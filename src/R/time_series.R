@@ -4,7 +4,6 @@ library(tidyverse)
 #' 
 #' @param files Vetor com os data.frames a serem unidos
 #' @param delim Delimitador dos arquivos a serem carregados
-#'
 build_series <- function(files, delim) {
   references <- data.frame();
   df <- data.frame();
@@ -15,7 +14,25 @@ build_series <- function(files, delim) {
     df <- rbind(df, temp);
   }
   df$references <- data.frame(references);
+  df$Holerith <- NULL;
   return(df);
+}
+
+#' Função para criar uma serie utilizando somente os elementos em comum de cada arquivo
+#' 
+#' @param files Vetor com os data.frames a serem unidos
+#' @param delim Delimitador dos arquivos a serem carregados
+#' @param reference Index do arquivo a ser utilizado como referência
+serie_inner_join <- function(files, delim, reference) {
+  # Criando o elemento de referência
+  df <- read_delim(files[reference], delim = delim)
+  join <- data.frame();
+  for (file in files) {
+    temp <- read_delim(file, delim = delim);
+    join <- rbind(join, inner_join(df, temp));
+  }
+  join$Holerith <- NULL;
+  return(join);
 }
 
 #' Função para agrupar (Somatório) uma serie temporal
