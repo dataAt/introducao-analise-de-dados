@@ -1,4 +1,6 @@
-install.packages("bookdownplus")
-require(bookdownplus)
+'
+Script de configuração do bookdown
+'
 
-bookdownplus(template = template()[13])
+install.packages(c('bookdown', 'glue', 'devtools'))
+devtools::install_github('hadley/emo')

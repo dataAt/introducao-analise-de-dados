@@ -1,0 +1,3 @@
+# Analisando dados
+
+Nesta tópico serão apresentados exemplos de análises feitas utilizando o *dataset* **mtcars**. Estes exemplos podem ser utilizados para gerar *insights* na aplicação de análise de dados.

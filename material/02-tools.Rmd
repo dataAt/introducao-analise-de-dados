@@ -1,0 +1,28 @@
+# Ferramentas para a análise de dados
+
+## R
+
+<!-- Colocar o material criado pelo oldLipe -->
+
+## R studio server
+
+## Python
+
+### Jupyter notebook
+
+## Estatística
+
+### Medidas de tendência central
+
+### Medidas de dispersão
+
+#### Variância
+
+#### Desvio padrão
+
+#### Coeficiente de variação
+
+## Algumas outras ferramentas
+
+* Cálculo;
+* Algebra linear.

@@ -1,25 +1,7 @@
---- 
-title: "Introdução a ciência de dados"
-subtitle: "Minicurso - 2018"
-author: "Felipe Carvalho; Felipe Menino"
-date: ""
-output:
-  bookdown::pdf_book:
-    template: tex/template_thesis_classic.tex
-    keep_tex: yes
-    citation_package: natbib
-#    latex_engine: xelatex
-    toc_depth: 3
-    toc_unnumbered: no
-    toc_appendix: yes
-    pandoc_args: --chapters
-    quote_footer: ["\\begin{flushright}", "\\end{flushright}"]
-# bibliography: [bib/bib.bib]
-# biblio-style: apalike
-# link-citations: yes
-colorlinks: no  
-# toc: no
-lot: no
-lof: no
-site: bookdown::bookdown_site
----
+# Introdução a análise de dados
+
+
+## Objetivo
+
+O objetivo deste material é apresentar conceitos básicos de análise de dados, bem como algumas das principais ferramentas e métodos utilizados.
+
