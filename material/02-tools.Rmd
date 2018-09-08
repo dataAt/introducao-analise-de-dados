@@ -1,26 +1,135 @@
-# Ferramentas para a análise de dados
+# Ferramentas e técnicas para a análise de dados
 
 ## R
 
 <!-- Colocar o material criado pelo oldLipe -->
 
-## R studio server
-
 ## Python
 
-### Jupyter notebook
 
 ## Estatística
 
-### Medidas de tendência central
+De uma forma geral, a estatística pode ser definida como, uma subárea da matemática, que fornece métodos para a coleta, organização, descrição, análise e interpretação de dados, para que a partir destas análises, decisões sejam tomadas.
 
-### Medidas de dispersão
+### Estatística descritiva
 
-#### Variância
+A estatística descrita, é aquela que tem por objetivo organizar e apresentar os dados de forma simples e intuitiva.
 
-#### Desvio padrão
+A aplicação de estatística descritiva, pode ser segmentada em cinco partes, são elas:
 
-#### Coeficiente de variação
+#### Definição do problema
+
+Nesta etapa de algumas definições são feitas, veja cada uma delas abaixo:
+
+* O que será estudado ?
+* Qual o custo previsto ?
+* Qual o tempo disponível ?
+* Qual o tamanho da amostra ?
+* Qual o tipo de amostragem ?
+* Qual o grau de precisão exigido ?
+* Em que setores geográficos ?
+
+Veja que, tudo aquilo que é relacionado aos dados. Esta etapa é de extrema importância para que, o problema analisado seja bem definido.
+
+#### Planejamento;
+
+Após a definição do escopo do problema a ser analisado, será necessário realizar o planejamento de como o problema definido anteriormente será resolvido.
+
+Toda esta etapa poderá variar de acordo com o problema a ser estudado, já que o processo pode variar dependendo dos dados que estão sendo analisados.
+
+#### Coleta de dados
+
+Para analisar dados, é preciso te-los! Assim a etapa de coleta de dados é vital para o desenvolvimento de analises.
+
+Existem duas formas de coletas de dados, sendo elas:
+
+* Coleta direta
+    * Coleta feita através de elementos informativos de registro obrigatório;
+    * Dados coligidos (Reunidos) pelo próprio analista, através de inquéritos e questionários.
+* Coleta indireta
+    * Nesta os dados são inferidos através de elementos já conhecidos (Coleta direta).
+
+Perceba ainda que, na coleta de dados, tem-se algumas definições que devem ser levadas em consideração: 
+
+* População: É um conjunto de elementos, com pelo menos uma característica em comum;
+* Amostra: Qualquer parte da população;
+* Recenseamento: Quando a população toda é pesquisada.
+
+#### Apuração de dados;
+
+Aqui, a mensuração dos dados é realizada.
+
+#### Apresentação, análise e interpretação de dados.
+
+Nesta última etapa, a apresentação (Gráficos e tabelas) é feita para permitir a análise e interpretação dos dados.
+
+### Classificação dos dados estatísticos
+
+```{r}
+knitr::include_graphics(rep("images/classificacao_dados.png", 1))
+```
+
+Dentro das classes de variáveis qualitativas e variáveis quantitativas, há ainda algumas definições importantes de serem passadas.
+
+Nas variáveis qualitativas, existem dois subgrupos, as variáveis continuas e as discretas, onde as variáveis continuas são aquelas que apresentam números com grande variação entre eles próprios e também podem ser valores reais. Já as variáveis discretas, apresentam pouca variação e são apresentadas como valores inteiros.
+
+Seguindo esta definição passada acima, fique atento para que, quando um valor, mesmo que inteiro, apresentar muita variação, ele pode ser considerado uma variável continua. Mas o mesmo não se aplica a variáveis continuas com baixa variação.
+
+Veja alguns exemplos para cada um dos tipos de variáveis descritos acima.
+
+* Variáveis discretas
+    * Número de alunos de uma classe;
+    * Número de acidentes numa rodovia, num determinado período;
+    * Número de livros de uma biblioteca.
+  
+* Variáveis continuas
+    * Pesos dos alunos de uma série;
+    * Lucro de uma empresa;
+    * Notas dos alunos.
+
+### Séries estatísticas
+
+Podem ser, séries históricas e séries geográficas, onde, a série histórica, traz dados que variam no tempo, e a série geográfica, dados que variam no espaço (E.g. Regiões)
+
+### Distribuição de frequências
+
+Quando estuda-se uma determinada variável, é importante conhecer seu comportamento, analisando a ocorrência de suas possíveis realizações. (Adaptado de Morretin. P, 8 Ed)
+
+Para que então, seja possível verificar estas frequências e porcentagens, utilizamos a distribuição de frequências, pois é com ela que pode-se ter uma visão geral do comportamento da variável a ser estudada.
+
+É importante lembrar que, para os diferentes tipos de variáveis quantitativas, discretas e contínuas, apresentado anteriormente tem-se formas diferentes de aplicar a distribuição de frequência.
+
+Para as variáveis discretas, que assumem valores inteiros e normalmente tem baixa variação, pode-se enumerar todas os possíveis valores, e no caso de variáveis continuas, onde a variação normalmente é grande, nem sempre será possível enumerar todos os valores, neste caso, são criados grupos.
+
+Antes de vermos a tabela gerada com a aplicação da distribuição de frequência, é necessário entender que existem diversos tipos diferentes de frequências que compoem a tabela. Veja a descrição de cada uma delas.
+
+| Tipo de frequência                 | Descrição                                                                                                   |
+|------------------------------------|-------------------------------------------------------------------------------------------------------------|
+| Frequência simples ou absoluta: fi | São os valores que representam o número de dados de cada classe                                             |
+| Frequência total: Σfi              | É o número total de dados coletados                                                                         |
+| Frequência relativa: fri           | São os valores das razões entre a frequência simples da classe e frequência total (fri = fi / Σfi)          |
+| Frequência acumulada: Fi           | É o total das frequências de todos os valores inferiores ao limite superior do intervalo de uma dada classe |
+| Frequência acumulada relativa: Fri | É a frequência acumulada da classe dividida pela frequência total da distribuição (Fri = Fi / Σfi)          |
+
+Com a descrição de cada uma das frequências presentes na tabela de distribuição, veja alguns exemplos que utilizam variáveis continuas e discretas.
+
+```{r}
+# Exemplo de variável discreta
+
+rol <- c(0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5);
+z <- data.frame(table(rol));
+colnames(z) = c('rol', 'fi');
+
+mutate(z, fri = prop.table(fi), Fi = cumsum(fi), Fri = cumsum(fri));
+```
+
+Perceba que, nesta tabela, todos os valores presentes no rol foram mapeamos na tabela de distribuição de frequência.
+
+### Representação gráfica
+
+<!-- ToDo: Oldlipe descrever a representação gráfica -->
+
+## Datamining
 
 ## Algumas outras ferramentas
 
