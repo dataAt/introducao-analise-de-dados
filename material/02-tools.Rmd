@@ -125,9 +125,59 @@ mutate(z, fri = prop.table(fi), Fi = cumsum(fi), Fri = cumsum(fri));
 
 Perceba que, nesta tabela, todos os valores presentes no rol foram mapeamos na tabela de distribuição de frequência.
 
+<!-- ToDo: Adicionar exemplo com variável continua -->
+
 ### Representação gráfica
 
 <!-- ToDo: Oldlipe descrever a representação gráfica -->
+
+### Medidas de distribuição de frequências
+
+<!-- ToDo: Adicionar introdução -->
+
+#### Medidas de tendência central (Medidas de posição)
+
+Conforme demonstrado na capítulo anterior, as distribuições de frequência, trazem diversas informações sobre o comportamento das variáveis, e tudo isto de forma resumida, e mesmo assim, tem-se muito mais entendimento dos dados que a própria tabela original. Porém há casos em que, há a necessidade de resumir ainda mais os dados, em diversos casos somente em um único valor expressivo a todo o conjunto de dados. 
+
+Nestes casos, de acordo com Moretin, emprega-se algumas das seguintes medidas de posição.
+
+* Média arimética
+
+Esta é talvez a medida estatística mais utilizada, e provavelmente já familiar ao leitor. Nesta basicamente há a soma de todos os valores presentes no conjunto de dados dividido pela quantidade de valores presentes no conjunto, assim a média pode ser expressa por:
+
+$$ \overline{X} = \frac{\sum{A}}{n} $$ onde n é a quantidade de valores presentem em A.
+
+* Mediana
+
+A mediana representa o valor que ocupa a posição dentral da série de observações, quando ordenados em ordem **crescente**, desta forma, se as observações forem [1 2 3 4 5] a mediana será 3, porém caso as observações sejam [1 2 3 4 5 6] a mediana será 
+
+```{r} 
+(3 + 4) / 2 
+```
+
+Isto porque, a regra para o cálculo da mediana muda, de acordo com o valor de n (Vale lembrar que n representa a quantidade de amostrar dentro de um conjunto de dados).
+
+Desta forma, para a mediana, pode-se utilizar a seguinte definição.
+
+$$ Md(X) = \begin{cases}\frac{n + 1}{n} & n = par\\\frac{n}{2} & n = ímpar\end{cases} $$
+
+* Moda
+
+A moda é o valore mais frequente em um conjunto de observações. Veja o exemplo abaixo
+
+```{r}
+x <- c(1, 1, 2, 3, 4, 4, 4, 4, 5, 6, 7);
+
+# Cálcula a moda
+temp <- table(as.vector(x))
+names(temp)[temp == max(temp)];
+```
+
+Vale lembrar que a moda não precisa ser um valor único, há casos em que, podem haver mais de uma móda. A estes casos chamamos de bimonal, para duas modas, trimodal, para três modas e assim por diante.
+
+#### Medidas de dispersão ou variabilidade
+
+#### Medidas de posição
 
 ## Datamining
 
