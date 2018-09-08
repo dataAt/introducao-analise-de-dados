@@ -147,6 +147,10 @@ Esta é talvez a medida estatística mais utilizada, e provavelmente já familia
 
 $$ \overline{X} = \frac{\sum{A}}{n} $$ onde n é a quantidade de valores presentem em A.
 
+* Médias de dados agrupados
+
+<!-- ToDo: Adicionar conteúdo -->
+
 * Mediana
 
 A mediana representa o valor que ocupa a posição dentral da série de observações, quando ordenados em ordem **crescente**, desta forma, se as observações forem [1 2 3 4 5] a mediana será 3, porém caso as observações sejam [1 2 3 4 5 6] a mediana será 
