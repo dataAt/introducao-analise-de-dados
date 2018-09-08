@@ -1,6 +1,6 @@
-# Introdução a Ciência de dados
+# Introdução a análise de dados
 
-Curso introdutório aos principais conceitos e atividades da Ciência de dados utilizando R e Python.
+Curso introdutório aos principais conceitos e atividades sobre análise de dados utilizando R e Python.
 
 ## Ementa
 
