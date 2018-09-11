@@ -114,6 +114,7 @@ Antes de vermos a tabela gerada com a aplicação da distribuição de frequênc
 Com a descrição de cada uma das frequências presentes na tabela de distribuição, veja alguns exemplos que utilizam variáveis continuas e discretas.
 
 ```{r}
+library(dplyr)
 # Exemplo de variável discreta
 
 rol <- c(0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5);
@@ -177,7 +178,7 @@ temp <- table(as.vector(x))
 names(temp)[temp == max(temp)];
 ```
 
-Vale lembrar que a moda não precisa ser um valor único, há casos em que, podem haver mais de uma móda. A estes casos chamamos de bimonal, para duas modas, trimodal, para três modas e assim por diante.
+Vale lembrar que a moda não precisa ser um valor único, há casos em que, podem haver mais de uma móda. A estes casos chamamos de bimodal, para duas modas, trimodal, para três modas e assim por diante.
 
 #### Medidas de dispersão ou variabilidade
 
