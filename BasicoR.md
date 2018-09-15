@@ -470,7 +470,9 @@ Para saber mais
 
 [Diferença entre lista e vetor - 3](!https://www.burns-stat.com/documents/tutorials/impatient-r/)
 
-[CRAN - 4](!https://cran.r-project.org/doc/FAQ/R-FAQ.html#Introduction) [R eficiente - 5](!https://csgillespie.github.io/efficientR/)
+[CRAN - 4](!https://cran.r-project.org/doc/FAQ/R-FAQ.html#Introduction) 
+
+[R eficiente - 5](!https://csgillespie.github.io/efficientR/)
 
 Materias utilizados como base
 -----------------------------
