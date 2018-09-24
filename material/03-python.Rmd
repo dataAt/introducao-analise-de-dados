@@ -33,7 +33,7 @@ As duas principais estruturas de dados presentes no pandas são:
 - Series;
 - DataFrames.
 
-Vejamos as principais características de cada uma delas
+Nos subtópicos abaixo vamos ver as características de cada uma destas estruturas, e em seguida, veremos alguns utilitários para leitura dos dados com Pandas.
 
 ### Series
 
@@ -94,7 +94,115 @@ data_m_tres = data[data > 3] # Devolve todos os valores dentro da Serie que são
 print(data_m_tres)
 ```
 
+Caso os valores das variáveis sejam string, também é possível realizar buscas, utilizando a mesma técnica.
+
+```{python}
+faculdade = dicto_s[dicto_s == 'Fatec'] # Recupera o campo que tem o valor 'Fatec'
+print(faculdade)
+```
+
+Porém, como citado lá no início deste tutorial, as `Series` são estruturas unidimensionais, o que significa que não poderemos ter matrizes dentro das `Series`, caso tentarmos fazer a inserção de uma matriz, ele irá aceitar, porém, fará o tratamento dos dados como se fossem diveras listas separadas dentro da `Series`, veja:
+
+```{python}
+matriz = pd.Series([[1, 2, 3], [4, 5, 6]])
+print(matriz)
+```
+
+Percebeu ? Para estes casos, faz-se necessário o uso de uma outra estrutura de dados, o DataFrame, que vamos tratar no próximo capítulo.
 
 ### Dataframes
 
+Agora que você já conhece como as `Series` funcionam, vamos apresentar a você o `DataFrame`, que difere das `Series` por serem multidimensionais, ou seja, aqui temos matrizes `r emo::ji("rainbow")`
+
+Mas por esta simples diferença, a manipulação dos `DataFrames` acabam sendo diferentes, não nos métodos, que em boa parte dos casos será os mesmos já apresentados, e sim, na maneira de pensar na manipulação, isto porque, trabalhar com multiplas linhas e colunas de uma única vez, pode tornar sua análise diferente.
+
+Além disto, no caso do pandas, boa parte dos métodos de leitura de dados, já retornam por padrão o `DataFrame` (Os métodos de leitura serão explicados mais abaixo).
+
+Vejamos algumas características bacanas dos `DataFrames`
+
+```{python}
+matriz = pd.DataFrame([[1, 2, 3], [4, 5, 6]])
+print(matriz)
+```
+
+Veja que, da mesma forma que as `Series`, os `DataFrames` tem o index que pode ser nomeado, e 
+além destes, as colunas também podem ser nomeadas.
+
+```{python}
+tabela = pd.DataFrame([[.9, .8, .7], [.4, .5, .7]], columns = ['primeiro', 'segundo', 'terceiro'], index = ['zero', 'um'])
+print(tabela)
+```
+
+E a recuperação tanto das linhas quanto das colunas pode ser feita utilizando a ideia da recuperação em dicionários de Python, como citado anteriormente.
+
+```{python}
+# Recuperando coluna
+coluna = tabela['primeiro']
+print(coluna)
+```
+
+```{python}
+# Recuperando linha
+linha = tabela.loc['zero']
+print(linha)
+```
+
+Para a recuperação da linha utilizamos um método do `DataFrame`, o `loc`, este permite recuperar uma linha através de seu nome, porém pode-se também recuperar pela posição, utilizando o método `iloc`.
+
+```{python}
+linha_um = tabela.iloc[1]
+```
+
+A diferença entre os métodos está justamente no que ele procura, no primeiro, `loc`, busca-se nomes, e no segundo, `iloc`, tenta-se recuperar a posição.
+
+Quando apresentamos as `Series` falamos sobre o método `describe`, ele também está disponível para o `DataFrame`, porém, caso você queira algum parâmetro estatístico específico, é possível chama-lo através de um método do `DataFrame`.
+
+```{python}
+print(tabela.mean()) # Média
+print(tabela.median()) # Mediana
+```
+
+Outros métodos úteis podem ser vistos abaixo
+
+```{python}
+print(tabela.max()) # Recupera a coluna com maior valor
+print(tabela.min()) # Recupera a coluna com o menor valor
+print(tabela.sum()) # Faz o somatório dos valores de cada linha
+```
+
+Lembre-se, muitos dos métodos apresentados na seção do `DataFrame` funcionam nas `Series`, e o contrátio também é verdadeiro.
+
+### Funções de leitura e escrita
+
+Além das estruturas de dados poderosas, o pandas também possui funções para leitura e escrita que são **APELONAS**
+
+Para a leitura de csv, podemos utilizar a `read_csv`
+
+```{python}
+df = pd.read_csv('data/titanic.csv') # O caminho pode ser diferente eu sua máquina
+print(df.head()) # Função que demonstra o início do DataFrame carregado
+print(df.tail()) # Função que demonstra o final do DataFrame carregado
+```
+
+Caso você esteja trabalhando com alguma API Rest, você pode fazer com que o json seja transportado para um `DataFrame`, veja
+
+```{python}
+json_frame = pd.read_json('https://www.reddit.com/r/technology/.json')
+print(json_frame.head())
+print(json_frame.columns) # Recupera as colunas do DataFrame
+```
+
+Da mesma forma que a leitura, a escrita é extremamente fácil. Para salvar um CSV, ou um JSON, basta utilizar os métodos `to_csv` e `to_json`, presentes dentro do `DataFrame`.
+
+```{python}
+df.to_csv('nome_do_csv.csv') # Salva o CSV
+df.to_json('nome_do_json.json') # Salva o JSON
+```
+
+Viu ? É tudo muito simples e direto, o que te permite focar em sua análise, e deixar de lado problemas com sintaxe `r emo::ji("statue_of_liberty")`, mas, após a sua análise, é importante apresentar seus dados, para isto, vamos aprender a utilizar a biblioteca matplotlib para fazer **plots** e visualizar seus dados.
+
 ## Introdução ao Matplotlib `r emo::ji("bar_chart")`
+
+Como citado no capítulo anterior, a visualização e apresentação de seus dados é importante, tanto para apresentar o que você analisou, quanto para você mesmo, entender seus dados.
+
+Existem diversos tipos de dados, aqui vamos apresentar alguns dos principais tipos de gráficos, e para isto vamos utilizar a biblioteca Matplotlib, que foi criada especialmente para a visualização de dados.
