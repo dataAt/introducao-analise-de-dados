@@ -1,5 +1,9 @@
 # Introdução
 
+A análise de dados é uma das atividades mais interessantes da atualidade, com ela é possível monitorar o governo, fazer empresas de sucesso e produtos que atendam a real necessidade de seus clientes, e o mais importante, com ela é possível saciar nossa curiosidade.
+Isto porque com a quantidade de dados disponível, podemos literalmente, saber sobre tudo, apenas realizando análises. 
+Mas para fazer estas análises é preciso dominar metodologias e tecnologias de análise, assim, este trabalho tem como objetivo apresentar, de forma introdutória, as principais tecnologias para análise de dados, as linguagens de programação R e Python.
+
 ## Dados
 
 Muito foi dito sobre dados, que estes são abundantes e estão em constante crescimento, porém o que são dados ? 
