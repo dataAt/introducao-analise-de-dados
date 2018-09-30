@@ -1,0 +1,195 @@
+---
+title: "cursoR"
+author: "Felipe Carvalho"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    toc: true
+    toc_depth: 3
+---
+
+## Análise simples dos dados de furtos de sjc
+
+### Pacotes utilizados
+
+
+```{r}
+suppressMessages(library(tidyverse))
+suppressMessages(library(hrbrthemes))
+suppressMessages(library(ggthemr))
+suppressMessages(library(lubridate))
+suppressMessages(library(stringr))
+suppressMessages(library(knitr))
+library(leaflet)
+```
+
+### Leitura do conjunto de dados
+
+```{r}
+# Leitura do arquivo csv
+df <- read.csv2("../data/dataset_of_abril.csv",
+                sep=",",
+                stringsAsFactors = FALSE)
+
+# Mais informações que o head
+knitr::kable(head(df, 4))
+```
+
+
+### Definição da análise
+1. Ano de fabricação que sofre mais roubos?
+Será que os carros fabricados em 2018 são mais roubados?
+#'... UMA IDEIA É RESPONDER ISSO AQUI DEPOIS COM OS VIZ
+
+2. Qual é o dia da semana em que houve mais roubo?
+Será que foi na sexta-feira?
+#'... UMA IDEIA É RESPONDER ISSO AQUI DEPOIS COM OS VIZ
+
+3. Qual é o tipo de meio de locomoção mais roubado?
+Será que foi moto?
+#'... UMA IDEIA É RESPONDER ISSO AQUI DEPOIS COM OS VIZ
+
+4. Qual é a marca que mais roubam?
+Será ford?
+#'... UMA IDEIA É RESPONDER ISSO AQUI DEPOIS COM OS VIZ
+
+5. Qual é a média de roubo de carro por mês?
+
+6. Mapa de região mais roubada
+
+### 1 - Análise de roubo por ano de fabricação
+
+
+```{r}
+# Usando um tema bonitinho :D
+ggthemr::ggthemr('earth')
+
+# Selecionando os atributos e filtrando a cidade de sjc
+carros_sjc <- df %>% select(CIDADE_VEICULO,
+                            ANO_MODELO,
+                            DESCR_COR_VEICULO) %>%
+  filter(CIDADE_VEICULO==("S.JOSE DOS CAMPOS"))
+
+knitr::kable(head(carros_sjc, 4))
+
+
+# Definição de cores por classes
+cores <- c("Amarelo" = "#f1c40f",
+           "Azul" = "#2980b9",
+           "Branco" = "#f7f1e3",
+           "Cinza" = "#95a5a6",
+           "Prata" = "#bdc3c7",
+           "Preta" = "#3d3d3d",
+           "Verde" = "#2ecc71",
+           "Vermelho" = "#e74c3c")
+
+# Grafico de barras
+ggplot(carros_sjc, aes(x=ANO_MODELO,
+                       fill=DESCR_COR_VEICULO)) +
+  geom_histogram(binwidth = 0.5) +
+  labs(title = 'Carros roubados em Abril',
+       y = 'Quantidade de carros Roubados',
+       x = 'Ano de frabricação') +
+  scale_fill_manual("Cores dos veículos",values=cores) +
+  scale_x_continuous(breaks = seq(1984,2018,2)) +
+  scale_y_continuous(breaks = seq(0,16,2)) +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+```
+
+
+### 2 - Roubo nos dias da semana
+```{r}
+# Alterando o tema
+ggthemr::ggthemr('fresh')
+
+# Selecionado a data do BO iniciado e transformo em dmy_hm(dia, mes, ano hora e minuto)
+df %>% select(BO_INICIADO) %>%
+  mutate (BO_INICIADO = dmy_hm(BO_INICIADO),
+          DIA_SEMANA = wday(BO_INICIADO,
+                            label=TRUE,
+                            abbr=FALSE)) %>%
+  ggplot(aes(x=DIA_SEMANA)) +
+  geom_bar() +
+  labs(title = 'Roubo de carro no de Abril',
+       y = 'Quantidade de carros roubados',
+       x = 'Dias da semana')
+
+```
+
+
+### 3 - Meio de locomoção mais roubado
+```{r}
+# Voltando ao tema normal
+ggthemr::ggthemr_reset()
+
+# Usando regex para limpar os atributos que estão vazios
+df %>% select(DESCR_TIPO_VEICULO)%>%
+  mutate(DESCR_TIPO_VEICULO =
+           str_replace(DESCR_TIPO_VEICULO,"^$", "N/I")) %>%
+  group_by(DESCR_TIPO_VEICULO) %>%
+  summarise(quant = length(DESCR_TIPO_VEICULO)) %>%
+  ggplot(aes(x=DESCR_TIPO_VEICULO,
+             y=quant,
+             fill=DESCR_TIPO_VEICULO)) +
+  geom_point() +
+  labs(title = 'Tipos de meio de locomoção roubados',
+       y = 'Quantidade total',
+       x = 'Meios de locomoção') +
+  theme(axis.text.x = element_text(angle = 90),
+        legend.position = "none")
+
+```
+
+### 4 - Fabricante mais roubado
+```{r}
+
+marcas <- stringr::str_split(df$DESCR_MARCA_VEICULO,
+                    "[:punct:]") %>%
+  purrr::flatten_chr()
+
+## Transformando para dataframe
+df_marcas <- as.data.frame(marcas)
+
+df_marcas %>% select(marcas) %>%
+  filter(marcas %in% c("FIAT",
+         "HONDA",
+         "PEUGEOT",
+         "FORD",
+         "TOYOTA",
+         "YAMAHA")) %>%
+  ggplot(aes(x=marcas)) +
+  geom_bar() +
+  labs(title = 'Fabricantes mais roubadas',
+                    y = 'Quantidade Total',
+                    x = 'Fabricantes')
+
+
+```
+
+
+### 5 - Mapa de ocorrencia
+```{r}
+mapa <- df %>%
+  select(DATA = BO_INICIADO, LAT = LATITUDE,
+         LONG = LONGITUDE) %>%
+  mutate(DATA = dmy_hm(DATA),
+         LAT = as.double(LAT),
+         LONG = as.double(LONG)) %>%
+  na.omit()
+
+
+map <- leaflet() %>%
+  addTiles() %>%
+  addProviderTiles("OpenStreetMap.BlackAndWhite") %>%
+  # Marcando algum ponto no mapa 
+  addMarkers(lng = -46.0030986, lat = -23.1894443) %>%
+  addCircleMarkers(data = mapa,
+                   lng = ~LONG, lat = ~LAT,
+                   opacity = 1.5)
+
+map
+
+```
+
+
