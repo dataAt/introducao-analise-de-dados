@@ -16,18 +16,17 @@ knitr::kable(head(df, 5))
 # Visualização de algumas estatísticas básicas
 summary(df)
 
-
 #'Análises
 #'
 #'1. Ano de fabricação que sofre mais roubos?
 #'1.1 Será que os carros de 2018 são mais roubados?
-#'... UMA IDEIA É RESPONDER ISSO AQUI DEPOIS COM OS VIZ
+#'
 #'
 #'2. Qual é o dia da semana em que houve mais roubo?
 #'2.1 Será que foi na sexta-feira?
 #'... UMA IDEIA É RESPONDER ISSO AQUI DEPOIS COM OS VIZ
 #'
-#'3. Qual é o tipo de meio de locomoção mais roubado?
+#'3. Qual é o de meio de locomoção mais roubado?
 #'3.1 Será que foi moto?
 #'... UMA IDEIA É RESPONDER ISSO AQUI DEPOIS COM OS VIZ
 #'
@@ -35,9 +34,7 @@ summary(df)
 #'4.1 Será ford?
 #'... UMA IDEIA É RESPONDER ISSO AQUI DEPOIS COM OS VIZ
 #'
-#'5. Qual é a média de roubo de carro por mês?
-#'
-#'6. Mapa de região mais roubada
+#'5. Mapa de região mais roubada
 
 ######## 1 - Análise de roubo por ano de fabricação
 
@@ -161,7 +158,22 @@ map <- leaflet() %>%
                    opacity = 1.5)
 
 
+# Respostas
 
+# OBS.: Não é possível encontrar uma tendencia com análise de um mês, precisamos análisar uma série maior para extrair
+# mais informações.
+
+# 1. Intervalo de carros que mais sofrem roubos são de 2013 até 2015
+# 1.1 Não, talvez seja porque a maioria tem seguro
+
+# 2 O dia da semana que teve mais roubo no mês de Abril foi na terça-feira
+# 2.1 Não, http://www.rastreadores.org/dias-e-horarios-que-mais-ocorrem-roubos-e-furtos-de-veiculos-no-brasil/, dar uma olhada
+# na fonte desse dado.
+
+# 3. Automóveis
+# 3.1 Não, pelo menos não nesse mês
+
+# 4. Honda
 
 
 

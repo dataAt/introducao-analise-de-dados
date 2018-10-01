@@ -192,4 +192,20 @@ map
 
 ```
 
+## Respostas
+
+### OBS.: Não é possível encontrar uma tendência com análise apenas de um mês, precisamos análisar uma série maior para extrair mais informações.
+
+1. Intervalo de carros que mais sofrem roubos são de 2013 até 2015
+1.1 Não, talvez seja porque a maioria tem seguro
+
+2. O dia da semana que teve mais roubo no mês de Abril foi na terça-feira
+2.1 Não, http://www.rastreadores.org/dias-e-horarios-que-mais-ocorrem-roubos-e-furtos-de-veiculos-no-brasil/, dar uma olhada na fonte desse dado.
+
+3. Automóveis
+3.1 Não, pelo menos não nesse mês
+
+4. Honda
+
+OBS.: Talvez poderia discorrer mais sobre o assunto mas não entendo nada sobre carros :D 
 
