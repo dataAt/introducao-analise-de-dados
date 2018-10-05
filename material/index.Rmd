@@ -1,7 +1,0 @@
-# Introdução a análise de dados
-
-
-## Objetivo
-
-O objetivo deste material é apresentar conceitos básicos de análise de dados, bem como algumas das principais ferramentas e métodos utilizados.
-
