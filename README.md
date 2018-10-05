@@ -12,7 +12,11 @@ Os tópicos abordados são os seguintes:
   - Utilização de biblioteca de manipulação de dados :recycle: ;
   - Utilização de biblioteca de visualização de dados :bar_chart: .
 
-## Colaboradores construction_worker:
+## Material de apoio
+
+O material de apoio para acompanhar o curso está disponível [aqui](https://dataat.github.io/introducao-analise-de-dados/)
+
+## Colaboradores :construction_worker:
 
 - Daniele Zaramello;
 - Felipe Carvalho;
