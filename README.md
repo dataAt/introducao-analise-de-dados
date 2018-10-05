@@ -16,6 +16,12 @@ Os tópicos abordados são os seguintes:
 
 O material de apoio para acompanhar o curso está disponível [aqui](https://dataat.github.io/introducao-analise-de-dados/)
 
+Caso você queira continuar o desenvolvimento do material, você pode continuar escrevendo no conteúdo do diretório `src-material`, e compilando o conteúdo executando:
+
+```shell 
+./compile.sh
+``` 
+
 ## Colaboradores :construction_worker:
 
 - Daniele Zaramello;
