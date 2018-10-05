@@ -1,11 +1,21 @@
-# Introdução a análise de dados
+# Introdução a análise de dados 
 
-Curso introdutório aos principais conceitos e atividades sobre análise de dados utilizando R e Python.
+Curso de introdução aos principais conceitos de análise de dados utilizando R e Python.
 
-## Ementa
+## O que este curso aborda ?
 
-- O que é Ciência de dados
-- Introdução ao R e Python para análise dados;
-- Principais métodos estatísticos;
-- Atividades práticas
-	- Processamento e análise de dados publicos.
+Bem, este curso tem como objetivo abordar conceitos básicos para ensinar a todos as rotinas básicas de análise de dados, e não apenas o conteúdo técnico, mas também, uma visão critica com relação as análises e principalmente aos dados.
+
+Os tópicos abordados são os seguintes: 
+- Introdução a análise de dados;
+- Introdução ao R e Python:
+  - Utilização de biblioteca de manipulação de dados :recycle: ;
+  - Utilização de biblioteca de visualização de dados :bar_chart: .
+
+## Colaboradores construction_worker:
+
+- Daniele Zaramello;
+- Felipe Carvalho;
+- Felipe Menino;
+- Lucas Augusto.
+
