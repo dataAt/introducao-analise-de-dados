@@ -178,12 +178,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
   vetor_boleano &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">FALSE</span>, <span class="ot">TRUE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>)
   vetor_numerico &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">3.14</span>, <span class="fl">6.28</span>, <span class="fl">2.3</span>)
   vetor_char &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;ola&#39;</span>, <span class="st">&#39;pessoal&#39;</span>, <span class="st">&#39;xd&#39;</span>)
-  v01 &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">4</span>
-  v02 &lt;-<span class="st"> </span><span class="dv">84</span><span class="op">:</span><span class="dv">76</span>
+  v01 &lt;-<span class="st"> </span><span class="dv">1</span>:<span class="dv">4</span>
+  v02 &lt;-<span class="st"> </span><span class="dv">84</span>:<span class="dv">76</span>
   v03 &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from=</span><span class="dv">1</span>, <span class="dt">to=</span><span class="dv">10</span>)
   v06 &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="st">&#39;DATA SCIENCE&#39;</span>, <span class="dv">50</span>)
   v08 &lt;-<span class="st"> </span><span class="kw">paste</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&#39;B&#39;</span>, <span class="st">&#39;C&#39;</span>) 
-  v11 &lt;-<span class="st"> </span><span class="kw">paste0</span>(<span class="st">&quot;EX_&quot;</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>)
+  v11 &lt;-<span class="st"> </span><span class="kw">paste0</span>(<span class="st">&quot;EX_&quot;</span>, <span class="dv">1</span>:<span class="dv">5</span>)
   
   <span class="co"># Podemos misturar tudo</span>
   vetor_misturado &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;sou legal&quot;</span>, <span class="ot">FALSE</span>, <span class="dv">21</span>)
@@ -243,7 +243,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="kw">is.list</span>(a)</code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="co"># Matriz</span>
-   m2 &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dt">data =</span> <span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">25</span>, <span class="kw">rep</span>(<span class="st">&quot;legal&quot;</span>, <span class="dv">5</span>)), <span class="dt">nrow =</span> <span class="dv">5</span>, <span class="dt">ncol=</span><span class="dv">6</span>)
+   m2 &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dt">data =</span> <span class="kw">c</span>(<span class="dv">1</span>:<span class="dv">25</span>, <span class="kw">rep</span>(<span class="st">&quot;legal&quot;</span>, <span class="dv">5</span>)), <span class="dt">nrow =</span> <span class="dv">5</span>, <span class="dt">ncol=</span><span class="dv">6</span>)
    
    <span class="kw">is.matrix</span>(m2)</code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
@@ -259,7 +259,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
   <span class="kw">length</span>(data_frame)</code></pre></div>
 <pre><code>## [1] 3</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="co"># Podemos acessar os valores individuais usando o &#39;$&#39;</span>
-  data_frame<span class="op">$</span>Animal</code></pre></div>
+  data_frame$Animal</code></pre></div>
 <pre><code>## [1] Cachorro Gato     Capivara Girafa   Macaco  
 ## Levels: Cachorro Capivara Gato Girafa Macaco</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="co"># Acessando os valores por indices</span>
@@ -345,13 +345,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>2.2 Estatisca básica</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="co"># Vamos usar o dado do filme Star Wars do pacote dplyr*</span>
   <span class="kw">suppressMessages</span>(<span class="kw">library</span>(dplyr))
-  starwars &lt;-<span class="st"> </span>dplyr<span class="op">::</span>starwars
+  starwars &lt;-<span class="st"> </span>dplyr::starwars
   
   <span class="co"># Desse modo o dataset é carregado no nosso ambiente, use ls()</span>
   <span class="kw">data</span>(starwars)
   
   <span class="co"># Vamos visualizar o dado</span>
-  dplyr<span class="op">::</span><span class="kw">glimpse</span>(starwars)</code></pre></div>
+  dplyr::<span class="kw">glimpse</span>(starwars)</code></pre></div>
 <pre><code>## Observations: 87
 ## Variables: 13
 ## $ name       &lt;chr&gt; &quot;Luke Skywalker&quot;, &quot;C-3PO&quot;, &quot;R2-D2&quot;, &quot;Darth Vader&quot;, ...
@@ -368,47 +368,47 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 ## $ vehicles   &lt;list&gt; [&lt;&quot;Snowspeeder&quot;, &quot;Imperial Speeder Bike&quot;&gt;, &lt;&gt;, &lt;&gt;,...
 ## $ starships  &lt;list&gt; [&lt;&quot;X-wing&quot;, &quot;Imperial shuttle&quot;&gt;, &lt;&gt;, &lt;&gt;, &quot;TIE Adva...</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="co"># Vamos ver a média de ano de nascimento</span>
-  <span class="kw">mean</span>(starwars<span class="op">$</span>birth_year)</code></pre></div>
+  <span class="kw">mean</span>(starwars$birth_year)</code></pre></div>
 <pre><code>## [1] NA</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="co"># oops... - Observe que o NA atrapalha nossa média,vamos remove-lo</span>
-  <span class="kw">mean</span>(starwars<span class="op">$</span>birth_year, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</code></pre></div>
+  <span class="kw">mean</span>(starwars$birth_year, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</code></pre></div>
 <pre><code>## [1] 87.56512</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="co"># Podemos procurar pela menor data de nascimento</span>
-  <span class="kw">min</span>(starwars<span class="op">$</span>birth_year, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</code></pre></div>
+  <span class="kw">min</span>(starwars$birth_year, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</code></pre></div>
 <pre><code>## [1] 8</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="co"># Pelo máximo também</span>
-  <span class="kw">max</span>(starwars<span class="op">$</span>birth_year, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</code></pre></div>
+  <span class="kw">max</span>(starwars$birth_year, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</code></pre></div>
 <pre><code>## [1] 896</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="co"># Desvio padrão </span>
-  <span class="kw">sd</span>(starwars<span class="op">$</span>birth_year, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</code></pre></div>
+  <span class="kw">sd</span>(starwars$birth_year, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</code></pre></div>
 <pre><code>## [1] 154.6914</code></pre>
 <ol start="3" style="list-style-type: decimal">
 <li>Os ifs da vida…</li>
 </ol>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="cf">if</span>(starwars<span class="op">$</span>name <span class="op">==</span><span class="st"> &quot;Luke Skywalker&quot;</span>){
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  if(starwars$name ==<span class="st"> &quot;Luke Skywalker&quot;</span>){
     <span class="st">&quot;Faz cara de vilão&quot;</span>
-  } <span class="cf">else</span> {
+  } else {
     <span class="st">&quot;Faz cara de bonzinho&quot;</span>
   }
   <span class="co"># hackezinho rápido</span>
-  vilao &lt;-<span class="st"> </span><span class="kw">ifelse</span>(starwars<span class="op">$</span>name <span class="op">==</span><span class="st"> &quot;Luke Skywalker&quot;</span>,
+  vilao &lt;-<span class="st"> </span><span class="kw">ifelse</span>(starwars$name ==<span class="st"> &quot;Luke Skywalker&quot;</span>,
          <span class="ot">TRUE</span>, <span class="ot">FALSE</span>)
   
   <span class="co"># Pense em vetor...</span>
-  starwars<span class="op">$</span>name[vilao]
+  starwars$name[vilao]
   
   <span class="co"># Foreach</span>
-  <span class="cf">for</span>(i <span class="cf">in</span> starwars<span class="op">$</span>name){
+  for(i in starwars$name){
     <span class="kw">print</span>(i)
   }
   
   <span class="co"># Um For pouco mais rápido[5]</span>
-  <span class="cf">for</span>(i <span class="cf">in</span> <span class="kw">seq_along</span>(starwars<span class="op">$</span>name)){
-    <span class="kw">print</span>(starwars<span class="op">$</span>name[i])
+  for(i in <span class="kw">seq_along</span>(starwars$name)){
+    <span class="kw">print</span>(starwars$name[i])
   }
   <span class="co"># Usando map do pacote purr</span>
   <span class="kw">library</span>(purrr)
-  purrr<span class="op">::</span><span class="kw">map_chr</span>(starwars<span class="op">$</span>name, print)</code></pre></div>
+  purrr::<span class="kw">map_chr</span>(starwars$name, print)</code></pre></div>
 </div>
 </div>
 <div id="para-saber-mais" class="section level2">
