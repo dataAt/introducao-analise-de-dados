@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="introducao-ao-r.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="introducao.html"><a href="introducao.html"><i class="fa fa-check"></i><b>1</b> Introdução</a><ul>
+<li class="chapter" data-level="1.1" data-path="introducao.html"><a href="introducao.html#dados"><i class="fa fa-check"></i><b>1.1</b> Dados</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="introducao.html"><a href="introducao.html#formatos-de-dados"><i class="fa fa-check"></i><b>1.1.1</b> Formatos de dados</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="introducao.html"><a href="introducao.html#o-que-e-analise-de-dados"><i class="fa fa-check"></i><b>1.2</b> O que é análise de dados</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="introducao.html"><a href="introducao.html#etapas-da-analise-de-dados"><i class="fa fa-check"></i><b>1.2.1</b> Etapas da análise de dados</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="introducao.html"><a href="introducao.html#diferencas-entre-analise-de-dados-e-ciencia-de-dados"><i class="fa fa-check"></i><b>1.3</b> Diferenças entre análise de dados e ciência de dados</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="introducao-ao-r.html"><a href="introducao-ao-r.html"><i class="fa fa-check"></i><b>2</b> Introdução ao R</a><ul>
+<li class="chapter" data-level="2.1" data-path="introducao-ao-r.html"><a href="introducao-ao-r.html#definicao-de-variaveis"><i class="fa fa-check"></i><b>2.1</b> Definição de variáveis</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="introducao-ao-r.html"><a href="introducao-ao-r.html#tipos-primitivos"><i class="fa fa-check"></i><b>2.1.1</b> Tipos primitivos</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="introducao-ao-r.html"><a href="introducao-ao-r.html#para-saber-mais"><i class="fa fa-check"></i><b>2.2</b> Para saber mais</a></li>
+<li class="chapter" data-level="2.3" data-path="introducao-ao-r.html"><a href="introducao-ao-r.html#materias-utilizados-como-base"><i class="fa fa-check"></i><b>2.3</b> Materias utilizados como base</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="introducao-ao-python.html"><a href="introducao-ao-python.html"><i class="fa fa-check"></i><b>3</b> Introdução ao Python 🚀</a><ul>
+<li class="chapter" data-level="3.1" data-path="introducao-ao-python.html"><a href="introducao-ao-python.html#introducao-ao-pandas"><i class="fa fa-check"></i><b>3.1</b> Introdução ao Pandas 🐼</a></li>
+<li class="chapter" data-level="3.2" data-path="introducao-ao-python.html"><a href="introducao-ao-python.html#estruturas-de-dados"><i class="fa fa-check"></i><b>3.2</b> Estruturas de dados</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="introducao-ao-python.html"><a href="introducao-ao-python.html#series"><i class="fa fa-check"></i><b>3.2.1</b> Series</a></li>
+<li class="chapter" data-level="3.2.2" data-path="introducao-ao-python.html"><a href="introducao-ao-python.html#dataframes"><i class="fa fa-check"></i><b>3.2.2</b> Dataframes</a></li>
+<li class="chapter" data-level="3.2.3" data-path="introducao-ao-python.html"><a href="introducao-ao-python.html#funcoes-de-leitura-e-escrita"><i class="fa fa-check"></i><b>3.2.3</b> Funções de leitura e escrita</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="introducao-ao-python.html"><a href="introducao-ao-python.html#introducao-ao-matplotlib"><i class="fa fa-check"></i><b>3.3</b> Introdução ao Matplotlib 📊</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="introducao-ao-python" class="section level1">
+<h1><span class="header-section-number">3</span> Introdução ao Python 🚀</h1>
+<p>Python é uma linguagem multiparadigma, com uma sintaxe muito simples que permite ao programador focar no problema e deixar de lado questões da linguagem. Esta é uma linguagem amplamente utilizada em diversos áreas, por conta principalmente das milhares de bibliotecas que a linguagem possui, todas elas distribuidas pela comunidade incrível que a linguagem possui ❤️</p>
+<p>Neste introdução, o foco será a aplicação da linguagem Python na manipulação e tratamento de dados, utilizando como base as bibliotecas Pandas e ao Matplotlib.</p>
+<p>Você pode estar se perguntando o motivo da utilização destas bibliotecas, e a respostas é bem simples, Python é uma linguagem para uso geral, assim, suas funções nativas não tem foco em uma função específica, como ocorre em linguagem como R, que já tem um foco em uma área específica (No caso do R, em análises estatísticas, como descrito no capítulo 2 deste material).</p>
+<p>Vamos começar !</p>
+<div id="introducao-ao-pandas" class="section level2">
+<h2><span class="header-section-number">3.1</span> Introdução ao Pandas 🐼</h2>
+<p>Como forma de iniciar, vamos começar entendendo o que é a biblioteca Pandas e qual seu objetivo geral, para isto, vejamos a definição feita pelo próprio site do projeto.</p>
+<blockquote>
+<p>pandas é uma biblioteca open source, licenciada pelo BSD, que fornece estruturas de dados de alto desempenho e fáceis de usar e ferramentas de análise de dados para a linguagem de programação Python.</p>
+</blockquote>
+<p>Veja então que, tudo o que é necessário para a realização da maioria dos casos de análise de dados utilizando a linguagem Python, irão, bem provavelmente, trabalhar com esta biblioteca.</p>
+<p>Para que se tenha uma ideia, o pandas pode ser aplicado em análises envolvendo:</p>
+<ul>
+<li>Finanças;</li>
+<li>Análise estatística;</li>
+<li>Ciência social;</li>
+<li>Além de diversas outras áreas de ciências e engenharia.</li>
+</ul>
+<p>Isto tudo, por contar com diversas funções e estruturas de dados que facilitam os processos de análise, por falar nestas funções e estruturas, no próximo tópico, vamos discutir um pouco mais sobre as principais presentes no pandas.</p>
+</div>
+<div id="estruturas-de-dados" class="section level2">
+<h2><span class="header-section-number">3.2</span> Estruturas de dados</h2>
+<p>As duas principais estruturas de dados presentes no pandas são:</p>
+<ul>
+<li>Series;</li>
+<li>DataFrames.</li>
+</ul>
+<p>Nos subtópicos abaixo vamos ver as características de cada uma destas estruturas, e em seguida, veremos alguns utilitários para leitura dos dados com Pandas.</p>
+<div id="series" class="section level3">
+<h3><span class="header-section-number">3.2.1</span> Series</h3>
+<p>As <code>Series</code> são estruturas de dados unidimensionais, que contam com diversos métodos para a manipulação de dados. Pode-se entender que as <code>Series</code> são estruturas de dados simples, assim como as listas padrões da linguagem Python, com uma pequena diferença, para cada item dentro de uma <code>Series</code> tem-se indices, estes podendo ser valores numéricos ou texto.</p>
+<p>Vamos começar a utilização, para facilitar o entendimento.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Estes comandos não devem ser executados em seu terminal</span>
+<span class="kw">library</span>(reticulate) 
+<span class="kw">use_python</span>(<span class="st">&quot;/home/felipe/anaconda3/bin/python&quot;</span>)</code></pre></div>
+<p>Para iniciar, vamos criar um simples <code>Series</code> e colocar dentro de uma variável. Para isto, importando a biblioteca pandas, e passamos para ela o ‘apelido’ de <code>pd</code>.</p>
+<p>Em seguida, criar uma <code>Series</code> simples, passando como parâmetro de entrada uma lista com três valores, veja:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pandas <span class="im">as</span> pd
+s <span class="op">=</span> pd.Series([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])<span class="op">;</span> <span class="bu">print</span>(s)</code></pre></div>
+<pre><code>## 0    1
+## 1    2
+## 2    3
+## dtype: int64</code></pre>
+<p>É interessante notar que, cada uma das linhas, tem associado um index (Pode ser visto do lado esquerdo dos valores), e isto permite a recuperação dos valores através destes index. Você pode fazer uma analogia a forma com que você recupera os valores em um dicionário em Python, a diferença aqui é que, esta é uma estrutura de dados de alto desempenho, além de que, estas estruturas são otimizadas para fazer a melhor utilização de memória possível.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(s[<span class="dv">0</span>]) <span class="co"># Recupera o valor do index com nome 0</span></code></pre></div>
+<pre><code>## 1</code></pre>
+<p>Por falar em dicionários, estes podem ser facilmente transformados em <code>Series</code>, veja:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">dicto <span class="op">=</span> {
+  <span class="st">&#39;faculdade&#39;</span>: <span class="st">&#39;Fatec&#39;</span>,
+  <span class="st">&#39;nota&#39;</span>: <span class="dv">10</span> 
+}
+dicto_s <span class="op">=</span> pd.Series(dicto)<span class="op">;</span> <span class="bu">print</span>(dicto_s)</code></pre></div>
+<pre><code>## faculdade    Fatec
+## nota            10
+## dtype: object</code></pre>
+<p>Após a conversão, o uso é basicamente o mesmo do dicionário, porém com os benefícios já citados. Além do que já foi dito sobre os <code>Series</code>, é importante lembrar que, estas estruturas de dados possuem diversos métodos para facilitar a manipulação e entendimento dos dados, vamos a alguns destes métodos</p>
+<p>Caso queira-se uma rápida descrição de seus dados, é possível obter um resumo estatístico</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">data <span class="op">=</span> pd.Series([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])
+<span class="bu">print</span>(data.describe())</code></pre></div>
+<pre><code>## count    5.000000
+## mean     3.000000
+## std      1.581139
+## min      1.000000
+## 25%      2.000000
+## 50%      3.000000
+## 75%      4.000000
+## max      5.000000
+## dtype: float64</code></pre>
+<p>Este tipo de comando pode te ajudar a entender os dados que você está analisando.</p>
+<p>Além disto, você pode ter necessidades como buscas dentro do conjunto de dados, existem diversas maneiras de fazer isto com pandas, mas uma forma simples e intuitiva é a utilização de indexação booleana, onde basicamente uma expressão lógica é passada como ponto para indexação.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">data_m_tres <span class="op">=</span> data[data <span class="op">&gt;</span> <span class="dv">3</span>] <span class="co"># Devolve todos os valores dentro da Serie que são maiores que 3</span>
+<span class="bu">print</span>(data_m_tres)</code></pre></div>
+<pre><code>## 3    4
+## 4    5
+## dtype: int64</code></pre>
+<p>Caso os valores das variáveis sejam string, também é possível realizar buscas, utilizando a mesma técnica.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">faculdade <span class="op">=</span> dicto_s[dicto_s <span class="op">==</span> <span class="st">&#39;Fatec&#39;</span>] <span class="co"># Recupera o campo que tem o valor &#39;Fatec&#39;</span>
+<span class="bu">print</span>(faculdade)</code></pre></div>
+<pre><code>## faculdade    Fatec
+## dtype: object</code></pre>
+<p>Porém, como citado lá no início deste tutorial, as <code>Series</code> são estruturas unidimensionais, o que significa que não poderemos ter matrizes dentro das <code>Series</code>, caso tentarmos fazer a inserção de uma matriz, ele irá aceitar, porém, fará o tratamento dos dados como se fossem diveras listas separadas dentro da <code>Series</code>, veja:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">matriz <span class="op">=</span> pd.Series([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]])
+<span class="bu">print</span>(matriz)</code></pre></div>
+<pre><code>## 0    [1, 2, 3]
+## 1    [4, 5, 6]
+## dtype: object</code></pre>
+<p>Percebeu ? Para estes casos, faz-se necessário o uso de uma outra estrutura de dados, o DataFrame, que vamos tratar no próximo capítulo.</p>
+</div>
+<div id="dataframes" class="section level3">
+<h3><span class="header-section-number">3.2.2</span> Dataframes</h3>
+<p>Agora que você já conhece como as <code>Series</code> funcionam, vamos apresentar a você o <code>DataFrame</code>, que difere das <code>Series</code> por serem multidimensionais, ou seja, aqui temos matrizes 🌈</p>
+<p>Mas por esta simples diferença, a manipulação dos <code>DataFrames</code> acabam sendo diferentes, não nos métodos, que em boa parte dos casos será os mesmos já apresentados, e sim, na maneira de pensar na manipulação, isto porque, trabalhar com multiplas linhas e colunas de uma única vez, pode tornar sua análise diferente.</p>
+<p>Além disto, no caso do pandas, boa parte dos métodos de leitura de dados, já retornam por padrão o <code>DataFrame</code> (Os métodos de leitura serão explicados mais abaixo).</p>
+<p>Vejamos algumas características bacanas dos <code>DataFrames</code></p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">matriz <span class="op">=</span> pd.DataFrame([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]])
+<span class="bu">print</span>(matriz)</code></pre></div>
+<pre><code>##    0  1  2
+## 0  1  2  3
+## 1  4  5  6</code></pre>
+<p>Veja que, da mesma forma que as <code>Series</code>, os <code>DataFrames</code> tem o index que pode ser nomeado, e além destes, as colunas também podem ser nomeadas.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">tabela <span class="op">=</span> pd.DataFrame([[.<span class="dv">9</span>, .<span class="dv">8</span>, .<span class="dv">7</span>], [.<span class="dv">4</span>, .<span class="dv">5</span>, .<span class="dv">7</span>]], columns <span class="op">=</span> [<span class="st">&#39;primeiro&#39;</span>, <span class="st">&#39;segundo&#39;</span>, <span class="st">&#39;terceiro&#39;</span>], index <span class="op">=</span> [<span class="st">&#39;zero&#39;</span>, <span class="st">&#39;um&#39;</span>])
+<span class="bu">print</span>(tabela)</code></pre></div>
+<pre><code>##       primeiro  segundo  terceiro
+## zero       0.9      0.8       0.7
+## um         0.4      0.5       0.7</code></pre>
+<p>E a recuperação tanto das linhas quanto das colunas pode ser feita utilizando a ideia da recuperação em dicionários de Python, como citado anteriormente.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Recuperando coluna</span>
+coluna <span class="op">=</span> tabela[<span class="st">&#39;primeiro&#39;</span>]
+<span class="bu">print</span>(coluna)</code></pre></div>
+<pre><code>## zero    0.9
+## um      0.4
+## Name: primeiro, dtype: float64</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Recuperando linha</span>
+linha <span class="op">=</span> tabela.loc[<span class="st">&#39;zero&#39;</span>]
+<span class="bu">print</span>(linha)</code></pre></div>
+<pre><code>## primeiro    0.9
+## segundo     0.8
+## terceiro    0.7
+## Name: zero, dtype: float64</code></pre>
+<p>Para a recuperação da linha utilizamos um método do <code>DataFrame</code>, o <code>loc</code>, este permite recuperar uma linha através de seu nome, porém pode-se também recuperar pela posição, utilizando o método <code>iloc</code>.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">linha_um <span class="op">=</span> tabela.iloc[<span class="dv">1</span>]</code></pre></div>
+<p>A diferença entre os métodos está justamente no que ele procura, no primeiro, <code>loc</code>, busca-se nomes, e no segundo, <code>iloc</code>, tenta-se recuperar a posição.</p>
+<p>Quando apresentamos as <code>Series</code> falamos sobre o método <code>describe</code>, ele também está disponível para o <code>DataFrame</code>, porém, caso você queira algum parâmetro estatístico específico, é possível chama-lo através de um método do <code>DataFrame</code>.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(tabela.mean()) <span class="co"># Média</span></code></pre></div>
+<pre><code>## primeiro    0.65
+## segundo     0.65
+## terceiro    0.70
+## dtype: float64</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(tabela.median()) <span class="co"># Mediana</span></code></pre></div>
+<pre><code>## primeiro    0.65
+## segundo     0.65
+## terceiro    0.70
+## dtype: float64</code></pre>
+<p>Outros métodos úteis podem ser vistos abaixo</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(tabela.<span class="bu">max</span>()) <span class="co"># Recupera a coluna com maior valor</span></code></pre></div>
+<pre><code>## primeiro    0.9
+## segundo     0.8
+## terceiro    0.7
+## dtype: float64</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(tabela.<span class="bu">min</span>()) <span class="co"># Recupera a coluna com o menor valor</span></code></pre></div>
+<pre><code>## primeiro    0.4
+## segundo     0.5
+## terceiro    0.7
+## dtype: float64</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(tabela.<span class="bu">sum</span>()) <span class="co"># Faz o somatório dos valores de cada linha</span></code></pre></div>
+<pre><code>## primeiro    1.3
+## segundo     1.3
+## terceiro    1.4
+## dtype: float64</code></pre>
+<p>Lembre-se, muitos dos métodos apresentados na seção do <code>DataFrame</code> funcionam nas <code>Series</code>, e o contrátio também é verdadeiro.</p>
+</div>
+<div id="funcoes-de-leitura-e-escrita" class="section level3">
+<h3><span class="header-section-number">3.2.3</span> Funções de leitura e escrita</h3>
+<p>Além das estruturas de dados poderosas, o pandas também possui funções para leitura e escrita que são <strong>APELONAS</strong></p>
+<p>Para a leitura de csv, podemos utilizar a <code>read_csv</code></p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">df <span class="op">=</span> pd.read_csv(<span class="st">&#39;data/titanic.csv&#39;</span>) <span class="co"># O caminho pode ser diferente eu sua máquina</span>
+<span class="bu">print</span>(df.head()) <span class="co"># Função que demonstra o início do DataFrame carregado</span></code></pre></div>
+<pre><code>##    PassengerId  Pclass                                          Name     Sex  \
+## 0          892       3                              Kelly, Mr. James    male   
+## 1          893       3              Wilkes, Mrs. James (Ellen Needs)  female   
+## 2          894       2                     Myles, Mr. Thomas Francis    male   
+## 3          895       3                              Wirz, Mr. Albert    male   
+## 4          896       3  Hirvonen, Mrs. Alexander (Helga E Lindqvist)  female   
+## 
+##     Age  SibSp  Parch   Ticket     Fare Cabin Embarked  
+## 0  34.5      0      0   330911   7.8292   NaN        Q  
+## 1  47.0      1      0   363272   7.0000   NaN        S  
+## 2  62.0      0      0   240276   9.6875   NaN        Q  
+## 3  27.0      0      0   315154   8.6625   NaN        S  
+## 4  22.0      1      1  3101298  12.2875   NaN        S</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(df.tail()) <span class="co"># Função que demonstra o final do DataFrame carregado</span></code></pre></div>
+<pre><code>##      PassengerId  Pclass                          Name     Sex   Age  SibSp  \
+## 413         1305       3            Spector, Mr. Woolf    male   NaN      0   
+## 414         1306       1  Oliva y Ocana, Dona. Fermina  female  39.0      0   
+## 415         1307       3  Saether, Mr. Simon Sivertsen    male  38.5      0   
+## 416         1308       3           Ware, Mr. Frederick    male   NaN      0   
+## 417         1309       3      Peter, Master. Michael J    male   NaN      1   
+## 
+##      Parch              Ticket      Fare Cabin Embarked  
+## 413      0           A.5. 3236    8.0500   NaN        S  
+## 414      0            PC 17758  108.9000  C105        C  
+## 415      0  SOTON/O.Q. 3101262    7.2500   NaN        S  
+## 416      0              359309    8.0500   NaN        S  
+## 417      1                2668   22.3583   NaN        C</code></pre>
+<p>Caso você esteja trabalhando com alguma API Rest, você pode fazer com que o json seja transportado para um <code>DataFrame</code>, veja</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">json_frame <span class="op">=</span> pd.read_json(<span class="st">&#39;https://www.reddit.com/r/technology/.json&#39;</span>)
+<span class="bu">print</span>(json_frame.head())</code></pre></div>
+<pre><code>##                                                        data     kind
+## after                                             t3_9lmhre  Listing
+## before                                                 None  Listing
+## children  [{&#39;kind&#39;: &#39;t3&#39;, &#39;data&#39;: {&#39;approved_at_utc&#39;: No...  Listing
+## dist                                                     27  Listing
+## modhash                                                      Listing</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(json_frame.columns) <span class="co"># Recupera as colunas do DataFrame</span></code></pre></div>
+<pre><code>## Index([&#39;data&#39;, &#39;kind&#39;], dtype=&#39;object&#39;)</code></pre>
+<p>Da mesma forma que a leitura, a escrita é extremamente fácil. Para salvar um CSV, ou um JSON, basta utilizar os métodos <code>to_csv</code> e <code>to_json</code>, presentes dentro do <code>DataFrame</code>.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">df.to_csv(<span class="st">&#39;nome_do_csv.csv&#39;</span>) <span class="co"># Salva o CSV</span>
+df.to_json(<span class="st">&#39;nome_do_json.json&#39;</span>) <span class="co"># Salva o JSON</span></code></pre></div>
+<p>Viu ? É tudo muito simples e direto, o que te permite focar em sua análise, e deixar de lado problemas com sintaxe 🗽, mas, após a sua análise, é importante apresentar seus dados, para isto, vamos aprender a utilizar a biblioteca matplotlib para fazer <strong>plots</strong> e visualizar seus dados.</p>
+</div>
+</div>
+<div id="introducao-ao-matplotlib" class="section level2">
+<h2><span class="header-section-number">3.3</span> Introdução ao Matplotlib 📊</h2>
+<p>Como citado no capítulo anterior, a visualização e apresentação de seus dados é importante, tanto para apresentar o que você analisou, quanto para você mesmo, entender seus dados.</p>
+<p>Existem diversos tipos de dados, aqui vamos apresentar alguns dos principais tipos de gráficos, e para isto vamos utilizar a biblioteca Matplotlib, que foi criada especialmente para a visualização de dados.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="introducao-ao-r.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
