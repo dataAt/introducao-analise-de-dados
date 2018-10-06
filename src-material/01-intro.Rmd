@@ -1,0 +1,29 @@
+# Introdução
+
+A análise de dados é uma das atividades mais interessantes da atualidade, com ela é possível monitorar o governo, fazer empresas de sucesso e produtos que atendam a real necessidade de seus clientes, e o mais importante, com ela é possível saciar nossa curiosidade.
+Isto porque com a quantidade de dados disponível, podemos literalmente, saber sobre tudo, apenas realizando análises. 
+Mas para fazer estas análises é preciso dominar metodologias e tecnologias de análise, assim, este trabalho tem como objetivo apresentar, de forma introdutória, as principais tecnologias para análise de dados, as linguagens de programação R e Python.
+
+## Dados
+
+Muito foi dito sobre dados, que estes são abundantes e estão em constante crescimento, porém o que são dados ? 
+
+Bem esta pergunta possui diversas respostas, isto porque há várias definições para dados, aqui iremos assumir que dados são "Qualquer coisa registrada com o propósito de posteriormente ser analisado" - Rafael Santos.
+
+### Formatos de dados
+
+Como já citado, existem muitos dados disponíveis, estes vindos das mais diversas fontes e formatos, e boa parte dos desafios na análise de dados está vinculada ao formato com que o dados está disponível, isto porque dependendo do formato, existem etapas de organização que devem ser aplicada nos dados.
+
+Nos subtópicos abaixo, serão descritos os principais formatos de dados e alguns exemplos de cada um destes.
+
+#### Dados estruturados
+
+#### Dados semi-estruturados
+
+#### Dados não estruturados
+
+## O que é análise de dados
+
+### Etapas da análise de dados
+
+## Diferenças entre análise de dados e ciência de dados

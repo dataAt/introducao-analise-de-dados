@@ -1,0 +1,125 @@
+# Pacotes utilizados
+library(tidyverse)
+library(ggthemes)
+
+# A leitura do dado é feita através do pacote da função read.csv2
+# que pertence ao pacote utils do R
+dengue_set <- read.csv2(file = "http://i3geo.saude.gov.br/i3geo/ogc.php?service=WFS&version=1.0.0&request=GetFeature&typeName=odm6_dengue&outputFormat=CSV",
+                 sep=",",
+                 stringsAsFactors = FALSE)
+
+
+# Vamos fazer uma análise rápida do nosso conjunto, por exemplo,
+# o nome dos nossos atributos, estatísticas básicas,
+# verificar se há algum NA no nosso dado. Recomendo uma
+# análise mais elaborada para dados não tratados.
+
+
+# Primeiro, vamos observar nossos dados
+head(dengue_set)
+
+# Tirando uma conclusão rápida, nosso atributo no_cidade
+# é qualitativo, por se tratar dos nomes das cidades. Por outro lado,
+# o indicx é um atributo quantitativo discreto, pois representa
+# a quantidade de casos de obito que ocorreram na cidade.
+
+# A partir dessa conclusão rápida, quero ver se há algum atributo
+# com o valor NA
+is.na(dengue_set)
+
+# Acho assim meio cansativo de analisar linha por linha
+# se é TRUE ou FALSE, podemos otimizar apenas somando os valores
+# TRUE
+sum(is.na(dengue_set))
+
+# Seguindo, esse dado me parece perfeito (isso não acontece na vida real).
+# Vamos seguir e visualizar algumas estatísticas básicas
+summary(dengue_set)
+
+# Vejo que o valor mínimo é 0, a média é 0.117 e o valor máximo é 28.
+# Vou remover as cidades que contém 0 casos e calcular a média novamente,
+# talvez assim, conseguimos ter uma análise melhor
+
+# Vamos lá, primeiro vamos observar o tamanho do nosso conjunto completo
+dim(dengue_set)
+
+# Temos 5565 linhas, quero ver, quantos registro possuem o indice 0
+dengue_set %>%
+  select(everything()) %>%
+  filter(indicx == 0) %>%
+  count()
+
+# Temos 5279 registros com os valores 0.
+# Quero analisar apenas as cidade que ouveram casos
+conjunto_novo <- dengue_set %>%
+  select(everything()) %>%
+  filter(indicx >= 1)
+
+# Pronto, com o nosso conjunto novo, vamos fazer a mesma análise
+summary(conjunto_novo)
+
+# Agora temos os valores mais acurados, sabemos que, a média de cidades
+# que houveram casos de dengue foram de 2 pessoa em 286 cidades.
+# Vamos selecionar apenas as cidades que estão acima da média de ocorrência
+cidades_casos <- conjunto_novo %>%
+  select(everything()) %>%
+  filter(indicx > mean(indicx))
+
+# Vamos observar as estatísticas novamente
+summary(cidades_casos)
+
+# Agora, com 54 cidades, quero ver, quais capitais estão acima da média
+# da cidades em que ocorreram pelo menos 1 vítima da dengue
+# Aqui poderia pegar um conjunto de dados e fazer um merge, mas, vou fazer
+# na mão por motivos didáticos a.k.a preguiça
+
+capitais_brasil <- cidades_casos %>%
+  select(everything()) %>%
+  filter(no_cidade %in% c("São Paulo",
+                        "Rio de Janeiro",
+                        "Belo Horizonte",
+                        "Porto Alegre",
+                        "Curitiba",
+                        "Florianópolis",
+                        "Goiânia",
+                        "Salvador",
+                        "Brasília",
+                        "Fortaleza",
+                        "Recife",
+                        "Manaus",
+                        "Vitória",
+                        "Belém",
+                        "Natal",
+                        "Cuiabá",
+                        "São Luís",
+                        "João Pessoa",
+                        "Campo Grande",
+                        "Maceió",
+                        "Aracaju",
+                        "Teresina",
+                        "Palmas",
+                        "Boa Vista",
+                        "Porto Velho",
+                        "Rio Branco"))
+
+
+# Bom, agora que temos as capitais, podemos visualizar,
+# algumas ideias, podemos separar por cidades litorâneas e
+# ver se há alguma relação de índices maiores por conter mar, ou
+# cidade que têm rios.
+
+ggplot(capitais_brasil, aes(x=no_cidade, y=indicx)) +
+  geom_col(fill = "#c0392b") +
+  geom_text(aes(label = indicx), vjust = -0.5) +
+  labs(title = 'Capitais com casos de dengue',
+       y = 'Quantidade de casos',
+       x = 'Capitais do brasil') +
+  theme_hc() +
+  theme(axis.text.x = element_text(angle = 45,
+                                   hjust = 1))
+
+# Olha só, agora sabemos que Campo Grande e Goiânia tem
+# os maiores indices de dengue. Sabemos que ambas capitais
+# pertencem a região do centro-oeste.
+# https://g1.globo.com/bemestar/noticia/brasil-tem-62-mortes-por-dengue-em-2018.ghtml
+# reportagem do g1 sobre os casos no centro-oeste

@@ -1,0 +1,264 @@
+---
+title: "cursoR"
+author: "Felipe Carvalho"
+date: "`r Sys.Date()`"
+output: 
+  github_document:
+    toc: true
+    toc_depth: 3
+---
+
+
+## Básico do R
+
+1. Definição de variáveis
+
+1.1 Tipos primitivos
+```{r}
+  a <- 7L
+  b = 14.01
+  42 -> c
+  k <- FALSE
+  g <- 12i # tipo complexo*
+  couse <- 'cool'
+  
+  
+  # Para ver inspecionar o valor das variáveis
+  print(a)
+  b
+  cat(c)
+  
+  # Para ver as classes[1]
+  class(a)
+  class(b)
+  class(c)
+  class(k)
+  class(couse)
+  
+  # Para remove-las
+  rm(a)
+  
+```
+
+1.2 Tipos de dados estruturados
+```{r}
+  # Vetores[2]
+  vetor_boleano <- c(FALSE, TRUE, TRUE, FALSE)
+  vetor_numerico <- c(3.14, 6.28, 2.3)
+  vetor_char <- c('ola', 'pessoal', 'xd')
+  v01 <- 1:4
+  v02 <- 84:76
+  v03 <- seq(from=1, to=10)
+  v06 <- rep('DATA SCIENCE', 50)
+  v08 <- paste("A", 'B', 'C') 
+  v11 <- paste0("EX_", 1:5)
+  
+  # Podemos misturar tudo
+  vetor_misturado <- c("sou legal", FALSE, 21)
+  # Vetor atomico tem um único tipo, então se misturarmos, vai converter para o tipo mais forte:
+  #1 - character
+  #2 - complex
+  #3 - numeric
+  #4 - integerc
+  #5- logical
+  # Vetor misturado será convertido em qual tipo?
+  
+  # Conferirndo a variável e tamanho
+  is.atomic(vetor_boleano)
+  is.list(vetor_boleano)
+  length(vetor_boleano)
+  
+  # Lista
+  lista_boleano <- list(FALSE, TRUE, TRUE, FALSE)
+  lista_inteiro <- list(12L, 10L, 7L)
+  lista_misturada <- list(FALSE, 12L, 't', 2i)
+  
+  # Conferindo o tamanho da lista
+  is.list(lista_boleano)
+  is.recursive(lista_boleano)
+  is.atomic(lista_boleano)
+  is.list(lista_inteiro)
+  
+  
+  # Array
+  a <- array(c('green','yellow'),dim = c(3,3,2)); a
+  
+  class(a)
+  typeof(a)
+  is.atomic(a)
+  # Por que não é um vetor?
+  is.vector(a)
+  is.list(a)
+  
+  
+  # Matriz
+   m2 <- matrix(data = c(1:25, rep("legal", 5)), nrow = 5, ncol=6)
+   
+   is.matrix(m2)
+   is.array(m2)
+   
+   m2[5,6]
+
+```
+
+1.3 DataFrame
+
+```{r}
+   # DataFrame[3]
+   data_frame <- data.frame(Risco=c(FALSE,FALSE, FALSE, FALSE,TRUE), Animal=c("Cachorro", "Gato", "Capivara", "Girafa", "Macaco"), Periculosidade=c(200, 400, 0, 7, 1000))
+  
+  # Para ver o tamanho
+  length(data_frame)
+  
+  # Podemos acessar os valores individuais usando o '$'
+  data_frame$Animal
+  
+  # Acessando os valores por indices
+  data_frame[,2]
+  data_frame[2,]
+  data_frame[3,2]
+  
+  
+  # Visualização das lihas iniciais
+  head(data_frame)
+  # Visualização das linhas finais
+  tail(data_frame)
+  
+  # Nome das colunas
+  colnames(data_frame)
+  # Nome das linhas
+  rownames(data_frame)
+  
+  # Quantidade de colunas
+  ncol(data_frame)
+  # Quantidade de linhas
+  nrow(data_frame)
+  
+  # Podemos observar a estrutura
+  str(data_frame)
+  
+  # Algumas estatísticas básicas 
+  summary(data_frame)
+```
+
+
+2. Operações Básicas
+
+2.1 Dicas úteis
+```{r, eval=FALSE}
+  # Para usar algum pacote
+  library(tidyverse)
+
+  # Para procurar por um pacote
+  ??ggsom
+
+  # Para instalar algum pacote que esteja no CRAN [4]
+  #install.packages("meupacotefavorite")
+
+  # Para ler sobre alguma função
+  ?sum()
+  
+  # Para verificar seu diretório atual
+  getwd() 
+  
+  # Para definir um novo diretório
+  setwd("~/R/ggsom/")
+  
+  # Para ler conjunto de dados
+  df <- read.csv2("~/Dados/pesquisa_google_trend/convolutional_neural_networks.csv", 
+            header = TRUE, sep = ",")
+  
+  # Dependendo do tamanho do dataset, vale a pena usar fread() ou read_csv()
+```
+
+
+2.2 Estatisca básica
+```{r}
+  # Vamos usar o dado do filme Star Wars do pacote dplyr*
+  suppressMessages(library(dplyr))
+  starwars <- dplyr::starwars
+  
+  # Desse modo o dataset é carregado no nosso ambiente, use ls()
+  data(starwars)
+  
+  # Vamos visualizar o dado
+  dplyr::glimpse(starwars)
+  
+  # Vamos ver a média de ano de nascimento
+  mean(starwars$birth_year)
+  
+  # oops... - Observe que o NA atrapalha nossa média,vamos remove-lo
+  mean(starwars$birth_year, na.rm = TRUE)
+  
+  
+  # Podemos procurar pela menor data de nascimento
+  min(starwars$birth_year, na.rm = TRUE)
+  
+  # Pelo máximo também
+  max(starwars$birth_year, na.rm = TRUE)
+  
+  # Desvio padrão 
+  sd(starwars$birth_year, na.rm = TRUE)
+```
+
+3. Os ifs da vida...
+```{r, eval=FALSE}
+  
+  if(starwars$name == "Luke Skywalker"){
+    "Faz cara de vilão"
+  } else {
+    "Faz cara de bonzinho"
+  }
+  # hackezinho rápido
+  vilao <- ifelse(starwars$name == "Luke Skywalker",
+         TRUE, FALSE)
+  
+  # Pense em vetor...
+  starwars$name[vilao]
+  
+  # Foreach
+  for(i in starwars$name){
+    print(i)
+  }
+  
+  # Um For pouco mais rápido[5]
+  for(i in seq_along(starwars$name)){
+    print(starwars$name[i])
+  }
+  # Usando map do pacote purr
+  library(purrr)
+  purrr::map_chr(starwars$name, print)
+
+```
+
+## Para saber mais
+
+[Números complexos - 1](!https://stat.ethz.ch/R-manual/R-devel/library/base/html/complex.html)
+
+[Tipos númericos em R - 2](!http://uc-r.github.io/integer_double/)
+
+[Diferença entre lista e vetor - 3](!https://www.burns-stat.com/documents/tutorials/impatient-r/)
+
+[CRAN - 4](!https://cran.r-project.org/doc/FAQ/R-FAQ.html#Introduction)
+[R eficiente - 5](!https://csgillespie.github.io/efficientR/)
+
+
+## Materias utilizados como base
+[Rafael Santos](!https://github.com/rafaeldcsantos/CAP-394)
+
+- José Roberto M. Garcia
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
