@@ -1,0 +1,100 @@
+---
+title: "cursoR"
+author: "Felipe Carvalho"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    toc: true
+    toc_depth: 3
+---
+
+Em certos casos, no início de uma análise, é necessário entender os dados. A clusterização permite a você verificar se existe alguma similaridade nos dados, ou mesmo se existe alguma característica em comum no conjunto. Existem diversas técnicas de clusterização, cada uma com suas particularidades, estas indo deste simples algoritimos de distância, até mesmo redes neurais.
+
+Aqui, vamos aprender a utilizar o KMédias, um algoritimo que através da utilização da distância euclidiana, verifica quais dados tem alguma relação (Pertencem ao mesmo grupo).
+
+## Importando os pacotes necessários
+```{r}
+suppressMessages(library(tidyverse))
+suppressMessages(library(VIM))
+suppressMessages(library(knitr))
+```
+
+## Aquisição dos dados
+```{r}
+# Vamos baixar o csv
+url_dataset <- "http://archive.ics.uci.edu/ml/machine-learning-databases/wine/wine.data"
+
+# Sim, é possível ler um csv na web, caso não tenha definição no atributo
+# vale a pena colocar um 'header = F'
+wine <- read.csv2(url_dataset,
+                  header = F,
+                  sep=",")
+```
+
+## Limpeza e tratamento do dado
+```{r}
+# Para observar as dimensões
+dim(wine)
+
+# Visualização usando kable
+knitr::kable(head(wine, 3))
+
+# Vamos ver se no nosso conjunto contém algum NA
+sum(is.na(wine))
+
+# Caso queira algo mais visual...
+aggr(wine)
+
+# Limpar o nome dos atributos
+wine <- wine %>%
+  rename_all( funs (c("tipo",
+                      "Alcool",
+                      "acido_malico",
+                      "cinza",
+                      "alcalinidade_cinza",
+                      "magnesio",
+                      "total_fenolicos",
+                      "flavonoides",
+                      "nao_flavonoide",
+                      "proantocianidina",
+                      "intensidade_cor",
+                      "hue",
+                      "OD280/OD315_diluicao_vinho",
+                      "prolina")))
+```
+Se ficou com dúvida no que é ácido málico (assim como eu) lá vai: O ácido málico é uma substância naturalmente encontrada em frutas e legumes – como já vimos, uma das mais ricas fontes de ácido málico são as maçãs. Também está naturalmente presente nas células do corpo e grandes quantidades de ácido málico são produzidas diariamente pelo corpo. O ácido málico possui muitos benefícios relacionados à saúde, tais como aumentar a imunidade do corpo, melhorar a saúde oral,
+# reduzir o risco de acumulação de metais tóxicos no organismo e promover uma pele mais lisa e firme
+
+https://www.mundoboaforma.com.br/acido-malico-o-que-e-para-que-serve-e-beneficios/
+
+Tenho formatar isso - Aliás, essa fonte que eu pesquisei é questionável, a gente pode analisar se os vinhos de maça tem mesmo um alto indice de acido malico. Agora acho que fica mais fácil pesquisar sobre
+
+## Criação do cluster
+```{r}
+# Vamos selecionar alcool e acido malico para fazer o agrupamento
+cluster_set <- wine %>% select(Alcool,acido_malico) %>%
+  mutate(Alcool = as.integer(Alcool),
+  acido_malico = as.integer(acido_malico)) %>%
+  kmeans(centers = 3)
+
+
+# Vamos selecionar alcool e acido malico
+new_set <- wine %>%
+  select(tipo, Alcool, acido_malico) %>%
+  mutate(tipo = as.factor(tipo),
+         Alcool = as.numeric(as.character(Alcool)),
+         acido_malico = as.numeric(as.character(acido_malico)))
+
+# Vamos adicionar os cluster gerados pelo conjunto
+new_set$cluster <- as.factor(cluster_set$cluster)
+```
+
+## Visualização
+```{r}
+ggplot(new_set, aes(x=acido_malico, y=Alcool, color=cluster)) + geom_point() +
+  scale_y_continuous(breaks = seq(11,15))
+
+```
+
+
+
