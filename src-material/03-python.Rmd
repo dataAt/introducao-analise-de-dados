@@ -3,9 +3,11 @@
 Python é uma linguagem multiparadigma, com uma sintaxe muito simples que permite ao programador focar no problema e deixar de lado questões da linguagem. 
 Esta é uma linguagem amplamente utilizada em diversos áreas, por conta principalmente das milhares de bibliotecas que a linguagem possui, todas elas distribuidas pela comunidade incrível que a linguagem possui `r emo::ji("heart")`
 
-Neste introdução, o foco será a aplicação da linguagem Python na manipulação e tratamento de dados, utilizando como base as bibliotecas Pandas e ao Matplotlib.
+Neste introdução, o foco será a aplicação da linguagem Python na manipulação e tratamento de dados, utilizando como base a biblioteca Pandas.
 
-Você pode estar se perguntando o motivo da utilização destas bibliotecas, e a respostas é bem simples, Python é uma linguagem para uso geral, assim, suas funções nativas não tem foco em uma função específica, como ocorre em linguagem como R, que já tem um foco em uma área específica (No caso do R, em análises estatísticas, como descrito no capítulo 2 deste material).
+Você pode estar se perguntando o motivo da utilização desta biblioteca, e a resposta é bem simples, Python é uma linguagem para uso geral, assim, suas funções nativas não tem foco em uma função específica, como ocorre em linguagem como R, que já tem um foco em uma área específica (No caso do R, em análises estatísticas, como descrito no capítulo 2 deste material), assim esta biblioteca facilita o processo de manipulação e tratamento de dados.
+
+No próximo capítulo você verá como realizar a visualização de seus dados utilizando a biblioteca `plotnine`, que é uma implementação do ggplot para o Python.
 
 Vamos começar !
 
@@ -199,10 +201,6 @@ df.to_csv('nome_do_csv.csv') # Salva o CSV
 df.to_json('nome_do_json.json') # Salva o JSON
 ```
 
-Viu ? É tudo muito simples e direto, o que te permite focar em sua análise, e deixar de lado problemas com sintaxe `r emo::ji("statue_of_liberty")`, mas, após a sua análise, é importante apresentar seus dados, para isto, vamos aprender a utilizar a biblioteca matplotlib para fazer **plots** e visualizar seus dados.
+Viu ? É tudo muito simples e direto, o que te permite focar em sua análise, e deixar de lado problemas com sintaxe `r emo::ji("statue_of_liberty")`, mas, após a sua análise, é importante apresentar seus dados, para isto, vamos aprender a utilizar a biblioteca plotnine para fazer **plots** e visualizar seus dados.
 
-## Introdução ao Matplotlib `r emo::ji("bar_chart")`
-
-Como citado no capítulo anterior, a visualização e apresentação de seus dados é importante, tanto para apresentar o que você analisou, quanto para você mesmo, entender seus dados.
-
-Existem diversos tipos de dados, aqui vamos apresentar alguns dos principais tipos de gráficos, e para isto vamos utilizar a biblioteca Matplotlib, que foi criada especialmente para a visualização de dados.
+Vamos para o próximo capítulo.

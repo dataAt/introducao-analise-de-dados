@@ -1,0 +1,2 @@
+# Introdução ao ggplot `r emo::ji("bar_chart")`
+

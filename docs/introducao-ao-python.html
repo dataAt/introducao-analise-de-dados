@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="introducao-ao-r.html">
-
+<link rel="next" href="introducao-ao-ggplot.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -120,8 +120,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="3.2.2" data-path="introducao-ao-python.html"><a href="introducao-ao-python.html#dataframes"><i class="fa fa-check"></i><b>3.2.2</b> Dataframes</a></li>
 <li class="chapter" data-level="3.2.3" data-path="introducao-ao-python.html"><a href="introducao-ao-python.html#funcoes-de-leitura-e-escrita"><i class="fa fa-check"></i><b>3.2.3</b> Funções de leitura e escrita</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="introducao-ao-python.html"><a href="introducao-ao-python.html#introducao-ao-matplotlib"><i class="fa fa-check"></i><b>3.3</b> Introdução ao Matplotlib 📊</a></li>
 </ul></li>
+<li class="chapter" data-level="4" data-path="introducao-ao-ggplot.html"><a href="introducao-ao-ggplot.html"><i class="fa fa-check"></i><b>4</b> Introdução ao ggplot 📊</a></li>
 </ul>
 
       </nav>
@@ -142,8 +142,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="introducao-ao-python" class="section level1">
 <h1><span class="header-section-number">3</span> Introdução ao Python 🚀</h1>
 <p>Python é uma linguagem multiparadigma, com uma sintaxe muito simples que permite ao programador focar no problema e deixar de lado questões da linguagem. Esta é uma linguagem amplamente utilizada em diversos áreas, por conta principalmente das milhares de bibliotecas que a linguagem possui, todas elas distribuidas pela comunidade incrível que a linguagem possui ❤️</p>
-<p>Neste introdução, o foco será a aplicação da linguagem Python na manipulação e tratamento de dados, utilizando como base as bibliotecas Pandas e ao Matplotlib.</p>
-<p>Você pode estar se perguntando o motivo da utilização destas bibliotecas, e a respostas é bem simples, Python é uma linguagem para uso geral, assim, suas funções nativas não tem foco em uma função específica, como ocorre em linguagem como R, que já tem um foco em uma área específica (No caso do R, em análises estatísticas, como descrito no capítulo 2 deste material).</p>
+<p>Neste introdução, o foco será a aplicação da linguagem Python na manipulação e tratamento de dados, utilizando como base a biblioteca Pandas.</p>
+<p>Você pode estar se perguntando o motivo da utilização desta biblioteca, e a resposta é bem simples, Python é uma linguagem para uso geral, assim, suas funções nativas não tem foco em uma função específica, como ocorre em linguagem como R, que já tem um foco em uma área específica (No caso do R, em análises estatísticas, como descrito no capítulo 2 deste material), assim esta biblioteca facilita o processo de manipulação e tratamento de dados.</p>
+<p>No próximo capítulo você verá como realizar a visualização de seus dados utilizando a biblioteca <code>plotnine</code>, que é uma implementação do ggplot para o Python.</p>
 <p>Vamos começar !</p>
 <div id="introducao-ao-pandas" class="section level2">
 <h2><span class="header-section-number">3.1</span> Introdução ao Pandas 🐼</h2>
@@ -329,7 +330,7 @@ linha <span class="op">=</span> tabela.loc[<span class="st">&#39;zero&#39;</span
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">json_frame <span class="op">=</span> pd.read_json(<span class="st">&#39;https://www.reddit.com/r/technology/.json&#39;</span>)
 <span class="bu">print</span>(json_frame.head())</code></pre></div>
 <pre><code>##                                                        data     kind
-## after                                             t3_9lmhre  Listing
+## after                                             t3_9lyyml  Listing
 ## before                                                 None  Listing
 ## children  [{&#39;kind&#39;: &#39;t3&#39;, &#39;data&#39;: {&#39;approved_at_utc&#39;: No...  Listing
 ## dist                                                     27  Listing
@@ -339,14 +340,10 @@ linha <span class="op">=</span> tabela.loc[<span class="st">&#39;zero&#39;</span
 <p>Da mesma forma que a leitura, a escrita é extremamente fácil. Para salvar um CSV, ou um JSON, basta utilizar os métodos <code>to_csv</code> e <code>to_json</code>, presentes dentro do <code>DataFrame</code>.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">df.to_csv(<span class="st">&#39;nome_do_csv.csv&#39;</span>) <span class="co"># Salva o CSV</span>
 df.to_json(<span class="st">&#39;nome_do_json.json&#39;</span>) <span class="co"># Salva o JSON</span></code></pre></div>
-<p>Viu ? É tudo muito simples e direto, o que te permite focar em sua análise, e deixar de lado problemas com sintaxe 🗽, mas, após a sua análise, é importante apresentar seus dados, para isto, vamos aprender a utilizar a biblioteca matplotlib para fazer <strong>plots</strong> e visualizar seus dados.</p>
-</div>
-</div>
-<div id="introducao-ao-matplotlib" class="section level2">
-<h2><span class="header-section-number">3.3</span> Introdução ao Matplotlib 📊</h2>
-<p>Como citado no capítulo anterior, a visualização e apresentação de seus dados é importante, tanto para apresentar o que você analisou, quanto para você mesmo, entender seus dados.</p>
-<p>Existem diversos tipos de dados, aqui vamos apresentar alguns dos principais tipos de gráficos, e para isto vamos utilizar a biblioteca Matplotlib, que foi criada especialmente para a visualização de dados.</p>
+<p>Viu ? É tudo muito simples e direto, o que te permite focar em sua análise, e deixar de lado problemas com sintaxe 🗽, mas, após a sua análise, é importante apresentar seus dados, para isto, vamos aprender a utilizar a biblioteca plotnine para fazer <strong>plots</strong> e visualizar seus dados.</p>
+<p>Vamos para o próximo capítulo.</p>
 
+</div>
 </div>
 </div>
             </section>
@@ -354,8 +351,8 @@ df.to_json(<span class="st">&#39;nome_do_json.json&#39;</span>) <span class="co"
           </div>
         </div>
       </div>
-<a href="introducao-ao-r.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="introducao-ao-r.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="introducao-ao-ggplot.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
