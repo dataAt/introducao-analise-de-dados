@@ -1,0 +1,96 @@
+---
+title: "Análise dos dados dos vereadores em Jacareí"
+author: "Felipe Carvalho"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    toc: true
+    toc_depth: 3
+---
+
+# Análise simples dos vereadores que mais ajudam a população da cidade de Jacareí
+
+Primeiro passo é importação das pacotes necessários para que possamos fazer a análise
+```{r}
+# Importando os pacotes necessários
+suppressMessages(library(tidyverse))
+suppressMessages(library(ggthemes))
+suppressMessages(library(ggthemr))
+suppressMessages(library(knitr))
+```
+
+
+Próximo passo é realizar a leitura dos conjuntos de dados no site da prefeitura de Jacareí
+```{r}
+# mes de junho
+junho <- read.csv2(file="~/R/introducao-analise-de-dados/dados/dados_remuneracao_vereadores-jacarei/jac_junho_2018.csv", sep=",", stringsAsFactors = FALSE)
+
+# mes de julho
+julho <- read.csv2(file="~/R/introducao-analise-de-dados/dados/dados_remuneracao_vereadores-jacarei/jac_julho_2018.csv", sep=",", stringsAsFactors = FALSE)
+
+# mes de agosto
+agosto <- read.csv2(file="~/R/introducao-analise-de-dados/dados/dados_remuneracao_vereadores-jacarei/jac_agosto_2018.csv", sep=",", stringsAsFactors = FALSE)
+
+```
+
+Como o número de vereadores é fixo, basta juntarmos os dados aos nível de linha, porque precisamos de todas as informações dos três meses. De qualquer forma, é sempre importante observarmos os nossos dados antes de criar quaisquer modelos estatísticos.
+```{r}
+kable(head(junho, 2))
+kable(head(julho, 2))
+kable(head(agosto, 2))
+
+sum(is.na(junho))
+sum(is.na(julho))
+sum(is.na(agosto))
+```
+
+
+Já que o dado parece limpo, podemos proseguir com a nossa análise. Precisamos juntar nossos conjuntos de dados, utilizados o bind_rows para reunir os conjuntos pelas linhas, selecionamos todas as colunas e criamos levels para poder ordenar nossos meses.
+```{r}
+conjunto_meses <- bind_rows(junho, julho, agosto) %>%
+  select(everything()) %>%
+  mutate(Mês = factor(Mês, levels = c("Junho",
+                                      "Julho",
+                                      "Agosto")))
+
+```
+
+Vamos selecionar um tema legal no pacote gthemr, quero ver qual vereador que mais ajudou os munícipes em Jacareí. Para isso vamos usar o atributo 'Atendimento.aos.munícipes'no eixo y e o nome dos vereadores no eixo x, é importante criar um grupo de mês para que haja uma ligação com os vereadores e a quantidade de atendimento aos munícipes.
+
+```{r, fig.height=7, fig.width=10}
+ggthemr("dust")
+ggplot(conjunto_meses, aes(x=Vereador,
+           y=Atendimento.aos.munícipes,
+           colour=Mês,
+           group=Mês)) +
+  geom_line(aes(linetype=Mês), size=0.8) +
+  geom_point() +
+  theme(axis.text.x = element_text(angle = 75,
+                                   hjust = 1)) +
+  xlab("Vereadores") +
+  ylab("Atendimento aos munícipes") +
+  scale_y_continuous(breaks = seq(0,420,30)) +
+  scale_colour_colorblind()
+
+```
+
+
+É possível notar uma leve tendência, com o decorrer dos meses parece há uma leve alta nas ajudas. Vamos observar em barras e tentar comprovas essa tendência.
+```{r, fig.height=7, fig.width=10}
+ggthemr("dust")
+ggplot(conjunto_meses, aes(x=Vereador,
+                           y=Atendimento.aos.munícipes,
+                           group=Mês)) +
+  geom_col(position = "dodge",
+           aes(fill = Mês))+
+  theme(axis.text.x = element_text(angle = 0,
+                                   hjust = 0.5)) +
+  coord_flip() +
+  xlab("Vereadores") +
+  ylab("Atendimento aos munícipes") +
+  ggtitle("Ajuda aos munícipes jacareí") +
+  scale_y_continuous(breaks = seq(0,400,50))
+
+```
+
+Parece que essa tendência se comprova, para a maioria dos vereados, há um crescimento no número de pessoas que recebem ajuda dos mesmos. Claro que não podemos concluir nada analisando apenas três meses, caso haja alguma rivalidade, na minha opinião, a tendência é continuar crescendo.
