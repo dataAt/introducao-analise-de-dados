@@ -27,5 +27,5 @@ Caso você queira continuar o desenvolvimento do material, você pode continuar 
 - Daniele Zaramello;
 - Felipe Carvalho;
 - Felipe Menino;
-- Lucas Augusto.
-
+- Lucas Augusto;
+- Weslei Luiz.
