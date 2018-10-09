@@ -29,3 +29,9 @@ Caso você queira continuar o desenvolvimento do material, você pode continuar 
 - Felipe Menino;
 - Lucas Augusto;
 - Weslei Luiz.
+
+## Materiais base :books:
+
+- [Rafael Santos](https://github.com/rafaeldcsantos/CAP-394)
+- [Ciência de dados em R](https://cdr.ibpad.com.br/index.html)
+- [R for data science](http://r4ds.had.co.nz/)
