@@ -22,16 +22,21 @@ Caso você queira continuar o desenvolvimento do material, você pode continuar 
 ./compile.sh
 ``` 
 
+## Como colaborar ? :no_good:
+
+Para colaborar e adicionar mais conteúdo no material crie uma branch, adicione o conteúdo e inicie o **pull request**. Pronto! 
+
 ## Colaboradores :construction_worker:
 
-- Daniele Zaramello;
-- Felipe Carvalho;
-- Felipe Menino;
-- Lucas Augusto;
-- Weslei Luiz.
+- Daniele Zaramello (Art);
+- Felipe Carvalho (Dev);
+- Felipe Menino (Dev);
+- Lucas Augusto (Dev);
+- Weslei Luiz (Rev).
 
-## Materiais base :books:
+## Materiais utilizados :books:
 
-- [Rafael Santos](https://github.com/rafaeldcsantos/CAP-394)
+- [CAP 394 (INPE) - Introduction to data science](https://github.com/rafaeldcsantos/CAP-394)
 - [Ciência de dados em R](https://cdr.ibpad.com.br/index.html)
 - [R for data science](http://r4ds.had.co.nz/)
+- [Treinamento em Raspagem de Dados para Jornalistas](https://github.com/fmasanori/treinamento)
