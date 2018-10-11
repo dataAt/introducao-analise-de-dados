@@ -1,4 +1,4 @@
-# Introdução a análise de dados 
+# Introdução à análise de dados  
 
 Curso de introdução aos principais conceitos de análise de dados utilizando R e Python.
 
