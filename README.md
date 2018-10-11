@@ -24,7 +24,7 @@ Caso você queira continuar o desenvolvimento do material, você pode continuar 
 
 ## Como colaborar ? :no_good:
 
-Para colaborar e adicionar mais conteúdo no material crie uma branch, adicione o conteúdo e inicie o **pull request**. Pronto! 
+Para colaborar e adicionar mais conteúdos no material crie uma branch, adicione o conteúdo e inicie o **pull request**. Pronto! 
 
 ## Colaboradores :construction_worker:
 
