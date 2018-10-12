@@ -1,4 +1,4 @@
-# Introdução ao R
+# Introdução ao R `r emo::ji("smile")`
 
 ## Definição de variáveis
 
