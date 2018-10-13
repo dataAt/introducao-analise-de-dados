@@ -102,11 +102,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="1.1.1" data-path="introducao.html"><a href="introducao.html#formatos-de-dados"><i class="fa fa-check"></i><b>1.1.1</b> Formatos de dados</a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="introducao.html"><a href="introducao.html#o-que-e-analise-de-dados"><i class="fa fa-check"></i><b>1.2</b> O que é análise de dados</a><ul>
-<li class="chapter" data-level="1.2.1" data-path="introducao.html"><a href="introducao.html#etapas-da-analise-de-dados"><i class="fa fa-check"></i><b>1.2.1</b> Etapas da análise de dados</a></li>
+<li class="chapter" data-level="1.2.1" data-path="introducao.html"><a href="introducao.html#processos-da-analise-de-dados"><i class="fa fa-check"></i><b>1.2.1</b> Processos da análise de dados</a></li>
 </ul></li>
 <li class="chapter" data-level="1.3" data-path="introducao.html"><a href="introducao.html#diferencas-entre-analise-de-dados-e-ciencia-de-dados"><i class="fa fa-check"></i><b>1.3</b> Diferenças entre análise de dados e ciência de dados</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="introducao-ao-r.html"><a href="introducao-ao-r.html"><i class="fa fa-check"></i><b>2</b> Introdução ao R</a><ul>
+<li class="chapter" data-level="2" data-path="introducao-ao-r.html"><a href="introducao-ao-r.html"><i class="fa fa-check"></i><b>2</b> Introdução ao R 💎</a><ul>
 <li class="chapter" data-level="2.1" data-path="introducao-ao-r.html"><a href="introducao-ao-r.html#definicao-de-variaveis"><i class="fa fa-check"></i><b>2.1</b> Definição de variáveis</a><ul>
 <li class="chapter" data-level="2.1.1" data-path="introducao-ao-r.html"><a href="introducao-ao-r.html#tipos-primitivos"><i class="fa fa-check"></i><b>2.1.1</b> Tipos primitivos</a></li>
 </ul></li>
@@ -176,7 +176,23 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Vamos começar a utilização, para facilitar o entendimento.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Estes comandos não devem ser executados em seu terminal</span>
 <span class="kw">library</span>(reticulate) 
-<span class="kw">use_python</span>(<span class="st">&quot;/home/felipe/anaconda3/bin/python&quot;</span>)</code></pre></div>
+<span class="kw">use_python</span>(<span class="st">&quot;venv/bin/python&quot;</span>)
+<span class="kw">py_config</span>()</code></pre></div>
+<pre><code>## python:         venv/bin/python
+## libpython:      /home/felipe/anaconda3/lib/libpython3.6m.so
+## pythonhome:     /home/felipe/anaconda3:/home/felipe/anaconda3
+## virtualenv:     venv/bin/activate_this.py
+## version:        3.6.4 |Anaconda, Inc.| (default, Jan 16 2018, 18:10:19)  [GCC 7.2.0]
+## numpy:          /home/felipe/Documentos/cursos/reta-final/introducao-analise-de-dados/src-material/venv/lib/python3.6/site-packages/numpy
+## numpy_version:  1.15.2
+## 
+## python versions found: 
+##  venv/bin/python
+##  /usr/bin/python
+##  /usr/bin/python3
+##  /home/felipe/anaconda3/bin/python
+##  /home/felipe/.virtualenvs/libras_model-ZiBj09ft/bin/python
+##  /home/felipe/.virtualenvs/repositorio-SmVOy2Ui/bin/python</code></pre>
 <p>Para iniciar, vamos criar um simples <code>Series</code> e colocar dentro de uma variável. Para isto, importando a biblioteca pandas, e passamos para ela o ‘apelido’ de <code>pd</code>.</p>
 <p>Em seguida, criar uma <code>Series</code> simples, passando como parâmetro de entrada uma lista com três valores, veja:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> pandas <span class="im">as</span> pd
@@ -299,44 +315,30 @@ linha <span class="op">=</span> tabela.loc[<span class="st">&#39;zero&#39;</span
 <p>Para a leitura de csv, podemos utilizar a <code>read_csv</code></p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">df <span class="op">=</span> pd.read_csv(<span class="st">&#39;data/titanic.csv&#39;</span>) <span class="co"># O caminho pode ser diferente eu sua máquina</span>
 <span class="bu">print</span>(df.head()) <span class="co"># Função que demonstra o início do DataFrame carregado</span></code></pre></div>
-<pre><code>##    PassengerId  Pclass                                          Name     Sex  \
-## 0          892       3                              Kelly, Mr. James    male   
-## 1          893       3              Wilkes, Mrs. James (Ellen Needs)  female   
-## 2          894       2                     Myles, Mr. Thomas Francis    male   
-## 3          895       3                              Wirz, Mr. Albert    male   
-## 4          896       3  Hirvonen, Mrs. Alexander (Helga E Lindqvist)  female   
-## 
-##     Age  SibSp  Parch   Ticket     Fare Cabin Embarked  
-## 0  34.5      0      0   330911   7.8292   NaN        Q  
-## 1  47.0      1      0   363272   7.0000   NaN        S  
-## 2  62.0      0      0   240276   9.6875   NaN        Q  
-## 3  27.0      0      0   315154   8.6625   NaN        S  
-## 4  22.0      1      1  3101298  12.2875   NaN        S</code></pre>
+<pre><code>##    PassengerId  Pclass                                          Name     Sex   Age  SibSp  Parch   Ticket     Fare Cabin Embarked
+## 0          892       3                              Kelly, Mr. James    male  34.5      0      0   330911   7.8292   NaN        Q
+## 1          893       3              Wilkes, Mrs. James (Ellen Needs)  female  47.0      1      0   363272   7.0000   NaN        S
+## 2          894       2                     Myles, Mr. Thomas Francis    male  62.0      0      0   240276   9.6875   NaN        Q
+## 3          895       3                              Wirz, Mr. Albert    male  27.0      0      0   315154   8.6625   NaN        S
+## 4          896       3  Hirvonen, Mrs. Alexander (Helga E Lindqvist)  female  22.0      1      1  3101298  12.2875   NaN        S</code></pre>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(df.tail()) <span class="co"># Função que demonstra o final do DataFrame carregado</span></code></pre></div>
-<pre><code>##      PassengerId  Pclass                          Name     Sex   Age  SibSp  \
-## 413         1305       3            Spector, Mr. Woolf    male   NaN      0   
-## 414         1306       1  Oliva y Ocana, Dona. Fermina  female  39.0      0   
-## 415         1307       3  Saether, Mr. Simon Sivertsen    male  38.5      0   
-## 416         1308       3           Ware, Mr. Frederick    male   NaN      0   
-## 417         1309       3      Peter, Master. Michael J    male   NaN      1   
-## 
-##      Parch              Ticket      Fare Cabin Embarked  
-## 413      0           A.5. 3236    8.0500   NaN        S  
-## 414      0            PC 17758  108.9000  C105        C  
-## 415      0  SOTON/O.Q. 3101262    7.2500   NaN        S  
-## 416      0              359309    8.0500   NaN        S  
-## 417      1                2668   22.3583   NaN        C</code></pre>
+<pre><code>##      PassengerId  Pclass                          Name     Sex   Age  SibSp  Parch              Ticket      Fare Cabin Embarked
+## 413         1305       3            Spector, Mr. Woolf    male   NaN      0      0           A.5. 3236    8.0500   NaN        S
+## 414         1306       1  Oliva y Ocana, Dona. Fermina  female  39.0      0      0            PC 17758  108.9000  C105        C
+## 415         1307       3  Saether, Mr. Simon Sivertsen    male  38.5      0      0  SOTON/O.Q. 3101262    7.2500   NaN        S
+## 416         1308       3           Ware, Mr. Frederick    male   NaN      0      0              359309    8.0500   NaN        S
+## 417         1309       3      Peter, Master. Michael J    male   NaN      1      1                2668   22.3583   NaN        C</code></pre>
 <p>Caso você esteja trabalhando com alguma API Rest, você pode fazer com que o json seja transportado para um <code>DataFrame</code>, veja</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">json_frame <span class="op">=</span> pd.read_json(<span class="st">&#39;https://www.reddit.com/r/technology/.json&#39;</span>)
 <span class="bu">print</span>(json_frame.head())</code></pre></div>
-<pre><code>##                                                        data     kind
-## after                                             t3_9lyyml  Listing
-## before                                                 None  Listing
-## children  [{&#39;kind&#39;: &#39;t3&#39;, &#39;data&#39;: {&#39;approved_at_utc&#39;: No...  Listing
-## dist                                                     27  Listing
-## modhash                                                      Listing</code></pre>
+<pre><code>##              kind                                               data
+## after     Listing                                          t3_9nsgle
+## before    Listing                                               None
+## children  Listing  [{&#39;kind&#39;: &#39;t3&#39;, &#39;data&#39;: {&#39;approved_at_utc&#39;: No...
+## dist      Listing                                                 27
+## modhash   Listing</code></pre>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(json_frame.columns) <span class="co"># Recupera as colunas do DataFrame</span></code></pre></div>
-<pre><code>## Index([&#39;data&#39;, &#39;kind&#39;], dtype=&#39;object&#39;)</code></pre>
+<pre><code>## Index([&#39;kind&#39;, &#39;data&#39;], dtype=&#39;object&#39;)</code></pre>
 <p>Da mesma forma que a leitura, a escrita é extremamente fácil. Para salvar um CSV, ou um JSON, basta utilizar os métodos <code>to_csv</code> e <code>to_json</code>, presentes dentro do <code>DataFrame</code>.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">df.to_csv(<span class="st">&#39;nome_do_csv.csv&#39;</span>) <span class="co"># Salva o CSV</span>
 df.to_json(<span class="st">&#39;nome_do_json.json&#39;</span>) <span class="co"># Salva o JSON</span></code></pre></div>

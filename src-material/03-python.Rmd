@@ -47,7 +47,7 @@ Vamos começar a utilização, para facilitar o entendimento.
 ```{r}
 # Estes comandos não devem ser executados em seu terminal
 library(reticulate) 
-use_python("/usr/bin/python3")
+use_python("venv/bin/python")
 py_config()
 ```
 
