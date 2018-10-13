@@ -1,6 +1,6 @@
 # Introdução
 
-A análise de dados é uma das atividades mais interessantes da atualidade, com ela é possível monitorar o governo, por exemplo, [operacao serenata](https://serenata.ai/), fazer empresas de sucesso e produtos que atendam a real necessidade de seus clientes, e o mais importante, comprovar a veracidade da informação recebida e saciar nossa curiosidade.
+A análise de dados é uma das atividades mais interessantes da atualidade, com ela é possível monitorar o governo, por exemplo, [Operação serenata](https://serenata.ai/), fazer empresas de sucesso e produtos que atendam a real necessidade de seus clientes, e o mais importante, comprovar a veracidade da informação recebida e saciar nossa curiosidade.
 Isto porque com a quantidade de dados disponível, podemos literalmente, saber sobre tudo, aplicando técnicas de análise de dados.
 Portando, esse mini-curso tem como objetivo apresentar, de forma introdutória, às principais tecnologias para análise de dados com as linguagens de programação R e Python.
 

@@ -22,6 +22,8 @@ Caso você queira continuar o desenvolvimento do material, você pode continuar 
 ./compile.sh
 ``` 
 
+Veja que, pode ser necessário alterar o script `compile.R`, presente dentro do diretório `src-material`, neste há os comandos utilizados para criar o ambiente virtual de Python, assim caso seu sistema utilize um comando diferente do registrado neste script, basta fazer a alteração.
+
 ## Como colaborar ? :no_good:
 
 Para colaborar e adicionar mais conteúdos no material crie uma branch, adicione o conteúdo e inicie o **pull request**. Pronto! 
