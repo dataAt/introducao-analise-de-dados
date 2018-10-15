@@ -9,47 +9,44 @@ Portando, esse mini-curso tem como objetivo apresentar, de forma introdutória, 
 
 Muito foi dito sobre dados, que estes são abundantes e estão em constante crescimento, porém, o que são dados ? 
 
-Bem esta pergunta possui diversas respostas, isto porque há várias definições para dados, aqui iremos assumir que dados são "Qualquer coisa registrada com o propósito de posteriormente ser analisado" - Rafael Santos.
+Bem esta pergunta possui diversas respostas, isto porque há várias definições para dados, aqui iremos assumir que dados são "Qualquer coisa registrada com o propósito de posteriormente ser analisado" - [Rafael Santos](http://www.lac.inpe.br/~rafael.santos/).
 
-Agora que sabemos a definição de dados, podemos concluir que *Big Data* é um alto volume de dados. Não entraremos no mérito do que é ou não considerado *Big data*, caso queiram ler mais sobre o assunto, recomendamos o livro **Analyzing the Analyzers** publicado pela **O'REILLY**. tabela \@ref(tab:basic-data-types)).
+Agora que sabemos a definição de dados, podemos concluir que *Big Data* é um alto volume de dados. Não entraremos no mérito do que é ou não considerado *Big data*, caso queiram ler mais sobre o assunto, recomendamos o livro **Analyzing the Analyzers** publicado pela **O'REILLY**.
 
-Table: (\#tab:basic-data-types) Types of variables encountered in typical data visualization scenarios.
 
-características mensuráveis que assumem valores em 
-uma escala contínua (na reta real), para as quais 
-valores fracionais fazem sentido. Usualmente devem 
-ser medidas através de algum instrumento. 
-Exemplos: peso (balança), altura (régua), 
-tempo (relógio), pressão arterial, idade. 
+### Tipos de dados
+
+A tabela \@ref(tab:tipos-de-dados), foi feita com base no matérial de estatística da [UFPR](http://leg.ufpr.br/~silvia/CE055/node8.html) e o template utilizado foi retirado do livro-texto [Claus O. Wilke](https://serialmentor.com/dataviz).
+
+Tabela: (\#tab:tipos-de-dados) Tipos de variáveis encontradas durante um cenário de análise de dados.
 
 ---------------------------------------------------------------------------------------------------------------------
 Tipo variável               Exemplos              Escala apropriada       Descrição
 ------------------------ --------------------- ----------------------- ----------------------------------------------
-Quantitativa/númerica    1.3, 5.7, 83,         Contínuas               Valores mensuráveis que assumem valores  
+Quantitativa/númerica    1.3, 5.7, 83,             Contínuas           Valores mensuráveis que assumem valores  
 contínua                 1.5x10^-2^                                    em um escala contínua (na reta real).
                                                                        Usualmente devem ser medida através de 
-                                                                       algum instrumento. Exemplo:peso(balança)
-                                                                       tempo(relógio), pressão arterial.
+                                                                       algum instrumento. Exemplo:                                                                                       peso(balança), tempo(relógio), e pressão                                                                          arterial.
                                                                                
-Quantitativa/númerica    1, 2, 3, 4             Discretas               Características mensuráveis que podem
+Quantitativa/númerica    1, 2, 3, 4                Discretas           Características mensuráveis que podem
 discreta                                                               assumir apenas um número finito ou
                                                                        infinito contável de valores e, assim,
-                                                                       somente fazem sentido valores inteiros.                                                                         Geralmente são o resultado de contagens.
-                                                                       Exemplos: número de filhos, número de                                                                           bactérias por litro de leite, número
+                                                                       somente fazem sentido valores inteiros.                                                                           Geralmente são o resultado de contagens.
+                                                                       Exemplos: número de filhos, número de                                                                             bactérias por litro de leite, número
                                                                        de cigarros fumados por dia.
  
-Quantitativa/categóricas  Cachorro, peixe      Discreto                Não possui ordenação dentre as 
+Quantitativa/categóricas  Cachorro, peixe          Discreto            Não possui ordenação dentre as 
 nominais                                                               categorias. Essas variáveis são
                                                                        também chamadas de *factors*. Exemplo:
-                                                                       Sexo, cor dos olhos, doente/sadio
+                                                                       Sexo, cor dos olhos, doente/sadio.
                                                                        
-Quantitativa/categóricas  Janeiro, Fevereiro   Discreto                Existe uma ordenação entre as categorias.
+Quantitativa/categóricas  Janeiro, Fevereiro       Discreto            Existe uma ordenação entre as categorias.
 ordinais                                                               Essas variáveis são também chamadas de 
                                                                        *ordered factors*. Exemplo: escolaridade
                                                                        (1°, 2°, 3°), mês de observação(janeiro,
                                                                        fevereiro... dezembro).
 
-Data ou tempo            Jan. 5 2018, 8:03am    Contínuo ou Discreto    Dia ou hora específicos. Também datas 
+Data ou tempo            Jan. 5 2018, 8:03am    Contínuo ou Discreto   Dia ou hora específicos. Também datas 
                                                                        genéricas, Por exemplo 29 de Fevereiro em
                                                                        anos não bissextos
                                                                        
@@ -62,36 +59,62 @@ Texto                    The quick brown fox   Nenhum, ou discreto     Texto nor
 
 Como já citado, existem muitos dados disponíveis, estes vindos das mais diversas fontes e formatos, e boa parte dos desafios na análise de dados está vinculada ao formato com que o dados está disponível, isto porque dependendo do formato, existem etapas de organização que devem ser aplicada nos dados.
 
+> “Os conjuntos de dados arrumados são todos iguais, mas todos os conjuntos de dados confusos são confusos à sua própria maneira.” - Hadley Wickham
+
 Nos subtópicos abaixo, serão descritos os principais formatos de dados e alguns exemplos de cada um destes.
 
 #### Dados estruturados
-Dado estrutura é o sonho de quaisquer ciêntista de dados, 
+Esse formato de dado segue a estrutura de linhas e colunas. São geralmente encotrados em banco de dados, Excel (`xls` ou `csv`). 
 
-#### Dados semi-estruturados
+#### Dados Semiestruturados
+São dados que possuem uma orgazinição clara, porém, não segue o padrão de linha e coluna. Geralmente são aqueles formatos que recebemos em requisições de API, por exemplo, JSON, XML, HTML. 
 
 #### Dados não estruturados
+São aqueles que não conseguimos identificar uma organização clara, geralmente são arquivos com forte teor textual, por exemplo, email, twitters, PDF, imagens, vídeos, entre outros.
+
+
+> Lembrando que nem todo dado desorganizado é não estruturado.
 
 ## O que é análise de dados
 
-Para *John W. Tukey*, grande parte da análise de dados é inferencial, ou seja, o ato de extrair informações de uma amostra em relação ao conjunto todo. É interessante ressaltar, que análise de dados não é conceito novo, por exemplo, essa definição de *John* foi publicada em 1961, no artigo *The Future of Data Analysis*.
+Para *John W. Tukey*, grande parte da análise de dados é inferencial, ou seja, o ato de extrair informações de uma amostra em relação ao conjunto todo. É interessante ressaltar, que análise de dados não é um conceito novo, por exemplo, essa definição de *Tukey* foi publicada em 1961, no artigo *The Future of Data Analysis*.
 
 > Inferência estatística é um ramo da Estatística cujo objetivo é fazer afirmações a partir de um conjunto de valores representativo (amostra) sobre um universo (população). - Wikipedia
 
-Buscando por mais definições, a [Wikipedia](https://en.wikipedia.org/wiki/Data_analysis) descreve como análise de dados como o processo de observação, limpeza, transformação e modelagem de dados. Com o objetivo de extrar informações de dados não tratados.
+Buscando por mais definições, a [Wikipedia](https://en.wikipedia.org/wiki/Data_analysis) descreve análise de dados como o processo de observação, limpeza, transformação e modelagem de dados. Com o objetivo de extrair informações de dados não tratados.
 
-Artigo públicado pelo [dataquest](https://www.dataquest.io/blog/data-analyst-data-scientist-data-engineer/), contém uma abordagem muito interessante, com o foco no mercado, ele define o analista de dados como um agregador de valor para a companhia através de perguntas e respostas obtidas através do dados, dessa forma, ajudando na tomada de decisão da empresa. Atividades comuns feitas pelo analista de dados incluem a limpeza do dado, análise de perfomance e visualização de dados. 
+### o que faz um analista de dados
 
-As principais tarefas de uma analista, segundo o artigo do dataquest, são:
+O Artigo públicado pelo [dataquest](https://www.dataquest.io/blog/data-analyst-data-scientist-data-engineer/), contém uma abordagem muito interessante, com o foco no mercado, ele define o analista de dados como um agregador de valor para a companhia através respostas obtidas através dos dados, dessa forma, ajudando na tomada de decisão da empresa. As principais tarefas de uma analista, segundo o artigo do dataquest, são:
 
 - Limpeza e organização de dados;
 - Uso de estatística para ter uma visão geral dos dados;
-- Análise de tendencias encontradas no dado;
-- Criação de visualização e *dashboards* para ajudar a interpretação e tomada de decisão da empresa;
-- Apresentação dos resultados da análise técnica para clientes ou times internos.
+- Análise de tendencias encontradas nos dados;
+- Criação de visualização e *dashboards* para ajudar na interpretação e tomada de decisão da empresa;
+- Apresentação dos resultados obtidos pela análise para os clientes.
 
-Resumindo essas tarefas, o análista deve possuir habilidades de limpeza, minipulação e visualização dos dados, entender do négocio, e saber rransferir a informações gerada de suas análises para diferentes clientes.
+Resumindo essas tarefas, o análista deve possuir habilidades de limpeza, minipulação e visualização dos dados, entender do négocio, e saber transferir as informações geradas de suas análises para diferentes clientes técnico ou não técnicos.
 
 
+### Qual a diferenças entre análista e o ciêntista de dados
+
+Tanto se fala de ciêntista dados, mas, então, qual é a diferença?`r emo::ji("developer")` 
+
+Acredito que seja uma dúvida super válida, já que segundo a revista [Harvard Business Review](https://hbr.org/2012/10/data-scientist-the-sexiest-job-of-the-21st-century), ciêntista de dados é consirada a profissão mais _sexy_ do século 21.Vamos lá, Afinal, Qual é a diferença entre analista de dados e ciêntista de dados?
+
+Talvez a definição mais famosa de ciêntista de dados, feita por *Josh Wills* - "Pessoa que é melhor em estatística do que qualquer engenheiro de software e melhor em engenharia de software do que qualquer estatístico". Um ciêntista de dados possui todas as *skills* que um análista, mas, em essência, contém um domínio maior em estatística, matemática e _Machine Learning_. Em busca de um compilado, reunimos nossa resposta com base nesses sites:
+
+- [dataquest](https://www.dataquest.io/blog/data-analyst-data-scientist-data-engineer/) 
+- [edureka](https://www.edureka.co/blog/difference-between-data-scientist-and-data-analyst/)
+- [simplilearn](https://www.simplilearn.com/data-analyst-vs-data-scientist-article), 
+- [betterbuys](https://www.betterbuys.com/bi/comparing-data-science-roles/), 
+- [kdnuggets](https://www.kdnuggets.com/2015/11/different-data-science-roles-industry.html)
+
+
+A definição que escolhemos foi do site kdnuggets, que define o analista de dados como o Sheroque Rolmes do time de ciência de dados, o analista busca resposta para o time e para o négocio. Por outro lado o ciêntista, cria modelos estatísticos de aprendizado de máquina, visualizações mais elaboradas e gera novas perguntas em relação aos dados.
+
+> Fiquem à vontade para adicionar mais diferenças, basta ler nosso README.
+ 
 ### Processos da análise de dados
 
 Agora que sabemos o que faz um analista de dados, vamos descrever brevemente, no que consiste cada processo. Vamos trazer uma definição feita pela Hadley para deixar um pouco mais lucidativo. 
@@ -100,7 +123,7 @@ Agora que sabemos o que faz um analista de dados, vamos descrever brevemente, no
 
 ![](./images/data-science.png)
 
-Primeiro, é importante **importar** o dado, ou seja, realizar a leitura do dado, sendo ele  `.csv, .kml, .json` e qualquer outro formato. Assim que o dado for importado, é importante deixá-lo limpo ou **tidy**, para Hadley, um dado organizado (**tidy**), é quando cada coluna é uma variável, e cada linha é um observação. Por exemplo, em R (ref:tidy_data):
+Primeiro, é importante **importar** os dados, ou seja, realizar a leitura do dado, sendo ele  `.csv, .kml, .json` e qualquer outro formato. Assim que o dado for importado, é importante deixá-lo limpo ou **tidy**, para Hadley, um dado organizado (**tidy**), é quando cada coluna é uma variável, e cada linha é um observação. Por exemplo, em R:
 
 ```{r, fig.cap = '(ref:tidy_data)'}
   library(knitr)
@@ -116,7 +139,7 @@ Primeiro, é importante **importar** o dado, ou seja, realizar a leitura do dado
 
 Sabemos que `Joao` tem `14` anos e está no `ensino fundamental`, seguindo a ideia do **tidy**.
 
-Próximo passo, é a **transformação**, geralmente é a criação de novas varíaveis com base no conjunto de dados, por exemplo, a média da nota dos alunos em certo ano escolar. Nesta etapa, é importante gerar algumas perguntas sobre o seu conjunto e tentar responde-las com a manipulação do dado. Um exemplo de tranformação muito utilizado, é extrair o dia da semana de uma data `x`.Por exemplo, em R (ref:r_date):
+Próximo passo, é a **transformação**, geralmente é a criação de novas varíaveis com base no conjunto de dados, por exemplo, a média da nota dos alunos em certo ano escolar. Nesta etapa, é importante gerar algumas perguntas sobre o seu conjunto e tentar responde-las com a manipulação do dado. Um exemplo de tranformação muito utilizado, é extrair o dia da semana de uma data `x`.Por exemplo, em R:
 
 ```{r,  fig.cap = '(ref:r_date)'}
   suppressMessages(library(lubridate))
@@ -127,14 +150,9 @@ Próximo passo, é a **transformação**, geralmente é a criação de novas var
 
 No exemplo acima, estamos usando o pacote `lubridate` e com 1 linha de código descobrimos o dia da semana do dia 11 de Outubro.
 
-Hadley descreve a visualização e a modelagem como engenharia de representação de conhecimento. A **visualização**, pode gerar novos conhecimentos, questionamentos e respostas. Segundo [Claus O. Wilke](https://serialmentor.com/dataviz), a visualização de dados ou dataviz, é a parte arte e a parte ciência na área de ciências de dados, logo, a visualização precisa estar correta e agradável para o leitor interpretá-la.   
+Hadley descreve a **visualização** e os **modelos** como engenharia de representação de conhecimento. A **visualização**, pode gerar novos conhecimentos, questionamentos e respostas. Segundo [Claus O. Wilke](https://serialmentor.com/dataviz), a visualização de dados ou dataviz, é a parte arte e a parte ciência na área de ciências de dados, logo, a visualização precisa estar correta e agradável para o leitor interpretá-la.
 
 > TIL: visualisation ou visualization tem o mesmo significado, mas, na Europa é com "s" e na América com "z".
 
+Segundo Hadley, **modelos** são ferramentas complementares da visualização. Para *Rachel Schutt*, em seu livro *Doing Data Science* o passo fundamental para criar um bom modelo é o EDA, a partir dele, pode começar a aplicar alguns métodos estatísticos, por exemplo, regressão linear.
 
-
-
-
-
-
-## Diferenças entre análise de dados e ciência de dados

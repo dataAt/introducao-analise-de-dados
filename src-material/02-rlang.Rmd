@@ -1,167 +1,268 @@
 # Introdução ao R `r emo::ji("gem")`
 
+*R* é uma linguagem de programação de alto nível com ambiente voltado para visualização e análise de dados. Em essência foi inspirada na linguagem de programação *S*. Foi iniciamente escrito por *R*oss Ihaka and *R*obert Gentleman no departamente de estatística da universidade de Auckland na Nova Zelândia. Atualmente o *R* é mantido pelo grupo __R Core Team__ que são pessoas do mundo inteiro tentando melhorar a linguagem dia após dia. Esse conteúdo foi baseado no livro __THE R BOOK__ escrito por *MICHAEL J CRAWLEY*, que nos dias de hoje é considerado a bíblia do R.
+
+O kernel do *R* e os pacotes podem ser baixados pelo CRAN - *c*omprehensive *R* *a*rchive *n*etwork. O objetivo deste capítulo é trazer de forma introdutória alguns conceitos básicos do R, por favor, sinta-se à vontade para contribuir.
+
 ## Definição de variáveis
 
-### Tipos primitivos
+Para atribuir qualquer valor em uma variável usamos a `<-` ou `=`, segundo Hadley, é boas práticas usar `<-`, neste capítulo utilizaremos a seta por motivos de boas práticas. Para declarar as variáveis, use:
+
 ```{r}
+  a <- "Legal mesmo!"
+  b <- 4224
+  22 -> c
+```
+
+### Tipos primitivos
+
+Agora que sabemos atribuir valores a uma variável, vamos falar sobre os tipos primitivos, existe a classe númerica "pai" que é o `numeric`, basicamente o `numeric` é todo número declarado sem sufixo e o seu tipo é `double`, mas podemos definir o tipo `integer` colocando `L` na frente do valor, e o `complex` que por sua vez usa o `i` na frente do valor. Há também a classe `logical` que representam os valores boleanos `TRUE` e `FALSE`. Por último, a classe `character` que representa os caracteres. 
+
+Para declarar cada tipo:
+
+```{r}
+  # Inteiro
   a <- 7L
+  
+  # Double
   b = 14.01
-  42 -> c
+  
+  # Boleano
   k <- FALSE
-  g <- 12i # tipo complexo*
+  
+  # Complexo
+  g <- 12i 
+  
+  # Caractere
   couse <- 'cool'
   
-  
   # Para ver inspecionar o valor das variáveis
-  print(a)
   b
-  cat(c)
-  
-  # Para ver as classes[1]
+ 
+  # Para ver as classes
   class(a)
-  class(b)
-  class(c)
-  class(k)
-  class(couse)
+  
+  # Para ver o tipo
+  typeof(b)
   
   # Para remove-las
   rm(a)
   
 ```
 
-1.2 Tipos de dados estruturados
+> se quiser saber mais sobre o tipo `complex`, deixamos um link no subcapítulo _Para saber mais_. 
+
+
+### Tipos de dados estruturados
+
+Já que conhecemos os tipos primitivos, vamos aprender sobre vetores e matriz. Apenas relembrando, podemos dizer que vetores sempre seguem um sentido e contém apenas uma linha e _N_ colunas. Por outro lado, a matriz é um vetor bidimensional, composta por linhas e colunas.
+
+No *R* há dois tipos de vetores:
+
+- Vetores atômicos, que é composto por todos os tipos que citamos em cima mais um tipo chamado `raw`
+
+> Tipos citados: double, logical, integer, character e complex
+
+- Listas, que pode ser chamado de vetor recursivo e pode conter outras listas. 
+
+Falando de uma maneira simples, vetores atômicos são homogêneos, ou seja, apenas aceitam um tipo, mas, e se eu colocar outro tipo? Simples, é convertido pelo tipo mais forte `r emo::ji("chemist")`. 
+
+Se estiver pensando que existe uma hierarquia de tipos, pensou certo, existe sim. Essa figura abaixo foi retirada do livro do *Hadley* - *R 4 DS*.
+
+![](./images/tipos.png)
+
+Ibservando a Figura, é possível notar a hierarquia, mas, ela deve ser lida de baixo para cima. Seguindo essa ordem:
+
+- `character`
+- `complex`
+- `numeric`
+- `double`
+- `logical`
+
+Todo vetor em R é declaro usando o `c()`, fica assim:
+
 ```{r}
-  # Vetores[2]
+  # Vetor lógico
   vetor_boleano <- c(FALSE, TRUE, TRUE, FALSE)
+  
+  # Vetor númerico
   vetor_numerico <- c(3.14, 6.28, 2.3)
+  
+  # Vetor de caractere
   vetor_char <- c('ola', 'pessoal', 'xd')
-  v01 <- 1:4
-  v02 <- 84:76
-  v03 <- seq(from=1, to=10)
-  v06 <- rep('DATA SCIENCE', 50)
-  v08 <- paste("A", 'B', 'C') 
-  v11 <- paste0("EX_", 1:5)
   
-  # Podemos misturar tudo
+```
+
+Tudo lindo e maravilhoso `r emo::ji("chemist")`, mas, e as conversões?
+
+```{r}
+  # Esse é um vetor misturado
   vetor_misturado <- c("sou legal", FALSE, 21)
-  # Vetor atomico tem um único tipo, então se misturarmos, vai converter para o tipo mais forte:
-  #1 - character
-  #2 - complex
-  #3 - numeric
-  #4 - integerc
-  #5- logical
-  # Vetor misturado será convertido em qual tipo?
-  
-  # Conferirndo a variável e tamanho
-  is.atomic(vetor_boleano)
-  is.list(vetor_boleano)
-  length(vetor_boleano)
-  
-  # Lista
+
+  # Podemos verificá-lo assim
+  is.atomic(vetor_misturado)
+```
+
+Então, seguindo a ideia de hierarquia de tipos, esse vetor será convertido para `character` e continuará atômico `r emo::ji("drum")`.
+
+Por outro lado, as Listas são heterogênea, ou seja, aceitam diversos tipos, sendo Lista de Lista, por isso, é chamado de vetor recursivo. Podemos implementá-la usando `list()`, desse modo:
+
+```{r}
+  # Lista de boleanos
   lista_boleano <- list(FALSE, TRUE, TRUE, FALSE)
+  
+  # Lista de inteiros
   lista_inteiro <- list(12L, 10L, 7L)
+```
+
+Tudo maravilindo, mas, e a ideia de vários tipos? foi tudo uma mentira? `r emo::ji("doubt")`
+
+Não foi mentira, vamos criar uma lista de diversos tipos, assim:
+
+
+```{r}
+  # Minha lista com tudos os tipos tudo
   lista_misturada <- list(FALSE, 12L, 't', 2i)
   
-  # Conferindo o tamanho da lista
+  # Será ela atomica?
+  is.atomic(lista_misturada)
+  
+```
+ 
+Viu, não era mentira, temos uma lista não atômica, ou seja, de vários os tipos hehe. Mas será ela uma lista mesmo? Não é uma coisa do além? `r emo::ji("man_vampire_dark_skin_tone")`
+
+```{r}
+  # Você é uma lista mesmo?
   is.list(lista_boleano)
-  is.recursive(lista_boleano)
-  is.atomic(lista_boleano)
-  is.list(lista_inteiro)
-  
-  
-  # Array
-  a <- array(c('green','yellow'),dim = c(3,3,2)); a
-  
-  class(a)
-  typeof(a)
-  is.atomic(a)
-  # Por que não é um vetor?
-  is.vector(a)
-  is.list(a)
-  
-  
-  # Matriz
-   m2 <- matrix(data = c(1:25, rep("legal", 5)), nrow = 5, ncol=6)
+```
+
+Ufa, ainda bem! `r emo::ji("face_with_tears_of_joy")` . Esqueci de dizer, que podemos checar o tamanhos dos nossos vetores usando `length()`.
+
+Já sabemos de tipos de vetores, agora vamos para as matrizes. Bom, as matrizes seguem a mesma ideia dos vetores atômicos, confesso que não uso com frequência, mas sempre é válido saber. Podemos implementá-la usando `matrix()`, desse modo: 
+ 
+```{r} 
+  library(knitr)
+
+  # Minha matriz com números inteiros com caractere
+   matriz <- matrix(data = c(1:25, rep("legal", 5)),       nrow = 5, ncol=6)
    
-   is.matrix(m2)
-   is.array(m2)
+   # Para ver nossa matriz
+   knitr::kable(matriz)
+```   
+
+Então, seguindo a hirarquia de tipos, a nossa matriz será convertida para `character`. Podemos verificar se é uma matriz desse jeito:
+
+```{r}
+  # É matriz mesmo?
+  is.matrix(matriz)
    
-   m2[5,6]
+  # Sou legal ou chato?
+  matriz[5,6]
 
 ```
 
-1.3 DataFrame
+Podemos acessar os valores através dos indices de linha e coluna `matriz[linha, coluna]`.
+
+### DataFrame
+
+Para explicar o conceito de dataframe, vamos com a prática, ler um conjuto de dados em csv e observar algumas características: 
+
+```{r}
+  # Lendo nosso conjunto de dados
+  meu_dataframe <- read.csv2(file = "./nome_do_csv.csv",       sep=",")
+  
+  # Verificando a classe do nosso conjunto de dados
+  class(meu_dataframe)
+  
+  # Verificando o tipo do nosso conjunto de dados
+  typeof(meu_dataframe)
+```
+
+Podemos tirar algumas conclusões, a primeira é que existe é um classe chamada `data.frame` que é do tipo `list`, olha só, nós sabemos que uma lista *R* é heterogênea, então sabemos que nosso `dataframe` pode ter vários tipos, sendo assim, não atômico, mas, será mesmo? Vamos checar `r emo::ji("grinning_face")`
+
+> A ideia do `read.csv` é ler um csv e passar para dataframe no R 
+
+```{r}
+  # Verificando se é atomico nosso df
+  is.atomic(meu_dataframe)
+```
+
+Opa, então sabemos que `dataframe` é uma classe no *R* tratada como um tipo `list`que por sua pode ter diversos tipos. Mas, afinal, o que é um dataframe? `r emo::ji("hand")`
+
+Vou usar a definição feita pelo livro de [Limpeza de dados em R](tps://cdr.ibpad.com.br) - Tipo especial de lista, onde cada coluna é um vetor de apenas um tipo e todas as colunas têm o mesmo número de registros. É o tipo mais utilizado para se trabalhar com dados. 
+
+Que definição interessante, então, cada 'coluna' é vetor atômico? 
+
+Para acessar cada coluna do `data.frame` usamos o simbolo `$`. Agora, vamos responder a pergunta, desse modo:
+
+```{r}
+  # é atomico?
+  is.atomic(meu_dataframe$Pclass) 
+```
+
+
+Olha só, é atômico. Então, vamos criar uma dataframe, para fixar o aprendizado:
+
 
 ```{r}
    # DataFrame[3]
-   data_frame <- data.frame(Risco=c(FALSE,FALSE, FALSE, FALSE,TRUE), Animal=c("Cachorro", "Gato", "Capivara", "Girafa", "Macaco"), Periculosidade=c(200, 400, 0, 7, 1000))
-  
-  # Para ver o tamanho
-  length(data_frame)
+   data_frame <- data.frame(
+     Risco=c(FALSE,FALSE, FALSE, FALSE,TRUE),                Animal=c("Cachorro", "Gato", "Capivara", "Girafa", "Macaco"),
+     Periculosidade=c(200, 400, 0, 7, 1000))
   
   # Podemos acessar os valores individuais usando o '$'
   data_frame$Animal
   
-  # Acessando os valores por indices
-  data_frame[,2]
-  data_frame[2,]
-  data_frame[3,2]
-  
-  
   # Visualização das lihas iniciais
-  head(data_frame)
-  # Visualização das linhas finais
-  tail(data_frame)
-  
-  # Nome das colunas
-  colnames(data_frame)
-  # Nome das linhas
-  rownames(data_frame)
-  
-  # Quantidade de colunas
-  ncol(data_frame)
-  # Quantidade de linhas
-  nrow(data_frame)
-  
-  # Podemos observar a estrutura
-  str(data_frame)
-  
-  # Algumas estatísticas básicas 
-  summary(data_frame)
+  knitr::kable(head(data_frame, 3)) 
+ 
 ```
 
 
-2. Operações Básicas
+## Operações Básicas
 
-2.1 Dicas úteis
+Agora que já sabemos como declarar uma variável, um vetor e um dataframe, nesse cápitulo vamos dar algumas dicas e falar sobre alguns métodos estatísticos.
+
+### Dicas úteis
+
+Para importar algum pacote do *R* podemos usar o comando `library()` e parar baixar utilzamos `install.packages()`. Caso esteja com dúvida sobre determinida função de algum pacote, use o comando `?nome_da_funcao()` 
 ```{r, eval=FALSE}
   # Para usar algum pacote
-  library(tidyverse)
+  library(kohonen)
 
-  # Para procurar por um pacote
-  ??ggsom
-
-  # Para instalar algum pacote que esteja no CRAN [4]
+  # Para instalar algum pacote que esteja
   #install.packages("meupacotefavorite")
-
-  # Para ler sobre alguma função
-  ?sum()
   
+  # Função do pacote kohonen
+  ?som()
+```
+
+Para especificar algum diretório para trabalhar, usamos o comando `setwd()` e para ver em qual diretório estamos trabalhando `getwd()`.
+
+```{r}
   # Para verificar seu diretório atual
   getwd() 
   
   # Para definir um novo diretório
-  setwd("~/R/ggsom/")
-  
-  # Para ler conjunto de dados
-  df <- read.csv2("~/Dados/pesquisa_google_trend/convolutional_neural_networks.csv", 
-            header = TRUE, sep = ",")
-  
-  # Dependendo do tamanho do dataset, vale a pena usar fread() ou read_csv()
+  #setwd("~/R/ggsom/")
 ```
 
+### Estatisca básica
 
-2.2 Estatisca básica
+Vamos pular as definições das funções estatísticas que serão abordadas, sendo as medidas de posição:
+
+- Média
+- Mediana
+
+e as medidas de dispersão:
+
+- Desvio padrão
+
+Para verificar o desvio padrão do conjunto, podemos utilizar a função `sd()` do pacote `stats` do *R*. Podemos verificar a média usando o `mean()` que é uma função do pacote `base` do *R* e a mediana usando `median()` do pacote `stats`.
+
+Como demonstração, vamos utilizar o conjunto de dados do filme *star wars* `r emo::ji("smiling_face")`
+
+
 ```{r}
   # Vamos usar o dado do filme Star Wars do pacote dplyr*
   suppressMessages(library(dplyr))
@@ -179,6 +280,8 @@
   # oops... - Observe que o NA atrapalha nossa média,vamos remove-lo
   mean(starwars$birth_year, na.rm = TRUE)
   
+  # Mediana
+  median(starwars$birth_year, na.rm = TRUE)
   
   # Podemos procurar pela menor data de nascimento
   min(starwars$birth_year, na.rm = TRUE)
@@ -190,34 +293,31 @@
   sd(starwars$birth_year, na.rm = TRUE)
 ```
 
-3. Os ifs da vida...
-```{r, eval=FALSE}
-  
-  if(starwars$name == "Luke Skywalker"){
-    "Faz cara de vilão"
+## Estruturas de decisão
+
+Os `if` da vida, se não fosse por isso, aconteceria tal coisa. 
+Bom, no *R*, a estrutura de decisão é bem parecida com a do *Java*, ainda com o conjunto do *star wars*:
+```{r}
+  personagem <- "BB8"  
+
+  if(personagem %in% starwars$name){
+    "Um bb completo"
+  } else if("Padmé" %in% starwars$name) {
+    "Lindona mesmo"
   } else {
-    "Faz cara de bonzinho"
+    "Oloco"
   }
-  # hackezinho rápido
-  vilao <- ifelse(starwars$name == "Luke Skywalker",
-         TRUE, FALSE)
-  
-  # Pense em vetor...
-  starwars$name[vilao]
-  
+```
+
+## Iteração
+
+Para a `for` podemos utilizar o famoso `foreach`, parecido com o do `Python`, desta maneira:
+
+```{r}
   # Foreach
-  for(i in starwars$name){
+  for(i in head(starwars$name, 3)){
     print(i)
   }
-  
-  # Um For pouco mais rápido[5]
-  for(i in seq_along(starwars$name)){
-    print(starwars$name[i])
-  }
-  # Usando map do pacote purr
-  library(purrr)
-  purrr::map_chr(starwars$name, print)
-
 ```
 
 ## Para saber mais
@@ -233,7 +333,7 @@
 [R eficiente - 5](!https://csgillespie.github.io/efficientR/)
 
 
-## Materias utilizados como base
+###  Materias utilizados como base
 [Rafael Santos](!https://github.com/rafaeldcsantos/CAP-394)
 
 - José Roberto M. Garcia
