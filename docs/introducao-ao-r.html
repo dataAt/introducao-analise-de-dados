@@ -129,8 +129,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="3.2" data-path="introducao-ao-python.html"><a href="introducao-ao-python.html#estruturas-de-dados"><i class="fa fa-check"></i><b>3.2</b> Estruturas de dados</a><ul>
 <li class="chapter" data-level="3.2.1" data-path="introducao-ao-python.html"><a href="introducao-ao-python.html#series"><i class="fa fa-check"></i><b>3.2.1</b> Series</a></li>
 <li class="chapter" data-level="3.2.2" data-path="introducao-ao-python.html"><a href="introducao-ao-python.html#dataframes"><i class="fa fa-check"></i><b>3.2.2</b> Dataframes</a></li>
-<li class="chapter" data-level="3.2.3" data-path="introducao-ao-python.html"><a href="introducao-ao-python.html#funcoes-de-leitura-e-escrita"><i class="fa fa-check"></i><b>3.2.3</b> Funções de leitura e escrita</a></li>
+<li class="chapter" data-level="3.2.3" data-path="introducao-ao-python.html"><a href="introducao-ao-python.html#selecao-e-filtro-dos-dados"><i class="fa fa-check"></i><b>3.2.3</b> Seleção e filtro dos dados</a></li>
+<li class="chapter" data-level="3.2.4" data-path="introducao-ao-python.html"><a href="introducao-ao-python.html#agrupamento-de-dados-e-agregacoes"><i class="fa fa-check"></i><b>3.2.4</b> Agrupamento de dados e agregações</a></li>
+<li class="chapter" data-level="3.2.5" data-path="introducao-ao-python.html"><a href="introducao-ao-python.html#funcoes-de-leitura-e-escrita"><i class="fa fa-check"></i><b>3.2.5</b> Funções de leitura e escrita</a></li>
 </ul></li>
+<li class="chapter" data-level="3.3" data-path="introducao-ao-python.html"><a href="introducao-ao-python.html#para-saber-mais-1"><i class="fa fa-check"></i><b>3.3</b> Para saber mais</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="introducao-ao-ggplot.html"><a href="introducao-ao-ggplot.html"><i class="fa fa-check"></i><b>4</b> Introdução ao ggplot 📊</a></li>
 </ul>
@@ -207,7 +210,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <ul>
 <li>Listas, que pode ser chamado de vetor recursivo e pode conter outras listas.</li>
 </ul>
-<p>Falando de uma maneira simples, vetores atômicos são homogêneos, ou seja, apenas aceitam um tipo, mas, e se eu colocar outro tipo? Simples, é convertido pelo tipo mais forte 🧪.</p>
+<p>Falando de uma maneira simples, vetores atômicos são homogêneos, ou seja, apenas aceitam um tipo, mas, e se eu colocar outro tipo? Simples, é convertido pelo tipo mais forte 👩‍🔬.</p>
 <p>Se estiver pensando que existe uma hierarquia de tipos, pensou certo, existe sim. Essa figura abaixo foi retirada do livro do <em>Hadley</em> - <em>R 4 DS</em>.</p>
 <div class="figure">
 <img src="images/tipos.png" />
@@ -230,7 +233,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
   
   <span class="co"># Vetor de caractere</span>
   vetor_char &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;ola&#39;</span>, <span class="st">&#39;pessoal&#39;</span>, <span class="st">&#39;xd&#39;</span>)</code></pre></div>
-<p>Tudo lindo e maravilhoso 🧪, mas, e as conversões?</p>
+<p>Tudo lindo e maravilhoso 👩‍🔬, mas, e as conversões?</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="co"># Esse é um vetor misturado</span>
   vetor_misturado &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;sou legal&quot;</span>, <span class="ot">FALSE</span>, <span class="dv">21</span>)
 
@@ -401,7 +404,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Para especificar algum diretório para trabalhar, usamos o comando <code>setwd()</code> e para ver em qual diretório estamos trabalhando <code>getwd()</code>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="co"># Para verificar seu diretório atual</span>
   <span class="kw">getwd</span>() </code></pre></div>
-<pre><code>## [1] &quot;/home/felipe/R/introducao-analise-de-dados/src-material&quot;</code></pre>
+<pre><code>## [1] &quot;/home/felipe/Documentos/cursos/ultimo-dia/introducao-analise-de-dados/src-material&quot;</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="co"># Para definir um novo diretório</span>
   <span class="co">#setwd(&quot;~/R/ggsom/&quot;)</span></code></pre></div>
 </div>

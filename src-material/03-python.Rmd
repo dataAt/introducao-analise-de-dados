@@ -48,12 +48,11 @@ Vamos começar a utilização, para facilitar o entendimento.
 # Estes comandos não devem ser executados em seu terminal
 library(reticulate) 
 use_python("venv/bin/python")
-py_config()
 ```
 
 Para iniciar, vamos criar um simples `Series` e colocar dentro de uma variável. Para isto, importando a biblioteca pandas, e passamos para ela o 'apelido' de `pd`.
 
-Em seguida, criar uma `Series` simples, passando como parâmetro de entrada uma lista com três valores, veja:
+Em seguida, vamos criar uma `Series` simples, passando como parâmetro de entrada uma lista com três valores, veja:
 
 ```{python}
 import pandas as pd
@@ -61,13 +60,25 @@ import pandas as pd
 s = pd.Series([1, 2, 3]); print(s)
 ```
 
-É interessante notar que, cada uma das linhas, tem associado um index (Pode ser visto do lado esquerdo dos valores), e isto permite a recuperação dos valores através destes index. Você pode fazer uma analogia a forma com que você recupera os valores em um dicionário em Python, a diferença aqui é que, esta é uma estrutura de dados de alto desempenho, além de que, estas estruturas são otimizadas para fazer a melhor utilização de memória possível.
+É interessante notar que, cada uma das linhas, tem associado um índice (Pode ser visto do lado esquerdo dos valores), e isto permite a recuperação dos valores através destes índices. Você pode fazer uma analogia a forma com que você recupera os valores em um dicionário em Python, a diferença aqui é que, esta é uma estrutura de dados de alto desempenho, além de que, estas estruturas são otimizadas para fazer uma boa utilização de memória.
 
 ```{python}
-print(s[0]) # Recupera o valor do index com nome 0
+print(s[0]) # Recupera o valor do índice com nome 0
 ```
 
-Por falar em dicionários, estes podem ser facilmente transformados em `Series`, veja:
+Também é possível já criar uma `Series` com um índice personalizado, para isto, basta passar no construtor, uma lista representado o índice antes dos dados, veja:
+
+```{python}
+s = pd.Series([7, 8, 9], [1, 2, 3])
+```
+
+Veja que a primeira lista passada representa o índice, e a segunda os dados.
+
+```{python}
+print(s)
+```
+
+É possível também, transformar facilmente os dicionários em `Series`. 
 
 ```{python}
 dicto = {
@@ -78,33 +89,9 @@ dicto = {
 dicto_s = pd.Series(dicto); print(dicto_s)
 ```
 
-Após a conversão, o uso é basicamente o mesmo do dicionário, porém com os benefícios já citados. Além do que já foi dito sobre os `Series`, é importante lembrar que, estas estruturas de dados possuem diversos métodos para facilitar a manipulação e entendimento dos dados, vamos a alguns destes métodos
+Após a conversão, o uso é basicamente o mesmo do dicionário, porém com os benefícios já citados. Além do que já foi dito sobre os `Series`, é importante lembrar que, estas estruturas de dados possuem diversos métodos para facilitar a manipulação e entendimento dos dados, vamos a alguns destes métodos.
 
-Caso queira-se uma rápida descrição de seus dados, é possível obter um resumo estatístico
-
-```{python}
-data = pd.Series([1, 2, 3, 4, 5])
-
-print(data.describe())
-```
-
-Este tipo de comando pode te ajudar a entender os dados que você está analisando.
-
-Além disto, você pode ter necessidades como buscas dentro do conjunto de dados, existem diversas maneiras de fazer isto com pandas, mas uma forma simples e intuitiva é a utilização de indexação booleana, onde basicamente uma expressão lógica é passada como ponto para indexação.
-
-```{python}
-data_m_tres = data[data > 3] # Devolve todos os valores dentro da Serie que são maiores que 3
-print(data_m_tres)
-```
-
-Caso os valores das variáveis sejam string, também é possível realizar buscas, utilizando a mesma técnica.
-
-```{python}
-faculdade = dicto_s[dicto_s == 'Fatec'] # Recupera o campo que tem o valor 'Fatec'
-print(faculdade)
-```
-
-Porém, como citado lá no início deste tutorial, as `Series` são estruturas unidimensionais, o que significa que não poderemos ter matrizes dentro das `Series`, caso tentarmos fazer a inserção de uma matriz, ele irá aceitar, porém, fará o tratamento dos dados como se fossem diveras listas separadas dentro da `Series`, veja:
+Porém, como citado lá no início deste tutorial, as `Series` são estruturas unidimensionais, o que significa que todo o trabalho com estas estruturas é feito utilizando apenas como base as linhas, não sendo possível a utilização através de colunas. Como exemplo, vamos tentar inserir uma matriz de dados dentro de uma `Series`, veja que é possível, mas, tudo será tratado como listas de listas, de forma separada.
 
 ```{python}
 matriz = pd.Series([[1, 2, 3], [4, 5, 6]])
@@ -115,11 +102,9 @@ Percebeu ? Para estes casos, faz-se necessário o uso de uma outra estrutura de 
 
 ### Dataframes
 
-Agora que você já conhece como as `Series` funcionam, vamos apresentar a você o `DataFrame`, que difere das `Series` por serem multidimensionais, ou seja, aqui temos matrizes `r emo::ji("rainbow")`
+Agora que você já conhece como as `Series` funcionam, vamos apresentar a você o `DataFrame`, que difere das `Series` por serem multidimensionais, ou seja, aqui temos uma estrutura, que trabalhará com linhas e colunas (Podemos dizer também que temos matrizes aqui) `r emo::ji("rainbow")`
 
-Mas por esta simples diferença, a manipulação dos `DataFrames` acabam sendo diferentes, não nos métodos, que em boa parte dos casos será os mesmos já apresentados, e sim, na maneira de pensar na manipulação, isto porque, trabalhar com multiplas linhas e colunas de uma única vez, pode tornar sua análise diferente.
-
-Além disto, no caso do pandas, boa parte dos métodos de leitura de dados, já retornam por padrão o `DataFrame` (Os métodos de leitura serão explicados mais abaixo).
+A diferença é simples, mas em diversos casos já permite formas de manipulação e armazenamento dos dados muito diferentes.
 
 Vejamos algumas características bacanas dos `DataFrames`
 
@@ -128,52 +113,145 @@ matriz = pd.DataFrame([[1, 2, 3], [4, 5, 6]])
 print(matriz)
 ```
 
-Veja que, da mesma forma que as `Series`, os `DataFrames` tem o index que pode ser nomeado, e 
-além destes, as colunas também podem ser nomeadas.
+O mesmo processo feito acima, quando realizado nos `Series` gerou listas de listas, aqui não, tem-se uma matriz com formas de recuperação por linhas e colunas. Da mesma forma que as `Series`, os `DataFrames` tem o índice que pode ser nomeado, e além destes, as colunas também podem ser nomeadas.
 
 ```{python}
 tabela = pd.DataFrame([[.9, .8, .7], [.4, .5, .7]], columns = ['primeiro', 'segundo', 'terceiro'], index = ['zero', 'um'])
 print(tabela)
 ```
 
-E a recuperação tanto das linhas quanto das colunas pode ser feita utilizando a ideia da recuperação em dicionários de Python, como citado anteriormente.
+Pode-se também utilizar os dicionários e trasforma-los em `DataFrames`, veja como isto é feito.
 
 ```{python}
-# Recuperando coluna
-coluna = tabela['primeiro']
-print(coluna)
+dicto = {
+  'nome': ['felipe', 'maria'],
+  'idade': [12, 13]
+}
+
+df = pd.DataFrame(dicto); print(df)
 ```
+
+Bem, agora que você entendeu a diferença fundamental entre estas estruturas de dados, vamos para a parte de manipulação delas.
+
+### Seleção e filtro dos dados
+
+Uma parte muito importante é a seleção e filtro dos dados, com elas basicamente faremos a manipulação dos dados.
+
+Vamos começar fazendo a busca utilizando os índices (index) e as colunas (No caso dos `DataFrames`). Para isto, vamos utilizar os métodos `.loc` e `.iloc`. A sintaxe de utilização basica para as duas estruturas de dados podem ser vistas abaixos:
+
+| DataFrame        | Series     |     
+| ------------- |:-------------:|
+| .loc[linha, coluna]  | .loc[linha] |
+| .iloc[linha] | .iloc[linha] |
+
+No caso do `.loc` a sintaxe muda exatamente pelas diferenças apresentadas entre o `Series` e o `DataFrame`. Para o caso do `.iloc` ele busca somente a posição da linha, e você trata a coluna.
 
 ```{python}
-# Recuperando linha
-linha = tabela.loc['zero']
-print(linha)
+df = pd.DataFrame({
+  'nome': ['Joana', 'Maria', 'Josefa'],
+  'idade': [15, 18, 21],
+  'nota': [8, 9, 10]
+}, index = [7, 8, 9])
+
+# Recuperando a aluna com index 9
+df.loc[9, 'nome']
+
+# É possível também recuperar mais de uma coluna com o .loc
+df.loc[9, ['nome', 'idade']]
+
+# Recuperando a aluna na posição 2
+df.iloc[2]['nome']
+
+# Recuperando duas colunas
+df.iloc[2][['nome', 'idade']]
 ```
 
-Para a recuperação da linha utilizamos um método do `DataFrame`, o `loc`, este permite recuperar uma linha através de seu nome, porém pode-se também recuperar pela posição, utilizando o método `iloc`.
+Dentro destes, ainda é possível passar uma expressão booleana, para realizar uma filtragem dos dados.
 
 ```{python}
-linha_um = tabela.iloc[1]
+df = pd.DataFrame({'coluna': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]})
+
+df[df['coluna'] >= 5]
 ```
 
-A diferença entre os métodos está justamente no que ele procura, no primeiro, `loc`, busca-se nomes, e no segundo, `iloc`, tenta-se recuperar a posição.
+E isto também vale para as `Series`, utilizando a mesma estrutura. Bem, este é o básico para a manipulação e filtragem dos dados, existem muitos métodos para a manipulação e filtragem, aqui ainda veremos alguns deles, mas, inicialmente estes já resolver muitos dos nossos problemas.
 
-Quando apresentamos as `Series` falamos sobre o método `describe`, ele também está disponível para o `DataFrame`, porém, caso você queira algum parâmetro estatístico específico, é possível chama-lo através de um método do `DataFrame`.
+### Agrupamento de dados e agregações
+
+Muitas vezes queremos agrupar nossos dados, seja para facilitar a manipulação, o entendimento das relações dos dados, ou mesmo para aplicar funções sobre cada um dos grupos e obter informações a partir disto. Para isto utilizamos os agrupamentos e agregações.
+
+As agregações apresentam diversas derivações de definição, a utiliza aqui será a que, são operações aplicadas sobre os dados que resultam em um conjunto de valores, ou mesmo um valor escalar. Entenda que, o retorno pode mudar de acordo com a estrutura de dados onde se aplica a agregação, no caso `Series` será retornado apenas um valor ao utilizar agregações, e no caso dos `DataFrames` um valor para cada coluna ou linha, dependendo da definição feita durante o processo.
+
+Algumas operações de agregação são:
+
+- sum() -> Realiza somatório;
+- min() -> Busca o valor mínimo;
+- max() -> Busca o valor máximo;
+- count() -> Realiza a contagem de elementos.
 
 ```{python}
-print(tabela.mean()) # Média
-print(tabela.median()) # Mediana
+s = pd.Series([1, 2, 3])
+df = pd.DataFrame([[1, 2, 3,], [4, 5, 6]])
+
+# Agregando Series
+print(s.sum())
+# Agredando DataFrame
+print(df.sum())
 ```
 
-Outros métodos úteis podem ser vistos abaixo
+E o agrupamento basicamente representa a divisão dos dados, em conjuntos que possuem alguma similaridade (Esta similaridade é difinida pelo usuário). E isto em Python é realizado com o método `groupby`.
 
 ```{python}
-print(tabela.max()) # Recupera a coluna com maior valor
-print(tabela.min()) # Recupera a coluna com o menor valor
-print(tabela.sum()) # Faz o somatório dos valores de cada linha
+df = pd.DataFrame({
+  'nome': ['Tel1', 'Tel2', 'Tel3'],
+  'tipo': ['antigo', 'novo', 'novo']
+})
+
+# Etapa de divisão dos dados
+agrupado = df.groupby('tipo')
 ```
 
-Lembre-se, muitos dos métodos apresentados na seção do `DataFrame` funcionam nas `Series`, e o contrátio também é verdadeiro.
+Os dados foram agrupados de acordo com a coluna `tipo`. O que se espera como retorno do método `groupby` ? Um conjunto de `DataFrames`, correto ? Sim, mas, no caso do pandas ele retorna um tipo de `DataFrame`, nomeado `DataFrameGroupBy`, este contém cada um dos grupos, que podem ser acessados através do atributo `groups`, o formato de retorno é um dicionário, onde cada chave representa o grupo, neste caso o tipo, e os valores são os índices dos itens que fazem parte do grupo.
+
+```{python}
+print(agrupado.groups)
+```
+
+Bem, ao juntarmos os conceitos de agregação e agrupamento, temos um processo que pode ser um problema de ser entendido, para isto, vamos utilizar a definição feita por Hadley Wickham, onde ele simplesmente separa todo o processo em etapas, sendo estas: `Dividir-Aplicar-Combinar`.
+
+![](images/03.08-split-apply-combine.png)
+
+O processo de dividir é o agrupamento, onde estou juntando os dados de acordo com alguma caracteristica que eu defini, a aplicação é justamente onde pode-se aplicar as agregações, filtros ou transformações, e por fim o combinar, representa a junção dos resultados da operação realizada na aplicação.
+
+Para que se haja um entendimento melhor, vamos criar um exemplo.
+
+```{python}
+df = pd.DataFrame({
+  'nome': ['felipe', 'joão', 'maria', 'ana'],
+  'idade': [19, 19, 20, 20],
+  'dinheiro': [100, 100, 150, 150]
+})
+```
+
+Vamos agrupar estes dados, levando em consideração a idade.
+
+```{python}
+# Esta é a etapa de divir, da definição do Hedley
+agrupado = df.groupby('idade')
+
+# Aplicando uma agregação
+## Esta é a etapa de aplicação e junçaõ, definida pelo Hedley
+print(agrupado.count())
+```
+
+Veja que o agrupamento e a contagem foi realizado, mas caso eu queira aplicar uma agregação em uma coluna especifica ? Você pode!
+
+```{python}
+# Agregando somente o dinheiro de cada grupo
+print(agrupado['dinheiro'].sum())
+```
+
+Viu! Extremamente simples! Para finalizar esta parte, vamos aplicar um filtro nos dados agrupados!
 
 ### Funções de leitura e escrita
 
@@ -204,4 +282,7 @@ df.to_json('nome_do_json.json') # Salva o JSON
 
 Viu ? É tudo muito simples e direto, o que te permite focar em sua análise, e deixar de lado problemas com sintaxe `r emo::ji("statue_of_liberty")`, mas, após a sua análise, é importante apresentar seus dados, para isto, vamos aprender a utilizar a biblioteca plotnine para fazer **plots** e visualizar seus dados.
 
-Vamos para o próximo capítulo.
+## Para saber mais
+
+- [Python Data Science Handbook](http://shop.oreilly.com/product/0636920034919.do)
+- [Documentação - Pandas](https://pandas.pydata.org/pandas-docs/stable/)
