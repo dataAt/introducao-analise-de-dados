@@ -1,2 +1,10 @@
 # Introdução ao ggplot `r emo::ji("bar_chart")`
 
+Escolhemos a biblioteca de visualização **ggplot** para **R** e **Python**, pois sua sintaxe é bem amigável e é o pacote mais famoso de visualização de dados em **R**, levando isso em conta, a comunidade de Python resolveu criar um biblioteca beseada no **ggplot** chamada **plotnine**.
+
+
+## O que é o `ggplot`?
+
+Bom, `ggplot`é um pacote em R criado por _Hadley Wickham_, a sintaxe se baseia na obra [The Grammar of Graphics](https://www.amazon.com/Grammar-Graphics-Statistics-Computing/dp/0387245448),
+
+

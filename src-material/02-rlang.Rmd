@@ -320,6 +320,97 @@ Para a `for` podemos utilizar o famoso `foreach`, parecido com o do `Python`, de
   }
 ```
 
+## Manipulação de dados
+
+Vamos utilizar o pacote *dplyr* do kit de ferramentas *Tidyverse* focado em *análise de dados*, vamos criar um data.frame para a manipulação, fica assim:
+
+```{r}
+meu_df <- data.frame(
+    aluno_id = c(1, 2, 3, 4, 5, 6),
+    aluno_sexo = c("Masculino", "Feminino","Masculino", "Feminino", "Masculino", "Feminino"),
+    aluno_curso = c("Historia", "Historia", "Matemática",
+                    "Estatística", "Matemática", "Estatística"),
+    aluno_media = c(2.1, 3.5, 4.0, 1.0, NA, 4.9),
+    aluno_avaliacao = c("Ruim", "Ruim", "Excelente",
+                        "Ruim", "Nenhum", "Excelente"))
+
+  knitr::kable(meu_df)
+  
+```
+
+Vamos utilizar os seguintes métodos de manipulação do **dplyr**:
+
+- select - Seleciona as colunas do dataframe
+- filter - Filtra algum valor da coluna
+- mutate - Cria novas variavéis no dataframe
+- group_by - agrupa de acordo com um vetor de categorias
+- summarize - Reduz vários valores para um único resumo.
+
+Vamos manipular nosso `dataframe` com base nos métodos acima:
+
+```{r}
+library(dplyr)
+  
+filtro <- dplyr::filter(meu_df, meu_df$aluno_avaliacao == "Ruim")
+ 
+selecao <- dplyr::select(filtro, aluno_curso, aluno_avaliacao, aluno_media)
+  
+grupo <- group_by(selecao, aluno_curso)
+ 
+media <- summarize(grupo, media_grupo = mean(aluno_media))
+  
+knitr::kable(media)
+ 
+```
+
+Basicamente, filtramos pelo atributo `aluno_avaliacao`, selecionamos os atributos `aluno_curso`, `aluno_avaliacao` e `aluno_media`, agrupamos pelos cursos e tiramos a média daquele grupo em relação os cursos `r emo::ji("bear")`. Mas, ficou muito grande, não podemos melhorar? Podemos sim, dessa forma: 
+
+```{r}
+meu_df1 <- dplyr::filter(meu_df, meu_df$aluno_avaliacao =="Ruim")
+ 
+meu_df1 <- dplyr::select(meu_df1, aluno_curso, aluno_avaliacao, aluno_media)
+  
+meu_df1 <- group_by(meu_df1, aluno_curso)
+ 
+meu_df1 <- summarize(meu_df1, media_grupo = mean(aluno_media))
+  
+knitr::kable(meu_df1)
+
+```
+
+Aee, melhorou um pouco, não? `r emo::ji("blue")`. Podemos melhorar ainda mais, como? Usando `%>%` esse símbolo é chamado de **pipe** ou **então**, basicamente, é a `pipe` utilizada no **Linux**, mas o que faz?
+
+A **pipe** passa a resposta da primeira atribuição para o primeiro parâmetro da função seguinte, desta forma:
+
+```{r}
+meu_vetor <- c(1, 3, 5, 7, 9) %>% mean()
+  
+meu_vetor
+
+```
+
+Então, podemos ver, que não coloco o `meu_vetor` como parâmetro para a função `mean()`, mas, e se eu quiser colocar mais parâmetros? Opa, você pode e deve, segue a mesma linha de racíocio da função normal, dessa forma:
+
+```{r}
+meu_vetor <- c(2, 4, 6, 8, NA) %>% mean(na.rm=TRUE)
+
+meu_vetor
+```
+
+Que lindo, né `r emo::ji("bride")`. Agora, vamos optimizar nossa função usando **pipe**, desta forma:
+
+```{r}
+  df <- meu_df %>% filter(aluno_avaliacao == "Ruim") %>%
+    select(aluno_curso, aluno_avaliacao, aluno_media) %>%
+    group_by(aluno_curso) %>%
+    summarize(media_grupo = mean(aluno_media))
+  
+ knitr::kable(df)
+```
+
+Fico bem mais legível né `r emo::ji("bright")`. Essa é a principal função da **pipe**, tornar o código reprodutível.  
+
+
 ## Para saber mais
 
 [Números complexos - 1](!https://stat.ethz.ch/R-manual/R-devel/library/base/html/complex.html)
