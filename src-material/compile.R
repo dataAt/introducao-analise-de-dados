@@ -4,8 +4,8 @@ Script para "compilar" o bookdown
 
 # Pode ser necessário alterar os comandos abaixo (Caso seu ambiente esteja
 # configurado de forma diferente)
-venvCommand <- 'python3 -m venv venv';
-installCommand <- 'venv/bin/pip3 install pandas plotnine';
+venvCommand <- 'python3 -m venv ~/ambiente_virtual';
+installCommand <- '~/ambiente_virtual/bin/pip3 install pandas plotnine';
 
 if (!dir.exists('venv')) {
   system(venvCommand);

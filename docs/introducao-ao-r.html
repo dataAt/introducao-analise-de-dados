@@ -164,6 +164,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="4" data-path="introducao-ao-ggplot.html"><a href="introducao-ao-ggplot.html"><i class="fa fa-check"></i><b>4</b> Introdução ao ggplot 📊</a><ul>
 <li class="chapter" data-level="4.1" data-path="introducao-ao-ggplot.html"><a href="introducao-ao-ggplot.html#o-que-e-o-ggplot"><i class="fa fa-check"></i><b>4.1</b> O que é o <code>ggplot</code>?</a></li>
+<li class="chapter" data-level="4.2" data-path="introducao-ao-ggplot.html"><a href="introducao-ao-ggplot.html#mapeamente-estetico"><i class="fa fa-check"></i><b>4.2</b> Mapeamente Estético</a></li>
+<li class="chapter" data-level="4.3" data-path="introducao-ao-ggplot.html"><a href="introducao-ao-ggplot.html#objetos-geometricos"><i class="fa fa-check"></i><b>4.3</b> Objetos geométricos</a></li>
+<li class="chapter" data-level="4.4" data-path="introducao-ao-ggplot.html"><a href="introducao-ao-ggplot.html#escalas"><i class="fa fa-check"></i><b>4.4</b> Escalas</a></li>
+<li class="chapter" data-level="4.5" data-path="introducao-ao-ggplot.html"><a href="introducao-ao-ggplot.html#subplots"><i class="fa fa-check"></i><b>4.5</b> Subplots</a></li>
+<li class="chapter" data-level="4.6" data-path="introducao-ao-ggplot.html"><a href="introducao-ao-ggplot.html#temas"><i class="fa fa-check"></i><b>4.6</b> Temas</a></li>
+<li class="chapter" data-level="4.7" data-path="introducao-ao-ggplot.html"><a href="introducao-ao-ggplot.html#recomendacoes"><i class="fa fa-check"></i><b>4.7</b> Recomendações</a></li>
 </ul></li>
 </ul>
 
@@ -239,7 +245,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>Listas, que pode ser chamado de vetor recursivo e pode conter outras listas.</li>
 </ul>
-<p>Falando de uma maneira simples, vetores atômicos são homogêneos, ou seja, apenas aceitam um tipo, mas, e se eu colocar outro tipo? Simples, é convertido pelo tipo mais forte 👩‍🔬.</p>
+<p>Falando de uma maneira simples, vetores atômicos são homogêneos, ou seja, apenas aceitam um tipo, mas, e se eu colocar outro tipo? Simples, é convertido pelo tipo mais forte 👨‍🔬.</p>
 <p>Se estiver pensando que existe uma hierarquia de tipos, pensou certo, existe sim. Essa figura abaixo foi retirada do livro do <em>Hadley</em> - <em>R 4 DS</em>.</p>
 <p><img src="images/tipos.png" /></p>
 <p>Ibservando a Figura, é possível notar a hierarquia, mas, ela deve ser lida de baixo para cima. Seguindo essa ordem:</p>
@@ -259,7 +265,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb12-6" data-line-number="6">  </a>
 <a class="sourceLine" id="cb12-7" data-line-number="7">  <span class="co"># Vetor de caractere</span></a>
 <a class="sourceLine" id="cb12-8" data-line-number="8">  vetor_char &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;ola&#39;</span>, <span class="st">&#39;pessoal&#39;</span>, <span class="st">&#39;xd&#39;</span>)</a></code></pre></div>
-<p>Tudo lindo e maravilhoso 👩‍🔬, mas, e as conversões?</p>
+<p>Tudo lindo e maravilhoso 🧪, mas, e as conversões?</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1">  <span class="co"># Esse é um vetor misturado</span></a>
 <a class="sourceLine" id="cb13-2" data-line-number="2">  vetor_misturado &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;sou legal&quot;</span>, <span class="ot">FALSE</span>, <span class="dv">21</span>)</a>
 <a class="sourceLine" id="cb13-3" data-line-number="3"></a>
@@ -651,7 +657,7 @@ Bom, no <em>R</em>, a estrutura de decisão é bem parecida com a do <em>Java</e
 </tr>
 </tbody>
 </table>
-<p>Aee, melhorou um pouco, não? 🔵. Podemos melhorar ainda mais, como? Usando <code>%&gt;%</code> esse símbolo é chamado de <strong>pipe</strong> ou <strong>então</strong>, basicamente, é a <code>pipe</code> utilizada no <strong>Linux</strong>, mas o que faz?</p>
+<p>Aee, melhorou um pouco, não? 🔹. Podemos melhorar ainda mais, como? Usando <code>%&gt;%</code> esse símbolo é chamado de <strong>pipe</strong> ou <strong>então</strong>, basicamente, é a <code>pipe</code> utilizada no <strong>Linux</strong>, mas o que faz?</p>
 <p>A <strong>pipe</strong> passa a resposta da primeira atribuição para o primeiro parâmetro da função seguinte, desta forma:</p>
 <div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb61-1" data-line-number="1">meu_vetor &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">9</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mean</span>()</a>
 <a class="sourceLine" id="cb61-2" data-line-number="2">  </a>
@@ -687,7 +693,7 @@ Bom, no <em>R</em>, a estrutura de decisão é bem parecida com a do <em>Java</e
 </tr>
 </tbody>
 </table>
-<p>Fico bem mais legível né 🌝. Essa é a principal função da <strong>pipe</strong>, tornar o código reprodutível.</p>
+<p>Fico bem mais legível né 😎. Essa é a principal função da <strong>pipe</strong>, tornar o código reprodutível.</p>
 </div>
 <div id="para-saber-mais" class="section level2">
 <h2><span class="header-section-number">2.6</span> Para saber mais</h2>

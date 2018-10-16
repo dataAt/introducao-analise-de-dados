@@ -164,6 +164,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="4" data-path="introducao-ao-ggplot.html"><a href="introducao-ao-ggplot.html"><i class="fa fa-check"></i><b>4</b> Introdução ao ggplot 📊</a><ul>
 <li class="chapter" data-level="4.1" data-path="introducao-ao-ggplot.html"><a href="introducao-ao-ggplot.html#o-que-e-o-ggplot"><i class="fa fa-check"></i><b>4.1</b> O que é o <code>ggplot</code>?</a></li>
+<li class="chapter" data-level="4.2" data-path="introducao-ao-ggplot.html"><a href="introducao-ao-ggplot.html#mapeamente-estetico"><i class="fa fa-check"></i><b>4.2</b> Mapeamente Estético</a></li>
+<li class="chapter" data-level="4.3" data-path="introducao-ao-ggplot.html"><a href="introducao-ao-ggplot.html#objetos-geometricos"><i class="fa fa-check"></i><b>4.3</b> Objetos geométricos</a></li>
+<li class="chapter" data-level="4.4" data-path="introducao-ao-ggplot.html"><a href="introducao-ao-ggplot.html#escalas"><i class="fa fa-check"></i><b>4.4</b> Escalas</a></li>
+<li class="chapter" data-level="4.5" data-path="introducao-ao-ggplot.html"><a href="introducao-ao-ggplot.html#subplots"><i class="fa fa-check"></i><b>4.5</b> Subplots</a></li>
+<li class="chapter" data-level="4.6" data-path="introducao-ao-ggplot.html"><a href="introducao-ao-ggplot.html#temas"><i class="fa fa-check"></i><b>4.6</b> Temas</a></li>
+<li class="chapter" data-level="4.7" data-path="introducao-ao-ggplot.html"><a href="introducao-ao-ggplot.html#recomendacoes"><i class="fa fa-check"></i><b>4.7</b> Recomendações</a></li>
 </ul></li>
 </ul>
 
@@ -221,7 +227,7 @@ Pode-se entender que as <code>Series</code> são estruturas de dados simples, as
 <p>Vamos começar a utilização, para facilitar o entendimento.</p>
 <div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb66-1" data-line-number="1"><span class="co"># Estes comandos não devem ser executados em seu terminal</span></a>
 <a class="sourceLine" id="cb66-2" data-line-number="2"><span class="kw">library</span>(reticulate) </a>
-<a class="sourceLine" id="cb66-3" data-line-number="3"><span class="kw">use_python</span>(<span class="st">&quot;~/ambiente_virtual/bin/python&quot;</span>)</a></code></pre></div>
+<a class="sourceLine" id="cb66-3" data-line-number="3"><span class="kw">use_python</span>(<span class="st">&quot;~/ambiente_virtual/bin/python3&quot;</span>)</a></code></pre></div>
 <p>Para iniciar, vamos criar um simples <code>Series</code> e colocar dentro de uma variável. Para isto, importando a biblioteca pandas, e passamos para ela o ‘apelido’ de <code>pd</code>.</p>
 <p>Em seguida, vamos criar uma <code>Series</code> simples, passando como parâmetro de entrada uma lista com três valores, veja:</p>
 <div class="sourceCode" id="cb67"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb67-1" data-line-number="1"><span class="im">import</span> pandas <span class="im">as</span> pd</a>
@@ -410,7 +416,7 @@ Pode-se entender que as <code>Series</code> são estruturas de dados simples, as
 <div class="sourceCode" id="cb102"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb102-1" data-line-number="1">json_frame <span class="op">=</span> pd.read_json(<span class="st">&#39;https://www.reddit.com/r/technology/.json&#39;</span>)</a>
 <a class="sourceLine" id="cb102-2" data-line-number="2"><span class="bu">print</span>(json_frame.head())</a></code></pre></div>
 <pre><code>##              kind                                               data
-## after     Listing                                          t3_9oc3qv
+## after     Listing                                          t3_9ohjfa
 ## before    Listing                                               None
 ## children  Listing  [{&#39;kind&#39;: &#39;t3&#39;, &#39;data&#39;: {&#39;approved_at_utc&#39;: No...
 ## dist      Listing                                                 27
