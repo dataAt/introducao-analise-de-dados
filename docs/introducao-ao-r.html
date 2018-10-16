@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title></title>
+  <title>intro-analise-de-dados.utf8.md</title>
   <meta name="description" content="">
   <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
 
-  <meta property="og:title" content="" />
+  <meta property="og:title" content="intro-analise-de-dados.utf8.md" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="" />
+  <meta name="twitter:title" content="intro-analise-de-dados.utf8.md" />
   
   
   
@@ -48,41 +48,67 @@
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 </head>
@@ -120,8 +146,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="2.3" data-path="introducao-ao-r.html"><a href="introducao-ao-r.html#estruturas-de-decisao"><i class="fa fa-check"></i><b>2.3</b> Estruturas de decisão</a></li>
 <li class="chapter" data-level="2.4" data-path="introducao-ao-r.html"><a href="introducao-ao-r.html#iteracao"><i class="fa fa-check"></i><b>2.4</b> Iteração</a></li>
-<li class="chapter" data-level="2.5" data-path="introducao-ao-r.html"><a href="introducao-ao-r.html#para-saber-mais"><i class="fa fa-check"></i><b>2.5</b> Para saber mais</a><ul>
-<li class="chapter" data-level="2.5.1" data-path="introducao-ao-r.html"><a href="introducao-ao-r.html#materias-utilizados-como-base"><i class="fa fa-check"></i><b>2.5.1</b> Materias utilizados como base</a></li>
+<li class="chapter" data-level="2.5" data-path="introducao-ao-r.html"><a href="introducao-ao-r.html#manipulacao-de-dados"><i class="fa fa-check"></i><b>2.5</b> Manipulação de dados</a></li>
+<li class="chapter" data-level="2.6" data-path="introducao-ao-r.html"><a href="introducao-ao-r.html#para-saber-mais"><i class="fa fa-check"></i><b>2.6</b> Para saber mais</a><ul>
+<li class="chapter" data-level="2.6.1" data-path="introducao-ao-r.html"><a href="introducao-ao-r.html#materias-utilizados-como-base"><i class="fa fa-check"></i><b>2.6.1</b> Materias utilizados como base</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="introducao-ao-python.html"><a href="introducao-ao-python.html"><i class="fa fa-check"></i><b>3</b> Introdução ao Python 🚀</a><ul>
@@ -135,7 +162,15 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="introducao-ao-python.html"><a href="introducao-ao-python.html#para-saber-mais-1"><i class="fa fa-check"></i><b>3.3</b> Para saber mais</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="introducao-ao-ggplot.html"><a href="introducao-ao-ggplot.html"><i class="fa fa-check"></i><b>4</b> Introdução ao ggplot 📊</a></li>
+<li class="chapter" data-level="4" data-path="introducao-ao-ggplot.html"><a href="introducao-ao-ggplot.html"><i class="fa fa-check"></i><b>4</b> Introdução ao ggplot 📊</a><ul>
+<li class="chapter" data-level="4.1" data-path="introducao-ao-ggplot.html"><a href="introducao-ao-ggplot.html#o-que-e-o-ggplot"><i class="fa fa-check"></i><b>4.1</b> O que é o <code>ggplot</code>?</a></li>
+<li class="chapter" data-level="4.2" data-path="introducao-ao-ggplot.html"><a href="introducao-ao-ggplot.html#mapeamente-estetico"><i class="fa fa-check"></i><b>4.2</b> Mapeamente Estético</a></li>
+<li class="chapter" data-level="4.3" data-path="introducao-ao-ggplot.html"><a href="introducao-ao-ggplot.html#objetos-geometricos"><i class="fa fa-check"></i><b>4.3</b> Objetos geométricos</a></li>
+<li class="chapter" data-level="4.4" data-path="introducao-ao-ggplot.html"><a href="introducao-ao-ggplot.html#escalas"><i class="fa fa-check"></i><b>4.4</b> Escalas</a></li>
+<li class="chapter" data-level="4.5" data-path="introducao-ao-ggplot.html"><a href="introducao-ao-ggplot.html#subplots"><i class="fa fa-check"></i><b>4.5</b> Subplots</a></li>
+<li class="chapter" data-level="4.6" data-path="introducao-ao-ggplot.html"><a href="introducao-ao-ggplot.html#temas"><i class="fa fa-check"></i><b>4.6</b> Temas</a></li>
+<li class="chapter" data-level="4.7" data-path="introducao-ao-ggplot.html"><a href="introducao-ao-ggplot.html#recomendacoes"><i class="fa fa-check"></i><b>4.7</b> Recomendações</a></li>
+</ul></li>
 </ul>
 
       </nav>
@@ -160,39 +195,39 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="definicao-de-variaveis" class="section level2">
 <h2><span class="header-section-number">2.1</span> Definição de variáveis</h2>
 <p>Para atribuir qualquer valor em uma variável usamos a <code>&lt;-</code> ou <code>=</code>, segundo Hadley, é boas práticas usar <code>&lt;-</code>, neste capítulo utilizaremos a seta por motivos de boas práticas. Para declarar as variáveis, use:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  a &lt;-<span class="st"> &quot;Legal mesmo!&quot;</span>
-  b &lt;-<span class="st"> </span><span class="dv">4224</span>
-  <span class="dv">22</span> -&gt;<span class="st"> </span>c</code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">  a &lt;-<span class="st"> &quot;Legal mesmo!&quot;</span></a>
+<a class="sourceLine" id="cb4-2" data-line-number="2">  b &lt;-<span class="st"> </span><span class="dv">4224</span></a>
+<a class="sourceLine" id="cb4-3" data-line-number="3">  <span class="dv">22</span> -&gt;<span class="st"> </span>c</a></code></pre></div>
 <div id="tipos-primitivos" class="section level3">
 <h3><span class="header-section-number">2.1.1</span> Tipos primitivos</h3>
 <p>Agora que sabemos atribuir valores a uma variável, vamos falar sobre os tipos primitivos, existe a classe númerica “pai” que é o <code>numeric</code>, basicamente o <code>numeric</code> é todo número declarado sem sufixo e o seu tipo é <code>double</code>, mas podemos definir o tipo <code>integer</code> colocando <code>L</code> na frente do valor, e o <code>complex</code> que por sua vez usa o <code>i</code> na frente do valor. Há também a classe <code>logical</code> que representam os valores boleanos <code>TRUE</code> e <code>FALSE</code>. Por último, a classe <code>character</code> que representa os caracteres.</p>
 <p>Para declarar cada tipo:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="co"># Inteiro</span>
-  a &lt;-<span class="st"> </span>7L
-  
-  <span class="co"># Double</span>
-  b =<span class="st"> </span><span class="fl">14.01</span>
-  
-  <span class="co"># Boleano</span>
-  k &lt;-<span class="st"> </span><span class="ot">FALSE</span>
-  
-  <span class="co"># Complexo</span>
-  g &lt;-<span class="st"> </span>12i 
-  
-  <span class="co"># Caractere</span>
-  couse &lt;-<span class="st"> &#39;cool&#39;</span>
-  
-  <span class="co"># Para ver inspecionar o valor das variáveis</span>
-  b</code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">  <span class="co"># Inteiro</span></a>
+<a class="sourceLine" id="cb5-2" data-line-number="2">  a &lt;-<span class="st"> </span>7L</a>
+<a class="sourceLine" id="cb5-3" data-line-number="3">  </a>
+<a class="sourceLine" id="cb5-4" data-line-number="4">  <span class="co"># Double</span></a>
+<a class="sourceLine" id="cb5-5" data-line-number="5">  b =<span class="st"> </span><span class="fl">14.01</span></a>
+<a class="sourceLine" id="cb5-6" data-line-number="6">  </a>
+<a class="sourceLine" id="cb5-7" data-line-number="7">  <span class="co"># Boleano</span></a>
+<a class="sourceLine" id="cb5-8" data-line-number="8">  k &lt;-<span class="st"> </span><span class="ot">FALSE</span></a>
+<a class="sourceLine" id="cb5-9" data-line-number="9">  </a>
+<a class="sourceLine" id="cb5-10" data-line-number="10">  <span class="co"># Complexo</span></a>
+<a class="sourceLine" id="cb5-11" data-line-number="11">  g &lt;-<span class="st"> </span>12i </a>
+<a class="sourceLine" id="cb5-12" data-line-number="12">  </a>
+<a class="sourceLine" id="cb5-13" data-line-number="13">  <span class="co"># Caractere</span></a>
+<a class="sourceLine" id="cb5-14" data-line-number="14">  couse &lt;-<span class="st"> &#39;cool&#39;</span></a>
+<a class="sourceLine" id="cb5-15" data-line-number="15">  </a>
+<a class="sourceLine" id="cb5-16" data-line-number="16">  <span class="co"># Para ver inspecionar o valor das variáveis</span></a>
+<a class="sourceLine" id="cb5-17" data-line-number="17">  b</a></code></pre></div>
 <pre><code>## [1] 14.01</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="co"># Para ver as classes</span>
-  <span class="kw">class</span>(a)</code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1">  <span class="co"># Para ver as classes</span></a>
+<a class="sourceLine" id="cb7-2" data-line-number="2">  <span class="kw">class</span>(a)</a></code></pre></div>
 <pre><code>## [1] &quot;integer&quot;</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="co"># Para ver o tipo</span>
-  <span class="kw">typeof</span>(b)</code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">  <span class="co"># Para ver o tipo</span></a>
+<a class="sourceLine" id="cb9-2" data-line-number="2">  <span class="kw">typeof</span>(b)</a></code></pre></div>
 <pre><code>## [1] &quot;double&quot;</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="co"># Para remove-las</span>
-  <span class="kw">rm</span>(a)</code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1">  <span class="co"># Para remove-las</span></a>
+<a class="sourceLine" id="cb11-2" data-line-number="2">  <span class="kw">rm</span>(a)</a></code></pre></div>
 <blockquote>
 <p>se quiser saber mais sobre o tipo <code>complex</code>, deixamos um link no subcapítulo <em>Para saber mais</em>.</p>
 </blockquote>
@@ -210,12 +245,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <ul>
 <li>Listas, que pode ser chamado de vetor recursivo e pode conter outras listas.</li>
 </ul>
-<p>Falando de uma maneira simples, vetores atômicos são homogêneos, ou seja, apenas aceitam um tipo, mas, e se eu colocar outro tipo? Simples, é convertido pelo tipo mais forte 👩‍🔬.</p>
+<p>Falando de uma maneira simples, vetores atômicos são homogêneos, ou seja, apenas aceitam um tipo, mas, e se eu colocar outro tipo? Simples, é convertido pelo tipo mais forte 👨‍🔬.</p>
 <p>Se estiver pensando que existe uma hierarquia de tipos, pensou certo, existe sim. Essa figura abaixo foi retirada do livro do <em>Hadley</em> - <em>R 4 DS</em>.</p>
-<div class="figure">
-<img src="images/tipos.png" />
-
-</div>
+<p><img src="images/tipos.png" /></p>
 <p>Ibservando a Figura, é possível notar a hierarquia, mas, ela deve ser lida de baixo para cima. Seguindo essa ordem:</p>
 <ul>
 <li><code>character</code></li>
@@ -225,49 +257,49 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><code>logical</code></li>
 </ul>
 <p>Todo vetor em R é declaro usando o <code>c()</code>, fica assim:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="co"># Vetor lógico</span>
-  vetor_boleano &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">FALSE</span>, <span class="ot">TRUE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>)
-  
-  <span class="co"># Vetor númerico</span>
-  vetor_numerico &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">3.14</span>, <span class="fl">6.28</span>, <span class="fl">2.3</span>)
-  
-  <span class="co"># Vetor de caractere</span>
-  vetor_char &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;ola&#39;</span>, <span class="st">&#39;pessoal&#39;</span>, <span class="st">&#39;xd&#39;</span>)</code></pre></div>
-<p>Tudo lindo e maravilhoso 👩‍🔬, mas, e as conversões?</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="co"># Esse é um vetor misturado</span>
-  vetor_misturado &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;sou legal&quot;</span>, <span class="ot">FALSE</span>, <span class="dv">21</span>)
-
-  <span class="co"># Podemos verificá-lo assim</span>
-  <span class="kw">is.atomic</span>(vetor_misturado)</code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1">  <span class="co"># Vetor lógico</span></a>
+<a class="sourceLine" id="cb12-2" data-line-number="2">  vetor_boleano &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">FALSE</span>, <span class="ot">TRUE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb12-3" data-line-number="3">  </a>
+<a class="sourceLine" id="cb12-4" data-line-number="4">  <span class="co"># Vetor númerico</span></a>
+<a class="sourceLine" id="cb12-5" data-line-number="5">  vetor_numerico &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">3.14</span>, <span class="fl">6.28</span>, <span class="fl">2.3</span>)</a>
+<a class="sourceLine" id="cb12-6" data-line-number="6">  </a>
+<a class="sourceLine" id="cb12-7" data-line-number="7">  <span class="co"># Vetor de caractere</span></a>
+<a class="sourceLine" id="cb12-8" data-line-number="8">  vetor_char &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;ola&#39;</span>, <span class="st">&#39;pessoal&#39;</span>, <span class="st">&#39;xd&#39;</span>)</a></code></pre></div>
+<p>Tudo lindo e maravilhoso 🧪, mas, e as conversões?</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1">  <span class="co"># Esse é um vetor misturado</span></a>
+<a class="sourceLine" id="cb13-2" data-line-number="2">  vetor_misturado &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;sou legal&quot;</span>, <span class="ot">FALSE</span>, <span class="dv">21</span>)</a>
+<a class="sourceLine" id="cb13-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb13-4" data-line-number="4">  <span class="co"># Podemos verificá-lo assim</span></a>
+<a class="sourceLine" id="cb13-5" data-line-number="5">  <span class="kw">is.atomic</span>(vetor_misturado)</a></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 <p>Então, seguindo a ideia de hierarquia de tipos, esse vetor será convertido para <code>character</code> e continuará atômico 🥁.</p>
 <p>Por outro lado, as Listas são heterogênea, ou seja, aceitam diversos tipos, sendo Lista de Lista, por isso, é chamado de vetor recursivo. Podemos implementá-la usando <code>list()</code>, desse modo:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="co"># Lista de boleanos</span>
-  lista_boleano &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="ot">FALSE</span>, <span class="ot">TRUE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>)
-  
-  <span class="co"># Lista de inteiros</span>
-  lista_inteiro &lt;-<span class="st"> </span><span class="kw">list</span>(12L, 10L, 7L)</code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1">  <span class="co"># Lista de boleanos</span></a>
+<a class="sourceLine" id="cb15-2" data-line-number="2">  lista_boleano &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="ot">FALSE</span>, <span class="ot">TRUE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb15-3" data-line-number="3">  </a>
+<a class="sourceLine" id="cb15-4" data-line-number="4">  <span class="co"># Lista de inteiros</span></a>
+<a class="sourceLine" id="cb15-5" data-line-number="5">  lista_inteiro &lt;-<span class="st"> </span><span class="kw">list</span>(12L, 10L, 7L)</a></code></pre></div>
 <p>Tudo maravilindo, mas, e a ideia de vários tipos? foi tudo uma mentira? 🤷</p>
 <p>Não foi mentira, vamos criar uma lista de diversos tipos, assim:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="co"># Minha lista com tudos os tipos tudo</span>
-  lista_misturada &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="ot">FALSE</span>, 12L, <span class="st">&#39;t&#39;</span>, 2i)
-  
-  <span class="co"># Será ela atomica?</span>
-  <span class="kw">is.atomic</span>(lista_misturada)</code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1">  <span class="co"># Minha lista com tudos os tipos tudo</span></a>
+<a class="sourceLine" id="cb16-2" data-line-number="2">  lista_misturada &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="ot">FALSE</span>, 12L, <span class="st">&#39;t&#39;</span>, 2i)</a>
+<a class="sourceLine" id="cb16-3" data-line-number="3">  </a>
+<a class="sourceLine" id="cb16-4" data-line-number="4">  <span class="co"># Será ela atomica?</span></a>
+<a class="sourceLine" id="cb16-5" data-line-number="5">  <span class="kw">is.atomic</span>(lista_misturada)</a></code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
 <p>Viu, não era mentira, temos uma lista não atômica, ou seja, de vários os tipos hehe. Mas será ela uma lista mesmo? Não é uma coisa do além? 🧛🏿‍♂️</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="co"># Você é uma lista mesmo?</span>
-  <span class="kw">is.list</span>(lista_boleano)</code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1">  <span class="co"># Você é uma lista mesmo?</span></a>
+<a class="sourceLine" id="cb18-2" data-line-number="2">  <span class="kw">is.list</span>(lista_boleano)</a></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 <p>Ufa, ainda bem! 😂 . Esqueci de dizer, que podemos checar o tamanhos dos nossos vetores usando <code>length()</code>.</p>
 <p>Já sabemos de tipos de vetores, agora vamos para as matrizes. Bom, as matrizes seguem a mesma ideia dos vetores atômicos, confesso que não uso com frequência, mas sempre é válido saber. Podemos implementá-la usando <code>matrix()</code>, desse modo:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="kw">library</span>(knitr)
-
-  <span class="co"># Minha matriz com números inteiros com caractere</span>
-   matriz &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dt">data =</span> <span class="kw">c</span>(<span class="dv">1</span>:<span class="dv">25</span>, <span class="kw">rep</span>(<span class="st">&quot;legal&quot;</span>, <span class="dv">5</span>)),       <span class="dt">nrow =</span> <span class="dv">5</span>, <span class="dt">ncol=</span><span class="dv">6</span>)
-   
-   <span class="co"># Para ver nossa matriz</span>
-   knitr::<span class="kw">kable</span>(matriz)</code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" data-line-number="1">  <span class="kw">library</span>(knitr)</a>
+<a class="sourceLine" id="cb20-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb20-3" data-line-number="3">  <span class="co"># Minha matriz com números inteiros com caractere</span></a>
+<a class="sourceLine" id="cb20-4" data-line-number="4">   matriz &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dt">data =</span> <span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">25</span>, <span class="kw">rep</span>(<span class="st">&quot;legal&quot;</span>, <span class="dv">5</span>)),       <span class="dt">nrow =</span> <span class="dv">5</span>, <span class="dt">ncol=</span><span class="dv">6</span>)</a>
+<a class="sourceLine" id="cb20-5" data-line-number="5">   </a>
+<a class="sourceLine" id="cb20-6" data-line-number="6">   <span class="co"># Para ver nossa matriz</span></a>
+<a class="sourceLine" id="cb20-7" data-line-number="7">   knitr<span class="op">::</span><span class="kw">kable</span>(matriz)</a></code></pre></div>
 <table>
 <tbody>
 <tr class="odd">
@@ -313,52 +345,52 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </tbody>
 </table>
 <p>Então, seguindo a hirarquia de tipos, a nossa matriz será convertida para <code>character</code>. Podemos verificar se é uma matriz desse jeito:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="co"># É matriz mesmo?</span>
-  <span class="kw">is.matrix</span>(matriz)</code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" data-line-number="1">  <span class="co"># É matriz mesmo?</span></a>
+<a class="sourceLine" id="cb21-2" data-line-number="2">  <span class="kw">is.matrix</span>(matriz)</a></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="co"># Sou legal ou chato?</span>
-  matriz[<span class="dv">5</span>,<span class="dv">6</span>]</code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" data-line-number="1">  <span class="co"># Sou legal ou chato?</span></a>
+<a class="sourceLine" id="cb23-2" data-line-number="2">  matriz[<span class="dv">5</span>,<span class="dv">6</span>]</a></code></pre></div>
 <pre><code>## [1] &quot;legal&quot;</code></pre>
 <p>Podemos acessar os valores através dos indices de linha e coluna <code>matriz[linha, coluna]</code>.</p>
 </div>
 <div id="dataframe" class="section level3">
 <h3><span class="header-section-number">2.1.3</span> DataFrame</h3>
 <p>Para explicar o conceito de dataframe, vamos com a prática, ler um conjuto de dados em csv e observar algumas características:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="co"># Lendo nosso conjunto de dados</span>
-  meu_dataframe &lt;-<span class="st"> </span><span class="kw">read.csv2</span>(<span class="dt">file =</span> <span class="st">&quot;./nome_do_csv.csv&quot;</span>,       <span class="dt">sep=</span><span class="st">&quot;,&quot;</span>)
-  
-  <span class="co"># Verificando a classe do nosso conjunto de dados</span>
-  <span class="kw">class</span>(meu_dataframe)</code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" data-line-number="1">  <span class="co"># Lendo nosso conjunto de dados</span></a>
+<a class="sourceLine" id="cb25-2" data-line-number="2">  meu_dataframe &lt;-<span class="st"> </span><span class="kw">read.csv2</span>(<span class="dt">file =</span> <span class="st">&quot;./nome_do_csv.csv&quot;</span>,       <span class="dt">sep=</span><span class="st">&quot;,&quot;</span>)</a>
+<a class="sourceLine" id="cb25-3" data-line-number="3">  </a>
+<a class="sourceLine" id="cb25-4" data-line-number="4">  <span class="co"># Verificando a classe do nosso conjunto de dados</span></a>
+<a class="sourceLine" id="cb25-5" data-line-number="5">  <span class="kw">class</span>(meu_dataframe)</a></code></pre></div>
 <pre><code>## [1] &quot;data.frame&quot;</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="co"># Verificando o tipo do nosso conjunto de dados</span>
-  <span class="kw">typeof</span>(meu_dataframe)</code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" data-line-number="1">  <span class="co"># Verificando o tipo do nosso conjunto de dados</span></a>
+<a class="sourceLine" id="cb27-2" data-line-number="2">  <span class="kw">typeof</span>(meu_dataframe)</a></code></pre></div>
 <pre><code>## [1] &quot;list&quot;</code></pre>
 <p>Podemos tirar algumas conclusões, a primeira é que existe é um classe chamada <code>data.frame</code> que é do tipo <code>list</code>, olha só, nós sabemos que uma lista <em>R</em> é heterogênea, então sabemos que nosso <code>dataframe</code> pode ter vários tipos, sendo assim, não atômico, mas, será mesmo? Vamos checar 😀</p>
 <blockquote>
 <p>A ideia do <code>read.csv</code> é ler um csv e passar para dataframe no R</p>
 </blockquote>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="co"># Verificando se é atomico nosso df</span>
-  <span class="kw">is.atomic</span>(meu_dataframe)</code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" data-line-number="1">  <span class="co"># Verificando se é atomico nosso df</span></a>
+<a class="sourceLine" id="cb29-2" data-line-number="2">  <span class="kw">is.atomic</span>(meu_dataframe)</a></code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
 <p>Opa, então sabemos que <code>dataframe</code> é uma classe no <em>R</em> tratada como um tipo <code>list</code>que por sua pode ter diversos tipos. Mas, afinal, o que é um dataframe? ✋</p>
 <p>Vou usar a definição feita pelo livro de <a href="tps://cdr.ibpad.com.br">Limpeza de dados em R</a> - Tipo especial de lista, onde cada coluna é um vetor de apenas um tipo e todas as colunas têm o mesmo número de registros. É o tipo mais utilizado para se trabalhar com dados.</p>
 <p>Que definição interessante, então, cada ‘coluna’ é vetor atômico?</p>
 <p>Para acessar cada coluna do <code>data.frame</code> usamos o simbolo <code>$</code>. Agora, vamos responder a pergunta, desse modo:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="co"># é atomico?</span>
-  <span class="kw">is.atomic</span>(meu_dataframe$Pclass) </code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" data-line-number="1">  <span class="co"># é atomico?</span></a>
+<a class="sourceLine" id="cb31-2" data-line-number="2">  <span class="kw">is.atomic</span>(meu_dataframe<span class="op">$</span>Pclass) </a></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 <p>Olha só, é atômico. Então, vamos criar uma dataframe, para fixar o aprendizado:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">   <span class="co"># DataFrame[3]</span>
-   data_frame &lt;-<span class="st"> </span><span class="kw">data.frame</span>(
-     <span class="dt">Risco=</span><span class="kw">c</span>(<span class="ot">FALSE</span>,<span class="ot">FALSE</span>, <span class="ot">FALSE</span>, <span class="ot">FALSE</span>,<span class="ot">TRUE</span>),                <span class="dt">Animal=</span><span class="kw">c</span>(<span class="st">&quot;Cachorro&quot;</span>, <span class="st">&quot;Gato&quot;</span>, <span class="st">&quot;Capivara&quot;</span>, <span class="st">&quot;Girafa&quot;</span>, <span class="st">&quot;Macaco&quot;</span>),
-     <span class="dt">Periculosidade=</span><span class="kw">c</span>(<span class="dv">200</span>, <span class="dv">400</span>, <span class="dv">0</span>, <span class="dv">7</span>, <span class="dv">1000</span>))
-  
-  <span class="co"># Podemos acessar os valores individuais usando o &#39;$&#39;</span>
-  data_frame$Animal</code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" data-line-number="1">   <span class="co"># DataFrame[3]</span></a>
+<a class="sourceLine" id="cb33-2" data-line-number="2">   data_frame &lt;-<span class="st"> </span><span class="kw">data.frame</span>(</a>
+<a class="sourceLine" id="cb33-3" data-line-number="3">     <span class="dt">Risco=</span><span class="kw">c</span>(<span class="ot">FALSE</span>,<span class="ot">FALSE</span>, <span class="ot">FALSE</span>, <span class="ot">FALSE</span>,<span class="ot">TRUE</span>),                <span class="dt">Animal=</span><span class="kw">c</span>(<span class="st">&quot;Cachorro&quot;</span>, <span class="st">&quot;Gato&quot;</span>, <span class="st">&quot;Capivara&quot;</span>, <span class="st">&quot;Girafa&quot;</span>, <span class="st">&quot;Macaco&quot;</span>),</a>
+<a class="sourceLine" id="cb33-4" data-line-number="4">     <span class="dt">Periculosidade=</span><span class="kw">c</span>(<span class="dv">200</span>, <span class="dv">400</span>, <span class="dv">0</span>, <span class="dv">7</span>, <span class="dv">1000</span>))</a>
+<a class="sourceLine" id="cb33-5" data-line-number="5">  </a>
+<a class="sourceLine" id="cb33-6" data-line-number="6">  <span class="co"># Podemos acessar os valores individuais usando o &#39;$&#39;</span></a>
+<a class="sourceLine" id="cb33-7" data-line-number="7">  data_frame<span class="op">$</span>Animal</a></code></pre></div>
 <pre><code>## [1] Cachorro Gato     Capivara Girafa   Macaco  
 ## Levels: Cachorro Capivara Gato Girafa Macaco</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="co"># Visualização das lihas iniciais</span>
-  knitr::<span class="kw">kable</span>(<span class="kw">head</span>(data_frame, <span class="dv">3</span>)) </code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" data-line-number="1">  <span class="co"># Visualização das lihas iniciais</span></a>
+<a class="sourceLine" id="cb35-2" data-line-number="2">  knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">head</span>(data_frame, <span class="dv">3</span>)) </a></code></pre></div>
 <table>
 <thead>
 <tr class="header">
@@ -393,20 +425,20 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="dicas-uteis" class="section level3">
 <h3><span class="header-section-number">2.2.1</span> Dicas úteis</h3>
 <p>Para importar algum pacote do <em>R</em> podemos usar o comando <code>library()</code> e parar baixar utilzamos <code>install.packages()</code>. Caso esteja com dúvida sobre determinida função de algum pacote, use o comando <code>?nome_da_funcao()</code></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="co"># Para usar algum pacote</span>
-  <span class="kw">library</span>(kohonen)
-
-  <span class="co"># Para instalar algum pacote que esteja</span>
-  <span class="co">#install.packages(&quot;meupacotefavorite&quot;)</span>
-  
-  <span class="co"># Função do pacote kohonen</span>
-  ?<span class="kw">som</span>()</code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb36-1" data-line-number="1">  <span class="co"># Para usar algum pacote</span></a>
+<a class="sourceLine" id="cb36-2" data-line-number="2">  <span class="kw">library</span>(kohonen)</a>
+<a class="sourceLine" id="cb36-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb36-4" data-line-number="4">  <span class="co"># Para instalar algum pacote que esteja</span></a>
+<a class="sourceLine" id="cb36-5" data-line-number="5">  <span class="co">#install.packages(&quot;meupacotefavorite&quot;)</span></a>
+<a class="sourceLine" id="cb36-6" data-line-number="6">  </a>
+<a class="sourceLine" id="cb36-7" data-line-number="7">  <span class="co"># Função do pacote kohonen</span></a>
+<a class="sourceLine" id="cb36-8" data-line-number="8">  ?<span class="kw">som</span>()</a></code></pre></div>
 <p>Para especificar algum diretório para trabalhar, usamos o comando <code>setwd()</code> e para ver em qual diretório estamos trabalhando <code>getwd()</code>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="co"># Para verificar seu diretório atual</span>
-  <span class="kw">getwd</span>() </code></pre></div>
-<pre><code>## [1] &quot;/home/felipe/Documentos/cursos/ultimo-dia/introducao-analise-de-dados/src-material&quot;</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="co"># Para definir um novo diretório</span>
-  <span class="co">#setwd(&quot;~/R/ggsom/&quot;)</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" data-line-number="1">  <span class="co"># Para verificar seu diretório atual</span></a>
+<a class="sourceLine" id="cb37-2" data-line-number="2">  <span class="kw">getwd</span>() </a></code></pre></div>
+<pre><code>## [1] &quot;/home/felipe/R/introducao-analise-de-dados/src-material&quot;</code></pre>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb39-1" data-line-number="1">  <span class="co"># Para definir um novo diretório</span></a>
+<a class="sourceLine" id="cb39-2" data-line-number="2">  <span class="co">#setwd(&quot;~/R/ggsom/&quot;)</span></a></code></pre></div>
 </div>
 <div id="estatisca-basica" class="section level3">
 <h3><span class="header-section-number">2.2.2</span> Estatisca básica</h3>
@@ -421,15 +453,15 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul>
 <p>Para verificar o desvio padrão do conjunto, podemos utilizar a função <code>sd()</code> do pacote <code>stats</code> do <em>R</em>. Podemos verificar a média usando o <code>mean()</code> que é uma função do pacote <code>base</code> do <em>R</em> e a mediana usando <code>median()</code> do pacote <code>stats</code>.</p>
 <p>Como demonstração, vamos utilizar o conjunto de dados do filme <em>star wars</em> ☺️</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="co"># Vamos usar o dado do filme Star Wars do pacote dplyr*</span>
-  <span class="kw">suppressMessages</span>(<span class="kw">library</span>(dplyr))
-  starwars &lt;-<span class="st"> </span>dplyr::starwars
-  
-  <span class="co"># Desse modo o dataset é carregado no nosso ambiente, use ls()</span>
-  <span class="kw">data</span>(starwars)
-  
-  <span class="co"># Vamos visualizar o dado</span>
-  dplyr::<span class="kw">glimpse</span>(starwars)</code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb40-1" data-line-number="1">  <span class="co"># Vamos usar o dado do filme Star Wars do pacote dplyr*</span></a>
+<a class="sourceLine" id="cb40-2" data-line-number="2">  <span class="kw">suppressMessages</span>(<span class="kw">library</span>(dplyr))</a>
+<a class="sourceLine" id="cb40-3" data-line-number="3">  starwars &lt;-<span class="st"> </span>dplyr<span class="op">::</span>starwars</a>
+<a class="sourceLine" id="cb40-4" data-line-number="4">  </a>
+<a class="sourceLine" id="cb40-5" data-line-number="5">  <span class="co"># Desse modo o dataset é carregado no nosso ambiente, use ls()</span></a>
+<a class="sourceLine" id="cb40-6" data-line-number="6">  <span class="kw">data</span>(starwars)</a>
+<a class="sourceLine" id="cb40-7" data-line-number="7">  </a>
+<a class="sourceLine" id="cb40-8" data-line-number="8">  <span class="co"># Vamos visualizar o dado</span></a>
+<a class="sourceLine" id="cb40-9" data-line-number="9">  dplyr<span class="op">::</span><span class="kw">glimpse</span>(starwars)</a></code></pre></div>
 <pre><code>## Observations: 87
 ## Variables: 13
 ## $ name       &lt;chr&gt; &quot;Luke Skywalker&quot;, &quot;C-3PO&quot;, &quot;R2-D2&quot;, &quot;Darth Vader&quot;, ...
@@ -445,60 +477,233 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 ## $ films      &lt;list&gt; [&lt;&quot;Revenge of the Sith&quot;, &quot;Return of the Jedi&quot;, &quot;Th...
 ## $ vehicles   &lt;list&gt; [&lt;&quot;Snowspeeder&quot;, &quot;Imperial Speeder Bike&quot;&gt;, &lt;&gt;, &lt;&gt;,...
 ## $ starships  &lt;list&gt; [&lt;&quot;X-wing&quot;, &quot;Imperial shuttle&quot;&gt;, &lt;&gt;, &lt;&gt;, &quot;TIE Adva...</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="co"># Vamos ver a média de ano de nascimento</span>
-  <span class="kw">mean</span>(starwars$birth_year)</code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb42-1" data-line-number="1">  <span class="co"># Vamos ver a média de ano de nascimento</span></a>
+<a class="sourceLine" id="cb42-2" data-line-number="2">  <span class="kw">mean</span>(starwars<span class="op">$</span>birth_year)</a></code></pre></div>
 <pre><code>## [1] NA</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="co"># oops... - Observe que o NA atrapalha nossa média,vamos remove-lo</span>
-  <span class="kw">mean</span>(starwars$birth_year, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb44-1" data-line-number="1">  <span class="co"># oops... - Observe que o NA atrapalha nossa média,vamos remove-lo</span></a>
+<a class="sourceLine" id="cb44-2" data-line-number="2">  <span class="kw">mean</span>(starwars<span class="op">$</span>birth_year, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
 <pre><code>## [1] 87.56512</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="co"># Mediana</span>
-  <span class="kw">median</span>(starwars$birth_year, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb46-1" data-line-number="1">  <span class="co"># Mediana</span></a>
+<a class="sourceLine" id="cb46-2" data-line-number="2">  <span class="kw">median</span>(starwars<span class="op">$</span>birth_year, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
 <pre><code>## [1] 52</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="co"># Podemos procurar pela menor data de nascimento</span>
-  <span class="kw">min</span>(starwars$birth_year, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb48-1" data-line-number="1">  <span class="co"># Podemos procurar pela menor data de nascimento</span></a>
+<a class="sourceLine" id="cb48-2" data-line-number="2">  <span class="kw">min</span>(starwars<span class="op">$</span>birth_year, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
 <pre><code>## [1] 8</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="co"># Pelo máximo também</span>
-  <span class="kw">max</span>(starwars$birth_year, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb50-1" data-line-number="1">  <span class="co"># Pelo máximo também</span></a>
+<a class="sourceLine" id="cb50-2" data-line-number="2">  <span class="kw">max</span>(starwars<span class="op">$</span>birth_year, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
 <pre><code>## [1] 896</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="co"># Desvio padrão </span>
-  <span class="kw">sd</span>(starwars$birth_year, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb52-1" data-line-number="1">  <span class="co"># Desvio padrão </span></a>
+<a class="sourceLine" id="cb52-2" data-line-number="2">  <span class="kw">sd</span>(starwars<span class="op">$</span>birth_year, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
 <pre><code>## [1] 154.6914</code></pre>
 </div>
 </div>
 <div id="estruturas-de-decisao" class="section level2">
 <h2><span class="header-section-number">2.3</span> Estruturas de decisão</h2>
-<p>Os <code>if</code> da vida, se não fosse por isso, aconteceria tal coisa. Bom, no <em>R</em>, a estrutura de decisão é bem parecida com a do <em>Java</em>, ainda com o conjunto do <em>star wars</em>:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  personagem &lt;-<span class="st"> &quot;BB8&quot;</span>  
-
-  if(personagem %in%<span class="st"> </span>starwars$name){
-    <span class="st">&quot;Um bb completo&quot;</span>
-  } else if(<span class="st">&quot;Padmé&quot;</span> %in%<span class="st"> </span>starwars$name) {
-    <span class="st">&quot;Lindona mesmo&quot;</span>
-  } else {
-    <span class="st">&quot;Oloco&quot;</span>
-  }</code></pre></div>
+<p>Os <code>if</code> da vida, se não fosse por isso, aconteceria tal coisa.
+Bom, no <em>R</em>, a estrutura de decisão é bem parecida com a do <em>Java</em>, ainda com o conjunto do <em>star wars</em>:</p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb54-1" data-line-number="1">  personagem &lt;-<span class="st"> &quot;BB8&quot;</span>  </a>
+<a class="sourceLine" id="cb54-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb54-3" data-line-number="3">  <span class="cf">if</span>(personagem <span class="op">%in%</span><span class="st"> </span>starwars<span class="op">$</span>name){</a>
+<a class="sourceLine" id="cb54-4" data-line-number="4">    <span class="st">&quot;Um bb completo&quot;</span></a>
+<a class="sourceLine" id="cb54-5" data-line-number="5">  } <span class="cf">else</span> <span class="cf">if</span>(<span class="st">&quot;Padmé&quot;</span> <span class="op">%in%</span><span class="st"> </span>starwars<span class="op">$</span>name) {</a>
+<a class="sourceLine" id="cb54-6" data-line-number="6">    <span class="st">&quot;Lindona mesmo&quot;</span></a>
+<a class="sourceLine" id="cb54-7" data-line-number="7">  } <span class="cf">else</span> {</a>
+<a class="sourceLine" id="cb54-8" data-line-number="8">    <span class="st">&quot;Oloco&quot;</span></a>
+<a class="sourceLine" id="cb54-9" data-line-number="9">  }</a></code></pre></div>
 <pre><code>## [1] &quot;Um bb completo&quot;</code></pre>
 </div>
 <div id="iteracao" class="section level2">
 <h2><span class="header-section-number">2.4</span> Iteração</h2>
 <p>Para a <code>for</code> podemos utilizar o famoso <code>foreach</code>, parecido com o do <code>Python</code>, desta maneira:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="co"># Foreach</span>
-  for(i in <span class="kw">head</span>(starwars$name, <span class="dv">3</span>)){
-    <span class="kw">print</span>(i)
-  }</code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb56-1" data-line-number="1">  <span class="co"># Foreach</span></a>
+<a class="sourceLine" id="cb56-2" data-line-number="2">  <span class="cf">for</span>(i <span class="cf">in</span> <span class="kw">head</span>(starwars<span class="op">$</span>name, <span class="dv">3</span>)){</a>
+<a class="sourceLine" id="cb56-3" data-line-number="3">    <span class="kw">print</span>(i)</a>
+<a class="sourceLine" id="cb56-4" data-line-number="4">  }</a></code></pre></div>
 <pre><code>## [1] &quot;Luke Skywalker&quot;
 ## [1] &quot;C-3PO&quot;
 ## [1] &quot;R2-D2&quot;</code></pre>
 </div>
+<div id="manipulacao-de-dados" class="section level2">
+<h2><span class="header-section-number">2.5</span> Manipulação de dados</h2>
+<p>Vamos utilizar o pacote <em>dplyr</em> do kit de ferramentas <em>Tidyverse</em> focado em <em>análise de dados</em>, vamos criar um data.frame para a manipulação, fica assim:</p>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb58-1" data-line-number="1">meu_df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(</a>
+<a class="sourceLine" id="cb58-2" data-line-number="2">    <span class="dt">aluno_id =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>),</a>
+<a class="sourceLine" id="cb58-3" data-line-number="3">    <span class="dt">aluno_sexo =</span> <span class="kw">c</span>(<span class="st">&quot;Masculino&quot;</span>, <span class="st">&quot;Feminino&quot;</span>,<span class="st">&quot;Masculino&quot;</span>, <span class="st">&quot;Feminino&quot;</span>, <span class="st">&quot;Masculino&quot;</span>, <span class="st">&quot;Feminino&quot;</span>),</a>
+<a class="sourceLine" id="cb58-4" data-line-number="4">    <span class="dt">aluno_curso =</span> <span class="kw">c</span>(<span class="st">&quot;Historia&quot;</span>, <span class="st">&quot;Historia&quot;</span>, <span class="st">&quot;Matemática&quot;</span>,</a>
+<a class="sourceLine" id="cb58-5" data-line-number="5">                    <span class="st">&quot;Estatística&quot;</span>, <span class="st">&quot;Matemática&quot;</span>, <span class="st">&quot;Estatística&quot;</span>),</a>
+<a class="sourceLine" id="cb58-6" data-line-number="6">    <span class="dt">aluno_media =</span> <span class="kw">c</span>(<span class="fl">2.1</span>, <span class="fl">3.5</span>, <span class="fl">4.0</span>, <span class="fl">1.0</span>, <span class="ot">NA</span>, <span class="fl">4.9</span>),</a>
+<a class="sourceLine" id="cb58-7" data-line-number="7">    <span class="dt">aluno_avaliacao =</span> <span class="kw">c</span>(<span class="st">&quot;Ruim&quot;</span>, <span class="st">&quot;Ruim&quot;</span>, <span class="st">&quot;Excelente&quot;</span>,</a>
+<a class="sourceLine" id="cb58-8" data-line-number="8">                        <span class="st">&quot;Ruim&quot;</span>, <span class="st">&quot;Nenhum&quot;</span>, <span class="st">&quot;Excelente&quot;</span>))</a>
+<a class="sourceLine" id="cb58-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb58-10" data-line-number="10">  knitr<span class="op">::</span><span class="kw">kable</span>(meu_df)</a></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="right">aluno_id</th>
+<th align="left">aluno_sexo</th>
+<th align="left">aluno_curso</th>
+<th align="right">aluno_media</th>
+<th align="left">aluno_avaliacao</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="left">Masculino</td>
+<td align="left">Historia</td>
+<td align="right">2.1</td>
+<td align="left">Ruim</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="left">Feminino</td>
+<td align="left">Historia</td>
+<td align="right">3.5</td>
+<td align="left">Ruim</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="left">Masculino</td>
+<td align="left">Matemática</td>
+<td align="right">4.0</td>
+<td align="left">Excelente</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="left">Feminino</td>
+<td align="left">Estatística</td>
+<td align="right">1.0</td>
+<td align="left">Ruim</td>
+</tr>
+<tr class="odd">
+<td align="right">5</td>
+<td align="left">Masculino</td>
+<td align="left">Matemática</td>
+<td align="right">NA</td>
+<td align="left">Nenhum</td>
+</tr>
+<tr class="even">
+<td align="right">6</td>
+<td align="left">Feminino</td>
+<td align="left">Estatística</td>
+<td align="right">4.9</td>
+<td align="left">Excelente</td>
+</tr>
+</tbody>
+</table>
+<p>Vamos utilizar os seguintes métodos de manipulação do <strong>dplyr</strong>:</p>
+<ul>
+<li>select - Seleciona as colunas do dataframe</li>
+<li>filter - Filtra algum valor da coluna</li>
+<li>mutate - Cria novas variavéis no dataframe</li>
+<li>group_by - agrupa de acordo com um vetor de categorias</li>
+<li>summarize - Reduz vários valores para um único resumo.</li>
+</ul>
+<p>Vamos manipular nosso <code>dataframe</code> com base nos métodos acima:</p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb59-1" data-line-number="1"><span class="kw">library</span>(dplyr)</a>
+<a class="sourceLine" id="cb59-2" data-line-number="2">  </a>
+<a class="sourceLine" id="cb59-3" data-line-number="3">filtro &lt;-<span class="st"> </span>dplyr<span class="op">::</span><span class="kw">filter</span>(meu_df, meu_df<span class="op">$</span>aluno_avaliacao <span class="op">==</span><span class="st"> &quot;Ruim&quot;</span>)</a>
+<a class="sourceLine" id="cb59-4" data-line-number="4"> </a>
+<a class="sourceLine" id="cb59-5" data-line-number="5">selecao &lt;-<span class="st"> </span>dplyr<span class="op">::</span><span class="kw">select</span>(filtro, aluno_curso, aluno_avaliacao, aluno_media)</a>
+<a class="sourceLine" id="cb59-6" data-line-number="6">  </a>
+<a class="sourceLine" id="cb59-7" data-line-number="7">grupo &lt;-<span class="st"> </span><span class="kw">group_by</span>(selecao, aluno_curso)</a>
+<a class="sourceLine" id="cb59-8" data-line-number="8"> </a>
+<a class="sourceLine" id="cb59-9" data-line-number="9">media &lt;-<span class="st"> </span><span class="kw">summarize</span>(grupo, <span class="dt">media_grupo =</span> <span class="kw">mean</span>(aluno_media))</a>
+<a class="sourceLine" id="cb59-10" data-line-number="10">  </a>
+<a class="sourceLine" id="cb59-11" data-line-number="11">knitr<span class="op">::</span><span class="kw">kable</span>(media)</a></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">aluno_curso</th>
+<th align="right">media_grupo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Estatística</td>
+<td align="right">1.0</td>
+</tr>
+<tr class="even">
+<td align="left">Historia</td>
+<td align="right">2.8</td>
+</tr>
+</tbody>
+</table>
+<p>Basicamente, filtramos pelo atributo <code>aluno_avaliacao</code>, selecionamos os atributos <code>aluno_curso</code>, <code>aluno_avaliacao</code> e <code>aluno_media</code>, agrupamos pelos cursos e tiramos a média daquele grupo em relação os cursos 🐻. Mas, ficou muito grande, não podemos melhorar? Podemos sim, dessa forma:</p>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb60-1" data-line-number="1">meu_df1 &lt;-<span class="st"> </span>dplyr<span class="op">::</span><span class="kw">filter</span>(meu_df, meu_df<span class="op">$</span>aluno_avaliacao <span class="op">==</span><span class="st">&quot;Ruim&quot;</span>)</a>
+<a class="sourceLine" id="cb60-2" data-line-number="2"> </a>
+<a class="sourceLine" id="cb60-3" data-line-number="3">meu_df1 &lt;-<span class="st"> </span>dplyr<span class="op">::</span><span class="kw">select</span>(meu_df1, aluno_curso, aluno_avaliacao, aluno_media)</a>
+<a class="sourceLine" id="cb60-4" data-line-number="4">  </a>
+<a class="sourceLine" id="cb60-5" data-line-number="5">meu_df1 &lt;-<span class="st"> </span><span class="kw">group_by</span>(meu_df1, aluno_curso)</a>
+<a class="sourceLine" id="cb60-6" data-line-number="6"> </a>
+<a class="sourceLine" id="cb60-7" data-line-number="7">meu_df1 &lt;-<span class="st"> </span><span class="kw">summarize</span>(meu_df1, <span class="dt">media_grupo =</span> <span class="kw">mean</span>(aluno_media))</a>
+<a class="sourceLine" id="cb60-8" data-line-number="8">  </a>
+<a class="sourceLine" id="cb60-9" data-line-number="9">knitr<span class="op">::</span><span class="kw">kable</span>(meu_df1)</a></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">aluno_curso</th>
+<th align="right">media_grupo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Estatística</td>
+<td align="right">1.0</td>
+</tr>
+<tr class="even">
+<td align="left">Historia</td>
+<td align="right">2.8</td>
+</tr>
+</tbody>
+</table>
+<p>Aee, melhorou um pouco, não? 🔹. Podemos melhorar ainda mais, como? Usando <code>%&gt;%</code> esse símbolo é chamado de <strong>pipe</strong> ou <strong>então</strong>, basicamente, é a <code>pipe</code> utilizada no <strong>Linux</strong>, mas o que faz?</p>
+<p>A <strong>pipe</strong> passa a resposta da primeira atribuição para o primeiro parâmetro da função seguinte, desta forma:</p>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb61-1" data-line-number="1">meu_vetor &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">9</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mean</span>()</a>
+<a class="sourceLine" id="cb61-2" data-line-number="2">  </a>
+<a class="sourceLine" id="cb61-3" data-line-number="3">meu_vetor</a></code></pre></div>
+<pre><code>## [1] 5</code></pre>
+<p>Então, podemos ver, que não coloco o <code>meu_vetor</code> como parâmetro para a função <code>mean()</code>, mas, e se eu quiser colocar mais parâmetros? Opa, você pode e deve, segue a mesma linha de racíocio da função normal, dessa forma:</p>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb63-1" data-line-number="1">meu_vetor &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="ot">NA</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mean</span>(<span class="dt">na.rm=</span><span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb63-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb63-3" data-line-number="3">meu_vetor</a></code></pre></div>
+<pre><code>## [1] 5</code></pre>
+<p>Que lindo, né 👰. Agora, vamos optimizar nossa função usando <strong>pipe</strong>, desta forma:</p>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb65-1" data-line-number="1">  df &lt;-<span class="st"> </span>meu_df <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(aluno_avaliacao <span class="op">==</span><span class="st"> &quot;Ruim&quot;</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb65-2" data-line-number="2"><span class="st">    </span><span class="kw">select</span>(aluno_curso, aluno_avaliacao, aluno_media) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb65-3" data-line-number="3"><span class="st">    </span><span class="kw">group_by</span>(aluno_curso) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb65-4" data-line-number="4"><span class="st">    </span><span class="kw">summarize</span>(<span class="dt">media_grupo =</span> <span class="kw">mean</span>(aluno_media))</a>
+<a class="sourceLine" id="cb65-5" data-line-number="5">  </a>
+<a class="sourceLine" id="cb65-6" data-line-number="6"> knitr<span class="op">::</span><span class="kw">kable</span>(df)</a></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">aluno_curso</th>
+<th align="right">media_grupo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Estatística</td>
+<td align="right">1.0</td>
+</tr>
+<tr class="even">
+<td align="left">Historia</td>
+<td align="right">2.8</td>
+</tr>
+</tbody>
+</table>
+<p>Fico bem mais legível né 😎. Essa é a principal função da <strong>pipe</strong>, tornar o código reprodutível.</p>
+</div>
 <div id="para-saber-mais" class="section level2">
-<h2><span class="header-section-number">2.5</span> Para saber mais</h2>
+<h2><span class="header-section-number">2.6</span> Para saber mais</h2>
 <p><a href="!https://stat.ethz.ch/R-manual/R-devel/library/base/html/complex.html">Números complexos - 1</a></p>
 <p><a href="!http://uc-r.github.io/integer_double/">Tipos númericos em R - 2</a></p>
 <p><a href="!https://www.burns-stat.com/documents/tutorials/impatient-r/">Diferença entre lista e vetor - 3</a></p>
 <p><a href="!https://cran.r-project.org/doc/FAQ/R-FAQ.html#Introduction">CRAN - 4</a></p>
 <p><a href="!https://csgillespie.github.io/efficientR/">R eficiente - 5</a></p>
 <div id="materias-utilizados-como-base" class="section level3">
-<h3><span class="header-section-number">2.5.1</span> Materias utilizados como base</h3>
+<h3><span class="header-section-number">2.6.1</span> Materias utilizados como base</h3>
 <p><a href="!https://github.com/rafaeldcsantos/CAP-394">Rafael Santos</a></p>
 <ul>
 <li>José Roberto M. Garcia</li>
