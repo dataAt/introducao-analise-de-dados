@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-<html >
-
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>intro-analise-de-dados.utf8.md</title>
-  <meta name="description" content="">
-  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>4 Introdução ao ggplot 📊 | intro-analise-de-dados.utf8.md</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="intro-analise-de-dados.utf8.md" />
+  <meta property="og:title" content="4 Introdução ao ggplot 📊 | intro-analise-de-dados.utf8.md" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="intro-analise-de-dados.utf8.md" />
+  <meta name="twitter:title" content="4 Introdução ao ggplot 📊 | intro-analise-de-dados.utf8.md" />
   
   
   
@@ -25,19 +24,21 @@
 
 
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="introducao-ao-python.html">
-
+<link rel="prev" href="introducao-ao-python.html"/>
+<link rel="next" href="references.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
 
 
 
@@ -45,6 +46,9 @@
 
 
 
+
+
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
 
 
 <style type="text/css">
@@ -53,7 +57,6 @@ a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
 a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
@@ -128,13 +131,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.1.1" data-path="introducao.html"><a href="introducao.html#tipos-de-dados"><i class="fa fa-check"></i><b>1.1.1</b> Tipos de dados</a></li>
 <li class="chapter" data-level="1.1.2" data-path="introducao.html"><a href="introducao.html#formatos-de-dados"><i class="fa fa-check"></i><b>1.1.2</b> Formatos de dados</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="introducao.html"><a href="introducao.html#o-que-e-analise-de-dados"><i class="fa fa-check"></i><b>1.2</b> O que é análise de dados</a><ul>
-<li class="chapter" data-level="1.2.1" data-path="introducao.html"><a href="introducao.html#o-que-faz-um-analista-de-dados"><i class="fa fa-check"></i><b>1.2.1</b> o que faz um analista de dados</a></li>
-<li class="chapter" data-level="1.2.2" data-path="introducao.html"><a href="introducao.html#qual-a-diferencas-entre-analista-e-o-cientista-de-dados"><i class="fa fa-check"></i><b>1.2.2</b> Qual a diferenças entre análista e o ciêntista de dados</a></li>
+<li class="chapter" data-level="1.2" data-path="introducao.html"><a href="introducao.html#o-que-e-analise-de-dados"><i class="fa fa-check"></i><b>1.2</b> O que é análise de dados?</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="introducao.html"><a href="introducao.html#o-que-faz-um-analista-de-dados"><i class="fa fa-check"></i><b>1.2.1</b> o que faz um analista de dados?</a></li>
+<li class="chapter" data-level="1.2.2" data-path="introducao.html"><a href="introducao.html#quais-sao-as-diferencas-entre-analista-e-cientista-de-dados"><i class="fa fa-check"></i><b>1.2.2</b> Quais são as diferenças entre analista e cientista de dados?</a></li>
 <li class="chapter" data-level="1.2.3" data-path="introducao.html"><a href="introducao.html#processos-da-analise-de-dados"><i class="fa fa-check"></i><b>1.2.3</b> Processos da análise de dados</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="introducao-ao-r.html"><a href="introducao-ao-r.html"><i class="fa fa-check"></i><b>2</b> Introdução ao R 💎</a><ul>
+<li class="chapter" data-level="2" data-path="introducao-ao-r.html"><a href="introducao-ao-r.html"><i class="fa fa-check"></i><b>2</b> Introdução ao R</a><ul>
 <li class="chapter" data-level="2.1" data-path="introducao-ao-r.html"><a href="introducao-ao-r.html#definicao-de-variaveis"><i class="fa fa-check"></i><b>2.1</b> Definição de variáveis</a><ul>
 <li class="chapter" data-level="2.1.1" data-path="introducao-ao-r.html"><a href="introducao-ao-r.html#tipos-primitivos"><i class="fa fa-check"></i><b>2.1.1</b> Tipos primitivos</a></li>
 <li class="chapter" data-level="2.1.2" data-path="introducao-ao-r.html"><a href="introducao-ao-r.html#tipos-de-dados-estruturados"><i class="fa fa-check"></i><b>2.1.2</b> Tipos de dados estruturados</a></li>
@@ -142,13 +145,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="2.2" data-path="introducao-ao-r.html"><a href="introducao-ao-r.html#operacoes-basicas"><i class="fa fa-check"></i><b>2.2</b> Operações Básicas</a><ul>
 <li class="chapter" data-level="2.2.1" data-path="introducao-ao-r.html"><a href="introducao-ao-r.html#dicas-uteis"><i class="fa fa-check"></i><b>2.2.1</b> Dicas úteis</a></li>
-<li class="chapter" data-level="2.2.2" data-path="introducao-ao-r.html"><a href="introducao-ao-r.html#estatisca-basica"><i class="fa fa-check"></i><b>2.2.2</b> Estatisca básica</a></li>
+<li class="chapter" data-level="2.2.2" data-path="introducao-ao-r.html"><a href="introducao-ao-r.html#estatistica-basica"><i class="fa fa-check"></i><b>2.2.2</b> Estatística básica</a></li>
 </ul></li>
 <li class="chapter" data-level="2.3" data-path="introducao-ao-r.html"><a href="introducao-ao-r.html#estruturas-de-decisao"><i class="fa fa-check"></i><b>2.3</b> Estruturas de decisão</a></li>
 <li class="chapter" data-level="2.4" data-path="introducao-ao-r.html"><a href="introducao-ao-r.html#iteracao"><i class="fa fa-check"></i><b>2.4</b> Iteração</a></li>
 <li class="chapter" data-level="2.5" data-path="introducao-ao-r.html"><a href="introducao-ao-r.html#manipulacao-de-dados"><i class="fa fa-check"></i><b>2.5</b> Manipulação de dados</a></li>
 <li class="chapter" data-level="2.6" data-path="introducao-ao-r.html"><a href="introducao-ao-r.html#para-saber-mais"><i class="fa fa-check"></i><b>2.6</b> Para saber mais</a><ul>
-<li class="chapter" data-level="2.6.1" data-path="introducao-ao-r.html"><a href="introducao-ao-r.html#materias-utilizados-como-base"><i class="fa fa-check"></i><b>2.6.1</b> Materias utilizados como base</a></li>
+<li class="chapter" data-level="2.6.1" data-path="introducao-ao-r.html"><a href="introducao-ao-r.html#materiais-utilizados-como-base"><i class="fa fa-check"></i><b>2.6.1</b> Materiais utilizados como base</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="introducao-ao-python.html"><a href="introducao-ao-python.html"><i class="fa fa-check"></i><b>3</b> Introdução ao Python 🚀</a><ul>
@@ -164,13 +167,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="4" data-path="introducao-ao-ggplot.html"><a href="introducao-ao-ggplot.html"><i class="fa fa-check"></i><b>4</b> Introdução ao ggplot 📊</a><ul>
 <li class="chapter" data-level="4.1" data-path="introducao-ao-ggplot.html"><a href="introducao-ao-ggplot.html#o-que-e-o-ggplot"><i class="fa fa-check"></i><b>4.1</b> O que é o <code>ggplot</code>?</a></li>
-<li class="chapter" data-level="4.2" data-path="introducao-ao-ggplot.html"><a href="introducao-ao-ggplot.html#mapeamente-estetico"><i class="fa fa-check"></i><b>4.2</b> Mapeamente Estético</a></li>
+<li class="chapter" data-level="4.2" data-path="introducao-ao-ggplot.html"><a href="introducao-ao-ggplot.html#mapeamento-estetico"><i class="fa fa-check"></i><b>4.2</b> Mapeamento Estético</a></li>
 <li class="chapter" data-level="4.3" data-path="introducao-ao-ggplot.html"><a href="introducao-ao-ggplot.html#objetos-geometricos"><i class="fa fa-check"></i><b>4.3</b> Objetos geométricos</a></li>
 <li class="chapter" data-level="4.4" data-path="introducao-ao-ggplot.html"><a href="introducao-ao-ggplot.html#escalas"><i class="fa fa-check"></i><b>4.4</b> Escalas</a></li>
 <li class="chapter" data-level="4.5" data-path="introducao-ao-ggplot.html"><a href="introducao-ao-ggplot.html#subplots"><i class="fa fa-check"></i><b>4.5</b> Subplots</a></li>
 <li class="chapter" data-level="4.6" data-path="introducao-ao-ggplot.html"><a href="introducao-ao-ggplot.html#temas"><i class="fa fa-check"></i><b>4.6</b> Temas</a></li>
 <li class="chapter" data-level="4.7" data-path="introducao-ao-ggplot.html"><a href="introducao-ao-ggplot.html#recomendacoes"><i class="fa fa-check"></i><b>4.7</b> Recomendações</a></li>
 </ul></li>
+<li class="chapter" data-level="5" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>5</b> References</a></li>
 </ul>
 
       </nav>
@@ -190,94 +194,164 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="introducao-ao-ggplot" class="section level1">
 <h1><span class="header-section-number">4</span> Introdução ao ggplot 📊</h1>
-<p>Escolhemos a biblioteca de visualização <strong>ggplot</strong> para <strong>R</strong> e <strong>Python</strong>, pois sua sintaxe é bem amigável e é o pacote mais famoso de visualização de dados em <strong>R</strong>, levando isso em conta, a comunidade de Python resolveu criar um biblioteca beseada no <strong>ggplot</strong> chamada <strong>plotnine</strong>.</p>
+<p>Escolhemos o pacote de visualização de dados <strong>ggplot2</strong> para <strong>R</strong> e <strong>Python</strong>, pois sua sintaxe é amigável, a qual segue o conceito de <em>gramática dos gráficos</em>. Desta forma, a comunidade de Python resolveu criar uma biblioteca baseada no <strong>ggplot2</strong> chamada <strong>plotnine</strong>.</p>
 <div id="o-que-e-o-ggplot" class="section level2">
 <h2><span class="header-section-number">4.1</span> O que é o <code>ggplot</code>?</h2>
-<p>Bom, <code>ggplot</code>é um pacote em R criado por <em>Hadley Wickham</em>, a sintaxe se baseia na obra <a href="https://www.amazon.com/Grammar-Graphics-Statistics-Computing/dp/0387245448">The Grammar of Graphics</a>. Sua sintaxe é baseada é um conjunto de camadas, cujo o mapeamento dos atributos é chamado de <em>aesthetics</em>. O esqueleto pode ser escrito assim:</p>
-<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb107-1" data-line-number="1">  <span class="kw">ggplot</span>(<span class="dt">data =</span> <span class="op">&lt;</span>DATA<span class="op">&gt;</span>, <span class="kw">aes</span>(<span class="op">&lt;</span>MAPPINGS<span class="op">&gt;</span>)) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb107-2" data-line-number="2"><span class="st">  </span><span class="er">&lt;</span>GEOM_FUNCTION<span class="op">&gt;</span>(</a>
-<a class="sourceLine" id="cb107-3" data-line-number="3">     <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="op">&lt;</span>MAPPINGS<span class="op">&gt;</span>),</a>
-<a class="sourceLine" id="cb107-4" data-line-number="4">     <span class="dt">stat =</span> <span class="op">&lt;</span>STAT<span class="op">&gt;</span>, </a>
-<a class="sourceLine" id="cb107-5" data-line-number="5">     <span class="dt">position =</span> <span class="op">&lt;</span>POSITION<span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb107-6" data-line-number="6"><span class="st">  </span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb107-7" data-line-number="7"><span class="st">  </span><span class="er">&lt;</span>COORDINATE_FUNCTION<span class="op">&gt;</span><span class="st"> </span><span class="op">+</span></a>
-<a class="sourceLine" id="cb107-8" data-line-number="8"><span class="st">  </span><span class="er">&lt;</span>FACET_FUNCTION<span class="op">&gt;</span><span class="st">  </span></a></code></pre></div>
-<p>Vamos explicar linha por linha do código acima. Vamos lá 🧮.</p>
+<p>Bom, <code>ggplot</code>é um pacote em R criado pelo <em>Hadley Wickham</em>, como mencionado anteriormente, sua sintaxe se baseia na obra <a href="https://www.amazon.com/Grammar-Graphics-Statistics-Computing/dp/0387245448">The Grammar of Graphics</a>. Assim, a <em>gramática dos gráficos</em> é um conjunto de camadas, cujo o mapeamento dos atributos é chamado de <em>aesthetics</em>. O esqueleto pode ser escrito assim:</p>
+<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb115-1" data-line-number="1">  <span class="kw">ggplot</span>(<span class="dt">data =</span> <span class="op">&lt;</span>DATA<span class="op">&gt;</span>, <span class="kw">aes</span>(<span class="op">&lt;</span>MAPPINGS<span class="op">&gt;</span>)) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb115-2" data-line-number="2"><span class="st">  </span><span class="er">&lt;</span>GEOM_FUNCTION<span class="op">&gt;</span>(</a>
+<a class="sourceLine" id="cb115-3" data-line-number="3">     <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="op">&lt;</span>MAPPINGS<span class="op">&gt;</span>),</a>
+<a class="sourceLine" id="cb115-4" data-line-number="4">     <span class="dt">stat =</span> <span class="op">&lt;</span>STAT<span class="op">&gt;</span>, </a>
+<a class="sourceLine" id="cb115-5" data-line-number="5">     <span class="dt">position =</span> <span class="op">&lt;</span>POSITION<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb115-6" data-line-number="6"><span class="st">  </span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb115-7" data-line-number="7"><span class="st">  </span><span class="er">&lt;</span>COORDINATE_FUNCTION<span class="op">&gt;</span><span class="st"> </span><span class="op">+</span></a>
+<a class="sourceLine" id="cb115-8" data-line-number="8"><span class="st">  </span><span class="er">&lt;</span>FACET_FUNCTION<span class="op">&gt;</span><span class="st">  </span></a></code></pre></div>
+<p>Vamos explicar linha por linha do código a cima. Vamos lá 🧮.</p>
 </div>
-<div id="mapeamente-estetico" class="section level2">
-<h2><span class="header-section-number">4.2</span> Mapeamente Estético</h2>
-<p>Podemos mapear dentro da função <code>ggplot()</code> ou dentro de alguma geométria. A imagem abaixo, foi retirada do livro <a href="https://serialmentor.com/dataviz">visualização de dados</a>, mostra os métodos geométricos do mapeamento estético.</p>
+<div id="mapeamento-estetico" class="section level2">
+<h2><span class="header-section-number">4.2</span> Mapeamento Estético</h2>
+<p>Podemos mapear dentro da função <code>ggplot()</code> ou dentro de alguma geometria. A imagem abaixo, retirada do livro do <span class="citation">Wilke (2019)</span>, mostra os métodos geométricos do mapeamento estético.</p>
 <p><img src="images/aes_ggplot.png" /></p>
-<p>Vamos começar criando um dataframe, desse modo:</p>
-<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb108-1" data-line-number="1">escola &lt;-<span class="st"> </span><span class="kw">data.frame</span>(</a>
-<a class="sourceLine" id="cb108-2" data-line-number="2">    <span class="dt">aluno_id =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>),</a>
-<a class="sourceLine" id="cb108-3" data-line-number="3">    <span class="dt">aluno_sexo =</span> <span class="kw">c</span>(<span class="st">&quot;Masculino&quot;</span>, <span class="st">&quot;Feminino&quot;</span>,<span class="st">&quot;Masculino&quot;</span>, <span class="st">&quot;Feminino&quot;</span>, <span class="st">&quot;Masculino&quot;</span>, <span class="st">&quot;Feminino&quot;</span>),</a>
-<a class="sourceLine" id="cb108-4" data-line-number="4">    <span class="dt">aluno_curso =</span> <span class="kw">c</span>(<span class="st">&quot;Historia&quot;</span>, <span class="st">&quot;Historia&quot;</span>, <span class="st">&quot;Matemática&quot;</span>,</a>
-<a class="sourceLine" id="cb108-5" data-line-number="5">                    <span class="st">&quot;Estatística&quot;</span>, <span class="st">&quot;Matemática&quot;</span>, <span class="st">&quot;Estatística&quot;</span>),</a>
-<a class="sourceLine" id="cb108-6" data-line-number="6">    <span class="dt">aluno_media =</span> <span class="kw">c</span>(<span class="fl">2.1</span>, <span class="fl">3.5</span>, <span class="fl">4.0</span>, <span class="fl">1.0</span>, <span class="ot">NA</span>, <span class="fl">4.9</span>),</a>
-<a class="sourceLine" id="cb108-7" data-line-number="7">    <span class="dt">aluno_avaliacao =</span> <span class="kw">c</span>(<span class="st">&quot;Ruim&quot;</span>, <span class="st">&quot;Ruim&quot;</span>, <span class="st">&quot;Excelente&quot;</span>,</a>
-<a class="sourceLine" id="cb108-8" data-line-number="8">                        <span class="st">&quot;Ruim&quot;</span>, <span class="st">&quot;Nenhum&quot;</span>, <span class="st">&quot;Excelente&quot;</span>))</a>
-<a class="sourceLine" id="cb108-9" data-line-number="9"></a>
-<a class="sourceLine" id="cb108-10" data-line-number="10">  knitr<span class="op">::</span><span class="kw">kable</span>(escola)</a></code></pre></div>
+<p>Vamos começar criando um dataframe, deste modo:</p>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb116-1" data-line-number="1">escola &lt;-<span class="st"> </span><span class="kw">data.frame</span>(</a>
+<a class="sourceLine" id="cb116-2" data-line-number="2">    <span class="dt">aluno_id =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>),</a>
+<a class="sourceLine" id="cb116-3" data-line-number="3">    <span class="dt">aluno_sexo =</span> <span class="kw">c</span>(<span class="st">&quot;Masculino&quot;</span>, <span class="st">&quot;Feminino&quot;</span>,<span class="st">&quot;Masculino&quot;</span>, <span class="st">&quot;Feminino&quot;</span>, <span class="st">&quot;Masculino&quot;</span>, <span class="st">&quot;Feminino&quot;</span>),</a>
+<a class="sourceLine" id="cb116-4" data-line-number="4">    <span class="dt">aluno_curso =</span> <span class="kw">c</span>(<span class="st">&quot;Historia&quot;</span>, <span class="st">&quot;Historia&quot;</span>, <span class="st">&quot;Matemática&quot;</span>,</a>
+<a class="sourceLine" id="cb116-5" data-line-number="5">                    <span class="st">&quot;Estatística&quot;</span>, <span class="st">&quot;Matemática&quot;</span>, <span class="st">&quot;Estatística&quot;</span>),</a>
+<a class="sourceLine" id="cb116-6" data-line-number="6">    <span class="dt">aluno_media =</span> <span class="kw">c</span>(<span class="fl">2.1</span>, <span class="fl">3.5</span>, <span class="fl">4.0</span>, <span class="fl">1.0</span>, <span class="ot">NA</span>, <span class="fl">4.9</span>),</a>
+<a class="sourceLine" id="cb116-7" data-line-number="7">    <span class="dt">aluno_avaliacao =</span> <span class="kw">c</span>(<span class="st">&quot;Ruim&quot;</span>, <span class="st">&quot;Ruim&quot;</span>, <span class="st">&quot;Excelente&quot;</span>,</a>
+<a class="sourceLine" id="cb116-8" data-line-number="8">                        <span class="st">&quot;Ruim&quot;</span>, <span class="st">&quot;Nenhum&quot;</span>, <span class="st">&quot;Excelente&quot;</span>))</a>
+<a class="sourceLine" id="cb116-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb116-10" data-line-number="10">  knitr<span class="op">::</span><span class="kw">kable</span>(escola)</a></code></pre></div>
 <table>
 <thead>
-<tr class="header">
-<th align="right">aluno_id</th>
-<th align="left">aluno_sexo</th>
-<th align="left">aluno_curso</th>
-<th align="right">aluno_media</th>
-<th align="left">aluno_avaliacao</th>
+<tr>
+<th style="text-align:right;">
+aluno_id
+</th>
+<th style="text-align:left;">
+aluno_sexo
+</th>
+<th style="text-align:left;">
+aluno_curso
+</th>
+<th style="text-align:right;">
+aluno_media
+</th>
+<th style="text-align:left;">
+aluno_avaliacao
+</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td align="right">1</td>
-<td align="left">Masculino</td>
-<td align="left">Historia</td>
-<td align="right">2.1</td>
-<td align="left">Ruim</td>
+<tr>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Masculino
+</td>
+<td style="text-align:left;">
+Historia
+</td>
+<td style="text-align:right;">
+2.1
+</td>
+<td style="text-align:left;">
+Ruim
+</td>
 </tr>
-<tr class="even">
-<td align="right">2</td>
-<td align="left">Feminino</td>
-<td align="left">Historia</td>
-<td align="right">3.5</td>
-<td align="left">Ruim</td>
+<tr>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Feminino
+</td>
+<td style="text-align:left;">
+Historia
+</td>
+<td style="text-align:right;">
+3.5
+</td>
+<td style="text-align:left;">
+Ruim
+</td>
 </tr>
-<tr class="odd">
-<td align="right">3</td>
-<td align="left">Masculino</td>
-<td align="left">Matemática</td>
-<td align="right">4.0</td>
-<td align="left">Excelente</td>
+<tr>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+Masculino
+</td>
+<td style="text-align:left;">
+Matemática
+</td>
+<td style="text-align:right;">
+4.0
+</td>
+<td style="text-align:left;">
+Excelente
+</td>
 </tr>
-<tr class="even">
-<td align="right">4</td>
-<td align="left">Feminino</td>
-<td align="left">Estatística</td>
-<td align="right">1.0</td>
-<td align="left">Ruim</td>
+<tr>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:left;">
+Feminino
+</td>
+<td style="text-align:left;">
+Estatística
+</td>
+<td style="text-align:right;">
+1.0
+</td>
+<td style="text-align:left;">
+Ruim
+</td>
 </tr>
-<tr class="odd">
-<td align="right">5</td>
-<td align="left">Masculino</td>
-<td align="left">Matemática</td>
-<td align="right">NA</td>
-<td align="left">Nenhum</td>
+<tr>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+Masculino
+</td>
+<td style="text-align:left;">
+Matemática
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:left;">
+Nenhum
+</td>
 </tr>
-<tr class="even">
-<td align="right">6</td>
-<td align="left">Feminino</td>
-<td align="left">Estatística</td>
-<td align="right">4.9</td>
-<td align="left">Excelente</td>
+<tr>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+Feminino
+</td>
+<td style="text-align:left;">
+Estatística
+</td>
+<td style="text-align:right;">
+4.9
+</td>
+<td style="text-align:left;">
+Excelente
+</td>
 </tr>
 </tbody>
 </table>
-<p>Agora, vamos mapear os atributos do nosso dataframe <code>escola</code>, dessa forma:</p>
-<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb109-1" data-line-number="1">  <span class="kw">library</span>(ggplot2)</a>
-<a class="sourceLine" id="cb109-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb109-3" data-line-number="3">  <span class="kw">ggplot</span>(escola, <span class="kw">aes</span>(<span class="dt">x=</span>aluno_id, <span class="dt">y=</span>aluno_media, <span class="dt">color=</span>aluno_curso))</a></code></pre></div>
+<p>Agora, vamos mapear os atributos do nosso dataframe <code>escola</code>, desta forma:</p>
+<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb117-1" data-line-number="1">  <span class="kw">library</span>(ggplot2)</a>
+<a class="sourceLine" id="cb117-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb117-3" data-line-number="3">  <span class="kw">ggplot</span>(escola, <span class="kw">aes</span>(<span class="dt">x=</span>aluno_id, <span class="dt">y=</span>aluno_media, <span class="dt">color=</span>aluno_curso))</a></code></pre></div>
 <p><img src="intro-analise-de-dados_files/figure-html/unnamed-chunk-50-1.png" width="672" /></p>
 <p>Bom, agora que mapeamos nossos atributos é possível ver que no eixo <code>x</code> está escrito <code>aluno_id</code> e no eixo <code>y</code> está escrito <code>aluno_media</code>.</p>
 </div>
@@ -324,77 +398,77 @@ Histograma</td>
 </tr>
 </tbody>
 </table>
-<p>Vamos utilizar <code>geom_point</code> para fazer um gráfico bolhas no conjunto de dados, desse modo:</p>
-<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb110-1" data-line-number="1"> <span class="kw">ggplot</span>(escola, <span class="kw">aes</span>(<span class="dt">x=</span>aluno_id, <span class="dt">y=</span>aluno_media, <span class="dt">color=</span>aluno_curso)) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb110-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">na.rm =</span> <span class="ot">TRUE</span>) </a></code></pre></div>
+<p>Vamos utilizar <code>geom_point</code> para fazer um gráfico bolhas no conjunto de dados, deste modo:</p>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb118-1" data-line-number="1"> <span class="kw">ggplot</span>(escola, <span class="kw">aes</span>(<span class="dt">x=</span>aluno_id, <span class="dt">y=</span>aluno_media, <span class="dt">color=</span>aluno_curso)) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb118-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">na.rm =</span> <span class="ot">TRUE</span>) </a></code></pre></div>
 <p><img src="intro-analise-de-dados_files/figure-html/unnamed-chunk-51-1.png" width="672" /></p>
-<p>Olha que legal, ainda assim, noss gráfico parece estar errado, por exemplo, no eixo <code>x</code>, não sabemos se começa com 0 ou 1, o nome dos nossos atributos no nosso gráfico também não está legal, vamos melhorará-lo 🎗.</p>
+<p>Olha que legal. No entanto, ainda faltam informações no nosso gráficos, por exemplo, no eixo <code>x</code>, não sabemos se começa com 0 ou 1 e o nome dos nossos atributos não estão informativos.</p>
 </div>
 <div id="escalas" class="section level2">
 <h2><span class="header-section-number">4.4</span> Escalas</h2>
 <p>Bom, agora é a hora de melhorar nosso gráfico, que por sinal está bem estranho, vamos lá!</p>
 <p>Primeiro, vamos mudar o nome dos nossos atributos em cada eixo e também mudar as escalas:</p>
-<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb111-1" data-line-number="1">   <span class="kw">ggplot</span>(escola, <span class="kw">aes</span>(<span class="dt">x=</span>aluno_id, <span class="dt">y=</span>aluno_media, <span class="dt">color=</span>aluno_curso)) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb111-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">na.rm =</span> <span class="ot">TRUE</span>) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb111-3" data-line-number="3"><span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Identificação dos alunos&quot;</span>, <span class="dt">breaks =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">6</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb119-1" data-line-number="1">   <span class="kw">ggplot</span>(escola, <span class="kw">aes</span>(<span class="dt">x=</span>aluno_id, <span class="dt">y=</span>aluno_media, <span class="dt">color=</span>aluno_curso)) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb119-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">na.rm =</span> <span class="ot">TRUE</span>) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb119-3" data-line-number="3"><span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Identificação dos alunos&quot;</span>, <span class="dt">breaks =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">6</span>)</a></code></pre></div>
 <p><img src="intro-analise-de-dados_files/figure-html/unnamed-chunk-52-1.png" width="672" /></p>
-<p>Opa, assim ficou muito mais claro, mas, mudar o nome de apenas um eixo não move moinhos, não, pera? 👏.</p>
-<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb112-1" data-line-number="1"><span class="kw">ggplot</span>(escola, <span class="kw">aes</span>(<span class="dt">x=</span>aluno_id, <span class="dt">y=</span>aluno_media, <span class="dt">color=</span>aluno_curso)) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb112-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">na.rm =</span> <span class="ot">TRUE</span>) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb112-3" data-line-number="3"><span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Identificação dos alunos&quot;</span>, <span class="dt">breaks =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">6</span>) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb112-4" data-line-number="4"><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name=</span><span class="st">&quot;Média dos alunos&quot;</span>, </a>
-<a class="sourceLine" id="cb112-5" data-line-number="5">                   <span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">1</span>, <span class="dv">6</span>, <span class="fl">0.5</span>))</a></code></pre></div>
+<p>Opa, assim ficou mais claro, mas, mudar o nome de apenas um eixo não move moinhos, não, pera? 👏.</p>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb120-1" data-line-number="1"><span class="kw">ggplot</span>(escola, <span class="kw">aes</span>(<span class="dt">x=</span>aluno_id, <span class="dt">y=</span>aluno_media, <span class="dt">color=</span>aluno_curso)) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb120-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">na.rm =</span> <span class="ot">TRUE</span>) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb120-3" data-line-number="3"><span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Identificação dos alunos&quot;</span>, <span class="dt">breaks =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">6</span>) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb120-4" data-line-number="4"><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name=</span><span class="st">&quot;Média dos alunos&quot;</span>, </a>
+<a class="sourceLine" id="cb120-5" data-line-number="5">                   <span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">1</span>, <span class="dv">6</span>, <span class="fl">0.5</span>))</a></code></pre></div>
 <p><img src="intro-analise-de-dados_files/figure-html/unnamed-chunk-53-1.png" width="672" /></p>
-<p>Ainda está faltando mais algumas coisas, por exemplo, colocar e adicionar um título no nosso gráfico.</p>
-<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb113-1" data-line-number="1">cores &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Estatística&quot;</span> =<span class="st"> &quot;green&quot;</span>,</a>
-<a class="sourceLine" id="cb113-2" data-line-number="2">           <span class="st">&quot;Historia&quot;</span> =<span class="st"> &quot;red&quot;</span>,</a>
-<a class="sourceLine" id="cb113-3" data-line-number="3">            <span class="st">&quot;Matemática&quot;</span> =<span class="st"> &quot;blue&quot;</span>)</a>
-<a class="sourceLine" id="cb113-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb113-5" data-line-number="5">  <span class="kw">ggplot</span>(escola, <span class="kw">aes</span>(<span class="dt">x=</span>aluno_id, <span class="dt">y=</span>aluno_media, <span class="dt">color=</span>aluno_curso)) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb113-6" data-line-number="6"><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">na.rm =</span> <span class="ot">TRUE</span>) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb113-7" data-line-number="7"><span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Identificação dos alunos&quot;</span>, <span class="dt">breaks =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">6</span>) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb113-8" data-line-number="8"><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name=</span><span class="st">&quot;Média dos alunos&quot;</span>, </a>
-<a class="sourceLine" id="cb113-9" data-line-number="9">                   <span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">1</span>, <span class="dv">6</span>, <span class="fl">0.5</span>)) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb113-10" data-line-number="10"><span class="st">  </span><span class="kw">scale_color_manual</span>(<span class="st">&quot;Matérias&quot;</span>, <span class="dt">values =</span> cores) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb113-11" data-line-number="11"><span class="st">    </span><span class="kw">ggtitle</span>(<span class="st">&quot;Média dos alunos da faculdade y&quot;</span>)</a></code></pre></div>
+<p>Ainda falta mais informações, por exemplo, o título do nosso gráfico.</p>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb121-1" data-line-number="1">cores &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Estatística&quot;</span> =<span class="st"> &quot;green&quot;</span>,</a>
+<a class="sourceLine" id="cb121-2" data-line-number="2">           <span class="st">&quot;Historia&quot;</span> =<span class="st"> &quot;red&quot;</span>,</a>
+<a class="sourceLine" id="cb121-3" data-line-number="3">            <span class="st">&quot;Matemática&quot;</span> =<span class="st"> &quot;blue&quot;</span>)</a>
+<a class="sourceLine" id="cb121-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb121-5" data-line-number="5">  <span class="kw">ggplot</span>(escola, <span class="kw">aes</span>(<span class="dt">x=</span>aluno_id, <span class="dt">y=</span>aluno_media, <span class="dt">color=</span>aluno_curso)) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb121-6" data-line-number="6"><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">na.rm =</span> <span class="ot">TRUE</span>) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb121-7" data-line-number="7"><span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Identificação dos alunos&quot;</span>, <span class="dt">breaks =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">6</span>) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb121-8" data-line-number="8"><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name=</span><span class="st">&quot;Média dos alunos&quot;</span>, </a>
+<a class="sourceLine" id="cb121-9" data-line-number="9">                   <span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">1</span>, <span class="dv">6</span>, <span class="fl">0.5</span>)) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb121-10" data-line-number="10"><span class="st">  </span><span class="kw">scale_color_manual</span>(<span class="st">&quot;Matérias&quot;</span>, <span class="dt">values =</span> cores) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb121-11" data-line-number="11"><span class="st">    </span><span class="kw">ggtitle</span>(<span class="st">&quot;Média dos alunos da faculdade y&quot;</span>)</a></code></pre></div>
 <p><img src="intro-analise-de-dados_files/figure-html/unnamed-chunk-54-1.png" width="672" /></p>
-<p>Só consegui observar agora que o aluno com id <strong>5</strong> não possui média em nenhuma matéria. Agora, que tal dividirmos nosso gráfico em subgráficos? 🆒.</p>
+<p>É possível observar que o aluno com id <strong>5</strong> não possui média em nenhuma matéria. Agora, que tal dividirmos nosso gráfico em sub gráficos? 🆒.</p>
 </div>
 <div id="subplots" class="section level2">
 <h2><span class="header-section-number">4.5</span> Subplots</h2>
-<p>Bom, quero visualizar de forma que divida nosso gráfico em subgráficos, usando <code>facet_wrap</code>, dessa forma:</p>
-<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb114-1" data-line-number="1">cores &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Estatística&quot;</span> =<span class="st"> &quot;green&quot;</span>,</a>
-<a class="sourceLine" id="cb114-2" data-line-number="2">           <span class="st">&quot;Historia&quot;</span> =<span class="st"> &quot;red&quot;</span>,</a>
-<a class="sourceLine" id="cb114-3" data-line-number="3">            <span class="st">&quot;Matemática&quot;</span> =<span class="st"> &quot;blue&quot;</span>)</a>
-<a class="sourceLine" id="cb114-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb114-5" data-line-number="5">  <span class="kw">ggplot</span>(escola, <span class="kw">aes</span>(<span class="dt">x=</span>aluno_sexo, <span class="dt">y=</span>aluno_media, <span class="dt">color=</span>aluno_curso)) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb114-6" data-line-number="6"><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">na.rm =</span> <span class="ot">TRUE</span>) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb114-7" data-line-number="7"><span class="st">  </span><span class="kw">facet_grid</span>(<span class="op">~</span><span class="st"> </span>aluno_avaliacao) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb114-8" data-line-number="8"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">title=</span><span class="st">&quot;Notas dos alunos por grid&quot;</span>, </a>
-<a class="sourceLine" id="cb114-9" data-line-number="9">       <span class="dt">x =</span> <span class="st">&quot;Sexo dos alunos&quot;</span>,</a>
-<a class="sourceLine" id="cb114-10" data-line-number="10">       <span class="dt">y =</span> <span class="st">&quot;Média dos alunos&quot;</span>) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb114-11" data-line-number="11"><span class="st">  </span><span class="kw">scale_color_manual</span>(<span class="st">&quot;Matérias&quot;</span>, <span class="dt">values =</span> cores) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb114-12" data-line-number="12"><span class="st">    </span><span class="kw">ggtitle</span>(<span class="st">&quot;Média dos alunos da faculdade y&quot;</span>)</a></code></pre></div>
+<p>Bom, quero visualizar de forma que divida nosso gráfico em subgráficos, usando <code>facet_wrap</code>, desta forma:</p>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb122-1" data-line-number="1">cores &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Estatística&quot;</span> =<span class="st"> &quot;green&quot;</span>,</a>
+<a class="sourceLine" id="cb122-2" data-line-number="2">           <span class="st">&quot;Historia&quot;</span> =<span class="st"> &quot;red&quot;</span>,</a>
+<a class="sourceLine" id="cb122-3" data-line-number="3">            <span class="st">&quot;Matemática&quot;</span> =<span class="st"> &quot;blue&quot;</span>)</a>
+<a class="sourceLine" id="cb122-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb122-5" data-line-number="5">  <span class="kw">ggplot</span>(escola, <span class="kw">aes</span>(<span class="dt">x=</span>aluno_sexo, <span class="dt">y=</span>aluno_media, <span class="dt">color=</span>aluno_curso)) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb122-6" data-line-number="6"><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">na.rm =</span> <span class="ot">TRUE</span>) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb122-7" data-line-number="7"><span class="st">  </span><span class="kw">facet_grid</span>(<span class="op">~</span><span class="st"> </span>aluno_avaliacao) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb122-8" data-line-number="8"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">title=</span><span class="st">&quot;Notas dos alunos por grid&quot;</span>, </a>
+<a class="sourceLine" id="cb122-9" data-line-number="9">       <span class="dt">x =</span> <span class="st">&quot;Sexo dos alunos&quot;</span>,</a>
+<a class="sourceLine" id="cb122-10" data-line-number="10">       <span class="dt">y =</span> <span class="st">&quot;Média dos alunos&quot;</span>) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb122-11" data-line-number="11"><span class="st">  </span><span class="kw">scale_color_manual</span>(<span class="st">&quot;Matérias&quot;</span>, <span class="dt">values =</span> cores) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb122-12" data-line-number="12"><span class="st">    </span><span class="kw">ggtitle</span>(<span class="st">&quot;Média dos alunos da faculdade y&quot;</span>)</a></code></pre></div>
 <p><img src="intro-analise-de-dados_files/figure-html/unnamed-chunk-55-1.png" width="672" /></p>
 <p>Dessa vez, usei <code>labs</code> para demonstrar que essa função também altera o nome dos eixos.</p>
 </div>
 <div id="temas" class="section level2">
 <h2><span class="header-section-number">4.6</span> Temas</h2>
-<p>Por último, vamos deixar nosso gráfico mais bonito, usando os temas do próprio pacote:</p>
-<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb115-1" data-line-number="1">cores &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Estatística&quot;</span> =<span class="st"> &quot;green&quot;</span>,</a>
-<a class="sourceLine" id="cb115-2" data-line-number="2">           <span class="st">&quot;Historia&quot;</span> =<span class="st"> &quot;red&quot;</span>,</a>
-<a class="sourceLine" id="cb115-3" data-line-number="3">            <span class="st">&quot;Matemática&quot;</span> =<span class="st"> &quot;blue&quot;</span>)</a>
-<a class="sourceLine" id="cb115-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb115-5" data-line-number="5">  <span class="kw">ggplot</span>(escola, <span class="kw">aes</span>(<span class="dt">x=</span>aluno_id, <span class="dt">y=</span>aluno_media, <span class="dt">color=</span>aluno_curso)) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb115-6" data-line-number="6"><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">na.rm =</span> <span class="ot">TRUE</span>) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb115-7" data-line-number="7"><span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Identificação dos alunos&quot;</span>, <span class="dt">breaks =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">6</span>) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb115-8" data-line-number="8"><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name=</span><span class="st">&quot;Média dos alunos&quot;</span>, </a>
-<a class="sourceLine" id="cb115-9" data-line-number="9">                   <span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">1</span>, <span class="dv">6</span>, <span class="fl">0.5</span>)) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb115-10" data-line-number="10"><span class="st">  </span><span class="kw">scale_color_manual</span>(<span class="st">&quot;Matérias&quot;</span>, <span class="dt">values =</span> cores) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb115-11" data-line-number="11"><span class="st">    </span><span class="kw">ggtitle</span>(<span class="st">&quot;Média dos alunos da faculdade y&quot;</span>) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb115-12" data-line-number="12"><span class="st">    </span><span class="kw">theme_bw</span>()</a></code></pre></div>
+<p>Por último, vamos deixar nosso gráfico mais elegante, usando os temas do próprio pacote:</p>
+<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb123-1" data-line-number="1">cores &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Estatística&quot;</span> =<span class="st"> &quot;green&quot;</span>,</a>
+<a class="sourceLine" id="cb123-2" data-line-number="2">           <span class="st">&quot;Historia&quot;</span> =<span class="st"> &quot;red&quot;</span>,</a>
+<a class="sourceLine" id="cb123-3" data-line-number="3">            <span class="st">&quot;Matemática&quot;</span> =<span class="st"> &quot;blue&quot;</span>)</a>
+<a class="sourceLine" id="cb123-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb123-5" data-line-number="5">  <span class="kw">ggplot</span>(escola, <span class="kw">aes</span>(<span class="dt">x=</span>aluno_id, <span class="dt">y=</span>aluno_media, <span class="dt">color=</span>aluno_curso)) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb123-6" data-line-number="6"><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">na.rm =</span> <span class="ot">TRUE</span>) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb123-7" data-line-number="7"><span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Identificação dos alunos&quot;</span>, <span class="dt">breaks =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">6</span>) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb123-8" data-line-number="8"><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name=</span><span class="st">&quot;Média dos alunos&quot;</span>, </a>
+<a class="sourceLine" id="cb123-9" data-line-number="9">                   <span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">1</span>, <span class="dv">6</span>, <span class="fl">0.5</span>)) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb123-10" data-line-number="10"><span class="st">  </span><span class="kw">scale_color_manual</span>(<span class="st">&quot;Matérias&quot;</span>, <span class="dt">values =</span> cores) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb123-11" data-line-number="11"><span class="st">    </span><span class="kw">ggtitle</span>(<span class="st">&quot;Média dos alunos da faculdade y&quot;</span>) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb123-12" data-line-number="12"><span class="st">    </span><span class="kw">theme_bw</span>()</a></code></pre></div>
 <p><img src="intro-analise-de-dados_files/figure-html/unnamed-chunk-56-1.png" width="672" /></p>
-<p>Bom, sabemos que o <code>ggplot</code> é bem completo, mas, só abordados isso, com o tempo vamos adicionando mais materiais. Para se aprofundar no pacote, veja nossas análises no <a href="https://github.com/dataAt/introducao-analise-de-dados/tree/master/src/R">dataAt</a> 💃 .</p>
+<p>Bom, sabemos que o <code>ggplot</code> é bem completo, mas, só abordamos uma pequena parcela. Com o tempo vamos adicionando mais materiais. Para se aprofundar no pacote, veja nossas análises no <a href="https://github.com/dataAt/introducao-analise-de-dados/tree/master/src/R">dataAt</a> 💃.</p>
 </div>
 <div id="recomendacoes" class="section level2">
 <h2><span class="header-section-number">4.7</span> Recomendações</h2>
@@ -403,7 +477,6 @@ Histograma</td>
 <li><a href="https://cdr.ibpad.com.br/">Ciencia de dados em R</a></li>
 <li><a href="https://serialmentor.com/dataviz">dataviz</a></li>
 </ul>
-
 </div>
 </div>
             </section>
@@ -411,17 +484,19 @@ Histograma</td>
           </div>
         </div>
       </div>
-<a href="introducao-ao-python.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="introducao-ao-python.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
@@ -432,7 +507,7 @@ gitbook.start({
 "google": false,
 "linkedin": false,
 "weibo": false,
-"instapper": false,
+"instapaper": false,
 "vk": false,
 "all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
 },
@@ -442,6 +517,10 @@ gitbook.start({
 "size": 2
 },
 "edit": {
+"link": null,
+"text": null
+},
+"history": {
 "link": null,
 "text": null
 },

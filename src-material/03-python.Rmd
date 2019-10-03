@@ -268,7 +268,7 @@ print(df.tail()) # Função que demonstra o final do DataFrame carregado
 Caso você esteja trabalhando com alguma API Rest, você pode fazer com que o json seja transportado para um `DataFrame`, veja
 
 ```{python}
-json_frame = pd.read_json('https://www.reddit.com/r/technology/.json')
+json_frame = pd.read_json('http://dummy.restapiexample.com/api/v1/employees')
 print(json_frame.head())
 print(json_frame.columns) # Recupera as colunas do DataFrame
 ```

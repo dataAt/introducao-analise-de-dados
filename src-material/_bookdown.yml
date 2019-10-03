@@ -1,2 +1,3 @@
 book_filename: intro-analise-de-dados
 output_dir: "../docs"
+delete_merged_file: TRUE

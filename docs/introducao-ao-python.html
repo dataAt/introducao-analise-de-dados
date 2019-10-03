@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-<html >
-
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>intro-analise-de-dados.utf8.md</title>
-  <meta name="description" content="">
-  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>3 Introdução ao Python 🚀 | intro-analise-de-dados.utf8.md</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="intro-analise-de-dados.utf8.md" />
+  <meta property="og:title" content="3 Introdução ao Python 🚀 | intro-analise-de-dados.utf8.md" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="intro-analise-de-dados.utf8.md" />
+  <meta name="twitter:title" content="3 Introdução ao Python 🚀 | intro-analise-de-dados.utf8.md" />
   
   
   
@@ -25,19 +24,21 @@
 
 
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="introducao-ao-r.html">
-<link rel="next" href="introducao-ao-ggplot.html">
+<link rel="prev" href="introducao-ao-r.html"/>
+<link rel="next" href="introducao-ao-ggplot.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
 
 
 
@@ -45,6 +46,9 @@
 
 
 
+
+
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
 
 
 <style type="text/css">
@@ -53,7 +57,6 @@ a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
 a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
@@ -128,13 +131,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.1.1" data-path="introducao.html"><a href="introducao.html#tipos-de-dados"><i class="fa fa-check"></i><b>1.1.1</b> Tipos de dados</a></li>
 <li class="chapter" data-level="1.1.2" data-path="introducao.html"><a href="introducao.html#formatos-de-dados"><i class="fa fa-check"></i><b>1.1.2</b> Formatos de dados</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="introducao.html"><a href="introducao.html#o-que-e-analise-de-dados"><i class="fa fa-check"></i><b>1.2</b> O que é análise de dados</a><ul>
-<li class="chapter" data-level="1.2.1" data-path="introducao.html"><a href="introducao.html#o-que-faz-um-analista-de-dados"><i class="fa fa-check"></i><b>1.2.1</b> o que faz um analista de dados</a></li>
-<li class="chapter" data-level="1.2.2" data-path="introducao.html"><a href="introducao.html#qual-a-diferencas-entre-analista-e-o-cientista-de-dados"><i class="fa fa-check"></i><b>1.2.2</b> Qual a diferenças entre análista e o ciêntista de dados</a></li>
+<li class="chapter" data-level="1.2" data-path="introducao.html"><a href="introducao.html#o-que-e-analise-de-dados"><i class="fa fa-check"></i><b>1.2</b> O que é análise de dados?</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="introducao.html"><a href="introducao.html#o-que-faz-um-analista-de-dados"><i class="fa fa-check"></i><b>1.2.1</b> o que faz um analista de dados?</a></li>
+<li class="chapter" data-level="1.2.2" data-path="introducao.html"><a href="introducao.html#quais-sao-as-diferencas-entre-analista-e-cientista-de-dados"><i class="fa fa-check"></i><b>1.2.2</b> Quais são as diferenças entre analista e cientista de dados?</a></li>
 <li class="chapter" data-level="1.2.3" data-path="introducao.html"><a href="introducao.html#processos-da-analise-de-dados"><i class="fa fa-check"></i><b>1.2.3</b> Processos da análise de dados</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="introducao-ao-r.html"><a href="introducao-ao-r.html"><i class="fa fa-check"></i><b>2</b> Introdução ao R 💎</a><ul>
+<li class="chapter" data-level="2" data-path="introducao-ao-r.html"><a href="introducao-ao-r.html"><i class="fa fa-check"></i><b>2</b> Introdução ao R</a><ul>
 <li class="chapter" data-level="2.1" data-path="introducao-ao-r.html"><a href="introducao-ao-r.html#definicao-de-variaveis"><i class="fa fa-check"></i><b>2.1</b> Definição de variáveis</a><ul>
 <li class="chapter" data-level="2.1.1" data-path="introducao-ao-r.html"><a href="introducao-ao-r.html#tipos-primitivos"><i class="fa fa-check"></i><b>2.1.1</b> Tipos primitivos</a></li>
 <li class="chapter" data-level="2.1.2" data-path="introducao-ao-r.html"><a href="introducao-ao-r.html#tipos-de-dados-estruturados"><i class="fa fa-check"></i><b>2.1.2</b> Tipos de dados estruturados</a></li>
@@ -142,13 +145,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="2.2" data-path="introducao-ao-r.html"><a href="introducao-ao-r.html#operacoes-basicas"><i class="fa fa-check"></i><b>2.2</b> Operações Básicas</a><ul>
 <li class="chapter" data-level="2.2.1" data-path="introducao-ao-r.html"><a href="introducao-ao-r.html#dicas-uteis"><i class="fa fa-check"></i><b>2.2.1</b> Dicas úteis</a></li>
-<li class="chapter" data-level="2.2.2" data-path="introducao-ao-r.html"><a href="introducao-ao-r.html#estatisca-basica"><i class="fa fa-check"></i><b>2.2.2</b> Estatisca básica</a></li>
+<li class="chapter" data-level="2.2.2" data-path="introducao-ao-r.html"><a href="introducao-ao-r.html#estatistica-basica"><i class="fa fa-check"></i><b>2.2.2</b> Estatística básica</a></li>
 </ul></li>
 <li class="chapter" data-level="2.3" data-path="introducao-ao-r.html"><a href="introducao-ao-r.html#estruturas-de-decisao"><i class="fa fa-check"></i><b>2.3</b> Estruturas de decisão</a></li>
 <li class="chapter" data-level="2.4" data-path="introducao-ao-r.html"><a href="introducao-ao-r.html#iteracao"><i class="fa fa-check"></i><b>2.4</b> Iteração</a></li>
 <li class="chapter" data-level="2.5" data-path="introducao-ao-r.html"><a href="introducao-ao-r.html#manipulacao-de-dados"><i class="fa fa-check"></i><b>2.5</b> Manipulação de dados</a></li>
 <li class="chapter" data-level="2.6" data-path="introducao-ao-r.html"><a href="introducao-ao-r.html#para-saber-mais"><i class="fa fa-check"></i><b>2.6</b> Para saber mais</a><ul>
-<li class="chapter" data-level="2.6.1" data-path="introducao-ao-r.html"><a href="introducao-ao-r.html#materias-utilizados-como-base"><i class="fa fa-check"></i><b>2.6.1</b> Materias utilizados como base</a></li>
+<li class="chapter" data-level="2.6.1" data-path="introducao-ao-r.html"><a href="introducao-ao-r.html#materiais-utilizados-como-base"><i class="fa fa-check"></i><b>2.6.1</b> Materiais utilizados como base</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="introducao-ao-python.html"><a href="introducao-ao-python.html"><i class="fa fa-check"></i><b>3</b> Introdução ao Python 🚀</a><ul>
@@ -164,13 +167,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="4" data-path="introducao-ao-ggplot.html"><a href="introducao-ao-ggplot.html"><i class="fa fa-check"></i><b>4</b> Introdução ao ggplot 📊</a><ul>
 <li class="chapter" data-level="4.1" data-path="introducao-ao-ggplot.html"><a href="introducao-ao-ggplot.html#o-que-e-o-ggplot"><i class="fa fa-check"></i><b>4.1</b> O que é o <code>ggplot</code>?</a></li>
-<li class="chapter" data-level="4.2" data-path="introducao-ao-ggplot.html"><a href="introducao-ao-ggplot.html#mapeamente-estetico"><i class="fa fa-check"></i><b>4.2</b> Mapeamente Estético</a></li>
+<li class="chapter" data-level="4.2" data-path="introducao-ao-ggplot.html"><a href="introducao-ao-ggplot.html#mapeamento-estetico"><i class="fa fa-check"></i><b>4.2</b> Mapeamento Estético</a></li>
 <li class="chapter" data-level="4.3" data-path="introducao-ao-ggplot.html"><a href="introducao-ao-ggplot.html#objetos-geometricos"><i class="fa fa-check"></i><b>4.3</b> Objetos geométricos</a></li>
 <li class="chapter" data-level="4.4" data-path="introducao-ao-ggplot.html"><a href="introducao-ao-ggplot.html#escalas"><i class="fa fa-check"></i><b>4.4</b> Escalas</a></li>
 <li class="chapter" data-level="4.5" data-path="introducao-ao-ggplot.html"><a href="introducao-ao-ggplot.html#subplots"><i class="fa fa-check"></i><b>4.5</b> Subplots</a></li>
 <li class="chapter" data-level="4.6" data-path="introducao-ao-ggplot.html"><a href="introducao-ao-ggplot.html#temas"><i class="fa fa-check"></i><b>4.6</b> Temas</a></li>
 <li class="chapter" data-level="4.7" data-path="introducao-ao-ggplot.html"><a href="introducao-ao-ggplot.html#recomendacoes"><i class="fa fa-check"></i><b>4.7</b> Recomendações</a></li>
 </ul></li>
+<li class="chapter" data-level="5" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>5</b> References</a></li>
 </ul>
 
       </nav>
@@ -227,11 +231,12 @@ Pode-se entender que as <code>Series</code> são estruturas de dados simples, as
 <p>Vamos começar a utilização, para facilitar o entendimento.</p>
 <div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb66-1" data-line-number="1"><span class="co"># Estes comandos não devem ser executados em seu terminal</span></a>
 <a class="sourceLine" id="cb66-2" data-line-number="2"><span class="kw">library</span>(reticulate) </a>
-<a class="sourceLine" id="cb66-3" data-line-number="3"><span class="kw">use_python</span>(<span class="st">&quot;~/ambiente_virtual/bin/python3&quot;</span>)</a></code></pre></div>
+<a class="sourceLine" id="cb66-3" data-line-number="3"><span class="kw">use_python</span>(<span class="st">&quot;venv/bin/python3&quot;</span>)</a></code></pre></div>
 <p>Para iniciar, vamos criar um simples <code>Series</code> e colocar dentro de uma variável. Para isto, importando a biblioteca pandas, e passamos para ela o ‘apelido’ de <code>pd</code>.</p>
 <p>Em seguida, vamos criar uma <code>Series</code> simples, passando como parâmetro de entrada uma lista com três valores, veja:</p>
 <div class="sourceCode" id="cb67"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb67-1" data-line-number="1"><span class="im">import</span> pandas <span class="im">as</span> pd</a>
-<a class="sourceLine" id="cb67-2" data-line-number="2">s <span class="op">=</span> pd.Series([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])<span class="op">;</span> <span class="bu">print</span>(s)</a></code></pre></div>
+<a class="sourceLine" id="cb67-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb67-3" data-line-number="3">s <span class="op">=</span> pd.Series([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])<span class="op">;</span> <span class="bu">print</span>(s)</a></code></pre></div>
 <pre><code>## 0    1
 ## 1    2
 ## 2    3
@@ -252,7 +257,8 @@ Pode-se entender que as <code>Series</code> são estruturas de dados simples, as
 <a class="sourceLine" id="cb74-2" data-line-number="2">  <span class="st">&#39;faculdade&#39;</span>: <span class="st">&#39;Fatec&#39;</span>,</a>
 <a class="sourceLine" id="cb74-3" data-line-number="3">  <span class="st">&#39;nota&#39;</span>: <span class="dv">10</span> </a>
 <a class="sourceLine" id="cb74-4" data-line-number="4">}</a>
-<a class="sourceLine" id="cb74-5" data-line-number="5">dicto_s <span class="op">=</span> pd.Series(dicto)<span class="op">;</span> <span class="bu">print</span>(dicto_s)</a></code></pre></div>
+<a class="sourceLine" id="cb74-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb74-6" data-line-number="6">dicto_s <span class="op">=</span> pd.Series(dicto)<span class="op">;</span> <span class="bu">print</span>(dicto_s)</a></code></pre></div>
 <pre><code>## faculdade    Fatec
 ## nota            10
 ## dtype: object</code></pre>
@@ -286,10 +292,11 @@ Pode-se entender que as <code>Series</code> são estruturas de dados simples, as
 <a class="sourceLine" id="cb82-2" data-line-number="2">  <span class="st">&#39;nome&#39;</span>: [<span class="st">&#39;felipe&#39;</span>, <span class="st">&#39;maria&#39;</span>],</a>
 <a class="sourceLine" id="cb82-3" data-line-number="3">  <span class="st">&#39;idade&#39;</span>: [<span class="dv">12</span>, <span class="dv">13</span>]</a>
 <a class="sourceLine" id="cb82-4" data-line-number="4">}</a>
-<a class="sourceLine" id="cb82-5" data-line-number="5">df <span class="op">=</span> pd.DataFrame(dicto)<span class="op">;</span> <span class="bu">print</span>(df)</a></code></pre></div>
-<pre><code>##      nome  idade
-## 0  felipe     12
-## 1   maria     13</code></pre>
+<a class="sourceLine" id="cb82-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb82-6" data-line-number="6">df <span class="op">=</span> pd.DataFrame(dicto)<span class="op">;</span> <span class="bu">print</span>(df)</a></code></pre></div>
+<pre><code>##    idade    nome
+## 0     12  felipe
+## 1     13   maria</code></pre>
 <p>Bem, agora que você entendeu a diferença fundamental entre estas estruturas de dados, vamos para a parte de manipulação delas.</p>
 </div>
 <div id="selecao-e-filtro-dos-dados" class="section level3">
@@ -320,17 +327,37 @@ Pode-se entender que as <code>Series</code> são estruturas de dados simples, as
 <a class="sourceLine" id="cb84-3" data-line-number="3">  <span class="st">&#39;idade&#39;</span>: [<span class="dv">15</span>, <span class="dv">18</span>, <span class="dv">21</span>],</a>
 <a class="sourceLine" id="cb84-4" data-line-number="4">  <span class="st">&#39;nota&#39;</span>: [<span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>]</a>
 <a class="sourceLine" id="cb84-5" data-line-number="5">}, index <span class="op">=</span> [<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>])</a>
-<a class="sourceLine" id="cb84-6" data-line-number="6"><span class="co"># Recuperando a aluna com index 9</span></a>
-<a class="sourceLine" id="cb84-7" data-line-number="7">df.loc[<span class="dv">9</span>, <span class="st">&#39;nome&#39;</span>]</a>
-<a class="sourceLine" id="cb84-8" data-line-number="8"><span class="co"># É possível também recuperar mais de uma coluna com o .loc</span></a>
-<a class="sourceLine" id="cb84-9" data-line-number="9">df.loc[<span class="dv">9</span>, [<span class="st">&#39;nome&#39;</span>, <span class="st">&#39;idade&#39;</span>]]</a>
-<a class="sourceLine" id="cb84-10" data-line-number="10"><span class="co"># Recuperando a aluna na posição 2</span></a>
-<a class="sourceLine" id="cb84-11" data-line-number="11">df.iloc[<span class="dv">2</span>][<span class="st">&#39;nome&#39;</span>]</a>
-<a class="sourceLine" id="cb84-12" data-line-number="12"><span class="co"># Recuperando duas colunas</span></a>
-<a class="sourceLine" id="cb84-13" data-line-number="13">df.iloc[<span class="dv">2</span>][[<span class="st">&#39;nome&#39;</span>, <span class="st">&#39;idade&#39;</span>]]</a></code></pre></div>
+<a class="sourceLine" id="cb84-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb84-7" data-line-number="7"><span class="co"># Recuperando a aluna com index 9</span></a>
+<a class="sourceLine" id="cb84-8" data-line-number="8">df.loc[<span class="dv">9</span>, <span class="st">&#39;nome&#39;</span>]</a>
+<a class="sourceLine" id="cb84-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb84-10" data-line-number="10"><span class="co"># É possível também recuperar mais de uma coluna com o .loc</span></a></code></pre></div>
+<pre><code>## &#39;Josefa&#39;</code></pre>
+<div class="sourceCode" id="cb86"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb86-1" data-line-number="1">df.loc[<span class="dv">9</span>, [<span class="st">&#39;nome&#39;</span>, <span class="st">&#39;idade&#39;</span>]]</a>
+<a class="sourceLine" id="cb86-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb86-3" data-line-number="3"><span class="co"># Recuperando a aluna na posição 2</span></a></code></pre></div>
+<pre><code>## nome     Josefa
+## idade        21
+## Name: 9, dtype: object</code></pre>
+<div class="sourceCode" id="cb88"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb88-1" data-line-number="1">df.iloc[<span class="dv">2</span>][<span class="st">&#39;nome&#39;</span>]</a>
+<a class="sourceLine" id="cb88-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb88-3" data-line-number="3"><span class="co"># Recuperando duas colunas</span></a></code></pre></div>
+<pre><code>## &#39;Josefa&#39;</code></pre>
+<div class="sourceCode" id="cb90"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb90-1" data-line-number="1">df.iloc[<span class="dv">2</span>][[<span class="st">&#39;nome&#39;</span>, <span class="st">&#39;idade&#39;</span>]]</a></code></pre></div>
+<pre><code>## nome     Josefa
+## idade        21
+## Name: 9, dtype: object</code></pre>
 <p>Dentro destes, ainda é possível passar uma expressão booleana, para realizar uma filtragem dos dados.</p>
-<div class="sourceCode" id="cb85"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb85-1" data-line-number="1">df <span class="op">=</span> pd.DataFrame({<span class="st">&#39;coluna&#39;</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>]})</a>
-<a class="sourceLine" id="cb85-2" data-line-number="2">df[df[<span class="st">&#39;coluna&#39;</span>] <span class="op">&gt;=</span> <span class="dv">5</span>]</a></code></pre></div>
+<div class="sourceCode" id="cb92"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb92-1" data-line-number="1">df <span class="op">=</span> pd.DataFrame({<span class="st">&#39;coluna&#39;</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>]})</a>
+<a class="sourceLine" id="cb92-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb92-3" data-line-number="3">df[df[<span class="st">&#39;coluna&#39;</span>] <span class="op">&gt;=</span> <span class="dv">5</span>]</a></code></pre></div>
+<pre><code>##    coluna
+## 4       5
+## 5       6
+## 6       7
+## 7       8
+## 8       9
+## 9      10</code></pre>
 <p>E isto também vale para as <code>Series</code>, utilizando a mesma estrutura. Bem, este é o básico para a manipulação e filtragem dos dados, existem muitos métodos para a manipulação e filtragem, aqui ainda veremos alguns deles, mas, inicialmente estes já resolver muitos dos nossos problemas.</p>
 </div>
 <div id="agrupamento-de-dados-e-agregacoes" class="section level3">
@@ -344,49 +371,52 @@ Pode-se entender que as <code>Series</code> são estruturas de dados simples, as
 <li>max() -&gt; Busca o valor máximo;</li>
 <li>count() -&gt; Realiza a contagem de elementos.</li>
 </ul>
-<div class="sourceCode" id="cb86"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb86-1" data-line-number="1">s <span class="op">=</span> pd.Series([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</a>
-<a class="sourceLine" id="cb86-2" data-line-number="2">df <span class="op">=</span> pd.DataFrame([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>,], [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]])</a>
-<a class="sourceLine" id="cb86-3" data-line-number="3"><span class="co"># Agregando Series</span></a>
-<a class="sourceLine" id="cb86-4" data-line-number="4"><span class="bu">print</span>(s.<span class="bu">sum</span>())</a>
-<a class="sourceLine" id="cb86-5" data-line-number="5"><span class="co"># Agredando DataFrame</span></a></code></pre></div>
+<div class="sourceCode" id="cb94"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb94-1" data-line-number="1">s <span class="op">=</span> pd.Series([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</a>
+<a class="sourceLine" id="cb94-2" data-line-number="2">df <span class="op">=</span> pd.DataFrame([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>,], [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]])</a>
+<a class="sourceLine" id="cb94-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb94-4" data-line-number="4"><span class="co"># Agregando Series</span></a>
+<a class="sourceLine" id="cb94-5" data-line-number="5"><span class="bu">print</span>(s.<span class="bu">sum</span>())</a>
+<a class="sourceLine" id="cb94-6" data-line-number="6"><span class="co"># Agredando DataFrame</span></a></code></pre></div>
 <pre><code>## 6</code></pre>
-<div class="sourceCode" id="cb88"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb88-1" data-line-number="1"><span class="bu">print</span>(df.<span class="bu">sum</span>())</a></code></pre></div>
+<div class="sourceCode" id="cb96"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb96-1" data-line-number="1"><span class="bu">print</span>(df.<span class="bu">sum</span>())</a></code></pre></div>
 <pre><code>## 0    5
 ## 1    7
 ## 2    9
 ## dtype: int64</code></pre>
 <p>E o agrupamento basicamente representa a divisão dos dados, em conjuntos que possuem alguma similaridade (Esta similaridade é difinida pelo usuário). E isto em Python é realizado com o método <code>groupby</code>.</p>
-<div class="sourceCode" id="cb90"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb90-1" data-line-number="1">df <span class="op">=</span> pd.DataFrame({</a>
-<a class="sourceLine" id="cb90-2" data-line-number="2">  <span class="st">&#39;nome&#39;</span>: [<span class="st">&#39;Tel1&#39;</span>, <span class="st">&#39;Tel2&#39;</span>, <span class="st">&#39;Tel3&#39;</span>],</a>
-<a class="sourceLine" id="cb90-3" data-line-number="3">  <span class="st">&#39;tipo&#39;</span>: [<span class="st">&#39;antigo&#39;</span>, <span class="st">&#39;novo&#39;</span>, <span class="st">&#39;novo&#39;</span>]</a>
-<a class="sourceLine" id="cb90-4" data-line-number="4">})</a>
-<a class="sourceLine" id="cb90-5" data-line-number="5"><span class="co"># Etapa de divisão dos dados</span></a>
-<a class="sourceLine" id="cb90-6" data-line-number="6">agrupado <span class="op">=</span> df.groupby(<span class="st">&#39;tipo&#39;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb98"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb98-1" data-line-number="1">df <span class="op">=</span> pd.DataFrame({</a>
+<a class="sourceLine" id="cb98-2" data-line-number="2">  <span class="st">&#39;nome&#39;</span>: [<span class="st">&#39;Tel1&#39;</span>, <span class="st">&#39;Tel2&#39;</span>, <span class="st">&#39;Tel3&#39;</span>],</a>
+<a class="sourceLine" id="cb98-3" data-line-number="3">  <span class="st">&#39;tipo&#39;</span>: [<span class="st">&#39;antigo&#39;</span>, <span class="st">&#39;novo&#39;</span>, <span class="st">&#39;novo&#39;</span>]</a>
+<a class="sourceLine" id="cb98-4" data-line-number="4">})</a>
+<a class="sourceLine" id="cb98-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb98-6" data-line-number="6"><span class="co"># Etapa de divisão dos dados</span></a>
+<a class="sourceLine" id="cb98-7" data-line-number="7">agrupado <span class="op">=</span> df.groupby(<span class="st">&#39;tipo&#39;</span>)</a></code></pre></div>
 <p>Os dados foram agrupados de acordo com a coluna <code>tipo</code>. O que se espera como retorno do método <code>groupby</code> ? Um conjunto de <code>DataFrames</code>, correto ? Sim, mas, no caso do pandas ele retorna um tipo de <code>DataFrame</code>, nomeado <code>DataFrameGroupBy</code>, este contém cada um dos grupos, que podem ser acessados através do atributo <code>groups</code>, o formato de retorno é um dicionário, onde cada chave representa o grupo, neste caso o tipo, e os valores são os índices dos itens que fazem parte do grupo.</p>
-<div class="sourceCode" id="cb91"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb91-1" data-line-number="1"><span class="bu">print</span>(agrupado.groups)</a></code></pre></div>
-<pre><code>## {&#39;antigo&#39;: Int64Index([0], dtype=&#39;int64&#39;), &#39;novo&#39;: Int64Index([1, 2], dtype=&#39;int64&#39;)}</code></pre>
+<div class="sourceCode" id="cb99"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb99-1" data-line-number="1"><span class="bu">print</span>(agrupado.groups)</a></code></pre></div>
+<pre><code>## {&#39;novo&#39;: Int64Index([1, 2], dtype=&#39;int64&#39;), &#39;antigo&#39;: Int64Index([0], dtype=&#39;int64&#39;)}</code></pre>
 <p>Bem, ao juntarmos os conceitos de agregação e agrupamento, temos um processo que pode ser um problema de ser entendido, para isto, vamos utilizar a definição feita por Hadley Wickham, onde ele simplesmente separa todo o processo em etapas, sendo estas: <code>Dividir-Aplicar-Combinar</code>.</p>
 <p><img src="images/03.08-split-apply-combine.png" /></p>
 <p>O processo de dividir é o agrupamento, onde estou juntando os dados de acordo com alguma caracteristica que eu defini, a aplicação é justamente onde pode-se aplicar as agregações, filtros ou transformações, e por fim o combinar, representa a junção dos resultados da operação realizada na aplicação.</p>
 <p>Para que se haja um entendimento melhor, vamos criar um exemplo.</p>
-<div class="sourceCode" id="cb93"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb93-1" data-line-number="1">df <span class="op">=</span> pd.DataFrame({</a>
-<a class="sourceLine" id="cb93-2" data-line-number="2">  <span class="st">&#39;nome&#39;</span>: [<span class="st">&#39;felipe&#39;</span>, <span class="st">&#39;joão&#39;</span>, <span class="st">&#39;maria&#39;</span>, <span class="st">&#39;ana&#39;</span>],</a>
-<a class="sourceLine" id="cb93-3" data-line-number="3">  <span class="st">&#39;idade&#39;</span>: [<span class="dv">19</span>, <span class="dv">19</span>, <span class="dv">20</span>, <span class="dv">20</span>],</a>
-<a class="sourceLine" id="cb93-4" data-line-number="4">  <span class="st">&#39;dinheiro&#39;</span>: [<span class="dv">100</span>, <span class="dv">100</span>, <span class="dv">150</span>, <span class="dv">150</span>]</a>
-<a class="sourceLine" id="cb93-5" data-line-number="5">})</a></code></pre></div>
+<div class="sourceCode" id="cb101"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb101-1" data-line-number="1">df <span class="op">=</span> pd.DataFrame({</a>
+<a class="sourceLine" id="cb101-2" data-line-number="2">  <span class="st">&#39;nome&#39;</span>: [<span class="st">&#39;felipe&#39;</span>, <span class="st">&#39;joão&#39;</span>, <span class="st">&#39;maria&#39;</span>, <span class="st">&#39;ana&#39;</span>],</a>
+<a class="sourceLine" id="cb101-3" data-line-number="3">  <span class="st">&#39;idade&#39;</span>: [<span class="dv">19</span>, <span class="dv">19</span>, <span class="dv">20</span>, <span class="dv">20</span>],</a>
+<a class="sourceLine" id="cb101-4" data-line-number="4">  <span class="st">&#39;dinheiro&#39;</span>: [<span class="dv">100</span>, <span class="dv">100</span>, <span class="dv">150</span>, <span class="dv">150</span>]</a>
+<a class="sourceLine" id="cb101-5" data-line-number="5">})</a></code></pre></div>
 <p>Vamos agrupar estes dados, levando em consideração a idade.</p>
-<div class="sourceCode" id="cb94"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb94-1" data-line-number="1"><span class="co"># Esta é a etapa de divir, da definição do Hedley</span></a>
-<a class="sourceLine" id="cb94-2" data-line-number="2">agrupado <span class="op">=</span> df.groupby(<span class="st">&#39;idade&#39;</span>)</a>
-<a class="sourceLine" id="cb94-3" data-line-number="3"><span class="co"># Aplicando uma agregação</span></a>
-<a class="sourceLine" id="cb94-4" data-line-number="4"><span class="co">## Esta é a etapa de aplicação e junçaõ, definida pelo Hedley</span></a>
-<a class="sourceLine" id="cb94-5" data-line-number="5"><span class="bu">print</span>(agrupado.count())</a></code></pre></div>
-<pre><code>##        nome  dinheiro
+<div class="sourceCode" id="cb102"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb102-1" data-line-number="1"><span class="co"># Esta é a etapa de divir, da definição do Hedley</span></a>
+<a class="sourceLine" id="cb102-2" data-line-number="2">agrupado <span class="op">=</span> df.groupby(<span class="st">&#39;idade&#39;</span>)</a>
+<a class="sourceLine" id="cb102-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb102-4" data-line-number="4"><span class="co"># Aplicando uma agregação</span></a>
+<a class="sourceLine" id="cb102-5" data-line-number="5"><span class="co">## Esta é a etapa de aplicação e junçaõ, definida pelo Hedley</span></a>
+<a class="sourceLine" id="cb102-6" data-line-number="6"><span class="bu">print</span>(agrupado.count())</a></code></pre></div>
+<pre><code>##        dinheiro  nome
 ## idade                
-## 19        2         2
-## 20        2         2</code></pre>
+## 19            2     2
+## 20            2     2</code></pre>
 <p>Veja que o agrupamento e a contagem foi realizado, mas caso eu queira aplicar uma agregação em uma coluna especifica ? Você pode!</p>
-<div class="sourceCode" id="cb96"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb96-1" data-line-number="1"><span class="co"># Agregando somente o dinheiro de cada grupo</span></a>
-<a class="sourceLine" id="cb96-2" data-line-number="2"><span class="bu">print</span>(agrupado[<span class="st">&#39;dinheiro&#39;</span>].<span class="bu">sum</span>())</a></code></pre></div>
+<div class="sourceCode" id="cb104"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb104-1" data-line-number="1"><span class="co"># Agregando somente o dinheiro de cada grupo</span></a>
+<a class="sourceLine" id="cb104-2" data-line-number="2"><span class="bu">print</span>(agrupado[<span class="st">&#39;dinheiro&#39;</span>].<span class="bu">sum</span>())</a></code></pre></div>
 <pre><code>## idade
 ## 19    200
 ## 20    300
@@ -397,35 +427,41 @@ Pode-se entender que as <code>Series</code> são estruturas de dados simples, as
 <h3><span class="header-section-number">3.2.5</span> Funções de leitura e escrita</h3>
 <p>Além das estruturas de dados poderosas, o pandas também possui funções para leitura e escrita que são <strong>APELONAS</strong></p>
 <p>Para a leitura de csv, podemos utilizar a <code>read_csv</code></p>
-<div class="sourceCode" id="cb98"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb98-1" data-line-number="1">df <span class="op">=</span> pd.read_csv(<span class="st">&#39;data/titanic.csv&#39;</span>) <span class="co"># O caminho pode ser diferente eu sua máquina</span></a>
-<a class="sourceLine" id="cb98-2" data-line-number="2"><span class="bu">print</span>(df.head()) <span class="co"># Função que demonstra o início do DataFrame carregado</span></a></code></pre></div>
-<pre><code>##    PassengerId  Pclass                                          Name     Sex   Age  SibSp  Parch   Ticket     Fare Cabin Embarked
-## 0          892       3                              Kelly, Mr. James    male  34.5      0      0   330911   7.8292   NaN        Q
-## 1          893       3              Wilkes, Mrs. James (Ellen Needs)  female  47.0      1      0   363272   7.0000   NaN        S
-## 2          894       2                     Myles, Mr. Thomas Francis    male  62.0      0      0   240276   9.6875   NaN        Q
-## 3          895       3                              Wirz, Mr. Albert    male  27.0      0      0   315154   8.6625   NaN        S
-## 4          896       3  Hirvonen, Mrs. Alexander (Helga E Lindqvist)  female  22.0      1      1  3101298  12.2875   NaN        S</code></pre>
-<div class="sourceCode" id="cb100"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb100-1" data-line-number="1"><span class="bu">print</span>(df.tail()) <span class="co"># Função que demonstra o final do DataFrame carregado</span></a></code></pre></div>
-<pre><code>##      PassengerId  Pclass                          Name     Sex   Age  SibSp  Parch              Ticket      Fare Cabin Embarked
-## 413         1305       3            Spector, Mr. Woolf    male   NaN      0      0           A.5. 3236    8.0500   NaN        S
-## 414         1306       1  Oliva y Ocana, Dona. Fermina  female  39.0      0      0            PC 17758  108.9000  C105        C
-## 415         1307       3  Saether, Mr. Simon Sivertsen    male  38.5      0      0  SOTON/O.Q. 3101262    7.2500   NaN        S
-## 416         1308       3           Ware, Mr. Frederick    male   NaN      0      0              359309    8.0500   NaN        S
-## 417         1309       3      Peter, Master. Michael J    male   NaN      1      1                2668   22.3583   NaN        C</code></pre>
+<div class="sourceCode" id="cb106"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb106-1" data-line-number="1">df <span class="op">=</span> pd.read_csv(<span class="st">&#39;data/titanic.csv&#39;</span>) <span class="co"># O caminho pode ser diferente eu sua máquina</span></a>
+<a class="sourceLine" id="cb106-2" data-line-number="2"><span class="bu">print</span>(df.head()) <span class="co"># Função que demonstra o início do DataFrame carregado</span></a></code></pre></div>
+<pre><code>##    PassengerId  Pclass  ... Cabin Embarked
+## 0          892       3  ...   NaN        Q
+## 1          893       3  ...   NaN        S
+## 2          894       2  ...   NaN        Q
+## 3          895       3  ...   NaN        S
+## 4          896       3  ...   NaN        S
+## 
+## [5 rows x 11 columns]</code></pre>
+<div class="sourceCode" id="cb108"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb108-1" data-line-number="1"><span class="bu">print</span>(df.tail()) <span class="co"># Função que demonstra o final do DataFrame carregado</span></a></code></pre></div>
+<pre><code>##      PassengerId  Pclass                          Name  ...      Fare  Cabin  Embarked
+## 413         1305       3            Spector, Mr. Woolf  ...    8.0500    NaN         S
+## 414         1306       1  Oliva y Ocana, Dona. Fermina  ...  108.9000   C105         C
+## 415         1307       3  Saether, Mr. Simon Sivertsen  ...    7.2500    NaN         S
+## 416         1308       3           Ware, Mr. Frederick  ...    8.0500    NaN         S
+## 417         1309       3      Peter, Master. Michael J  ...   22.3583    NaN         C
+## 
+## [5 rows x 11 columns]</code></pre>
 <p>Caso você esteja trabalhando com alguma API Rest, você pode fazer com que o json seja transportado para um <code>DataFrame</code>, veja</p>
-<div class="sourceCode" id="cb102"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb102-1" data-line-number="1">json_frame <span class="op">=</span> pd.read_json(<span class="st">&#39;https://www.reddit.com/r/technology/.json&#39;</span>)</a>
-<a class="sourceLine" id="cb102-2" data-line-number="2"><span class="bu">print</span>(json_frame.head())</a></code></pre></div>
-<pre><code>##              kind                                               data
-## after     Listing                                          t3_9ohjfa
-## before    Listing                                               None
-## children  Listing  [{&#39;kind&#39;: &#39;t3&#39;, &#39;data&#39;: {&#39;approved_at_utc&#39;: No...
-## dist      Listing                                                 27
-## modhash   Listing</code></pre>
-<div class="sourceCode" id="cb104"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb104-1" data-line-number="1"><span class="bu">print</span>(json_frame.columns) <span class="co"># Recupera as colunas do DataFrame</span></a></code></pre></div>
-<pre><code>## Index([&#39;kind&#39;, &#39;data&#39;], dtype=&#39;object&#39;)</code></pre>
+<div class="sourceCode" id="cb110"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb110-1" data-line-number="1">json_frame <span class="op">=</span> pd.read_json(<span class="st">&#39;http://dummy.restapiexample.com/api/v1/employees&#39;</span>)</a>
+<a class="sourceLine" id="cb110-2" data-line-number="2"><span class="bu">print</span>(json_frame.head())</a></code></pre></div>
+<pre><code>##    employee_age employee_name  employee_salary     id profile_image
+## 0            15    Marta37309                1  99003              
+## 1            33    emp0137338            10000  99008              
+## 2           343    emp0437338           100300  99011              
+## 3            25        M37345          2000000  99012              
+## 4            35    Marta37346          1000000  99013</code></pre>
+<div class="sourceCode" id="cb112"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb112-1" data-line-number="1"><span class="bu">print</span>(json_frame.columns) <span class="co"># Recupera as colunas do DataFrame</span></a></code></pre></div>
+<pre><code>## Index([&#39;employee_age&#39;, &#39;employee_name&#39;, &#39;employee_salary&#39;, &#39;id&#39;,
+##        &#39;profile_image&#39;],
+##       dtype=&#39;object&#39;)</code></pre>
 <p>Da mesma forma que a leitura, a escrita é extremamente fácil. Para salvar um CSV, ou um JSON, basta utilizar os métodos <code>to_csv</code> e <code>to_json</code>, presentes dentro do <code>DataFrame</code>.</p>
-<div class="sourceCode" id="cb106"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb106-1" data-line-number="1">df.to_csv(<span class="st">&#39;nome_do_csv.csv&#39;</span>) <span class="co"># Salva o CSV</span></a>
-<a class="sourceLine" id="cb106-2" data-line-number="2">df.to_json(<span class="st">&#39;nome_do_json.json&#39;</span>) <span class="co"># Salva o JSON</span></a></code></pre></div>
+<div class="sourceCode" id="cb114"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb114-1" data-line-number="1">df.to_csv(<span class="st">&#39;nome_do_csv.csv&#39;</span>) <span class="co"># Salva o CSV</span></a>
+<a class="sourceLine" id="cb114-2" data-line-number="2">df.to_json(<span class="st">&#39;nome_do_json.json&#39;</span>) <span class="co"># Salva o JSON</span></a></code></pre></div>
 <p>Viu ? É tudo muito simples e direto, o que te permite focar em sua análise, e deixar de lado problemas com sintaxe 🗽, mas, após a sua análise, é importante apresentar seus dados, para isto, vamos aprender a utilizar a biblioteca plotnine para fazer <strong>plots</strong> e visualizar seus dados.</p>
 </div>
 </div>
@@ -449,11 +485,13 @@ Pode-se entender que as <code>Series</code> são estruturas de dados simples, as
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
@@ -464,7 +502,7 @@ gitbook.start({
 "google": false,
 "linkedin": false,
 "weibo": false,
-"instapper": false,
+"instapaper": false,
 "vk": false,
 "all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
 },
@@ -474,6 +512,10 @@ gitbook.start({
 "size": 2
 },
 "edit": {
+"link": null,
+"text": null
+},
+"history": {
 "link": null,
 "text": null
 },
