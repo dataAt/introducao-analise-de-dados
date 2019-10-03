@@ -161,7 +161,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.2.2" data-path="introducao-ao-python.html"><a href="introducao-ao-python.html#dataframes"><i class="fa fa-check"></i><b>3.2.2</b> Dataframes</a></li>
 <li class="chapter" data-level="3.2.3" data-path="introducao-ao-python.html"><a href="introducao-ao-python.html#selecao-e-filtro-dos-dados"><i class="fa fa-check"></i><b>3.2.3</b> Seleção e filtro dos dados</a></li>
 <li class="chapter" data-level="3.2.4" data-path="introducao-ao-python.html"><a href="introducao-ao-python.html#agrupamento-de-dados-e-agregacoes"><i class="fa fa-check"></i><b>3.2.4</b> Agrupamento de dados e agregações</a></li>
-<li class="chapter" data-level="3.2.5" data-path="introducao-ao-python.html"><a href="introducao-ao-python.html#funcoes-de-leitura-e-escrita"><i class="fa fa-check"></i><b>3.2.5</b> Funções de leitura e escrita</a></li>
+<li class="chapter" data-level="3.2.5" data-path="introducao-ao-python.html"><a href="introducao-ao-python.html#funcoes-de-leitura-e-escrita-de-dados"><i class="fa fa-check"></i><b>3.2.5</b> Funções de leitura e escrita de dados</a></li>
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="introducao-ao-python.html"><a href="introducao-ao-python.html#para-saber-mais-1"><i class="fa fa-check"></i><b>3.3</b> Para saber mais</a></li>
 </ul></li>
@@ -198,14 +198,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="o-que-e-o-ggplot" class="section level2">
 <h2><span class="header-section-number">4.1</span> O que é o <code>ggplot</code>?</h2>
 <p>Bom, <code>ggplot</code>é um pacote em R criado pelo <em>Hadley Wickham</em>, como mencionado anteriormente, sua sintaxe se baseia na obra <a href="https://www.amazon.com/Grammar-Graphics-Statistics-Computing/dp/0387245448">The Grammar of Graphics</a>. Assim, a <em>gramática dos gráficos</em> é um conjunto de camadas, cujo o mapeamento dos atributos é chamado de <em>aesthetics</em>. O esqueleto pode ser escrito assim:</p>
-<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb115-1" data-line-number="1">  <span class="kw">ggplot</span>(<span class="dt">data =</span> <span class="op">&lt;</span>DATA<span class="op">&gt;</span>, <span class="kw">aes</span>(<span class="op">&lt;</span>MAPPINGS<span class="op">&gt;</span>)) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb115-2" data-line-number="2"><span class="st">  </span><span class="er">&lt;</span>GEOM_FUNCTION<span class="op">&gt;</span>(</a>
-<a class="sourceLine" id="cb115-3" data-line-number="3">     <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="op">&lt;</span>MAPPINGS<span class="op">&gt;</span>),</a>
-<a class="sourceLine" id="cb115-4" data-line-number="4">     <span class="dt">stat =</span> <span class="op">&lt;</span>STAT<span class="op">&gt;</span>, </a>
-<a class="sourceLine" id="cb115-5" data-line-number="5">     <span class="dt">position =</span> <span class="op">&lt;</span>POSITION<span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb115-6" data-line-number="6"><span class="st">  </span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb115-7" data-line-number="7"><span class="st">  </span><span class="er">&lt;</span>COORDINATE_FUNCTION<span class="op">&gt;</span><span class="st"> </span><span class="op">+</span></a>
-<a class="sourceLine" id="cb115-8" data-line-number="8"><span class="st">  </span><span class="er">&lt;</span>FACET_FUNCTION<span class="op">&gt;</span><span class="st">  </span></a></code></pre></div>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb118-1" data-line-number="1">  <span class="kw">ggplot</span>(<span class="dt">data =</span> <span class="op">&lt;</span>DATA<span class="op">&gt;</span>, <span class="kw">aes</span>(<span class="op">&lt;</span>MAPPINGS<span class="op">&gt;</span>)) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb118-2" data-line-number="2"><span class="st">  </span><span class="er">&lt;</span>GEOM_FUNCTION<span class="op">&gt;</span>(</a>
+<a class="sourceLine" id="cb118-3" data-line-number="3">     <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="op">&lt;</span>MAPPINGS<span class="op">&gt;</span>),</a>
+<a class="sourceLine" id="cb118-4" data-line-number="4">     <span class="dt">stat =</span> <span class="op">&lt;</span>STAT<span class="op">&gt;</span>, </a>
+<a class="sourceLine" id="cb118-5" data-line-number="5">     <span class="dt">position =</span> <span class="op">&lt;</span>POSITION<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb118-6" data-line-number="6"><span class="st">  </span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb118-7" data-line-number="7"><span class="st">  </span><span class="er">&lt;</span>COORDINATE_FUNCTION<span class="op">&gt;</span><span class="st"> </span><span class="op">+</span></a>
+<a class="sourceLine" id="cb118-8" data-line-number="8"><span class="st">  </span><span class="er">&lt;</span>FACET_FUNCTION<span class="op">&gt;</span><span class="st">  </span></a></code></pre></div>
 <p>Vamos explicar linha por linha do código a cima. Vamos lá 🧮.</p>
 </div>
 <div id="mapeamento-estetico" class="section level2">
@@ -213,16 +213,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Podemos mapear dentro da função <code>ggplot()</code> ou dentro de alguma geometria. A imagem abaixo, retirada do livro do <span class="citation">Wilke (2019)</span>, mostra os métodos geométricos do mapeamento estético.</p>
 <p><img src="images/aes_ggplot.png" /></p>
 <p>Vamos começar criando um dataframe, deste modo:</p>
-<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb116-1" data-line-number="1">escola &lt;-<span class="st"> </span><span class="kw">data.frame</span>(</a>
-<a class="sourceLine" id="cb116-2" data-line-number="2">    <span class="dt">aluno_id =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>),</a>
-<a class="sourceLine" id="cb116-3" data-line-number="3">    <span class="dt">aluno_sexo =</span> <span class="kw">c</span>(<span class="st">&quot;Masculino&quot;</span>, <span class="st">&quot;Feminino&quot;</span>,<span class="st">&quot;Masculino&quot;</span>, <span class="st">&quot;Feminino&quot;</span>, <span class="st">&quot;Masculino&quot;</span>, <span class="st">&quot;Feminino&quot;</span>),</a>
-<a class="sourceLine" id="cb116-4" data-line-number="4">    <span class="dt">aluno_curso =</span> <span class="kw">c</span>(<span class="st">&quot;Historia&quot;</span>, <span class="st">&quot;Historia&quot;</span>, <span class="st">&quot;Matemática&quot;</span>,</a>
-<a class="sourceLine" id="cb116-5" data-line-number="5">                    <span class="st">&quot;Estatística&quot;</span>, <span class="st">&quot;Matemática&quot;</span>, <span class="st">&quot;Estatística&quot;</span>),</a>
-<a class="sourceLine" id="cb116-6" data-line-number="6">    <span class="dt">aluno_media =</span> <span class="kw">c</span>(<span class="fl">2.1</span>, <span class="fl">3.5</span>, <span class="fl">4.0</span>, <span class="fl">1.0</span>, <span class="ot">NA</span>, <span class="fl">4.9</span>),</a>
-<a class="sourceLine" id="cb116-7" data-line-number="7">    <span class="dt">aluno_avaliacao =</span> <span class="kw">c</span>(<span class="st">&quot;Ruim&quot;</span>, <span class="st">&quot;Ruim&quot;</span>, <span class="st">&quot;Excelente&quot;</span>,</a>
-<a class="sourceLine" id="cb116-8" data-line-number="8">                        <span class="st">&quot;Ruim&quot;</span>, <span class="st">&quot;Nenhum&quot;</span>, <span class="st">&quot;Excelente&quot;</span>))</a>
-<a class="sourceLine" id="cb116-9" data-line-number="9"></a>
-<a class="sourceLine" id="cb116-10" data-line-number="10">  knitr<span class="op">::</span><span class="kw">kable</span>(escola)</a></code></pre></div>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb119-1" data-line-number="1">escola &lt;-<span class="st"> </span><span class="kw">data.frame</span>(</a>
+<a class="sourceLine" id="cb119-2" data-line-number="2">    <span class="dt">aluno_id =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>),</a>
+<a class="sourceLine" id="cb119-3" data-line-number="3">    <span class="dt">aluno_sexo =</span> <span class="kw">c</span>(<span class="st">&quot;Masculino&quot;</span>, <span class="st">&quot;Feminino&quot;</span>,<span class="st">&quot;Masculino&quot;</span>, <span class="st">&quot;Feminino&quot;</span>, <span class="st">&quot;Masculino&quot;</span>, <span class="st">&quot;Feminino&quot;</span>),</a>
+<a class="sourceLine" id="cb119-4" data-line-number="4">    <span class="dt">aluno_curso =</span> <span class="kw">c</span>(<span class="st">&quot;Historia&quot;</span>, <span class="st">&quot;Historia&quot;</span>, <span class="st">&quot;Matemática&quot;</span>,</a>
+<a class="sourceLine" id="cb119-5" data-line-number="5">                    <span class="st">&quot;Estatística&quot;</span>, <span class="st">&quot;Matemática&quot;</span>, <span class="st">&quot;Estatística&quot;</span>),</a>
+<a class="sourceLine" id="cb119-6" data-line-number="6">    <span class="dt">aluno_media =</span> <span class="kw">c</span>(<span class="fl">2.1</span>, <span class="fl">3.5</span>, <span class="fl">4.0</span>, <span class="fl">1.0</span>, <span class="ot">NA</span>, <span class="fl">4.9</span>),</a>
+<a class="sourceLine" id="cb119-7" data-line-number="7">    <span class="dt">aluno_avaliacao =</span> <span class="kw">c</span>(<span class="st">&quot;Ruim&quot;</span>, <span class="st">&quot;Ruim&quot;</span>, <span class="st">&quot;Excelente&quot;</span>,</a>
+<a class="sourceLine" id="cb119-8" data-line-number="8">                        <span class="st">&quot;Ruim&quot;</span>, <span class="st">&quot;Nenhum&quot;</span>, <span class="st">&quot;Excelente&quot;</span>))</a>
+<a class="sourceLine" id="cb119-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb119-10" data-line-number="10">  knitr<span class="op">::</span><span class="kw">kable</span>(escola)</a></code></pre></div>
 <table>
 <thead>
 <tr>
@@ -349,10 +349,10 @@ Excelente
 </tbody>
 </table>
 <p>Agora, vamos mapear os atributos do nosso dataframe <code>escola</code>, desta forma:</p>
-<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb117-1" data-line-number="1">  <span class="kw">library</span>(ggplot2)</a>
-<a class="sourceLine" id="cb117-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb117-3" data-line-number="3">  <span class="kw">ggplot</span>(escola, <span class="kw">aes</span>(<span class="dt">x=</span>aluno_id, <span class="dt">y=</span>aluno_media, <span class="dt">color=</span>aluno_curso))</a></code></pre></div>
-<p><img src="intro-analise-de-dados_files/figure-html/unnamed-chunk-50-1.png" width="672" /></p>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb120-1" data-line-number="1">  <span class="kw">library</span>(ggplot2)</a>
+<a class="sourceLine" id="cb120-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb120-3" data-line-number="3">  <span class="kw">ggplot</span>(escola, <span class="kw">aes</span>(<span class="dt">x=</span>aluno_id, <span class="dt">y=</span>aluno_media, <span class="dt">color=</span>aluno_curso))</a></code></pre></div>
+<p><img src="intro-analise-de-dados_files/figure-html/unnamed-chunk-52-1.png" width="672" /></p>
 <p>Bom, agora que mapeamos nossos atributos é possível ver que no eixo <code>x</code> está escrito <code>aluno_id</code> e no eixo <code>y</code> está escrito <code>aluno_media</code>.</p>
 </div>
 <div id="objetos-geometricos" class="section level2">
@@ -399,75 +399,75 @@ Histograma</td>
 </tbody>
 </table>
 <p>Vamos utilizar <code>geom_point</code> para fazer um gráfico bolhas no conjunto de dados, deste modo:</p>
-<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb118-1" data-line-number="1"> <span class="kw">ggplot</span>(escola, <span class="kw">aes</span>(<span class="dt">x=</span>aluno_id, <span class="dt">y=</span>aluno_media, <span class="dt">color=</span>aluno_curso)) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb118-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">na.rm =</span> <span class="ot">TRUE</span>) </a></code></pre></div>
-<p><img src="intro-analise-de-dados_files/figure-html/unnamed-chunk-51-1.png" width="672" /></p>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb121-1" data-line-number="1"> <span class="kw">ggplot</span>(escola, <span class="kw">aes</span>(<span class="dt">x=</span>aluno_id, <span class="dt">y=</span>aluno_media, <span class="dt">color=</span>aluno_curso)) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb121-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">na.rm =</span> <span class="ot">TRUE</span>) </a></code></pre></div>
+<p><img src="intro-analise-de-dados_files/figure-html/unnamed-chunk-53-1.png" width="672" /></p>
 <p>Olha que legal. No entanto, ainda faltam informações no nosso gráficos, por exemplo, no eixo <code>x</code>, não sabemos se começa com 0 ou 1 e o nome dos nossos atributos não estão informativos.</p>
 </div>
 <div id="escalas" class="section level2">
 <h2><span class="header-section-number">4.4</span> Escalas</h2>
 <p>Bom, agora é a hora de melhorar nosso gráfico, que por sinal está bem estranho, vamos lá!</p>
 <p>Primeiro, vamos mudar o nome dos nossos atributos em cada eixo e também mudar as escalas:</p>
-<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb119-1" data-line-number="1">   <span class="kw">ggplot</span>(escola, <span class="kw">aes</span>(<span class="dt">x=</span>aluno_id, <span class="dt">y=</span>aluno_media, <span class="dt">color=</span>aluno_curso)) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb119-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">na.rm =</span> <span class="ot">TRUE</span>) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb119-3" data-line-number="3"><span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Identificação dos alunos&quot;</span>, <span class="dt">breaks =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">6</span>)</a></code></pre></div>
-<p><img src="intro-analise-de-dados_files/figure-html/unnamed-chunk-52-1.png" width="672" /></p>
-<p>Opa, assim ficou mais claro, mas, mudar o nome de apenas um eixo não move moinhos, não, pera? 👏.</p>
-<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb120-1" data-line-number="1"><span class="kw">ggplot</span>(escola, <span class="kw">aes</span>(<span class="dt">x=</span>aluno_id, <span class="dt">y=</span>aluno_media, <span class="dt">color=</span>aluno_curso)) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb120-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">na.rm =</span> <span class="ot">TRUE</span>) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb120-3" data-line-number="3"><span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Identificação dos alunos&quot;</span>, <span class="dt">breaks =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">6</span>) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb120-4" data-line-number="4"><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name=</span><span class="st">&quot;Média dos alunos&quot;</span>, </a>
-<a class="sourceLine" id="cb120-5" data-line-number="5">                   <span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">1</span>, <span class="dv">6</span>, <span class="fl">0.5</span>))</a></code></pre></div>
-<p><img src="intro-analise-de-dados_files/figure-html/unnamed-chunk-53-1.png" width="672" /></p>
-<p>Ainda falta mais informações, por exemplo, o título do nosso gráfico.</p>
-<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb121-1" data-line-number="1">cores &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Estatística&quot;</span> =<span class="st"> &quot;green&quot;</span>,</a>
-<a class="sourceLine" id="cb121-2" data-line-number="2">           <span class="st">&quot;Historia&quot;</span> =<span class="st"> &quot;red&quot;</span>,</a>
-<a class="sourceLine" id="cb121-3" data-line-number="3">            <span class="st">&quot;Matemática&quot;</span> =<span class="st"> &quot;blue&quot;</span>)</a>
-<a class="sourceLine" id="cb121-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb121-5" data-line-number="5">  <span class="kw">ggplot</span>(escola, <span class="kw">aes</span>(<span class="dt">x=</span>aluno_id, <span class="dt">y=</span>aluno_media, <span class="dt">color=</span>aluno_curso)) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb121-6" data-line-number="6"><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">na.rm =</span> <span class="ot">TRUE</span>) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb121-7" data-line-number="7"><span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Identificação dos alunos&quot;</span>, <span class="dt">breaks =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">6</span>) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb121-8" data-line-number="8"><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name=</span><span class="st">&quot;Média dos alunos&quot;</span>, </a>
-<a class="sourceLine" id="cb121-9" data-line-number="9">                   <span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">1</span>, <span class="dv">6</span>, <span class="fl">0.5</span>)) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb121-10" data-line-number="10"><span class="st">  </span><span class="kw">scale_color_manual</span>(<span class="st">&quot;Matérias&quot;</span>, <span class="dt">values =</span> cores) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb121-11" data-line-number="11"><span class="st">    </span><span class="kw">ggtitle</span>(<span class="st">&quot;Média dos alunos da faculdade y&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb122-1" data-line-number="1">   <span class="kw">ggplot</span>(escola, <span class="kw">aes</span>(<span class="dt">x=</span>aluno_id, <span class="dt">y=</span>aluno_media, <span class="dt">color=</span>aluno_curso)) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb122-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">na.rm =</span> <span class="ot">TRUE</span>) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb122-3" data-line-number="3"><span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Identificação dos alunos&quot;</span>, <span class="dt">breaks =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">6</span>)</a></code></pre></div>
 <p><img src="intro-analise-de-dados_files/figure-html/unnamed-chunk-54-1.png" width="672" /></p>
+<p>Opa, assim ficou mais claro, mas, mudar o nome de apenas um eixo não move moinhos, não, pera? 👏.</p>
+<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb123-1" data-line-number="1"><span class="kw">ggplot</span>(escola, <span class="kw">aes</span>(<span class="dt">x=</span>aluno_id, <span class="dt">y=</span>aluno_media, <span class="dt">color=</span>aluno_curso)) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb123-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">na.rm =</span> <span class="ot">TRUE</span>) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb123-3" data-line-number="3"><span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Identificação dos alunos&quot;</span>, <span class="dt">breaks =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">6</span>) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb123-4" data-line-number="4"><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name=</span><span class="st">&quot;Média dos alunos&quot;</span>, </a>
+<a class="sourceLine" id="cb123-5" data-line-number="5">                   <span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">1</span>, <span class="dv">6</span>, <span class="fl">0.5</span>))</a></code></pre></div>
+<p><img src="intro-analise-de-dados_files/figure-html/unnamed-chunk-55-1.png" width="672" /></p>
+<p>Ainda falta mais informações, por exemplo, o título do nosso gráfico.</p>
+<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb124-1" data-line-number="1">cores &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Estatística&quot;</span> =<span class="st"> &quot;green&quot;</span>,</a>
+<a class="sourceLine" id="cb124-2" data-line-number="2">           <span class="st">&quot;Historia&quot;</span> =<span class="st"> &quot;red&quot;</span>,</a>
+<a class="sourceLine" id="cb124-3" data-line-number="3">            <span class="st">&quot;Matemática&quot;</span> =<span class="st"> &quot;blue&quot;</span>)</a>
+<a class="sourceLine" id="cb124-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb124-5" data-line-number="5">  <span class="kw">ggplot</span>(escola, <span class="kw">aes</span>(<span class="dt">x=</span>aluno_id, <span class="dt">y=</span>aluno_media, <span class="dt">color=</span>aluno_curso)) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb124-6" data-line-number="6"><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">na.rm =</span> <span class="ot">TRUE</span>) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb124-7" data-line-number="7"><span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Identificação dos alunos&quot;</span>, <span class="dt">breaks =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">6</span>) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb124-8" data-line-number="8"><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name=</span><span class="st">&quot;Média dos alunos&quot;</span>, </a>
+<a class="sourceLine" id="cb124-9" data-line-number="9">                   <span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">1</span>, <span class="dv">6</span>, <span class="fl">0.5</span>)) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb124-10" data-line-number="10"><span class="st">  </span><span class="kw">scale_color_manual</span>(<span class="st">&quot;Matérias&quot;</span>, <span class="dt">values =</span> cores) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb124-11" data-line-number="11"><span class="st">    </span><span class="kw">ggtitle</span>(<span class="st">&quot;Média dos alunos da faculdade y&quot;</span>)</a></code></pre></div>
+<p><img src="intro-analise-de-dados_files/figure-html/unnamed-chunk-56-1.png" width="672" /></p>
 <p>É possível observar que o aluno com id <strong>5</strong> não possui média em nenhuma matéria. Agora, que tal dividirmos nosso gráfico em sub gráficos? 🆒.</p>
 </div>
 <div id="subplots" class="section level2">
 <h2><span class="header-section-number">4.5</span> Subplots</h2>
 <p>Bom, quero visualizar de forma que divida nosso gráfico em subgráficos, usando <code>facet_wrap</code>, desta forma:</p>
-<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb122-1" data-line-number="1">cores &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Estatística&quot;</span> =<span class="st"> &quot;green&quot;</span>,</a>
-<a class="sourceLine" id="cb122-2" data-line-number="2">           <span class="st">&quot;Historia&quot;</span> =<span class="st"> &quot;red&quot;</span>,</a>
-<a class="sourceLine" id="cb122-3" data-line-number="3">            <span class="st">&quot;Matemática&quot;</span> =<span class="st"> &quot;blue&quot;</span>)</a>
-<a class="sourceLine" id="cb122-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb122-5" data-line-number="5">  <span class="kw">ggplot</span>(escola, <span class="kw">aes</span>(<span class="dt">x=</span>aluno_sexo, <span class="dt">y=</span>aluno_media, <span class="dt">color=</span>aluno_curso)) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb122-6" data-line-number="6"><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">na.rm =</span> <span class="ot">TRUE</span>) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb122-7" data-line-number="7"><span class="st">  </span><span class="kw">facet_grid</span>(<span class="op">~</span><span class="st"> </span>aluno_avaliacao) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb122-8" data-line-number="8"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">title=</span><span class="st">&quot;Notas dos alunos por grid&quot;</span>, </a>
-<a class="sourceLine" id="cb122-9" data-line-number="9">       <span class="dt">x =</span> <span class="st">&quot;Sexo dos alunos&quot;</span>,</a>
-<a class="sourceLine" id="cb122-10" data-line-number="10">       <span class="dt">y =</span> <span class="st">&quot;Média dos alunos&quot;</span>) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb122-11" data-line-number="11"><span class="st">  </span><span class="kw">scale_color_manual</span>(<span class="st">&quot;Matérias&quot;</span>, <span class="dt">values =</span> cores) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb122-12" data-line-number="12"><span class="st">    </span><span class="kw">ggtitle</span>(<span class="st">&quot;Média dos alunos da faculdade y&quot;</span>)</a></code></pre></div>
-<p><img src="intro-analise-de-dados_files/figure-html/unnamed-chunk-55-1.png" width="672" /></p>
+<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb125-1" data-line-number="1">cores &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Estatística&quot;</span> =<span class="st"> &quot;green&quot;</span>,</a>
+<a class="sourceLine" id="cb125-2" data-line-number="2">           <span class="st">&quot;Historia&quot;</span> =<span class="st"> &quot;red&quot;</span>,</a>
+<a class="sourceLine" id="cb125-3" data-line-number="3">            <span class="st">&quot;Matemática&quot;</span> =<span class="st"> &quot;blue&quot;</span>)</a>
+<a class="sourceLine" id="cb125-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb125-5" data-line-number="5">  <span class="kw">ggplot</span>(escola, <span class="kw">aes</span>(<span class="dt">x=</span>aluno_sexo, <span class="dt">y=</span>aluno_media, <span class="dt">color=</span>aluno_curso)) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb125-6" data-line-number="6"><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">na.rm =</span> <span class="ot">TRUE</span>) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb125-7" data-line-number="7"><span class="st">  </span><span class="kw">facet_grid</span>(<span class="op">~</span><span class="st"> </span>aluno_avaliacao) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb125-8" data-line-number="8"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">title=</span><span class="st">&quot;Notas dos alunos por grid&quot;</span>, </a>
+<a class="sourceLine" id="cb125-9" data-line-number="9">       <span class="dt">x =</span> <span class="st">&quot;Sexo dos alunos&quot;</span>,</a>
+<a class="sourceLine" id="cb125-10" data-line-number="10">       <span class="dt">y =</span> <span class="st">&quot;Média dos alunos&quot;</span>) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb125-11" data-line-number="11"><span class="st">  </span><span class="kw">scale_color_manual</span>(<span class="st">&quot;Matérias&quot;</span>, <span class="dt">values =</span> cores) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb125-12" data-line-number="12"><span class="st">    </span><span class="kw">ggtitle</span>(<span class="st">&quot;Média dos alunos da faculdade y&quot;</span>)</a></code></pre></div>
+<p><img src="intro-analise-de-dados_files/figure-html/unnamed-chunk-57-1.png" width="672" /></p>
 <p>Dessa vez, usei <code>labs</code> para demonstrar que essa função também altera o nome dos eixos.</p>
 </div>
 <div id="temas" class="section level2">
 <h2><span class="header-section-number">4.6</span> Temas</h2>
 <p>Por último, vamos deixar nosso gráfico mais elegante, usando os temas do próprio pacote:</p>
-<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb123-1" data-line-number="1">cores &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Estatística&quot;</span> =<span class="st"> &quot;green&quot;</span>,</a>
-<a class="sourceLine" id="cb123-2" data-line-number="2">           <span class="st">&quot;Historia&quot;</span> =<span class="st"> &quot;red&quot;</span>,</a>
-<a class="sourceLine" id="cb123-3" data-line-number="3">            <span class="st">&quot;Matemática&quot;</span> =<span class="st"> &quot;blue&quot;</span>)</a>
-<a class="sourceLine" id="cb123-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb123-5" data-line-number="5">  <span class="kw">ggplot</span>(escola, <span class="kw">aes</span>(<span class="dt">x=</span>aluno_id, <span class="dt">y=</span>aluno_media, <span class="dt">color=</span>aluno_curso)) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb123-6" data-line-number="6"><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">na.rm =</span> <span class="ot">TRUE</span>) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb123-7" data-line-number="7"><span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Identificação dos alunos&quot;</span>, <span class="dt">breaks =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">6</span>) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb123-8" data-line-number="8"><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name=</span><span class="st">&quot;Média dos alunos&quot;</span>, </a>
-<a class="sourceLine" id="cb123-9" data-line-number="9">                   <span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">1</span>, <span class="dv">6</span>, <span class="fl">0.5</span>)) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb123-10" data-line-number="10"><span class="st">  </span><span class="kw">scale_color_manual</span>(<span class="st">&quot;Matérias&quot;</span>, <span class="dt">values =</span> cores) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb123-11" data-line-number="11"><span class="st">    </span><span class="kw">ggtitle</span>(<span class="st">&quot;Média dos alunos da faculdade y&quot;</span>) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb123-12" data-line-number="12"><span class="st">    </span><span class="kw">theme_bw</span>()</a></code></pre></div>
-<p><img src="intro-analise-de-dados_files/figure-html/unnamed-chunk-56-1.png" width="672" /></p>
+<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb126-1" data-line-number="1">cores &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Estatística&quot;</span> =<span class="st"> &quot;green&quot;</span>,</a>
+<a class="sourceLine" id="cb126-2" data-line-number="2">           <span class="st">&quot;Historia&quot;</span> =<span class="st"> &quot;red&quot;</span>,</a>
+<a class="sourceLine" id="cb126-3" data-line-number="3">            <span class="st">&quot;Matemática&quot;</span> =<span class="st"> &quot;blue&quot;</span>)</a>
+<a class="sourceLine" id="cb126-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb126-5" data-line-number="5">  <span class="kw">ggplot</span>(escola, <span class="kw">aes</span>(<span class="dt">x=</span>aluno_id, <span class="dt">y=</span>aluno_media, <span class="dt">color=</span>aluno_curso)) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb126-6" data-line-number="6"><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">na.rm =</span> <span class="ot">TRUE</span>) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb126-7" data-line-number="7"><span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Identificação dos alunos&quot;</span>, <span class="dt">breaks =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">6</span>) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb126-8" data-line-number="8"><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">name=</span><span class="st">&quot;Média dos alunos&quot;</span>, </a>
+<a class="sourceLine" id="cb126-9" data-line-number="9">                   <span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">1</span>, <span class="dv">6</span>, <span class="fl">0.5</span>)) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb126-10" data-line-number="10"><span class="st">  </span><span class="kw">scale_color_manual</span>(<span class="st">&quot;Matérias&quot;</span>, <span class="dt">values =</span> cores) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb126-11" data-line-number="11"><span class="st">    </span><span class="kw">ggtitle</span>(<span class="st">&quot;Média dos alunos da faculdade y&quot;</span>) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb126-12" data-line-number="12"><span class="st">    </span><span class="kw">theme_bw</span>()</a></code></pre></div>
+<p><img src="intro-analise-de-dados_files/figure-html/unnamed-chunk-58-1.png" width="672" /></p>
 <p>Bom, sabemos que o <code>ggplot</code> é bem completo, mas, só abordamos uma pequena parcela. Com o tempo vamos adicionando mais materiais. Para se aprofundar no pacote, veja nossas análises no <a href="https://github.com/dataAt/introducao-analise-de-dados/tree/master/src/R">dataAt</a> 💃.</p>
 </div>
 <div id="recomendacoes" class="section level2">

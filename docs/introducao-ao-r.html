@@ -161,7 +161,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.2.2" data-path="introducao-ao-python.html"><a href="introducao-ao-python.html#dataframes"><i class="fa fa-check"></i><b>3.2.2</b> Dataframes</a></li>
 <li class="chapter" data-level="3.2.3" data-path="introducao-ao-python.html"><a href="introducao-ao-python.html#selecao-e-filtro-dos-dados"><i class="fa fa-check"></i><b>3.2.3</b> Seleção e filtro dos dados</a></li>
 <li class="chapter" data-level="3.2.4" data-path="introducao-ao-python.html"><a href="introducao-ao-python.html#agrupamento-de-dados-e-agregacoes"><i class="fa fa-check"></i><b>3.2.4</b> Agrupamento de dados e agregações</a></li>
-<li class="chapter" data-level="3.2.5" data-path="introducao-ao-python.html"><a href="introducao-ao-python.html#funcoes-de-leitura-e-escrita"><i class="fa fa-check"></i><b>3.2.5</b> Funções de leitura e escrita</a></li>
+<li class="chapter" data-level="3.2.5" data-path="introducao-ao-python.html"><a href="introducao-ao-python.html#funcoes-de-leitura-e-escrita-de-dados"><i class="fa fa-check"></i><b>3.2.5</b> Funções de leitura e escrita de dados</a></li>
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="introducao-ao-python.html"><a href="introducao-ao-python.html#para-saber-mais-1"><i class="fa fa-check"></i><b>3.3</b> Para saber mais</a></li>
 </ul></li>
@@ -531,7 +531,7 @@ Capivara
 <p>Para especificar algum diretório para trabalhar, usamos o comando <code>setwd()</code> e para verificar o diretório atual <code>getwd()</code>.</p>
 <div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" data-line-number="1">  <span class="co"># Para verificar seu diretório atual</span></a>
 <a class="sourceLine" id="cb37-2" data-line-number="2">  <span class="kw">getwd</span>() </a></code></pre></div>
-<pre><code>## [1] &quot;/home/felipe/R/introducao-analise-de-dados/src-material&quot;</code></pre>
+<pre><code>## [1] &quot;/home/Usuario/Documentos/5_repos/dev/introducao-analise-de-dados/src-material&quot;</code></pre>
 <div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb39-1" data-line-number="1">  <span class="co"># Para definir um novo diretório</span></a>
 <a class="sourceLine" id="cb39-2" data-line-number="2">  <span class="co">#setwd(&quot;~/R/ggsom/&quot;)</span></a></code></pre></div>
 </div>
@@ -846,7 +846,7 @@ Historia
 </tr>
 </tbody>
 </table>
-<p>Aee, melhorou um pouco, não? 💙. Podemos melhorar ainda mais, como? Usando <code>%&gt;%</code> este símbolo, chamado de <strong>pipe</strong> ou <strong>então</strong>, basicamente, é a <code>pipe</code> utilizada no <strong>Linux</strong>, mas o que faz?</p>
+<p>Aee, melhorou um pouco, não? 🔹. Podemos melhorar ainda mais, como? Usando <code>%&gt;%</code> este símbolo, chamado de <strong>pipe</strong> ou <strong>então</strong>, basicamente, é a <code>pipe</code> utilizada no <strong>Linux</strong>, mas o que faz?</p>
 <p>A <strong>pipe</strong> passa a resposta da primeira atribuição para o primeiro parâmetro da função seguinte, desta forma:</p>
 <div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb61-1" data-line-number="1">meu_vetor &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">9</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mean</span>()</a>
 <a class="sourceLine" id="cb61-2" data-line-number="2">  </a>

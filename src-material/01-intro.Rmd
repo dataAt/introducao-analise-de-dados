@@ -87,8 +87,7 @@ Esse formato de dado segue a estrutura de linhas e colunas. São geralmente enco
 São dados que possuem uma organização clara, porém, não segue o padrão de linha e coluna. Geralmente são aqueles formatos que recebemos em requisições de API, por exemplo, JSON, XML e HTML. 
 
 #### Dados não estruturados
-São aqueles que não conseguimos identificar uma organização clara, geralmente, são arquivos com forte teor textual, por exemplo, email, twitters, PDF, imagens, vídeos, entre outros.
-
+São aqueles que não conseguimos identificar uma organização clara, geralmente, são arquivos com forte teor textual, por exemplo, e-mail, tweets, PDF, imagens, vídeos, entre outros.
 
 > Lembrando que nem todo dado desorganizado é não estruturado.
 

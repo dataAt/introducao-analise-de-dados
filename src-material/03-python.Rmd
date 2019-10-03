@@ -1,36 +1,33 @@
 # Introdução ao Python `r emo::ji("rocket")`
 
-Python é uma linguagem multiparadigma, com uma sintaxe muito simples que permite ao programador focar no problema e deixar de lado questões da linguagem. 
-Esta é uma linguagem amplamente utilizada em diversos áreas, por conta principalmente das milhares de bibliotecas que a linguagem possui, todas elas distribuidas pela comunidade incrível que a linguagem possui `r emo::ji("heart")`
+Python é uma linguagem multiparadigma, com uma sintaxe muito simples que permite ao utilizador focar no problema e deixar de lado qualquer tipo de especificidade. Vem sendo amplamente utilizada em diversas áreas, principalmente, por cona das milhares de bibliotecas que possui, todas elas distribuídas pela comunidade incrível que a linguagem possui `r emo::ji("heart")`
 
-Neste introdução, o foco será a aplicação da linguagem Python na manipulação e tratamento de dados, utilizando como base a biblioteca Pandas.
+Nesta introdução, o foco será a aplicação da linguagem Python na manipulação e tratamento de dados, utilizando como base a biblioteca Pandas.
 
-Você pode estar se perguntando o motivo da utilização desta biblioteca, e a resposta é bem simples, Python é uma linguagem para uso geral, assim, suas funções nativas não tem foco em uma função específica, como ocorre em linguagem como R, que já tem um foco em uma área específica (No caso do R, em análises estatísticas, como descrito no capítulo 2 deste material), assim esta biblioteca facilita o processo de manipulação e tratamento de dados.
-
-No próximo capítulo você verá como realizar a visualização de seus dados utilizando a biblioteca `plotnine`, que é uma implementação do ggplot para o Python.
+Você pode estar se perguntando o motivo da utilização desta biblioteca e a resposta é bem simples, Python é uma linguagem para uso geral, assim, suas funções nativas não tem foco em uma aplicação específica, como acontece em linguagens como R e Julia, que possuem áreas específicas de aplicação, assim não podemos esperar que, nativamente a linguagem tenha métodos variados para a manipulação e tratamento de dados e é nesta parte que o pandas entra, facilitando toda manipulação e tratamento de dados com funções incríveis.
 
 Vamos começar !
 
 ## Introdução ao Pandas `r emo::ji("panda_face")`
 
-Como forma de iniciar, vamos começar entendendo o que é a biblioteca Pandas e qual seu objetivo geral, para isto, vejamos a definição feita pelo próprio site do projeto.
+Como forma de iniciar, vamos começar entendendo o que é a biblioteca Pandas e qual seu objetivo geral, para isto, vejamos a definição feita na documentação oficial do projeto.
 
-> pandas é uma biblioteca open source, licenciada pelo BSD, que fornece estruturas de dados de alto desempenho e fáceis de usar e ferramentas de análise de dados para a linguagem de programação Python.
+> Pandas é uma biblioteca open source, licenciada pelo BSD, que fornece estruturas de dados de alto desempenho e fáceis de usar e ferramentas de análise de dados para a linguagem de programação Python.
 
 Veja então que, tudo o que é necessário para a realização da maioria dos casos de análise de dados utilizando a linguagem Python, irão, bem provavelmente, trabalhar com esta biblioteca.
 
 Para que se tenha uma ideia, o pandas pode ser aplicado em análises envolvendo:
 
 - Finanças;
-- Análise estatística;
+- Geociências;
 - Ciência social;
 - Além de diversas outras áreas de ciências e engenharia.
 
-Isto tudo, por contar com diversas funções e estruturas de dados que facilitam os processos de análise, por falar nestas funções e estruturas, no próximo tópico, vamos discutir um pouco mais sobre as principais presentes no pandas. 
+Isto tudo por contar com diversas funções e estruturas de dados que facilitam os processos de análise, essas discutidas nos próximos tópicos. 
 
 ## Estruturas de dados
 
-As duas principais estruturas de dados presentes no pandas são:
+O Pandas disponibiliza diversas estruturas de dados, sendo as principais:
 
 - Series;
 - DataFrames.
@@ -40,19 +37,17 @@ Nos subtópicos abaixo vamos ver as características de cada uma destas estrutur
 ### Series
 
 As `Series` são estruturas de dados unidimensionais, que contam com diversos métodos para a manipulação de dados.
-Pode-se entender que as `Series` são estruturas de dados simples, assim como as listas padrões da linguagem Python, com uma pequena diferença, para cada item dentro de uma `Series` tem-se indices, estes podendo ser valores numéricos ou texto.
+Pode-se entender que as `Series` são estruturas de dados simples, assim como as listas padrões da linguagem Python, com uma pequena diferença, para cada item dentro de uma `Series` tem-se índices, em formatos de texto ou numéricos.
 
 Vamos começar a utilização, para facilitar o entendimento.
 
-```{r}
+```{r, echo=FALSE}
 # Estes comandos não devem ser executados em seu terminal
 library(reticulate) 
 use_python("venv/bin/python3")
 ```
 
-Para iniciar, vamos criar um simples `Series` e colocar dentro de uma variável. Para isto, importando a biblioteca pandas, e passamos para ela o 'apelido' de `pd`.
-
-Em seguida, vamos criar uma `Series` simples, passando como parâmetro de entrada uma lista com três valores, veja:
+Para iniciar, vamos importar a biblioteca pandas com o 'apelido' de `pd`, em seguida, vamos criar uma `Series` simples, passando como parâmetro de entrada uma lista com três valores, veja:
 
 ```{python}
 import pandas as pd
@@ -60,16 +55,33 @@ import pandas as pd
 s = pd.Series([1, 2, 3]); print(s)
 ```
 
-É interessante notar que, cada uma das linhas, tem associado um índice (Pode ser visto do lado esquerdo dos valores), e isto permite a recuperação dos valores através destes índices. Você pode fazer uma analogia a forma com que você recupera os valores em um dicionário em Python, a diferença aqui é que, esta é uma estrutura de dados de alto desempenho, além de que, estas estruturas são otimizadas para fazer uma boa utilização de memória.
+É interessante notar o índice na `Series` (Lateral esquerda), citado anteriormente, que permitem uma recuperação rápida e simples, sendo muito parecidas com a recuperação de valores em um dicionário em Python, a diferença aqui é que, estas estruturas de dados são criadas para trabalhar com grandes conjuntos de dados, sem contar nas facilidades de manipulação dos dados.
 
 ```{python}
 print(s[0]) # Recupera o valor do índice com nome 0
+```
+
+Para visualizar somente o índice, utilizamos o atributo `index`.
+
+```{python}
+print(s.index)
+```
+
+Este também pode ser facilemente editado.
+
+```{python}
+s.index = ["um", "dois", "tres"]
+
+print(s.index)
 ```
 
 Também é possível já criar uma `Series` com um índice personalizado, para isto, basta passar no construtor, uma lista representado o índice antes dos dados, veja:
 
 ```{python}
 s = pd.Series([7, 8, 9], [1, 2, 3])
+
+# ou
+# s = pd.Series([7, 8, 9], index=[1, 2, 3]) # Fica explicito quem é o índice
 ```
 
 Veja que a primeira lista passada representa o índice, e a segunda os dados.
@@ -98,13 +110,13 @@ matriz = pd.Series([[1, 2, 3], [4, 5, 6]])
 print(matriz)
 ```
 
-Percebeu ? Para estes casos, faz-se necessário o uso de uma outra estrutura de dados, o DataFrame, que vamos tratar no próximo capítulo.
+Percebeu ? Não há uma matriz, e sim várias listas dentro de listas em cada linha. Para estes casos é necessário o uso de uma outra estrutura de dados, o DataFrame, tratado no subtópico seguinte.
 
 ### Dataframes
 
-Agora que você já conhece como as `Series` funcionam, vamos apresentar a você o `DataFrame`, que difere das `Series` por serem multidimensionais, ou seja, aqui temos uma estrutura, que trabalhará com linhas e colunas (Podemos dizer também que temos matrizes aqui) `r emo::ji("rainbow")`
+Agora que você já conhece como as `Series` funcionam, vamos apresentar a você o `DataFrame`, que difere das `Series` por serem multidimensionais, ou seja, aqui temos uma estrutura que trabalhará com linhas e colunas (Podemos dizer também que temos matrizes aqui) `r emo::ji("rainbow")`.
 
-A diferença é simples, mas em diversos casos já permite formas de manipulação e armazenamento dos dados muito diferentes.
+Boa parte dos métodos disponíveis em uma `Series` também é aplicável em `DataFrames`, o que ajuda no aprendizado de utilização da API do pandas, mas é importante entender que, em diversos casos o simples fato de haver mais dimensões nos dados torna a manipulação diferente, com resultados diferentes (Isto para os mesmos métodos), sem contar que o armazenamento também pode diferir.
 
 Vejamos algumas características bacanas dos `DataFrames`
 
@@ -113,7 +125,7 @@ matriz = pd.DataFrame([[1, 2, 3], [4, 5, 6]])
 print(matriz)
 ```
 
-O mesmo processo feito acima, quando realizado nos `Series` gerou listas de listas, aqui não, tem-se uma matriz com formas de recuperação por linhas e colunas. Da mesma forma que as `Series`, os `DataFrames` tem o índice que pode ser nomeado, e além destes, as colunas também podem ser nomeadas.
+O mesmo processo feito acima, quando realizado nas `Series` gerou listas de listas, aqui não, tem-se uma matriz com formas de recuperação por linhas e colunas. Da mesma forma que as `Series`, os `DataFrames` tem o índice que pode ser nomeado, e além destes, as colunas, que também podem ser nomeadas e utilizadas para a recuperação de dados.
 
 ```{python}
 tabela = pd.DataFrame([[.9, .8, .7], [.4, .5, .7]], columns = ['primeiro', 'segundo', 'terceiro'], index = ['zero', 'um'])
@@ -137,14 +149,16 @@ Bem, agora que você entendeu a diferença fundamental entre estas estruturas de
 
 Uma parte muito importante é a seleção e filtro dos dados, com elas basicamente faremos a manipulação dos dados.
 
-Vamos começar fazendo a busca utilizando os índices (index) e as colunas (No caso dos `DataFrames`). Para isto, vamos utilizar os métodos `.loc` e `.iloc`. A sintaxe de utilização basica para as duas estruturas de dados podem ser vistas abaixos:
+Vamos começar fazendo a busca utilizando os índices (index) e as colunas (No caso dos `DataFrames`). Para isto, vamos utilizar os métodos `.loc`, que permitem buscar uma linha com algum nome de índice específico e o `.iloc` que busca uma linha em uma posição específica.
+
+A sintaxe de utilização básica para as duas estruturas de dados podem ser vistas abaixos:
 
 | DataFrame        | Series     |     
 | ------------- |:-------------:|
 | .loc[linha, coluna]  | .loc[linha] |
 | .iloc[linha] | .iloc[linha] |
 
-No caso do `.loc` a sintaxe muda exatamente pelas diferenças apresentadas entre o `Series` e o `DataFrame`. Para o caso do `.iloc` ele busca somente a posição da linha, e você trata a coluna.
+No caso do `.loc` a sintaxe muda exatamente pelas diferenças apresentadas entre o `Series` e o `DataFrame`. Para o caso do `.iloc` ele busca somente a posição da linha, nas duas estruturas.
 
 ```{python}
 df = pd.DataFrame({
@@ -166,7 +180,7 @@ df.iloc[2]['nome']
 df.iloc[2][['nome', 'idade']]
 ```
 
-Dentro destes, ainda é possível passar uma expressão booleana, para realizar uma filtragem dos dados.
+Dentro destes métodos de busca ainda é possível passar uma expressão booleana, para realizar um filtro dos dados.
 
 ```{python}
 df = pd.DataFrame({'coluna': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]})
@@ -174,13 +188,13 @@ df = pd.DataFrame({'coluna': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]})
 df[df['coluna'] >= 5]
 ```
 
-E isto também vale para as `Series`, utilizando a mesma estrutura. Bem, este é o básico para a manipulação e filtragem dos dados, existem muitos métodos para a manipulação e filtragem, aqui ainda veremos alguns deles, mas, inicialmente estes já resolver muitos dos nossos problemas.
+E isto também vale para as `Series`, utilizando a mesma estrutura. Bem, este é o básico para a manipulação e filtragem dos dados, existem muitos métodos para a manipulação e filtragem, aqui ainda veremos alguns deles, mas, inicialmente estes já resolver muitos problemas das etapas de análise de dados.
 
 ### Agrupamento de dados e agregações
 
 Muitas vezes queremos agrupar nossos dados, seja para facilitar a manipulação, o entendimento das relações dos dados, ou mesmo para aplicar funções sobre cada um dos grupos e obter informações a partir disto. Para isto utilizamos os agrupamentos e agregações.
 
-As agregações apresentam diversas derivações de definição, a utiliza aqui será a que, são operações aplicadas sobre os dados que resultam em um conjunto de valores, ou mesmo um valor escalar. Entenda que, o retorno pode mudar de acordo com a estrutura de dados onde se aplica a agregação, no caso `Series` será retornado apenas um valor ao utilizar agregações, e no caso dos `DataFrames` um valor para cada coluna ou linha, dependendo da definição feita durante o processo.
+As agregações apresentam diversas derivações de definição, a utiliza aqui será a que, são operações aplicadas sobre os dados que resultam em um conjunto de valores, ou mesmo um valor escalar. Entenda que, o retorno pode mudar de acordo com a estrutura de dados onde se aplica a agregação, no caso das `Series` será retornado apenas um valor e no caso dos `DataFrames` um valor para cada linha/coluna (Variando com a definição do usuário) é retornado.
 
 Algumas operações de agregação são:
 
@@ -199,7 +213,9 @@ print(s.sum())
 print(df.sum())
 ```
 
-E o agrupamento basicamente representa a divisão dos dados, em conjuntos que possuem alguma similaridade (Esta similaridade é difinida pelo usuário). E isto em Python é realizado com o método `groupby`.
+Já o agrupamento representa a divisão dos dados, em conjuntos que possuem alguma similaridade (O critério de similaridade é definido pelo usuário), no pandas o agrupamento é realizado com o método `groupby` presente nas classes `Series` e `DataFrames`.
+
+Aqui vamos focar no agrupamento das `Series`.
 
 ```{python}
 df = pd.DataFrame({
@@ -211,7 +227,11 @@ df = pd.DataFrame({
 agrupado = df.groupby('tipo')
 ```
 
-Os dados foram agrupados de acordo com a coluna `tipo`. O que se espera como retorno do método `groupby` ? Um conjunto de `DataFrames`, correto ? Sim, mas, no caso do pandas ele retorna um tipo de `DataFrame`, nomeado `DataFrameGroupBy`, este contém cada um dos grupos, que podem ser acessados através do atributo `groups`, o formato de retorno é um dicionário, onde cada chave representa o grupo, neste caso o tipo, e os valores são os índices dos itens que fazem parte do grupo.
+No exemplo acima, os dados foram agrupados de acordo com a coluna `tipo`. O que é esperado como retorno do método `groupby` ? Intuitivamente pensamos em um conjunto de `DataFrames`, cada um representando um grupo e é exatamente isto que o Pandas retorna, porém há algumas particularidades.
+
+O tipo retornado de um `groupby` deixa de ser um `DataFrame` e passa a ser um `DataFrameGroupBy` que possibilita e facilita a manipulação dos grupos.
+
+Caso você queira ver os grupos gerados, use o atributo `groups` no objeto gerado com o `groupby`.
 
 ```{python}
 print(agrupado.groups)
@@ -221,7 +241,7 @@ Bem, ao juntarmos os conceitos de agregação e agrupamento, temos um processo q
 
 ![](images/03.08-split-apply-combine.png)
 
-O processo de dividir é o agrupamento, onde estou juntando os dados de acordo com alguma caracteristica que eu defini, a aplicação é justamente onde pode-se aplicar as agregações, filtros ou transformações, e por fim o combinar, representa a junção dos resultados da operação realizada na aplicação.
+O processo de dividir é o agrupamento, onde os dados são agrupados de acordo com alguma característica definida previamente, a aplicação realiza as agregações, filtros ou transformações e por fim a combinação, que representa a junção dos resultados das etapas anteriores.
 
 Para que se haja um entendimento melhor, vamos criar um exemplo.
 
@@ -251,38 +271,44 @@ Veja que o agrupamento e a contagem foi realizado, mas caso eu queira aplicar um
 print(agrupado['dinheiro'].sum())
 ```
 
-Viu! Extremamente simples! Para finalizar esta parte, vamos aplicar um filtro nos dados agrupados!
+### Funções de leitura e escrita de dados
 
-### Funções de leitura e escrita
+Além das estruturas de dados poderosas, o pandas também possui funções para leitura e escrita de dados que facilitam muito a vida `r emo::ji("rocket")`.
 
-Além das estruturas de dados poderosas, o pandas também possui funções para leitura e escrita que são **APELONAS**
+Existem diversas funções de leitura, aqui serão apresentadas apenas algumas, mas não deixe de conferir a documentação do projeto para entender melhor as funções de leitura e escrita de dados.
 
-Para a leitura de csv, podemos utilizar a `read_csv`
+Para a leitura de dados no formato csv, podemos utilizar a função `read_csv`.
 
 ```{python}
 df = pd.read_csv('data/titanic.csv') # O caminho pode ser diferente eu sua máquina
-print(df.head()) # Função que demonstra o início do DataFrame carregado
-print(df.tail()) # Função que demonstra o final do DataFrame carregado
+
+print(df.head()) # Função que mostra o início do DataFrame carregado
+print(df.tail()) # Função que mostra o final do DataFrame carregado
 ```
 
-Caso você esteja trabalhando com alguma API Rest, você pode fazer com que o json seja transportado para um `DataFrame`, veja
+Caso os dados que você está coletando sejam oriundos de alguma API Rest o pandas também pode te ajudar! Com o método `read_json` você pode passar não só o nome do arquivo json em sua máquina, mas também a URL da API que distribui tais dados. Ao fazer isto, o pandas trata de já transformar os dados na estrutura adequada, podendo ser uma `Series` ou `DataFrame`, veja como a utilização é simples.
 
 ```{python}
 json_frame = pd.read_json('http://dummy.restapiexample.com/api/v1/employees')
+
 print(json_frame.head())
 print(json_frame.columns) # Recupera as colunas do DataFrame
 ```
 
-Da mesma forma que a leitura, a escrita é extremamente fácil. Para salvar um CSV, ou um JSON, basta utilizar os métodos `to_csv` e `to_json`, presentes dentro do `DataFrame`.
+Da mesma forma que a leitura, fazer escrita de dados com pandas é muito simples, tendo os dados em `Series` ou `DataFrame` é possível salvar os dados em diferentes formatos. Por exemplo, para salvar uma `Serie` ou um `DataFrame` em um arquivo CSV o método `to_csv` pode ser utilizado.
+
+Mas caso você queira salvar em um arquivo json, basta trocar o método `to_csv` para `to_json` e pronto! Seus dados já estarão disponibilizados no sistema de arquivo nos formados indicados.
 
 ```{python}
 df.to_csv('nome_do_csv.csv') # Salva o CSV
 df.to_json('nome_do_json.json') # Salva o JSON
 ```
 
-Viu ? É tudo muito simples e direto, o que te permite focar em sua análise, e deixar de lado problemas com sintaxe `r emo::ji("statue_of_liberty")`, mas, após a sua análise, é importante apresentar seus dados, para isto, vamos aprender a utilizar a biblioteca plotnine para fazer **plots** e visualizar seus dados.
+Viu ? É tudo muito simples e direto, o que te permite focar em sua análise e deixar de lado problemas com sintaxe `r emo::ji("statue_of_liberty")`. Para fechar esta introdução a análise de dados, vamos ver um pouco sobre visualização de dados, que facilita e potencializa a análise de dados. 
 
 ## Para saber mais
+
+Não deixe de buscar mais informações! Abaixo alguns links que podem ser úteis.
 
 - [Python Data Science Handbook](http://shop.oreilly.com/product/0636920034919.do)
 - [Documentação - Pandas](https://pandas.pydata.org/pandas-docs/stable/)

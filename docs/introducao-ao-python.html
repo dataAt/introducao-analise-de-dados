@@ -161,7 +161,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.2.2" data-path="introducao-ao-python.html"><a href="introducao-ao-python.html#dataframes"><i class="fa fa-check"></i><b>3.2.2</b> Dataframes</a></li>
 <li class="chapter" data-level="3.2.3" data-path="introducao-ao-python.html"><a href="introducao-ao-python.html#selecao-e-filtro-dos-dados"><i class="fa fa-check"></i><b>3.2.3</b> Seleção e filtro dos dados</a></li>
 <li class="chapter" data-level="3.2.4" data-path="introducao-ao-python.html"><a href="introducao-ao-python.html#agrupamento-de-dados-e-agregacoes"><i class="fa fa-check"></i><b>3.2.4</b> Agrupamento de dados e agregações</a></li>
-<li class="chapter" data-level="3.2.5" data-path="introducao-ao-python.html"><a href="introducao-ao-python.html#funcoes-de-leitura-e-escrita"><i class="fa fa-check"></i><b>3.2.5</b> Funções de leitura e escrita</a></li>
+<li class="chapter" data-level="3.2.5" data-path="introducao-ao-python.html"><a href="introducao-ao-python.html#funcoes-de-leitura-e-escrita-de-dados"><i class="fa fa-check"></i><b>3.2.5</b> Funções de leitura e escrita de dados</a></li>
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="introducao-ao-python.html"><a href="introducao-ao-python.html#para-saber-mais-1"><i class="fa fa-check"></i><b>3.3</b> Para saber mais</a></li>
 </ul></li>
@@ -194,31 +194,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="introducao-ao-python" class="section level1">
 <h1><span class="header-section-number">3</span> Introdução ao Python 🚀</h1>
-<p>Python é uma linguagem multiparadigma, com uma sintaxe muito simples que permite ao programador focar no problema e deixar de lado questões da linguagem.
-Esta é uma linguagem amplamente utilizada em diversos áreas, por conta principalmente das milhares de bibliotecas que a linguagem possui, todas elas distribuidas pela comunidade incrível que a linguagem possui ❤️</p>
-<p>Neste introdução, o foco será a aplicação da linguagem Python na manipulação e tratamento de dados, utilizando como base a biblioteca Pandas.</p>
-<p>Você pode estar se perguntando o motivo da utilização desta biblioteca, e a resposta é bem simples, Python é uma linguagem para uso geral, assim, suas funções nativas não tem foco em uma função específica, como ocorre em linguagem como R, que já tem um foco em uma área específica (No caso do R, em análises estatísticas, como descrito no capítulo 2 deste material), assim esta biblioteca facilita o processo de manipulação e tratamento de dados.</p>
-<p>No próximo capítulo você verá como realizar a visualização de seus dados utilizando a biblioteca <code>plotnine</code>, que é uma implementação do ggplot para o Python.</p>
+<p>Python é uma linguagem multiparadigma, com uma sintaxe muito simples que permite ao utilizador focar no problema e deixar de lado qualquer tipo de especificidade. Vem sendo amplamente utilizada em diversas áreas, principalmente, por cona das milhares de bibliotecas que possui, todas elas distribuídas pela comunidade incrível que a linguagem possui ❤️</p>
+<p>Nesta introdução, o foco será a aplicação da linguagem Python na manipulação e tratamento de dados, utilizando como base a biblioteca Pandas.</p>
+<p>Você pode estar se perguntando o motivo da utilização desta biblioteca e a resposta é bem simples, Python é uma linguagem para uso geral, assim, suas funções nativas não tem foco em uma aplicação específica, como acontece em linguagens como R e Julia, que possuem áreas específicas de aplicação, assim não podemos esperar que, nativamente a linguagem tenha métodos variados para a manipulação e tratamento de dados e é nesta parte que o pandas entra, facilitando toda manipulação e tratamento de dados com funções incríveis.</p>
 <p>Vamos começar !</p>
 <div id="introducao-ao-pandas" class="section level2">
 <h2><span class="header-section-number">3.1</span> Introdução ao Pandas 🐼</h2>
-<p>Como forma de iniciar, vamos começar entendendo o que é a biblioteca Pandas e qual seu objetivo geral, para isto, vejamos a definição feita pelo próprio site do projeto.</p>
+<p>Como forma de iniciar, vamos começar entendendo o que é a biblioteca Pandas e qual seu objetivo geral, para isto, vejamos a definição feita na documentação oficial do projeto.</p>
 <blockquote>
-<p>pandas é uma biblioteca open source, licenciada pelo BSD, que fornece estruturas de dados de alto desempenho e fáceis de usar e ferramentas de análise de dados para a linguagem de programação Python.</p>
+<p>Pandas é uma biblioteca open source, licenciada pelo BSD, que fornece estruturas de dados de alto desempenho e fáceis de usar e ferramentas de análise de dados para a linguagem de programação Python.</p>
 </blockquote>
 <p>Veja então que, tudo o que é necessário para a realização da maioria dos casos de análise de dados utilizando a linguagem Python, irão, bem provavelmente, trabalhar com esta biblioteca.</p>
 <p>Para que se tenha uma ideia, o pandas pode ser aplicado em análises envolvendo:</p>
 <ul>
 <li>Finanças;</li>
-<li>Análise estatística;</li>
+<li>Geociências;</li>
 <li>Ciência social;</li>
 <li>Além de diversas outras áreas de ciências e engenharia.</li>
 </ul>
-<p>Isto tudo, por contar com diversas funções e estruturas de dados que facilitam os processos de análise, por falar nestas funções e estruturas, no próximo tópico, vamos discutir um pouco mais sobre as principais presentes no pandas.</p>
+<p>Isto tudo por contar com diversas funções e estruturas de dados que facilitam os processos de análise, essas discutidas nos próximos tópicos.</p>
 </div>
 <div id="estruturas-de-dados" class="section level2">
 <h2><span class="header-section-number">3.2</span> Estruturas de dados</h2>
-<p>As duas principais estruturas de dados presentes no pandas são:</p>
+<p>O Pandas disponibiliza diversas estruturas de dados, sendo as principais:</p>
 <ul>
 <li>Series;</li>
 <li>DataFrames.</li>
@@ -227,82 +225,90 @@ Esta é uma linguagem amplamente utilizada em diversos áreas, por conta princip
 <div id="series" class="section level3">
 <h3><span class="header-section-number">3.2.1</span> Series</h3>
 <p>As <code>Series</code> são estruturas de dados unidimensionais, que contam com diversos métodos para a manipulação de dados.
-Pode-se entender que as <code>Series</code> são estruturas de dados simples, assim como as listas padrões da linguagem Python, com uma pequena diferença, para cada item dentro de uma <code>Series</code> tem-se indices, estes podendo ser valores numéricos ou texto.</p>
+Pode-se entender que as <code>Series</code> são estruturas de dados simples, assim como as listas padrões da linguagem Python, com uma pequena diferença, para cada item dentro de uma <code>Series</code> tem-se índices, em formatos de texto ou numéricos.</p>
 <p>Vamos começar a utilização, para facilitar o entendimento.</p>
-<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb66-1" data-line-number="1"><span class="co"># Estes comandos não devem ser executados em seu terminal</span></a>
-<a class="sourceLine" id="cb66-2" data-line-number="2"><span class="kw">library</span>(reticulate) </a>
-<a class="sourceLine" id="cb66-3" data-line-number="3"><span class="kw">use_python</span>(<span class="st">&quot;venv/bin/python3&quot;</span>)</a></code></pre></div>
-<p>Para iniciar, vamos criar um simples <code>Series</code> e colocar dentro de uma variável. Para isto, importando a biblioteca pandas, e passamos para ela o ‘apelido’ de <code>pd</code>.</p>
-<p>Em seguida, vamos criar uma <code>Series</code> simples, passando como parâmetro de entrada uma lista com três valores, veja:</p>
-<div class="sourceCode" id="cb67"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb67-1" data-line-number="1"><span class="im">import</span> pandas <span class="im">as</span> pd</a>
-<a class="sourceLine" id="cb67-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb67-3" data-line-number="3">s <span class="op">=</span> pd.Series([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])<span class="op">;</span> <span class="bu">print</span>(s)</a></code></pre></div>
+<p>Para iniciar, vamos importar a biblioteca pandas com o ‘apelido’ de <code>pd</code>, em seguida, vamos criar uma <code>Series</code> simples, passando como parâmetro de entrada uma lista com três valores, veja:</p>
+<div class="sourceCode" id="cb66"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb66-1" data-line-number="1"><span class="im">import</span> pandas <span class="im">as</span> pd</a>
+<a class="sourceLine" id="cb66-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb66-3" data-line-number="3">s <span class="op">=</span> pd.Series([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])<span class="op">;</span> <span class="bu">print</span>(s)</a></code></pre></div>
 <pre><code>## 0    1
 ## 1    2
 ## 2    3
 ## dtype: int64</code></pre>
-<p>É interessante notar que, cada uma das linhas, tem associado um índice (Pode ser visto do lado esquerdo dos valores), e isto permite a recuperação dos valores através destes índices. Você pode fazer uma analogia a forma com que você recupera os valores em um dicionário em Python, a diferença aqui é que, esta é uma estrutura de dados de alto desempenho, além de que, estas estruturas são otimizadas para fazer uma boa utilização de memória.</p>
-<div class="sourceCode" id="cb69"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb69-1" data-line-number="1"><span class="bu">print</span>(s[<span class="dv">0</span>]) <span class="co"># Recupera o valor do índice com nome 0</span></a></code></pre></div>
+<p>É interessante notar o índice na <code>Series</code> (Lateral esquerda), citado anteriormente, que permitem uma recuperação rápida e simples, sendo muito parecidas com a recuperação de valores em um dicionário em Python, a diferença aqui é que, estas estruturas de dados são criadas para trabalhar com grandes conjuntos de dados, sem contar nas facilidades de manipulação dos dados.</p>
+<div class="sourceCode" id="cb68"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb68-1" data-line-number="1"><span class="bu">print</span>(s[<span class="dv">0</span>]) <span class="co"># Recupera o valor do índice com nome 0</span></a></code></pre></div>
 <pre><code>## 1</code></pre>
+<p>Para visualizar somente o índice, utilizamos o atributo <code>index</code>.</p>
+<div class="sourceCode" id="cb70"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb70-1" data-line-number="1"><span class="bu">print</span>(s.index)</a></code></pre></div>
+<pre><code>## RangeIndex(start=0, stop=3, step=1)</code></pre>
+<p>Este também pode ser facilemente editado.</p>
+<div class="sourceCode" id="cb72"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb72-1" data-line-number="1">s.index <span class="op">=</span> [<span class="st">&quot;um&quot;</span>, <span class="st">&quot;dois&quot;</span>, <span class="st">&quot;tres&quot;</span>]</a>
+<a class="sourceLine" id="cb72-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb72-3" data-line-number="3"><span class="bu">print</span>(s.index)</a></code></pre></div>
+<pre><code>## Index([&#39;um&#39;, &#39;dois&#39;, &#39;tres&#39;], dtype=&#39;object&#39;)</code></pre>
 <p>Também é possível já criar uma <code>Series</code> com um índice personalizado, para isto, basta passar no construtor, uma lista representado o índice antes dos dados, veja:</p>
-<div class="sourceCode" id="cb71"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb71-1" data-line-number="1">s <span class="op">=</span> pd.Series([<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>], [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</a></code></pre></div>
+<div class="sourceCode" id="cb74"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb74-1" data-line-number="1">s <span class="op">=</span> pd.Series([<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>], [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</a>
+<a class="sourceLine" id="cb74-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb74-3" data-line-number="3"><span class="co"># ou</span></a>
+<a class="sourceLine" id="cb74-4" data-line-number="4"><span class="co"># s = pd.Series([7, 8, 9], index=[1, 2, 3]) # Fica explicito quem é o índice</span></a></code></pre></div>
 <p>Veja que a primeira lista passada representa o índice, e a segunda os dados.</p>
-<div class="sourceCode" id="cb72"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb72-1" data-line-number="1"><span class="bu">print</span>(s)</a></code></pre></div>
+<div class="sourceCode" id="cb75"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb75-1" data-line-number="1"><span class="bu">print</span>(s)</a></code></pre></div>
 <pre><code>## 1    7
 ## 2    8
 ## 3    9
 ## dtype: int64</code></pre>
 <p>É possível também, transformar facilmente os dicionários em <code>Series</code>.</p>
-<div class="sourceCode" id="cb74"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb74-1" data-line-number="1">dicto <span class="op">=</span> {</a>
-<a class="sourceLine" id="cb74-2" data-line-number="2">  <span class="st">&#39;faculdade&#39;</span>: <span class="st">&#39;Fatec&#39;</span>,</a>
-<a class="sourceLine" id="cb74-3" data-line-number="3">  <span class="st">&#39;nota&#39;</span>: <span class="dv">10</span> </a>
-<a class="sourceLine" id="cb74-4" data-line-number="4">}</a>
-<a class="sourceLine" id="cb74-5" data-line-number="5"></a>
-<a class="sourceLine" id="cb74-6" data-line-number="6">dicto_s <span class="op">=</span> pd.Series(dicto)<span class="op">;</span> <span class="bu">print</span>(dicto_s)</a></code></pre></div>
+<div class="sourceCode" id="cb77"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb77-1" data-line-number="1">dicto <span class="op">=</span> {</a>
+<a class="sourceLine" id="cb77-2" data-line-number="2">  <span class="st">&#39;faculdade&#39;</span>: <span class="st">&#39;Fatec&#39;</span>,</a>
+<a class="sourceLine" id="cb77-3" data-line-number="3">  <span class="st">&#39;nota&#39;</span>: <span class="dv">10</span> </a>
+<a class="sourceLine" id="cb77-4" data-line-number="4">}</a>
+<a class="sourceLine" id="cb77-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb77-6" data-line-number="6">dicto_s <span class="op">=</span> pd.Series(dicto)<span class="op">;</span> <span class="bu">print</span>(dicto_s)</a></code></pre></div>
 <pre><code>## faculdade    Fatec
 ## nota            10
 ## dtype: object</code></pre>
 <p>Após a conversão, o uso é basicamente o mesmo do dicionário, porém com os benefícios já citados. Além do que já foi dito sobre os <code>Series</code>, é importante lembrar que, estas estruturas de dados possuem diversos métodos para facilitar a manipulação e entendimento dos dados, vamos a alguns destes métodos.</p>
 <p>Porém, como citado lá no início deste tutorial, as <code>Series</code> são estruturas unidimensionais, o que significa que todo o trabalho com estas estruturas é feito utilizando apenas como base as linhas, não sendo possível a utilização através de colunas. Como exemplo, vamos tentar inserir uma matriz de dados dentro de uma <code>Series</code>, veja que é possível, mas, tudo será tratado como listas de listas, de forma separada.</p>
-<div class="sourceCode" id="cb76"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb76-1" data-line-number="1">matriz <span class="op">=</span> pd.Series([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]])</a>
-<a class="sourceLine" id="cb76-2" data-line-number="2"><span class="bu">print</span>(matriz)</a></code></pre></div>
+<div class="sourceCode" id="cb79"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb79-1" data-line-number="1">matriz <span class="op">=</span> pd.Series([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]])</a>
+<a class="sourceLine" id="cb79-2" data-line-number="2"><span class="bu">print</span>(matriz)</a></code></pre></div>
 <pre><code>## 0    [1, 2, 3]
 ## 1    [4, 5, 6]
 ## dtype: object</code></pre>
-<p>Percebeu ? Para estes casos, faz-se necessário o uso de uma outra estrutura de dados, o DataFrame, que vamos tratar no próximo capítulo.</p>
+<p>Percebeu ? Não há uma matriz, e sim várias listas dentro de listas em cada linha. Para estes casos é necessário o uso de uma outra estrutura de dados, o DataFrame, tratado no subtópico seguinte.</p>
 </div>
 <div id="dataframes" class="section level3">
 <h3><span class="header-section-number">3.2.2</span> Dataframes</h3>
-<p>Agora que você já conhece como as <code>Series</code> funcionam, vamos apresentar a você o <code>DataFrame</code>, que difere das <code>Series</code> por serem multidimensionais, ou seja, aqui temos uma estrutura, que trabalhará com linhas e colunas (Podemos dizer também que temos matrizes aqui) 🌈</p>
-<p>A diferença é simples, mas em diversos casos já permite formas de manipulação e armazenamento dos dados muito diferentes.</p>
+<p>Agora que você já conhece como as <code>Series</code> funcionam, vamos apresentar a você o <code>DataFrame</code>, que difere das <code>Series</code> por serem multidimensionais, ou seja, aqui temos uma estrutura que trabalhará com linhas e colunas (Podemos dizer também que temos matrizes aqui) 🌈.</p>
+<p>Boa parte dos métodos disponíveis em uma <code>Series</code> também é aplicável em <code>DataFrames</code>, o que ajuda no aprendizado de utilização da API do pandas, mas é importante entender que, em diversos casos o simples fato de haver mais dimensões nos dados torna a manipulação diferente, com resultados diferentes (Isto para os mesmos métodos), sem contar que o armazenamento também pode diferir.</p>
 <p>Vejamos algumas características bacanas dos <code>DataFrames</code></p>
-<div class="sourceCode" id="cb78"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb78-1" data-line-number="1">matriz <span class="op">=</span> pd.DataFrame([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]])</a>
-<a class="sourceLine" id="cb78-2" data-line-number="2"><span class="bu">print</span>(matriz)</a></code></pre></div>
+<div class="sourceCode" id="cb81"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb81-1" data-line-number="1">matriz <span class="op">=</span> pd.DataFrame([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]])</a>
+<a class="sourceLine" id="cb81-2" data-line-number="2"><span class="bu">print</span>(matriz)</a></code></pre></div>
 <pre><code>##    0  1  2
 ## 0  1  2  3
 ## 1  4  5  6</code></pre>
-<p>O mesmo processo feito acima, quando realizado nos <code>Series</code> gerou listas de listas, aqui não, tem-se uma matriz com formas de recuperação por linhas e colunas. Da mesma forma que as <code>Series</code>, os <code>DataFrames</code> tem o índice que pode ser nomeado, e além destes, as colunas também podem ser nomeadas.</p>
-<div class="sourceCode" id="cb80"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb80-1" data-line-number="1">tabela <span class="op">=</span> pd.DataFrame([[.<span class="dv">9</span>, <span class="fl">.8</span>, <span class="fl">.7</span>], [.<span class="dv">4</span>, <span class="fl">.5</span>, <span class="fl">.7</span>]], columns <span class="op">=</span> [<span class="st">&#39;primeiro&#39;</span>, <span class="st">&#39;segundo&#39;</span>, <span class="st">&#39;terceiro&#39;</span>], index <span class="op">=</span> [<span class="st">&#39;zero&#39;</span>, <span class="st">&#39;um&#39;</span>])</a>
-<a class="sourceLine" id="cb80-2" data-line-number="2"><span class="bu">print</span>(tabela)</a></code></pre></div>
+<p>O mesmo processo feito acima, quando realizado nas <code>Series</code> gerou listas de listas, aqui não, tem-se uma matriz com formas de recuperação por linhas e colunas. Da mesma forma que as <code>Series</code>, os <code>DataFrames</code> tem o índice que pode ser nomeado, e além destes, as colunas, que também podem ser nomeadas e utilizadas para a recuperação de dados.</p>
+<div class="sourceCode" id="cb83"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb83-1" data-line-number="1">tabela <span class="op">=</span> pd.DataFrame([[.<span class="dv">9</span>, <span class="fl">.8</span>, <span class="fl">.7</span>], [.<span class="dv">4</span>, <span class="fl">.5</span>, <span class="fl">.7</span>]], columns <span class="op">=</span> [<span class="st">&#39;primeiro&#39;</span>, <span class="st">&#39;segundo&#39;</span>, <span class="st">&#39;terceiro&#39;</span>], index <span class="op">=</span> [<span class="st">&#39;zero&#39;</span>, <span class="st">&#39;um&#39;</span>])</a>
+<a class="sourceLine" id="cb83-2" data-line-number="2"><span class="bu">print</span>(tabela)</a></code></pre></div>
 <pre><code>##       primeiro  segundo  terceiro
 ## zero       0.9      0.8       0.7
 ## um         0.4      0.5       0.7</code></pre>
 <p>Pode-se também utilizar os dicionários e trasforma-los em <code>DataFrames</code>, veja como isto é feito.</p>
-<div class="sourceCode" id="cb82"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb82-1" data-line-number="1">dicto <span class="op">=</span> {</a>
-<a class="sourceLine" id="cb82-2" data-line-number="2">  <span class="st">&#39;nome&#39;</span>: [<span class="st">&#39;felipe&#39;</span>, <span class="st">&#39;maria&#39;</span>],</a>
-<a class="sourceLine" id="cb82-3" data-line-number="3">  <span class="st">&#39;idade&#39;</span>: [<span class="dv">12</span>, <span class="dv">13</span>]</a>
-<a class="sourceLine" id="cb82-4" data-line-number="4">}</a>
-<a class="sourceLine" id="cb82-5" data-line-number="5"></a>
-<a class="sourceLine" id="cb82-6" data-line-number="6">df <span class="op">=</span> pd.DataFrame(dicto)<span class="op">;</span> <span class="bu">print</span>(df)</a></code></pre></div>
-<pre><code>##    idade    nome
-## 0     12  felipe
-## 1     13   maria</code></pre>
+<div class="sourceCode" id="cb85"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb85-1" data-line-number="1">dicto <span class="op">=</span> {</a>
+<a class="sourceLine" id="cb85-2" data-line-number="2">  <span class="st">&#39;nome&#39;</span>: [<span class="st">&#39;felipe&#39;</span>, <span class="st">&#39;maria&#39;</span>],</a>
+<a class="sourceLine" id="cb85-3" data-line-number="3">  <span class="st">&#39;idade&#39;</span>: [<span class="dv">12</span>, <span class="dv">13</span>]</a>
+<a class="sourceLine" id="cb85-4" data-line-number="4">}</a>
+<a class="sourceLine" id="cb85-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb85-6" data-line-number="6">df <span class="op">=</span> pd.DataFrame(dicto)<span class="op">;</span> <span class="bu">print</span>(df)</a></code></pre></div>
+<pre><code>##      nome  idade
+## 0  felipe     12
+## 1   maria     13</code></pre>
 <p>Bem, agora que você entendeu a diferença fundamental entre estas estruturas de dados, vamos para a parte de manipulação delas.</p>
 </div>
 <div id="selecao-e-filtro-dos-dados" class="section level3">
 <h3><span class="header-section-number">3.2.3</span> Seleção e filtro dos dados</h3>
 <p>Uma parte muito importante é a seleção e filtro dos dados, com elas basicamente faremos a manipulação dos dados.</p>
-<p>Vamos começar fazendo a busca utilizando os índices (index) e as colunas (No caso dos <code>DataFrames</code>). Para isto, vamos utilizar os métodos <code>.loc</code> e <code>.iloc</code>. A sintaxe de utilização basica para as duas estruturas de dados podem ser vistas abaixos:</p>
+<p>Vamos começar fazendo a busca utilizando os índices (index) e as colunas (No caso dos <code>DataFrames</code>). Para isto, vamos utilizar os métodos <code>.loc</code>, que permitem buscar uma linha com algum nome de índice específico e o <code>.iloc</code> que busca uma linha em uma posição específica.</p>
+<p>A sintaxe de utilização básica para as duas estruturas de dados podem ser vistas abaixos:</p>
 <table>
 <thead>
 <tr class="header">
@@ -321,36 +327,36 @@ Pode-se entender que as <code>Series</code> são estruturas de dados simples, as
 </tr>
 </tbody>
 </table>
-<p>No caso do <code>.loc</code> a sintaxe muda exatamente pelas diferenças apresentadas entre o <code>Series</code> e o <code>DataFrame</code>. Para o caso do <code>.iloc</code> ele busca somente a posição da linha, e você trata a coluna.</p>
-<div class="sourceCode" id="cb84"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb84-1" data-line-number="1">df <span class="op">=</span> pd.DataFrame({</a>
-<a class="sourceLine" id="cb84-2" data-line-number="2">  <span class="st">&#39;nome&#39;</span>: [<span class="st">&#39;Joana&#39;</span>, <span class="st">&#39;Maria&#39;</span>, <span class="st">&#39;Josefa&#39;</span>],</a>
-<a class="sourceLine" id="cb84-3" data-line-number="3">  <span class="st">&#39;idade&#39;</span>: [<span class="dv">15</span>, <span class="dv">18</span>, <span class="dv">21</span>],</a>
-<a class="sourceLine" id="cb84-4" data-line-number="4">  <span class="st">&#39;nota&#39;</span>: [<span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>]</a>
-<a class="sourceLine" id="cb84-5" data-line-number="5">}, index <span class="op">=</span> [<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>])</a>
-<a class="sourceLine" id="cb84-6" data-line-number="6"></a>
-<a class="sourceLine" id="cb84-7" data-line-number="7"><span class="co"># Recuperando a aluna com index 9</span></a>
-<a class="sourceLine" id="cb84-8" data-line-number="8">df.loc[<span class="dv">9</span>, <span class="st">&#39;nome&#39;</span>]</a>
-<a class="sourceLine" id="cb84-9" data-line-number="9"></a>
-<a class="sourceLine" id="cb84-10" data-line-number="10"><span class="co"># É possível também recuperar mais de uma coluna com o .loc</span></a></code></pre></div>
+<p>No caso do <code>.loc</code> a sintaxe muda exatamente pelas diferenças apresentadas entre o <code>Series</code> e o <code>DataFrame</code>. Para o caso do <code>.iloc</code> ele busca somente a posição da linha, nas duas estruturas.</p>
+<div class="sourceCode" id="cb87"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb87-1" data-line-number="1">df <span class="op">=</span> pd.DataFrame({</a>
+<a class="sourceLine" id="cb87-2" data-line-number="2">  <span class="st">&#39;nome&#39;</span>: [<span class="st">&#39;Joana&#39;</span>, <span class="st">&#39;Maria&#39;</span>, <span class="st">&#39;Josefa&#39;</span>],</a>
+<a class="sourceLine" id="cb87-3" data-line-number="3">  <span class="st">&#39;idade&#39;</span>: [<span class="dv">15</span>, <span class="dv">18</span>, <span class="dv">21</span>],</a>
+<a class="sourceLine" id="cb87-4" data-line-number="4">  <span class="st">&#39;nota&#39;</span>: [<span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>]</a>
+<a class="sourceLine" id="cb87-5" data-line-number="5">}, index <span class="op">=</span> [<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>])</a>
+<a class="sourceLine" id="cb87-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb87-7" data-line-number="7"><span class="co"># Recuperando a aluna com index 9</span></a>
+<a class="sourceLine" id="cb87-8" data-line-number="8">df.loc[<span class="dv">9</span>, <span class="st">&#39;nome&#39;</span>]</a>
+<a class="sourceLine" id="cb87-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb87-10" data-line-number="10"><span class="co"># É possível também recuperar mais de uma coluna com o .loc</span></a></code></pre></div>
 <pre><code>## &#39;Josefa&#39;</code></pre>
-<div class="sourceCode" id="cb86"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb86-1" data-line-number="1">df.loc[<span class="dv">9</span>, [<span class="st">&#39;nome&#39;</span>, <span class="st">&#39;idade&#39;</span>]]</a>
-<a class="sourceLine" id="cb86-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb86-3" data-line-number="3"><span class="co"># Recuperando a aluna na posição 2</span></a></code></pre></div>
+<div class="sourceCode" id="cb89"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb89-1" data-line-number="1">df.loc[<span class="dv">9</span>, [<span class="st">&#39;nome&#39;</span>, <span class="st">&#39;idade&#39;</span>]]</a>
+<a class="sourceLine" id="cb89-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb89-3" data-line-number="3"><span class="co"># Recuperando a aluna na posição 2</span></a></code></pre></div>
 <pre><code>## nome     Josefa
 ## idade        21
 ## Name: 9, dtype: object</code></pre>
-<div class="sourceCode" id="cb88"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb88-1" data-line-number="1">df.iloc[<span class="dv">2</span>][<span class="st">&#39;nome&#39;</span>]</a>
-<a class="sourceLine" id="cb88-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb88-3" data-line-number="3"><span class="co"># Recuperando duas colunas</span></a></code></pre></div>
+<div class="sourceCode" id="cb91"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb91-1" data-line-number="1">df.iloc[<span class="dv">2</span>][<span class="st">&#39;nome&#39;</span>]</a>
+<a class="sourceLine" id="cb91-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb91-3" data-line-number="3"><span class="co"># Recuperando duas colunas</span></a></code></pre></div>
 <pre><code>## &#39;Josefa&#39;</code></pre>
-<div class="sourceCode" id="cb90"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb90-1" data-line-number="1">df.iloc[<span class="dv">2</span>][[<span class="st">&#39;nome&#39;</span>, <span class="st">&#39;idade&#39;</span>]]</a></code></pre></div>
+<div class="sourceCode" id="cb93"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb93-1" data-line-number="1">df.iloc[<span class="dv">2</span>][[<span class="st">&#39;nome&#39;</span>, <span class="st">&#39;idade&#39;</span>]]</a></code></pre></div>
 <pre><code>## nome     Josefa
 ## idade        21
 ## Name: 9, dtype: object</code></pre>
-<p>Dentro destes, ainda é possível passar uma expressão booleana, para realizar uma filtragem dos dados.</p>
-<div class="sourceCode" id="cb92"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb92-1" data-line-number="1">df <span class="op">=</span> pd.DataFrame({<span class="st">&#39;coluna&#39;</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>]})</a>
-<a class="sourceLine" id="cb92-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb92-3" data-line-number="3">df[df[<span class="st">&#39;coluna&#39;</span>] <span class="op">&gt;=</span> <span class="dv">5</span>]</a></code></pre></div>
+<p>Dentro destes métodos de busca ainda é possível passar uma expressão booleana, para realizar um filtro dos dados.</p>
+<div class="sourceCode" id="cb95"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb95-1" data-line-number="1">df <span class="op">=</span> pd.DataFrame({<span class="st">&#39;coluna&#39;</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>]})</a>
+<a class="sourceLine" id="cb95-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb95-3" data-line-number="3">df[df[<span class="st">&#39;coluna&#39;</span>] <span class="op">&gt;=</span> <span class="dv">5</span>]</a></code></pre></div>
 <pre><code>##    coluna
 ## 4       5
 ## 5       6
@@ -358,12 +364,12 @@ Pode-se entender que as <code>Series</code> são estruturas de dados simples, as
 ## 7       8
 ## 8       9
 ## 9      10</code></pre>
-<p>E isto também vale para as <code>Series</code>, utilizando a mesma estrutura. Bem, este é o básico para a manipulação e filtragem dos dados, existem muitos métodos para a manipulação e filtragem, aqui ainda veremos alguns deles, mas, inicialmente estes já resolver muitos dos nossos problemas.</p>
+<p>E isto também vale para as <code>Series</code>, utilizando a mesma estrutura. Bem, este é o básico para a manipulação e filtragem dos dados, existem muitos métodos para a manipulação e filtragem, aqui ainda veremos alguns deles, mas, inicialmente estes já resolver muitos problemas das etapas de análise de dados.</p>
 </div>
 <div id="agrupamento-de-dados-e-agregacoes" class="section level3">
 <h3><span class="header-section-number">3.2.4</span> Agrupamento de dados e agregações</h3>
 <p>Muitas vezes queremos agrupar nossos dados, seja para facilitar a manipulação, o entendimento das relações dos dados, ou mesmo para aplicar funções sobre cada um dos grupos e obter informações a partir disto. Para isto utilizamos os agrupamentos e agregações.</p>
-<p>As agregações apresentam diversas derivações de definição, a utiliza aqui será a que, são operações aplicadas sobre os dados que resultam em um conjunto de valores, ou mesmo um valor escalar. Entenda que, o retorno pode mudar de acordo com a estrutura de dados onde se aplica a agregação, no caso <code>Series</code> será retornado apenas um valor ao utilizar agregações, e no caso dos <code>DataFrames</code> um valor para cada coluna ou linha, dependendo da definição feita durante o processo.</p>
+<p>As agregações apresentam diversas derivações de definição, a utiliza aqui será a que, são operações aplicadas sobre os dados que resultam em um conjunto de valores, ou mesmo um valor escalar. Entenda que, o retorno pode mudar de acordo com a estrutura de dados onde se aplica a agregação, no caso das <code>Series</code> será retornado apenas um valor e no caso dos <code>DataFrames</code> um valor para cada linha/coluna (Variando com a definição do usuário) é retornado.</p>
 <p>Algumas operações de agregação são:</p>
 <ul>
 <li>sum() -&gt; Realiza somatório;</li>
@@ -371,64 +377,68 @@ Pode-se entender que as <code>Series</code> são estruturas de dados simples, as
 <li>max() -&gt; Busca o valor máximo;</li>
 <li>count() -&gt; Realiza a contagem de elementos.</li>
 </ul>
-<div class="sourceCode" id="cb94"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb94-1" data-line-number="1">s <span class="op">=</span> pd.Series([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</a>
-<a class="sourceLine" id="cb94-2" data-line-number="2">df <span class="op">=</span> pd.DataFrame([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>,], [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]])</a>
-<a class="sourceLine" id="cb94-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb94-4" data-line-number="4"><span class="co"># Agregando Series</span></a>
-<a class="sourceLine" id="cb94-5" data-line-number="5"><span class="bu">print</span>(s.<span class="bu">sum</span>())</a>
-<a class="sourceLine" id="cb94-6" data-line-number="6"><span class="co"># Agredando DataFrame</span></a></code></pre></div>
+<div class="sourceCode" id="cb97"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb97-1" data-line-number="1">s <span class="op">=</span> pd.Series([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</a>
+<a class="sourceLine" id="cb97-2" data-line-number="2">df <span class="op">=</span> pd.DataFrame([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>,], [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]])</a>
+<a class="sourceLine" id="cb97-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb97-4" data-line-number="4"><span class="co"># Agregando Series</span></a>
+<a class="sourceLine" id="cb97-5" data-line-number="5"><span class="bu">print</span>(s.<span class="bu">sum</span>())</a>
+<a class="sourceLine" id="cb97-6" data-line-number="6"><span class="co"># Agredando DataFrame</span></a></code></pre></div>
 <pre><code>## 6</code></pre>
-<div class="sourceCode" id="cb96"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb96-1" data-line-number="1"><span class="bu">print</span>(df.<span class="bu">sum</span>())</a></code></pre></div>
+<div class="sourceCode" id="cb99"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb99-1" data-line-number="1"><span class="bu">print</span>(df.<span class="bu">sum</span>())</a></code></pre></div>
 <pre><code>## 0    5
 ## 1    7
 ## 2    9
 ## dtype: int64</code></pre>
-<p>E o agrupamento basicamente representa a divisão dos dados, em conjuntos que possuem alguma similaridade (Esta similaridade é difinida pelo usuário). E isto em Python é realizado com o método <code>groupby</code>.</p>
-<div class="sourceCode" id="cb98"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb98-1" data-line-number="1">df <span class="op">=</span> pd.DataFrame({</a>
-<a class="sourceLine" id="cb98-2" data-line-number="2">  <span class="st">&#39;nome&#39;</span>: [<span class="st">&#39;Tel1&#39;</span>, <span class="st">&#39;Tel2&#39;</span>, <span class="st">&#39;Tel3&#39;</span>],</a>
-<a class="sourceLine" id="cb98-3" data-line-number="3">  <span class="st">&#39;tipo&#39;</span>: [<span class="st">&#39;antigo&#39;</span>, <span class="st">&#39;novo&#39;</span>, <span class="st">&#39;novo&#39;</span>]</a>
-<a class="sourceLine" id="cb98-4" data-line-number="4">})</a>
-<a class="sourceLine" id="cb98-5" data-line-number="5"></a>
-<a class="sourceLine" id="cb98-6" data-line-number="6"><span class="co"># Etapa de divisão dos dados</span></a>
-<a class="sourceLine" id="cb98-7" data-line-number="7">agrupado <span class="op">=</span> df.groupby(<span class="st">&#39;tipo&#39;</span>)</a></code></pre></div>
-<p>Os dados foram agrupados de acordo com a coluna <code>tipo</code>. O que se espera como retorno do método <code>groupby</code> ? Um conjunto de <code>DataFrames</code>, correto ? Sim, mas, no caso do pandas ele retorna um tipo de <code>DataFrame</code>, nomeado <code>DataFrameGroupBy</code>, este contém cada um dos grupos, que podem ser acessados através do atributo <code>groups</code>, o formato de retorno é um dicionário, onde cada chave representa o grupo, neste caso o tipo, e os valores são os índices dos itens que fazem parte do grupo.</p>
-<div class="sourceCode" id="cb99"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb99-1" data-line-number="1"><span class="bu">print</span>(agrupado.groups)</a></code></pre></div>
-<pre><code>## {&#39;novo&#39;: Int64Index([1, 2], dtype=&#39;int64&#39;), &#39;antigo&#39;: Int64Index([0], dtype=&#39;int64&#39;)}</code></pre>
+<p>Já o agrupamento representa a divisão dos dados, em conjuntos que possuem alguma similaridade (O critério de similaridade é definido pelo usuário), no pandas o agrupamento é realizado com o método <code>groupby</code> presente nas classes <code>Series</code> e <code>DataFrames</code>.</p>
+<p>Aqui vamos focar no agrupamento das <code>Series</code>.</p>
+<div class="sourceCode" id="cb101"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb101-1" data-line-number="1">df <span class="op">=</span> pd.DataFrame({</a>
+<a class="sourceLine" id="cb101-2" data-line-number="2">  <span class="st">&#39;nome&#39;</span>: [<span class="st">&#39;Tel1&#39;</span>, <span class="st">&#39;Tel2&#39;</span>, <span class="st">&#39;Tel3&#39;</span>],</a>
+<a class="sourceLine" id="cb101-3" data-line-number="3">  <span class="st">&#39;tipo&#39;</span>: [<span class="st">&#39;antigo&#39;</span>, <span class="st">&#39;novo&#39;</span>, <span class="st">&#39;novo&#39;</span>]</a>
+<a class="sourceLine" id="cb101-4" data-line-number="4">})</a>
+<a class="sourceLine" id="cb101-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb101-6" data-line-number="6"><span class="co"># Etapa de divisão dos dados</span></a>
+<a class="sourceLine" id="cb101-7" data-line-number="7">agrupado <span class="op">=</span> df.groupby(<span class="st">&#39;tipo&#39;</span>)</a></code></pre></div>
+<p>No exemplo acima, os dados foram agrupados de acordo com a coluna <code>tipo</code>. O que é esperado como retorno do método <code>groupby</code> ? Intuitivamente pensamos em um conjunto de <code>DataFrames</code>, cada um representando um grupo e é exatamente isto que o Pandas retorna, porém há algumas particularidades.</p>
+<p>O tipo retornado de um <code>groupby</code> deixa de ser um <code>DataFrame</code> e passa a ser um <code>DataFrameGroupBy</code> que possibilita e facilita a manipulação dos grupos.</p>
+<p>Caso você queira ver os grupos gerados, use o atributo <code>groups</code> no objeto gerado com o <code>groupby</code>.</p>
+<div class="sourceCode" id="cb102"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb102-1" data-line-number="1"><span class="bu">print</span>(agrupado.groups)</a></code></pre></div>
+<pre><code>## {&#39;antigo&#39;: Int64Index([0], dtype=&#39;int64&#39;), &#39;novo&#39;: Int64Index([1, 2], dtype=&#39;int64&#39;)}</code></pre>
 <p>Bem, ao juntarmos os conceitos de agregação e agrupamento, temos um processo que pode ser um problema de ser entendido, para isto, vamos utilizar a definição feita por Hadley Wickham, onde ele simplesmente separa todo o processo em etapas, sendo estas: <code>Dividir-Aplicar-Combinar</code>.</p>
 <p><img src="images/03.08-split-apply-combine.png" /></p>
-<p>O processo de dividir é o agrupamento, onde estou juntando os dados de acordo com alguma caracteristica que eu defini, a aplicação é justamente onde pode-se aplicar as agregações, filtros ou transformações, e por fim o combinar, representa a junção dos resultados da operação realizada na aplicação.</p>
+<p>O processo de dividir é o agrupamento, onde os dados são agrupados de acordo com alguma característica definida previamente, a aplicação realiza as agregações, filtros ou transformações e por fim a combinação, que representa a junção dos resultados das etapas anteriores.</p>
 <p>Para que se haja um entendimento melhor, vamos criar um exemplo.</p>
-<div class="sourceCode" id="cb101"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb101-1" data-line-number="1">df <span class="op">=</span> pd.DataFrame({</a>
-<a class="sourceLine" id="cb101-2" data-line-number="2">  <span class="st">&#39;nome&#39;</span>: [<span class="st">&#39;felipe&#39;</span>, <span class="st">&#39;joão&#39;</span>, <span class="st">&#39;maria&#39;</span>, <span class="st">&#39;ana&#39;</span>],</a>
-<a class="sourceLine" id="cb101-3" data-line-number="3">  <span class="st">&#39;idade&#39;</span>: [<span class="dv">19</span>, <span class="dv">19</span>, <span class="dv">20</span>, <span class="dv">20</span>],</a>
-<a class="sourceLine" id="cb101-4" data-line-number="4">  <span class="st">&#39;dinheiro&#39;</span>: [<span class="dv">100</span>, <span class="dv">100</span>, <span class="dv">150</span>, <span class="dv">150</span>]</a>
-<a class="sourceLine" id="cb101-5" data-line-number="5">})</a></code></pre></div>
+<div class="sourceCode" id="cb104"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb104-1" data-line-number="1">df <span class="op">=</span> pd.DataFrame({</a>
+<a class="sourceLine" id="cb104-2" data-line-number="2">  <span class="st">&#39;nome&#39;</span>: [<span class="st">&#39;felipe&#39;</span>, <span class="st">&#39;joão&#39;</span>, <span class="st">&#39;maria&#39;</span>, <span class="st">&#39;ana&#39;</span>],</a>
+<a class="sourceLine" id="cb104-3" data-line-number="3">  <span class="st">&#39;idade&#39;</span>: [<span class="dv">19</span>, <span class="dv">19</span>, <span class="dv">20</span>, <span class="dv">20</span>],</a>
+<a class="sourceLine" id="cb104-4" data-line-number="4">  <span class="st">&#39;dinheiro&#39;</span>: [<span class="dv">100</span>, <span class="dv">100</span>, <span class="dv">150</span>, <span class="dv">150</span>]</a>
+<a class="sourceLine" id="cb104-5" data-line-number="5">})</a></code></pre></div>
 <p>Vamos agrupar estes dados, levando em consideração a idade.</p>
-<div class="sourceCode" id="cb102"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb102-1" data-line-number="1"><span class="co"># Esta é a etapa de divir, da definição do Hedley</span></a>
-<a class="sourceLine" id="cb102-2" data-line-number="2">agrupado <span class="op">=</span> df.groupby(<span class="st">&#39;idade&#39;</span>)</a>
-<a class="sourceLine" id="cb102-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb102-4" data-line-number="4"><span class="co"># Aplicando uma agregação</span></a>
-<a class="sourceLine" id="cb102-5" data-line-number="5"><span class="co">## Esta é a etapa de aplicação e junçaõ, definida pelo Hedley</span></a>
-<a class="sourceLine" id="cb102-6" data-line-number="6"><span class="bu">print</span>(agrupado.count())</a></code></pre></div>
-<pre><code>##        dinheiro  nome
+<div class="sourceCode" id="cb105"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb105-1" data-line-number="1"><span class="co"># Esta é a etapa de divir, da definição do Hedley</span></a>
+<a class="sourceLine" id="cb105-2" data-line-number="2">agrupado <span class="op">=</span> df.groupby(<span class="st">&#39;idade&#39;</span>)</a>
+<a class="sourceLine" id="cb105-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb105-4" data-line-number="4"><span class="co"># Aplicando uma agregação</span></a>
+<a class="sourceLine" id="cb105-5" data-line-number="5"><span class="co">## Esta é a etapa de aplicação e junçaõ, definida pelo Hedley</span></a>
+<a class="sourceLine" id="cb105-6" data-line-number="6"><span class="bu">print</span>(agrupado.count())</a></code></pre></div>
+<pre><code>##        nome  dinheiro
 ## idade                
-## 19            2     2
-## 20            2     2</code></pre>
+## 19        2         2
+## 20        2         2</code></pre>
 <p>Veja que o agrupamento e a contagem foi realizado, mas caso eu queira aplicar uma agregação em uma coluna especifica ? Você pode!</p>
-<div class="sourceCode" id="cb104"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb104-1" data-line-number="1"><span class="co"># Agregando somente o dinheiro de cada grupo</span></a>
-<a class="sourceLine" id="cb104-2" data-line-number="2"><span class="bu">print</span>(agrupado[<span class="st">&#39;dinheiro&#39;</span>].<span class="bu">sum</span>())</a></code></pre></div>
+<div class="sourceCode" id="cb107"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb107-1" data-line-number="1"><span class="co"># Agregando somente o dinheiro de cada grupo</span></a>
+<a class="sourceLine" id="cb107-2" data-line-number="2"><span class="bu">print</span>(agrupado[<span class="st">&#39;dinheiro&#39;</span>].<span class="bu">sum</span>())</a></code></pre></div>
 <pre><code>## idade
 ## 19    200
 ## 20    300
 ## Name: dinheiro, dtype: int64</code></pre>
-<p>Viu! Extremamente simples! Para finalizar esta parte, vamos aplicar um filtro nos dados agrupados!</p>
 </div>
-<div id="funcoes-de-leitura-e-escrita" class="section level3">
-<h3><span class="header-section-number">3.2.5</span> Funções de leitura e escrita</h3>
-<p>Além das estruturas de dados poderosas, o pandas também possui funções para leitura e escrita que são <strong>APELONAS</strong></p>
-<p>Para a leitura de csv, podemos utilizar a <code>read_csv</code></p>
-<div class="sourceCode" id="cb106"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb106-1" data-line-number="1">df <span class="op">=</span> pd.read_csv(<span class="st">&#39;data/titanic.csv&#39;</span>) <span class="co"># O caminho pode ser diferente eu sua máquina</span></a>
-<a class="sourceLine" id="cb106-2" data-line-number="2"><span class="bu">print</span>(df.head()) <span class="co"># Função que demonstra o início do DataFrame carregado</span></a></code></pre></div>
+<div id="funcoes-de-leitura-e-escrita-de-dados" class="section level3">
+<h3><span class="header-section-number">3.2.5</span> Funções de leitura e escrita de dados</h3>
+<p>Além das estruturas de dados poderosas, o pandas também possui funções para leitura e escrita de dados que facilitam muito a vida 🚀.</p>
+<p>Existem diversas funções de leitura, aqui serão apresentadas apenas algumas, mas não deixe de conferir a documentação do projeto para entender melhor as funções de leitura e escrita de dados.</p>
+<p>Para a leitura de dados no formato csv, podemos utilizar a função <code>read_csv</code>.</p>
+<div class="sourceCode" id="cb109"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb109-1" data-line-number="1">df <span class="op">=</span> pd.read_csv(<span class="st">&#39;data/titanic.csv&#39;</span>) <span class="co"># O caminho pode ser diferente eu sua máquina</span></a>
+<a class="sourceLine" id="cb109-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb109-3" data-line-number="3"><span class="bu">print</span>(df.head()) <span class="co"># Função que mostra o início do DataFrame carregado</span></a></code></pre></div>
 <pre><code>##    PassengerId  Pclass  ... Cabin Embarked
 ## 0          892       3  ...   NaN        Q
 ## 1          893       3  ...   NaN        S
@@ -437,7 +447,7 @@ Pode-se entender que as <code>Series</code> são estruturas de dados simples, as
 ## 4          896       3  ...   NaN        S
 ## 
 ## [5 rows x 11 columns]</code></pre>
-<div class="sourceCode" id="cb108"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb108-1" data-line-number="1"><span class="bu">print</span>(df.tail()) <span class="co"># Função que demonstra o final do DataFrame carregado</span></a></code></pre></div>
+<div class="sourceCode" id="cb111"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb111-1" data-line-number="1"><span class="bu">print</span>(df.tail()) <span class="co"># Função que mostra o final do DataFrame carregado</span></a></code></pre></div>
 <pre><code>##      PassengerId  Pclass                          Name  ...      Fare  Cabin  Embarked
 ## 413         1305       3            Spector, Mr. Woolf  ...    8.0500    NaN         S
 ## 414         1306       1  Oliva y Ocana, Dona. Fermina  ...  108.9000   C105         C
@@ -446,27 +456,30 @@ Pode-se entender que as <code>Series</code> são estruturas de dados simples, as
 ## 417         1309       3      Peter, Master. Michael J  ...   22.3583    NaN         C
 ## 
 ## [5 rows x 11 columns]</code></pre>
-<p>Caso você esteja trabalhando com alguma API Rest, você pode fazer com que o json seja transportado para um <code>DataFrame</code>, veja</p>
-<div class="sourceCode" id="cb110"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb110-1" data-line-number="1">json_frame <span class="op">=</span> pd.read_json(<span class="st">&#39;http://dummy.restapiexample.com/api/v1/employees&#39;</span>)</a>
-<a class="sourceLine" id="cb110-2" data-line-number="2"><span class="bu">print</span>(json_frame.head())</a></code></pre></div>
-<pre><code>##    employee_age employee_name  employee_salary     id profile_image
-## 0            15    Marta37309                1  99003              
-## 1            33    emp0137338            10000  99008              
-## 2           343    emp0437338           100300  99011              
-## 3            25        M37345          2000000  99012              
-## 4            35    Marta37346          1000000  99013</code></pre>
-<div class="sourceCode" id="cb112"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb112-1" data-line-number="1"><span class="bu">print</span>(json_frame.columns) <span class="co"># Recupera as colunas do DataFrame</span></a></code></pre></div>
-<pre><code>## Index([&#39;employee_age&#39;, &#39;employee_name&#39;, &#39;employee_salary&#39;, &#39;id&#39;,
+<p>Caso os dados que você está coletando sejam oriundos de alguma API Rest o pandas também pode te ajudar! Com o método <code>read_json</code> você pode passar não só o nome do arquivo json em sua máquina, mas também a URL da API que distribui tais dados. Ao fazer isto, o pandas trata de já transformar os dados na estrutura adequada, podendo ser uma <code>Series</code> ou <code>DataFrame</code>, veja como a utilização é simples.</p>
+<div class="sourceCode" id="cb113"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb113-1" data-line-number="1">json_frame <span class="op">=</span> pd.read_json(<span class="st">&#39;http://dummy.restapiexample.com/api/v1/employees&#39;</span>)</a>
+<a class="sourceLine" id="cb113-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb113-3" data-line-number="3"><span class="bu">print</span>(json_frame.head())</a></code></pre></div>
+<pre><code>##        id       employee_name  employee_salary  employee_age profile_image
+## 0  104273           TestName1              123            23              
+## 1  104276  test-1570081566834              123            23              
+## 2  104277  test-1570081577477              123            23              
+## 3  104278               pooja            12300            22              
+## 4  104280  test-1570081594563              123            23</code></pre>
+<div class="sourceCode" id="cb115"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb115-1" data-line-number="1"><span class="bu">print</span>(json_frame.columns) <span class="co"># Recupera as colunas do DataFrame</span></a></code></pre></div>
+<pre><code>## Index([&#39;id&#39;, &#39;employee_name&#39;, &#39;employee_salary&#39;, &#39;employee_age&#39;,
 ##        &#39;profile_image&#39;],
 ##       dtype=&#39;object&#39;)</code></pre>
-<p>Da mesma forma que a leitura, a escrita é extremamente fácil. Para salvar um CSV, ou um JSON, basta utilizar os métodos <code>to_csv</code> e <code>to_json</code>, presentes dentro do <code>DataFrame</code>.</p>
-<div class="sourceCode" id="cb114"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb114-1" data-line-number="1">df.to_csv(<span class="st">&#39;nome_do_csv.csv&#39;</span>) <span class="co"># Salva o CSV</span></a>
-<a class="sourceLine" id="cb114-2" data-line-number="2">df.to_json(<span class="st">&#39;nome_do_json.json&#39;</span>) <span class="co"># Salva o JSON</span></a></code></pre></div>
-<p>Viu ? É tudo muito simples e direto, o que te permite focar em sua análise, e deixar de lado problemas com sintaxe 🗽, mas, após a sua análise, é importante apresentar seus dados, para isto, vamos aprender a utilizar a biblioteca plotnine para fazer <strong>plots</strong> e visualizar seus dados.</p>
+<p>Da mesma forma que a leitura, fazer escrita de dados com pandas é muito simples, tendo os dados em <code>Series</code> ou <code>DataFrame</code> é possível salvar os dados em diferentes formatos. Por exemplo, para salvar uma <code>Serie</code> ou um <code>DataFrame</code> em um arquivo CSV o método <code>to_csv</code> pode ser utilizado.</p>
+<p>Mas caso você queira salvar em um arquivo json, basta trocar o método <code>to_csv</code> para <code>to_json</code> e pronto! Seus dados já estarão disponibilizados no sistema de arquivo nos formados indicados.</p>
+<div class="sourceCode" id="cb117"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb117-1" data-line-number="1">df.to_csv(<span class="st">&#39;nome_do_csv.csv&#39;</span>) <span class="co"># Salva o CSV</span></a>
+<a class="sourceLine" id="cb117-2" data-line-number="2">df.to_json(<span class="st">&#39;nome_do_json.json&#39;</span>) <span class="co"># Salva o JSON</span></a></code></pre></div>
+<p>Viu ? É tudo muito simples e direto, o que te permite focar em sua análise e deixar de lado problemas com sintaxe 🗽. Para fechar esta introdução a análise de dados, vamos ver um pouco sobre visualização de dados, que facilita e potencializa a análise de dados.</p>
 </div>
 </div>
 <div id="para-saber-mais-1" class="section level2">
 <h2><span class="header-section-number">3.3</span> Para saber mais</h2>
+<p>Não deixe de buscar mais informações! Abaixo alguns links que podem ser úteis.</p>
 <ul>
 <li><a href="http://shop.oreilly.com/product/0636920034919.do">Python Data Science Handbook</a></li>
 <li><a href="https://pandas.pydata.org/pandas-docs/stable/">Documentação - Pandas</a></li>
