@@ -18,7 +18,7 @@ Bom, `ggplot`é um pacote em R criado pelo _Hadley Wickham_, como mencionado ant
   <FACET_FUNCTION>  
 ```
 
-Vamos explicar linha por linha do código a cima. Vamos lá `r emo::ji("calculation")`.
+Vamos explicar linha por linha do código acima. Vamos lá `r emo::ji("calculation")`.
 
 ## Mapeamento Estético
 

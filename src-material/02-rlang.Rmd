@@ -68,7 +68,7 @@ Já que conhecemos os tipos primitivos, vamos aprender sobre vetores e matriz. A
 
 No **R** há dois tipos de vetores:
 
-- **Vetores atômicos**: compostos por todos os tipos citados a cima e mais um tipo chamado `raw`
+- **Vetores atômicos**: compostos por todos os tipos citados acima e mais um tipo chamado `raw`
 
 > Tipos citados: `double`, `logical`, `integer`, `character` e `complex`.
 
@@ -360,7 +360,7 @@ Vamos utilizar os seguintes métodos de manipulação do **dplyr**:
 - `group_by` - agrupa de acordo com um vetor de categorias
 - `summarize` - Reduz os valores para um único resumo.
 
-Vamos manipular nosso `dataframe` com base nos métodos a cima:
+Vamos manipular nosso `dataframe` com base nos métodos acima:
 
 ```{r}
 library(dplyr)

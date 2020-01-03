@@ -158,7 +158,7 @@ Primeiro, é importante **importar** os dados nos mais diferentes formatos `.csv
 
 Sabemos que `Joao` tem `14` anos e está no `ensino fundamental`, seguindo a ideia do formato **tidy**.
 
-A etapa de **transformação** é composta pela adição de novos atributos com base no conjunto de dados, por exemplo, a média da idade dos alunos, visto a cima. Nesta etapa, é importante gerar algumas perguntas sobre o seu conjunto e tentar respondê-las realizando a manipulação dos dados. Um exemplo de transformação muito utilizada, é extrair o dia da semana de uma determinada data `x`. Por exemplo, em R:
+A etapa de **transformação** é composta pela adição de novos atributos com base no conjunto de dados, por exemplo, a média da idade dos alunos, visto acima. Nesta etapa, é importante gerar algumas perguntas sobre o seu conjunto e tentar respondê-las realizando a manipulação dos dados. Um exemplo de transformação muito utilizada, é extrair o dia da semana de uma determinada data `x`. Por exemplo, em R:
 
 ```{r,  fig.cap = '(ref:r_date)'}
   suppressMessages(library(lubridate))
@@ -167,7 +167,7 @@ A etapa de **transformação** é composta pela adição de novos atributos com 
   lubridate::wday(data, label = TRUE)
 ```
 
-No exemplo a cima, estamos usando o pacote `lubridate` e com uma linha de código descobrimos o dia da semana do dia 11 de outubro.
+No exemplo acima, estamos usando o pacote `lubridate` e com uma linha de código descobrimos o dia da semana do dia 11 de outubro.
 
 Hadley descreve a **visualização** e os **modelos** como engenharia de representação de conhecimento. A **visualização**, pode gerar novos conhecimentos, questionamentos e respostas. Segundo @claus2019, a visualização de dados, é a parte arte e a parte ciência na área de ciência de dados, portanto, a visualização precisa estar correta e agradável para interpretá-la.
 
