@@ -6,4 +6,4 @@ cd src-material
 Rscript compile.R
 cd ../docs
 
-cp introducao.html index.html
+cp introdução.html index.html

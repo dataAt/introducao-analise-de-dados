@@ -299,9 +299,9 @@ Pode-se entender que as <code>Series</code> são estruturas de dados simples, as
 <a class="sourceLine" id="cb85-4" data-line-number="4">}</a>
 <a class="sourceLine" id="cb85-5" data-line-number="5"></a>
 <a class="sourceLine" id="cb85-6" data-line-number="6">df <span class="op">=</span> pd.DataFrame(dicto)<span class="op">;</span> <span class="bu">print</span>(df)</a></code></pre></div>
-<pre><code>##    idade    nome
-## 0     12  felipe
-## 1     13   maria</code></pre>
+<pre><code>##      nome  idade
+## 0  felipe     12
+## 1   maria     13</code></pre>
 <p>Bem, agora que você entendeu a diferença fundamental entre estas estruturas de dados, vamos para a parte de manipulação delas.</p>
 </div>
 <div id="seleção-e-filtro-dos-dados" class="section level3">
@@ -402,7 +402,7 @@ Pode-se entender que as <code>Series</code> são estruturas de dados simples, as
 <p>O tipo retornado de um <code>groupby</code> deixa de ser um <code>DataFrame</code> e passa a ser um <code>DataFrameGroupBy</code> que possibilita e facilita a manipulação dos grupos.</p>
 <p>Caso você queira ver os grupos gerados, use o atributo <code>groups</code> no objeto gerado com o <code>groupby</code>.</p>
 <div class="sourceCode" id="cb102"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb102-1" data-line-number="1"><span class="bu">print</span>(agrupado.groups)</a></code></pre></div>
-<pre><code>## {&#39;novo&#39;: Int64Index([1, 2], dtype=&#39;int64&#39;), &#39;antigo&#39;: Int64Index([0], dtype=&#39;int64&#39;)}</code></pre>
+<pre><code>## {&#39;antigo&#39;: Int64Index([0], dtype=&#39;int64&#39;), &#39;novo&#39;: Int64Index([1, 2], dtype=&#39;int64&#39;)}</code></pre>
 <p>Bem, ao juntarmos os conceitos de agregação e agrupamento, temos um processo que pode ser um problema de ser entendido, para isto, vamos utilizar a definição feita por Hadley Wickham, onde ele simplesmente separa todo o processo em etapas, sendo estas: <code>Dividir-Aplicar-Combinar</code>.</p>
 <p><img src="images/03.08-split-apply-combine.png" /></p>
 <p>O processo de dividir é o agrupamento, onde os dados são agrupados de acordo com alguma característica definida previamente, a aplicação realiza as agregações, filtros ou transformações e por fim a combinação, que representa a junção dos resultados das etapas anteriores.</p>
@@ -419,10 +419,10 @@ Pode-se entender que as <code>Series</code> são estruturas de dados simples, as
 <a class="sourceLine" id="cb105-4" data-line-number="4"><span class="co"># Aplicando uma agregação</span></a>
 <a class="sourceLine" id="cb105-5" data-line-number="5"><span class="co">## Esta é a etapa de aplicação e junçaõ, definida pelo Hedley</span></a>
 <a class="sourceLine" id="cb105-6" data-line-number="6"><span class="bu">print</span>(agrupado.count())</a></code></pre></div>
-<pre><code>##        dinheiro  nome
+<pre><code>##        nome  dinheiro
 ## idade                
-## 19            2     2
-## 20            2     2</code></pre>
+## 19        2         2
+## 20        2         2</code></pre>
 <p>Veja que o agrupamento e a contagem foi realizado, mas caso eu queira aplicar uma agregação em uma coluna especifica ? Você pode!</p>
 <div class="sourceCode" id="cb107"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb107-1" data-line-number="1"><span class="co"># Agregando somente o dinheiro de cada grupo</span></a>
 <a class="sourceLine" id="cb107-2" data-line-number="2"><span class="bu">print</span>(agrupado[<span class="st">&#39;dinheiro&#39;</span>].<span class="bu">sum</span>())</a></code></pre></div>
@@ -439,35 +439,31 @@ Pode-se entender que as <code>Series</code> são estruturas de dados simples, as
 <div class="sourceCode" id="cb109"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb109-1" data-line-number="1">df <span class="op">=</span> pd.read_csv(<span class="st">&#39;data/titanic.csv&#39;</span>) <span class="co"># O caminho pode ser diferente eu sua máquina</span></a>
 <a class="sourceLine" id="cb109-2" data-line-number="2"></a>
 <a class="sourceLine" id="cb109-3" data-line-number="3"><span class="bu">print</span>(df.head()) <span class="co"># Função que mostra o início do DataFrame carregado</span></a></code></pre></div>
-<pre><code>##    PassengerId  Pclass  ... Cabin Embarked
-## 0          892       3  ...   NaN        Q
-## 1          893       3  ...   NaN        S
-## 2          894       2  ...   NaN        Q
-## 3          895       3  ...   NaN        S
-## 4          896       3  ...   NaN        S
-## 
-## [5 rows x 11 columns]</code></pre>
+<pre><code>##    PassengerId  Pclass                                          Name     Sex   Age  SibSp  Parch   Ticket     Fare Cabin Embarked
+## 0          892       3                              Kelly, Mr. James    male  34.5      0      0   330911   7.8292   NaN        Q
+## 1          893       3              Wilkes, Mrs. James (Ellen Needs)  female  47.0      1      0   363272   7.0000   NaN        S
+## 2          894       2                     Myles, Mr. Thomas Francis    male  62.0      0      0   240276   9.6875   NaN        Q
+## 3          895       3                              Wirz, Mr. Albert    male  27.0      0      0   315154   8.6625   NaN        S
+## 4          896       3  Hirvonen, Mrs. Alexander (Helga E Lindqvist)  female  22.0      1      1  3101298  12.2875   NaN        S</code></pre>
 <div class="sourceCode" id="cb111"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb111-1" data-line-number="1"><span class="bu">print</span>(df.tail()) <span class="co"># Função que mostra o final do DataFrame carregado</span></a></code></pre></div>
-<pre><code>##      PassengerId  Pclass                          Name  ...      Fare  Cabin  Embarked
-## 413         1305       3            Spector, Mr. Woolf  ...    8.0500    NaN         S
-## 414         1306       1  Oliva y Ocana, Dona. Fermina  ...  108.9000   C105         C
-## 415         1307       3  Saether, Mr. Simon Sivertsen  ...    7.2500    NaN         S
-## 416         1308       3           Ware, Mr. Frederick  ...    8.0500    NaN         S
-## 417         1309       3      Peter, Master. Michael J  ...   22.3583    NaN         C
-## 
-## [5 rows x 11 columns]</code></pre>
+<pre><code>##      PassengerId  Pclass                          Name     Sex   Age  SibSp  Parch              Ticket      Fare Cabin Embarked
+## 413         1305       3            Spector, Mr. Woolf    male   NaN      0      0           A.5. 3236    8.0500   NaN        S
+## 414         1306       1  Oliva y Ocana, Dona. Fermina  female  39.0      0      0            PC 17758  108.9000  C105        C
+## 415         1307       3  Saether, Mr. Simon Sivertsen    male  38.5      0      0  SOTON/O.Q. 3101262    7.2500   NaN        S
+## 416         1308       3           Ware, Mr. Frederick    male   NaN      0      0              359309    8.0500   NaN        S
+## 417         1309       3      Peter, Master. Michael J    male   NaN      1      1                2668   22.3583   NaN        C</code></pre>
 <p>Caso os dados que você está coletando sejam oriundos de alguma API Rest o pandas também pode te ajudar! Com o método <code>read_json</code> você pode passar não só o nome do arquivo json em sua máquina, mas também a URL da API que distribui tais dados. Ao fazer isto, o pandas trata de já transformar os dados na estrutura adequada, podendo ser uma <code>Series</code> ou <code>DataFrame</code>, veja como a utilização é simples.</p>
 <div class="sourceCode" id="cb113"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb113-1" data-line-number="1">json_frame <span class="op">=</span> pd.read_json(<span class="st">&#39;http://dummy.restapiexample.com/api/v1/employees&#39;</span>)</a>
 <a class="sourceLine" id="cb113-2" data-line-number="2"></a>
 <a class="sourceLine" id="cb113-3" data-line-number="3"><span class="bu">print</span>(json_frame.head())</a></code></pre></div>
-<pre><code>##    employee_age employee_name  employee_salary     id profile_image
-## 0           546          gdfg             4534      1              
-## 1            23    Dummmmmmmy             1123  24634              
-## 2            23      twa1,2,3                0  24638              
-## 3            23            KJ              555  24645              
-## 4            33       Kalyani           100000  24655</code></pre>
+<pre><code>##       id employee_name  employee_salary  employee_age profile_image
+## 0      1          gdfg             4534           546              
+## 1  24634    Dummmmmmmy             1123            23              
+## 2  24638      twa1,2,3                0            23              
+## 3  24645            KJ              555            23              
+## 4  24655       Kalyani           100000            33</code></pre>
 <div class="sourceCode" id="cb115"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb115-1" data-line-number="1"><span class="bu">print</span>(json_frame.columns) <span class="co"># Recupera as colunas do DataFrame</span></a></code></pre></div>
-<pre><code>## Index([&#39;employee_age&#39;, &#39;employee_name&#39;, &#39;employee_salary&#39;, &#39;id&#39;,
+<pre><code>## Index([&#39;id&#39;, &#39;employee_name&#39;, &#39;employee_salary&#39;, &#39;employee_age&#39;,
 ##        &#39;profile_image&#39;],
 ##       dtype=&#39;object&#39;)</code></pre>
 <p>Da mesma forma que a leitura, fazer escrita de dados com pandas é muito simples, tendo os dados em <code>Series</code> ou <code>DataFrame</code> é possível salvar os dados em diferentes formatos. Por exemplo, para salvar uma <code>Serie</code> ou um <code>DataFrame</code> em um arquivo CSV o método <code>to_csv</code> pode ser utilizado.</p>
