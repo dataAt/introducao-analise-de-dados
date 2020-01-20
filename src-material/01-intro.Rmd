@@ -175,6 +175,7 @@ Hadley descreve a **visualização** e os **modelos** como engenharia de represe
 
 Segundo @hadley2017, **modelos** são ferramentas complementares de visualização. Para @schutt2013, realizar a análise exploratória de dados (EDA) é a etapa fundamental para a criação de um modelo. A **comunicação** é a última etapa do processo, sendo fundamental para o analista transmitir as informações obtidas através da análise dos dados, para clientes técnicos e não técnicos. Para isso, o analista apoia-se nos gráficos e modelos criados, por isso, é necessário que os gráficos possuam, pelo menos, uma estética agravél e de fácil interpretação.
 
-Nos próximos capítulos é apresentado com detalhes quais pacotes (bibliotecas) podem ser aplicados em cada etapa.  
+Nos próximos capítulos é apresentado com detalhes quais pacotes e bibliotecas podem ser aplicados em cada etapa do processo de análise de dados.
+
 
 
