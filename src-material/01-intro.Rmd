@@ -4,13 +4,14 @@ bibliography: bibtex.bib
 fig_caption: yes
 header-includes:
 - \usepackage{float}
+- \usepackage{xcolor}
 - \floatsetup[table]{capposition=bot}
 ---
 
 # Introdução
 
 A análise de dados é uma das atividades mais interessantes da atualidade, com ela é possível monitorar o governo, por exemplo, [Operação serenata](https://serenata.ai/), fazer empresas de sucesso e produtos que atendam a real necessidade de seus clientes, e o mais importante, comprovar a veracidade de informações recebida e saciar nossa curiosidade.
-Isto porque com a quantidade de dados disponível, podemos literalmente, saber sobre tudo, aplicando técnicas de análise de dados.
+Isto porque com a quantidade de dados disponíveis, podemos literalmente, saber sobre tudo, aplicando técnicas de análise de dados.
 Portanto, este minicurso tem como objetivo apresentar, de forma introdutória, as principais tecnologias para analisar dados com as linguagens de programação R e Python.
 
 
@@ -18,7 +19,9 @@ Portanto, este minicurso tem como objetivo apresentar, de forma introdutória, a
 
 Muito foi dito sobre dados, que estes são abundantes e estão em constante crescimento, porém, o que são dados? 
 
-Bem esta pergunta possui diversas respostas, isto porque há várias definições para dados, aqui iremos assumir que dados são "Qualquer coisa registrada com o propósito de posteriormente ser analisado" - [Dr. Rafael Santos](http://www.lac.inpe.br/~rafael.santos/).
+Bem esta pergunta possui diversas respostas, isto porque há várias definições para dados, aqui iremos assumir que dados são:
+
+> "Qualquer coisa registrada com o propósito de posteriormente ser analisado" - [Dr. Rafael Santos](http://www.lac.inpe.br/~rafael.santos/).
 
 Agora que sabemos a definição de dados, podemos concluir que *Big Data* é um alto volume de dados. Não entraremos no mérito do que é ou não considerado *Big Data*, caso queiram ler mais sobre o assunto, recomendamos o artigo [**Big data: A survey**](https://link.springer.com/article/10.1007/s11036-013-0489-0) publicado por **Min Chen e seus colaboradores**.
 
@@ -35,7 +38,7 @@ suppressWarnings(library(tidyverse))
 suppressWarnings(library(kableExtra))
 library(devtools)
   
-table <- tibble::tibble(`Tipo variável` = c("Quantitativa/numérica contínua",
+table <- tibble::tibble(`Tipo de variável` = c("Quantitativa/numérica contínua",
                                               "Quantitativa/numérica discreta",
                                               "Quantitativa/categóricas nominais",
                                               "Quantitativa/categóricas ordinais",
@@ -53,7 +56,7 @@ table <- tibble::tibble(`Tipo variável` = c("Quantitativa/numérica contínua",
                                                   "Discreto",
                                                   "Contínuo ou Discreto",
                                                   "Nenhum, ou discreto"),
-                          `Descrição` = c("Valores mensuráveis que assumem valores em um escala contínua (na reta real). Usualmente devem ser medida através de algum instrumento. Exemplo: peso(balança), tempo(relógio), e pressão arterial.",
+                          `Descrição` = c("Valores mensuráveis que assumem valores em um escala contínua (na reta real). Usualmente devem ser medida através de algum instrumento. Exemplo: peso (balança), tempo (relógio), e pressão arterial.",
                                           "Características mensuráveis que podem assumir apenas um número finito ou infinito contável de valores e, assim, somente fazem sentido valores inteiros. Geralmente são o resultado de contagens. Exemplos: número de filhos, número de bactérias por litro de leite, número de cigarros fumados por dia.",
                                           "Não possui ordenação dentre as categorias. Essas variáveis são também chamadas de factors. Exemplo: Sexo, cor dos olhos, doente/sadio.",
                                           "Existe uma ordenação entre as categorias. Essas variáveis são também chamadas de ordered factors. Exemplo: escolaridade (1°, 2°, 3°), mês de observação(janeiro, fevereiro… dezembro).",
@@ -74,17 +77,17 @@ table <- tibble::tibble(`Tipo variável` = c("Quantitativa/numérica contínua",
 
 ### Formatos de dados
 
-Como citado, existem muitos dados disponíveis, estes vindos das mais diversas fontes e formatos, e boa parte dos desafios na análise de dados está vinculada ao formato com que o dados estão disponíveis, isto porque dependendo do formato, existem etapas de organização que devem ser aplicada nos dados.
+Como mencionado anteriormente, existem muitos dados disponíveis, estes vindos das mais diversas fontes e formatos, e boa parte dos desafios na análise de dados estão vinculados aos formatos nos quais os dados estão disponíveis, isto porque dependendo do formato, existem diferentes etapas de organização que devem ser aplicadas.
 
-> “Os conjuntos de dados arrumados são todos iguais, mas todos os conjuntos de dados confusos são confusos à sua própria maneira.” - Hadley Wickham
+> “Os conjuntos de dados arrumados são todos iguais, mas todos os conjuntos de dados desorganizados são desorganizados à sua própria maneira.” - Hadley Wickham
 
-Nos subtópicos abaixo, serão descritos os principais formatos de dados e alguns exemplos de cada um.
+Nos subtópicos abaixo, serão descritos os principais formatos de dados e exemplos de cada um.
 
 #### Dados estruturados
-Esse formato de dado segue a estrutura de linhas e colunas. São geralmente encontrados em banco de dados, Excel (`xls`) e Comma-separated values (`csv`) 
+Esse formato de dado segue a estrutura de linhas e colunas (retangular). São geralmente encontrados em banco de dados, Excel (`.xls`) e valores separados por vírgulas (do inglês *Comma-separated values*) (`.csv`) 
 
 #### Dados Semiestruturados
-São dados que possuem uma organização clara, porém, não segue o padrão de linha e coluna. Geralmente são aqueles formatos que recebemos em requisições de API, por exemplo, JSON, XML e HTML. 
+São dados que possuem uma organização clara, porém, não seguem o padrão de linha e coluna. Geralmente são aqueles formatos que recebemos em requisições via API (do inglês *"Application Programming Interface*), por exemplo, `JSON`, `XML` e `HTML`. 
 
 #### Dados não estruturados
 São aqueles que não conseguimos identificar uma organização clara, geralmente, são arquivos com forte teor textual, por exemplo, e-mail, tweets, PDF, imagens, vídeos, entre outros.
@@ -101,7 +104,7 @@ Buscando por mais definições, a [Wikipedia](https://en.wikipedia.org/wiki/Data
 
 ### o que faz um analista de dados?
 
-O Artigo publicado pelo [dataquest](https://www.dataquest.io/blog/data-analyst-data-scientist-data-engineer/), define o analista de dados como um agregador de valor para a companhia através respostas obtidas através dos dados, dessa forma, ajudando na tomada de decisão da empresa. Ainda no artigo do dataquest, um analista de dados é responsável por tais tarefas:
+O Artigo publicado pelo [dataquest](https://www.dataquest.io/blog/data-analyst-data-scientist-data-engineer/), define o analista de dados como um agregador de valor para a companhia através respostas obtidas através dos dados, dessa forma, ajudando na tomada de decisão da empresa. Ainda no artigo do dataquest, um analista de dados é responsável pelas seguintes tarefas:
 
 - Limpeza e organização de dados;
 - Uso de estatística para ter uma visão geral dos dados;
@@ -118,7 +121,7 @@ Tanto se fala de cientista dados, afinal, qual é a diferença?`r emo::ji("devel
 
 Acredito que seja uma dúvida super válida, já que segundo a revista [Harvard Business Review](https://hbr.org/2012/10/data-scientist-the-sexiest-job-of-the-21st-century), cientista de dados é considerada a profissão mais _sexy_ do século 21.
 
-Segundo *Josh Wills*, um cientista de dados é melhor em estatística do que qualquer engenheiro de software e melhor em engenharia de software do que qualquer estatístico". Um cientista de dados possui todas as *skills* que um analista, mas, em essência, contém um domínio maior em estatística, matemática e _Machine Learning_. Em busca de um compilado de definições, reunimos nossa resposta com base nesses sites:
+Segundo *Josh Wills*, um cientista de dados é melhor em estatística do que qualquer engenheiro de software e melhor em engenharia de software do que qualquer estatístico. Um cientista de dados possui todas as habilidades que um analista, mas, em essência, contém um domínio maior em estatística, matemática e _Machine Learning_. Em busca de um compilado de definições, formulamos nossa resposta com base nesses sites:
 
 - [dataquest](https://www.dataquest.io/blog/data-analyst-data-scientist-data-engineer/) 
 - [edureka](https://www.edureka.co/blog/difference-between-data-scientist-and-data-analyst/)
@@ -127,16 +130,13 @@ Segundo *Josh Wills*, um cientista de dados é melhor em estatística do que qua
 - [kdnuggets](https://www.kdnuggets.com/2015/11/different-data-science-roles-industry.html)
 
 
-A definição que escolhemos foi do site *kdnuggets*: "O analista de dados é como o Sherlock Holmes `r emo::ji("search")` do time de ciência de dados". Ainda em sua definição, "o analista busca resposta para o time e para o negócio Por outro lado o cientista, cria modelos estatísticos de aprendizado de máquina, visualizações mais elaboradas e gera novas perguntas em relação aos dados".
+A definição que escolhemos foi do site **kdnuggets**: "O analista de dados é como o Sherlock Holmes `r emo::ji("search")` do time de ciência de dados". Ainda em sua definição, "o analista busca resposta para o time e para o negócio. Por outro lado o cientista de dados, cria modelos estatísticos de aprendizado de máquina, visualizações mais elaboradas e gera novas perguntas em relação aos dados".
 
 > Fiquem à vontade para adicionar mais diferenças, basta ler nosso README.
  
 ### Processos da análise de dados
 
-Agora que sabemos o que faz um analista de dados, é necessário entender cada etapa do processo de análise de dados. A Figura \@ref(fig:fig1) apresenta o processo mencionado,  Vamos trazer uma definição feita pela Hadley para deixar um pouco mais elucidativo 
-
-> Cada processo é abordado com detalhes em R e Python.
-
+Agora que sabemos o que faz um analista de dados, é necessário entender cada etapa do processo de análise de dados. A Figura \@ref(fig:fig1) apresenta o processo mencionado. Cada etapa é abordada com detalhes em ambas as linguagens (E e Python).
 
 
 ```{r fig1, echo=FALSE ,out.width = "150%", fig.cap='Etapas do processo de análise de dados - Fonte: @hadley2017'}
@@ -145,7 +145,7 @@ Agora que sabemos o que faz um analista de dados, é necessário entender cada e
 ```
 
 
-Primeiro, é importante **importar** os dados nos mais diferentes formatos `.csv, .kml, .json`. Após a leitura dos dados, é necessário limpá-los e transformá-los no formato **tidy**. O termo **tidy** refere-se a estrutura do conjunto de dados, onde cada atributo é uma variável e cada linha é uma observação @hadley2017. Por exemplo, em R:
+Primeiro, é importante **importar** os dados nos mais diferentes formatos `.csv, .kml, .json`. Após a leitura dos dados, é necessário limpá-los e transformá-los em **tidy**. O termo **tidy** refere-se a estrutura do conjunto de dados, onde cada coluna é uma variável e cada linha é uma observação @hadley2017. Por exemplo, em R:
 
 ```{r, fig.cap = '(ref:tidy_data)'}
   library(knitr)
@@ -158,7 +158,7 @@ Primeiro, é importante **importar** os dados nos mais diferentes formatos `.csv
 
 Sabemos que `Joao` tem `14` anos e está no `ensino fundamental`, seguindo a ideia do formato **tidy**.
 
-A etapa de **transformação** é composta pela adição de novos atributos com base no conjunto de dados, por exemplo, a média da idade dos alunos, visto acima. Nesta etapa, é importante gerar algumas perguntas sobre o seu conjunto e tentar respondê-las realizando a manipulação dos dados. Um exemplo de transformação muito utilizada, é extrair o dia da semana de uma determinada data `x`. Por exemplo, em R:
+A etapa de **transformação** é composta pela adição de novos atributos com base no conjunto de dados, por exemplo, a média da idade dos alunos, visto acima. Nesta etapa, é importante gerar algumas perguntas sobre seus dados e tentar respondê-las realizando a manipulação dos dados. Um exemplo de transformação muito utilizada, é extrair o dia da semana de uma determinada data. Por exemplo, em R:
 
 ```{r,  fig.cap = '(ref:r_date)'}
   suppressMessages(library(lubridate))
@@ -167,12 +167,14 @@ A etapa de **transformação** é composta pela adição de novos atributos com 
   lubridate::wday(data, label = TRUE)
 ```
 
-No exemplo acima, estamos usando o pacote `lubridate` e com uma linha de código descobrimos o dia da semana do dia 11 de outubro.
+No exemplo acima, estamos usando o pacote `lubridate` e com uma linha de código descobrimos o dia da semana do dia 11 de outubro de 2018.
 
 Hadley descreve a **visualização** e os **modelos** como engenharia de representação de conhecimento. A **visualização**, pode gerar novos conhecimentos, questionamentos e respostas. Segundo @claus2019, a visualização de dados, é a parte arte e a parte ciência na área de ciência de dados, portanto, a visualização precisa estar correta e agradável para interpretá-la.
 
-> TIL: visualisation ou visualization tem o mesmo significado, mas, na Europa é com "s" e na América com "z".
+> TIL: visualisation ou visualization possuem o mesmo significado, mas, na Europa é com "s" e na América com "z".
 
-Segundo @hadley2017, **modelos** são ferramentas complementares da visualização. Para @schutt2013, realizar a análise exploratória de dados (EDA) é a etapa fundamental para criar um modelo.
+Segundo @hadley2017, **modelos** são ferramentas complementares de visualização. Para @schutt2013, realizar a análise exploratória de dados (EDA) é a etapa fundamental para a criação de um modelo. A **comunicação** é a última etapa do processo, sendo fundamental para o analista transmitir as informações obtidas através da análise dos dados, para clientes técnicos e não técnicos. Para isso, o analista apoia-se nos gráficos e modelos criados, por isso, é necessário que os gráficos possuam, pelo menos, uma estética agravél e de fácil interpretação.
+
+Nos próximos capítulos é apresentado com detalhes quais pacotes (bibliotecas) podem ser aplicados em cada etapa.  
 
 
