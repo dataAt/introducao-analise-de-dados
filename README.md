@@ -25,7 +25,7 @@ Veja que, pode ser necessário alterar o script `compile.R`, presente no diretó
 
 ## Como colaborar ? :no_good:
 
-Para colaborar e adicionar mais conteúdos no material crie uma [branch](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-branches), adicione o conteúdo e inicie o [pull request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request). Pronto! 
+Para colaborar e adicionar mais conteúdos no material crie uma [branch](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-branches) chamada **dev**, adicione o conteúdo e inicie o [pull request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request). Pronto! 
 
 ## Colaboradores :construction_worker:
 
