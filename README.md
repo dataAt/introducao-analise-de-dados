@@ -4,25 +4,24 @@ Curso de introdução aos principais conceitos de análise de dados utilizando R
 
 ## O que este curso aborda ?
 
-Bem, este curso tem como objetivo abordar conceitos básicos para ensinar a todos as rotinas básicas de análise de dados, e não apenas o conteúdo técnico, mas também, uma visão critica com relação as análises e principalmente aos dados.
+Este curso tem como objetivo abordar conceitos básicos para ensinar a todos as rotinas básicas de análise de dados, e não apenas o conteúdo técnico, mas também, uma visão critica com relação as análises e principalmente aos dados.
 
 Os tópicos abordados são os seguintes: 
-- Introdução a análise de dados;
+- Introdução à análise de dados;
 - Introdução ao R e Python:
-  - Utilização de biblioteca de manipulação de dados :recycle: ;
-  - Utilização de biblioteca de visualização de dados :bar_chart: .
+  - Utilização de bibliotecas de escrita, manipulação e visualização de dados :bar_chart: .
 
 ## Material de apoio
 
 O material de apoio para acompanhar o curso está disponível [aqui](https://dataat.github.io/introducao-analise-de-dados/)
 
-Caso você queira continuar o desenvolvimento do material, você pode continuar escrevendo no conteúdo do diretório `src-material`, e compilando o conteúdo executando:
+Caso queira contribuir com o material, você pode continuar escrevendo no diretório `src-material`, e compilando o conteúdo executando:
 
 ```shell 
 ./compile.sh
 ``` 
 
-Veja que, pode ser necessário alterar o script `compile.R`, presente dentro do diretório `src-material`, neste há os comandos utilizados para criar o ambiente virtual de Python, assim caso seu sistema utilize um comando diferente do registrado neste script, basta fazer a alteração.
+Veja que, pode ser necessário alterar o script `compile.R`, presente no diretório `src-material`, neste há comandos utilizados para criar o ambiente virtual de Python, assim caso seu sistema utilize um comando diferente do registrado neste script, basta fazer a alteração.
 
 ## Como colaborar ? :no_good:
 
