@@ -14,22 +14,19 @@ A análise de dados é uma das atividades mais interessantes da atualidade, com 
 Isto porque com a quantidade de dados disponíveis, podemos literalmente, saber sobre tudo, aplicando técnicas de análise de dados.
 Portanto, este minicurso tem como objetivo apresentar, de forma introdutória, as principais tecnologias para analisar dados com as linguagens de programação R e Python.
 
-
 ## Dados
 
 Muito foi dito sobre dados, que estes são abundantes e estão em constante crescimento, porém, o que são dados? 
 
-Bem esta pergunta possui diversas respostas, isto porque há várias definições para dados, aqui iremos assumir que dados são:
+Bem, esta pergunta possui diversas respostas, isto porque há várias definições para dados, aqui iremos assumir que dados são:
 
 > "Qualquer coisa registrada com o propósito de posteriormente ser analisado" - [Dr. Rafael Santos](http://www.lac.inpe.br/~rafael.santos/).
 
 Agora que sabemos a definição de dados, podemos concluir que *Big Data* é um alto volume de dados. Não entraremos no mérito do que é ou não considerado *Big Data*, caso queiram ler mais sobre o assunto, recomendamos o artigo [**Big data: A survey**](https://link.springer.com/article/10.1007/s11036-013-0489-0) publicado por **Min Chen e seus colaboradores**.
 
-
 ### Tipos de dados
 
 A tabela \@ref(tab:tab1) foi feita com base no matérial de estatística da [UFPR](http://leg.ufpr.br/~silvia/CE055/node8.html) e o template utilizado foi retirado do livro-texto [Claus O. Wilke](https://serialmentor.com/dataviz).
-
 
 ```{r, tab1, echo=FALSE, message=FALSE}
   
@@ -102,7 +99,7 @@ Para *John W. Tukey*, grande parte da análise de dados é inferencial, ou seja,
 
 Buscando por mais definições, a [Wikipedia](https://en.wikipedia.org/wiki/Data_analysis) descreve **análise de dados** como o processo de observação, limpeza, transformação e modelagem de dados. Com o objetivo de extrair informações de dados não tratados.
 
-### o que faz um analista de dados?
+### O que faz um analista de dados?
 
 O Artigo publicado pelo [dataquest](https://www.dataquest.io/blog/data-analyst-data-scientist-data-engineer/), define o analista de dados como um agregador de valor para a companhia através respostas obtidas através dos dados, dessa forma, ajudando na tomada de decisão da empresa. Ainda no artigo do dataquest, um analista de dados é responsável pelas seguintes tarefas:
 
@@ -121,23 +118,21 @@ Tanto se fala de cientista dados, afinal, qual é a diferença?`r emo::ji("devel
 
 Acredito que seja uma dúvida super válida, já que segundo a revista [Harvard Business Review](https://hbr.org/2012/10/data-scientist-the-sexiest-job-of-the-21st-century), cientista de dados é considerada a profissão mais _sexy_ do século 21.
 
-Segundo *Josh Wills*, um cientista de dados é melhor em estatística do que qualquer engenheiro de software e melhor em engenharia de software do que qualquer estatístico. Um cientista de dados possui todas as habilidades que um analista, mas, em essência, contém um domínio maior em estatística, matemática e _Machine Learning_. Em busca de um compilado de definições, formulamos nossa resposta com base nesses sites:
+Segundo *Josh Wills*, um cientista de dados é melhor em estatística do que qualquer engenheiro de software e melhor em engenharia de software do que qualquer estatístico. Um cientista de dados possui todas as habilidades de um analista, mas, em essência, contém um domínio maior em estatística, matemática e _Machine Learning_. Em busca de um compilado de definições, formulamos nossa resposta com base nesses sites:
 
-- [dataquest](https://www.dataquest.io/blog/data-analyst-data-scientist-data-engineer/) 
-- [edureka](https://www.edureka.co/blog/difference-between-data-scientist-and-data-analyst/)
-- [simplilearn](https://www.simplilearn.com/data-analyst-vs-data-scientist-article), 
-- [betterbuys](https://www.betterbuys.com/bi/comparing-data-science-roles/), 
-- [kdnuggets](https://www.kdnuggets.com/2015/11/different-data-science-roles-industry.html)
-
+- [dataquest](https://www.dataquest.io/blog/data-analyst-data-scientist-data-engineer/);
+- [edureka](https://www.edureka.co/blog/difference-between-data-scientist-and-data-analyst/);
+- [simplilearn](https://www.simplilearn.com/data-analyst-vs-data-scientist-article);
+- [betterbuys](https://www.betterbuys.com/bi/comparing-data-science-roles/);
+- [kdnuggets](https://www.kdnuggets.com/2015/11/different-data-science-roles-industry.html).
 
 A definição que escolhemos foi do site **kdnuggets**: "O analista de dados é como o Sherlock Holmes `r emo::ji("search")` do time de ciência de dados". Ainda em sua definição, "o analista busca resposta para o time e para o negócio. Por outro lado o cientista de dados, cria modelos estatísticos de aprendizado de máquina, visualizações mais elaboradas e gera novas perguntas em relação aos dados".
 
-> Fiquem à vontade para adicionar mais diferenças, basta ler nosso README.
- 
+> Fiquem à vontade para adicionar mais diferenças, basta ler nosso [README](https://github.com/dataAt/introducao-analise-de-dados).
+
 ### Processos da análise de dados
 
 Agora que sabemos o que faz um analista de dados, é necessário entender cada etapa do processo de análise de dados. A Figura \@ref(fig:fig1) apresenta o processo mencionado. Cada etapa é abordada com detalhes em ambas as linguagens (E e Python).
-
 
 ```{r fig1, echo=FALSE ,out.width = "150%", fig.cap='Etapas do processo de análise de dados - Fonte: @hadley2017'}
   knitr::include_graphics("./images/data-science.png", )
@@ -177,5 +172,6 @@ Segundo @hadley2017, **modelos** são ferramentas complementares de visualizaç�
 
 Nos próximos capítulos é apresentado com detalhes quais pacotes e bibliotecas podem ser aplicados em cada etapa do processo de análise de dados.
 
+## Contribuição
 
-
+Este material está em constante mudança e todas as recomendações e melhorias são bem-vindas. Fique à vontade para adicionar mais conteúdo, instruções de colaboração no [README](https://github.com/dataAt/introducao-analise-de-dados).
