@@ -339,7 +339,102 @@ df.to_csv('nome_do_csv.csv') # Salva o CSV
 df.to_json('nome_do_json.json') # Salva o JSON
 ```
 
-Viu ? É tudo muito simples e direto, o que te permite focar em sua análise e deixar de lado problemas com sintaxe `r emo::ji("statue_of_liberty")`. Para fechar esta introdução a análise de dados, vamos ver um pouco sobre visualização de dados, que facilita e potencializa a análise de dados. 
+Viu ? É tudo muito simples e direto, o que te permite focar em sua análise e deixar de lado problemas com sintaxe `r emo::ji("statue_of_liberty")`. Para fechar esta seção de análise de dados com Python e Pandas, vejamos uma análise completa, aplicável ao mundo real utilizando todos os conceitos que vimos até aqui.
+
+## Exemplo - Análise de dados com Python
+
+Para a realização desta análise de exemplo foi utilizado o conjunto de dados [Meteorite Landings](https://www.kaggle.com/nasa/meteorite-landings), com registros de mais de 45 mil meteoros que atingiram a Terra. Os dados foram retirados da plataforma [kaggle.com](https://www.kaggle.com/).
+
+Para iniciar a análise, da mesma forma que foi feito nos exemplos, é necessário import o pandas
+
+```{python}
+import pandas as pd
+```
+
+Depois de importar a biblioteca, faça a importação dos dados
+
+```{python}
+df = pd.read_csv('./data/meteorite-landings.csv')
+```
+
+> Fazer análise de dados é responder perguntas, matar a curiosidade, então, na análise feita, algumas perguntas serão feitas para que a análise tenha algum objetivo.
+
+Para começar, vamos verificar o tipo de dado que foi devolvido da função `read_csv` utilizada para carregar os dados.
+
+```{python}
+type(df)
+```
+
+Beleza, um `DataFrame`, isto indica que vamos conseguir aplicar os métodos que vimos anteriormente sem problemas. Agora vamos verificar as dimensões que a tabela representa no `DataFrame` possui. Para tal, o atributo `shape` será utilizado.
+
+```{python}
+# Verificando a dimensão dos dados
+df.shape
+```
+
+Interessante! Os valores `(45716, 10)`, indicam respectivamente que, o conjunto de dados possuí `45716` linhas e `10` colunas. Por falar nas colunas, vamos verificar quais são cada uma das colunas disponíveis neste conjunto de dados.
+
+```{python}
+# Verificando as colunas
+df.columns
+```
+
+> A descrição de cada coluna está disponível na [página dos dados](https://www.kaggle.com/nasa/meteorite-landings), não deixe de conferir para um entendimento completo sobre os métodos de análise e os dados
+
+Vamos explorar a coluna `nametype`, que indica o tipo de meteorito, havendo dois tipos possíveis:
+
+- Valid: Tipo comum de meteorito;
+- Relict: Meteorito degrado pelo clima da Terra.
+
+Façamos a separação do conjunto de dados, para verificar qual tipo possui mais dados.
+
+```{python}
+# Separando por tipo de meteorito
+df_valid = df[df['nametype'] == 'Valid']
+df_relict = df[df['nametype'] == 'Relict']
+```
+
+Vamos olhar nas dimensões de cada conjunto de dados gerados.
+
+```{python}
+df_valid.shape
+df_relict.shape
+```
+
+Olha que bacana! Já foi possível perceber que, os meteoritos `Valid` são apresentados em escalar muito maiores. Agora, vamos entender a quantidade de massa média que cada um desses grupos apresenta.
+
+```{python}
+# Agrupando para verificar a massa média por grupo
+df_groupby_nametype = df.groupby('nametype')
+df_groupby_nametype_massmean = df_groupby_nametype['mass'].mean()
+```
+
+Depois de agrupar, vamos olhar o resultado
+
+```{python}
+print(df_groupby_nametype_massmean)
+```
+
+A massa média (Apresentada em gramas) do grupo `Valid` é muito maior, o que pode ser explicado pela quantidade no conjunto de dados.
+
+Para finalizar, vamos fazer a contagem dos tipos de meteoritos
+
+```{python}
+# Contagem da quantidade de tipos
+df_groupedby_recclass = df.groupby('recclass')
+df_groupedby_recclass_count = df_groupedby_recclass['recclass'].count()
+```
+
+Por fim, façamos o filtro do conjunto de dados pela quantidade de massa 
+
+```{python}
+# Filtragem (Maior que 500 gramas)
+df_gt_mass_500 = df[df['mass'] > 500]
+
+df_gt_mass_500.shape # Quantidade bem pequena
+```
+
+É isto, este foi o exemplo para mostrar que com os poucos métodos que vimos neste curso de introdução, é possível tirar várias informações do conjunto de dados, desde que, seja possível entender a estrutura e semântica dos dados.
 
 ## Para saber mais
 
