@@ -1,7 +1,14 @@
 # Introdução ao ggplot `r emo::ji("bar_chart")`
 
-Escolhemos o pacote de visualização de dados **ggplot2** para **R** e **Python**, pois sua sintaxe é amigável, a qual segue o conceito de *gramática dos gráficos*. Desta forma, a comunidade Python resolveu criar uma biblioteca baseada no **ggplot2** chamada **plotnine**.
+A visualização de dados pode ser considerada uma das mais importantes etapas do processo de análise de dados, é através dela que diversos fenômenos presentes nos dados poderão ser explicados e visualizados.
 
+> Quando não souber como explicar, mostre, afinal, uma imagem vale mais que mil palavras.
+
+Porém, criar formas de visualizar dados pode não ser uma atividade simples, muitas etapas acabam sendo necessárias. É neste contexto que entra o `ggplot`, uma biblioteca de alto nível, criada para tornar o processo de visualização de dados mais simples, possuindo implementações em **R** com o pacote [ggplot2](https://ggplot2.tidyverse.org/) e em **Python** com o pacote [plotnine](https://plotnine.readthedocs.io/en/stable/), ambos completamente compativeis.
+
+Esta seção faz a apresentação aos conceitos básicos necessários para a utilização do `ggplot`.
+
+> Os exemplos abaixo serão apresentados utilizando **R**, mas você pode sem nenhum problema executar os códigos em **Python** através da biblioteca `plotnine`.
 
 ## O que é o `ggplot`?
 
@@ -303,10 +310,13 @@ Vamos utilizar os atributos `cut`, `price` e `clarity`, correspodentes a qualida
 
 Bom, sabemos que o `ggplot` é bem completo, mas, só abordamos uma pequena parcela. Com o tempo vamos adicionando mais materiais. Para se aprofundar no pacote, veja nossas análises no [dataAt](https://github.com/dataAt/introducao-analise-de-dados/tree/master/src/R) `r emo::ji("dancer")`.
 
-## Recomendações
+## Para saber mais
+
+Alguns links úteis
 
 - [Tipos de gráficos](https://camo.githubusercontent.com/ea2e9eda9b01fafc1213f5c400aa357584f40df8/687474703a2f2f626c6f672e76697375616c2e6c792f77702d636f6e74656e742f75706c6f6164732f323031342f30392f696d6167652d362e706e67)
 - [Ciencia de dados em R](https://cdr.ibpad.com.br/)
 - [dataviz](https://serialmentor.com/dataviz)
+- [Escolhendo seus gráficos](https://www.ibpad.com.br/blog/analise-de-dados/qual-e-o-grafico-mais-adequado/)
 
 # References
