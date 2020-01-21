@@ -9,23 +9,35 @@ header-includes:
 
 # Introdução ao R
 
-**R** é uma linguagem de programação de alto nível voltada para visualização e análise de dados. Em essência foi inspirada na linguagem de programação __S__. Foi inicialmente escrito por [**R**oss Ihaka](https://en.wikipedia.org/wiki/Ross_Ihaka) and [**R**obert Gentleman](https://en.wikipedia.org/wiki/Robert_Gentleman_(statistician)) no departamente de estatística da universidade de Auckland na Nova Zelândia. Atualmente a linguagem **R** é mantido pelo grupo __R Core Team__ que são pessoas do mundo inteiro tentando melhorar a linguagem dia após dia. Esse conteúdo foi baseado no livro *THE R BOOK* escrito por @crawley2012, sendo considerado a bíblia do R.
+**R** é uma linguagem de programação de alto nível voltada para visualização e análise de dados. Em essência foi inspirada na linguagem de programação __S__ (do inglês *stats*). Foi inicialmente escrita por [**R**oss Ihaka](https://en.wikipedia.org/wiki/Ross_Ihaka) e [**R**obert Gentleman](https://en.wikipedia.org/wiki/Robert_Gentleman_(statistician)) no departamento de estatística da universidade de Auckland na Nova Zelândia. Atualmente a linguagem é mantida pelo grupo __R Core Team__ que são pessoas do mundo inteiro tentando melhorar a linguagem dia após dia. Esse conteúdo foi baseado no livro *THE R BOOK* escrito por @crawley2012, sendo considerado a bíblia do R.
 
-O kernel do **R** e os pacotes podem ser baixados pelo CRAN - *C*omprehensive **R** **A**rchive **N**etwork. O objetivo deste capítulo é trazer de forma introdutória alguns conceitos básicos do R, por favor, sinta-se à vontade para contribuir.
+O kernel do **R** e os pacotes podem ser baixados pelo 
+[CRAN](https://cran.r-project.org/) - *C*omprehensive **R** **A**rchive **N**etwork. Para instalar os pacotes em R:
+
+```{r, eval=FALSE}
+  # Via CRAN
+  install.packages("nome_do_pacote")
+  
+  # Via github
+  remotes::install_github("nome_do_repositorio/nome_do_pacote")
+
+```
+
+O objetivo deste capítulo é abordar de forma introdutória alguns conceitos básicos do R, por favor, sinta-se à vontade para contribuir.
 
 ## Definição de variáveis
 
-Para atribuir qualquer valor em uma variável usamos a `<-` ou `=`, segundo @hadley2017, usa-se seta `<-` como boas práticas. Desta forma, para declarar as variáveis:
+Para atribuir qualquer valor à uma variável usamos uma seta `<-` ou `=`, apontando-a para a variável. Segundo @hadley2017, usa-se a seta `<-` como forma de boas práticas. Assim, para declarar as variáveis:
 
 ```{r}
-  a <- "Legal mesmo!"
-  b <- 4224
+  a <- "Olá!"
+  b <- 42
   22 -> c
 ```
 
 ### Tipos primitivos
 
-Agora que sabemos atribuir valores a uma variável, vamos falar sobre os tipos primitivos do *R*. Seguindo uma hierarquia, existe a classe "pai" `numeric`, basicamente o `numeric` é todo número declarado sem sufixo e o seu tipo é `double`. No entanto, pode-se definir o tipo `integer` colocando `L` na frente do valor (sufixo), e o `complex` que por sua vez usa-se o `i`. Há também a classe `logical` que representa os valores booleanos `TRUE` e `FALSE`. Por último, a classe `character` que representa os caracteres. 
+Agora que sabemos atribuir valores a uma variável, vamos falar sobre os tipos primitivos do **R**. Seguindo uma hierarquia, existe a classe pai: `numeric`, basicamente o `numeric` é todo número declarado sem sufixo e o seu tipo é `double`. No entanto, pode-se definir o tipo inteiro: `integer` colocando `L` na frente do valor (sufixo), e o tipo complexo: `complex` que por sua vez usa-se o `i`. Há também a classe `logical` que representa os valores booleanos `TRUE` e `FALSE`. Por último, a classe `character` que representa os caracteres. 
 
 Para declarar cada tipo:
 
@@ -45,36 +57,39 @@ Para declarar cada tipo:
   # Caractere
   couse <- 'cool'
   
-  # Para ver inspecionar o valor das variáveis
+  # Para inspecionar o valor das variáveis
   b
  
-  # Para ver as classes
+  # Para verificar a classe
   class(a)
   
   # Para ver o tipo
   typeof(b)
   
-  # Para remove-las
+  # Para removê-las
   rm(a)
   
 ```
 
-> se quiser saber mais sobre o tipo `complex`, deixamos um link no subcapítulo _Para saber mais_. 
+> se quiser saber mais sobre o tipo `complex`, deixamos um link no subcapítulo [**Para saber mais**](https://dataat.github.io/introducao-analise-de-dados/introdu%C3%A7%C3%A3o-ao-r.html#para-saber-mais). 
 
 
 ### Tipos de dados estruturados
 
-Já que conhecemos os tipos primitivos, vamos aprender sobre vetores e matriz. Apenas relembrando, podemos dizer que vetores sempre seguem um sentido e contém apenas uma linha e _N_ colunas. Por outro lado, a matriz é um vetor bidimensional, composta por linhas e colunas.
+Agora que conhecemos os tipos primitivos, vamos aprender sobre vetores e matrizes. Apenas relembrando, podemos dizer que vetores sempre seguem um sentido, contendo uma linha e **N** colunas ou uma coluna e **N** linhas (Figura \@ref(fig:fig233)). Por outro lado, a matriz é um vetor bidimensional, composta por linhas e colunas.
+
+```{r fig233, echo=FALSE ,fig.align="center", out.width = "50%",fig.cap='Estrutura de dados: Vetor e Matriz'}
+  knitr::include_graphics("./images/vec_matriz.png")
+```
+
 
 No **R** há dois tipos de vetores:
 
-- **Vetores atômicos**: compostos por todos os tipos citados acima e mais um tipo chamado `raw`
-
-> Tipos citados: `double`, `logical`, `integer`, `character` e `complex`.
+- **Vetores atômicos**: compostos por todos os tipos citados anteriormente e mais um tipo chamado `raw`
 
 - **Listas**: Chamadas de vetor recursivo e pode conter outras listas. 
 
-Colocando de maneira simples, vetores atômicos são homogêneos, ou seja, apenas aceitam um tipo. Se alocado mais de um tipo no vetor, o que acontece? Simples, é convertido pelo tipo mais forte `r emo::ji("chemist")`. A hierarquia de tipos é apresentada na Figura \@ref(fig:fig2).
+Colocando de maneira simples, vetores atômicos são homogêneos, ou seja, apenas aceitam um tipo. Se alocado mais de um tipo no vetor, é convertido pelo tipo mais forte. A hierarquia de tipos é apresentada na Figura \@ref(fig:fig2).
 
 ```{r fig2, echo=FALSE ,out.width = "150%", fig.cap='Hierarquia de dados - Fonte: @hadley2017'}
   knitr::include_graphics("./images/tipos.png")
@@ -90,7 +105,7 @@ A Figura \@ref(fig:fig2) deve ser interpretada de baixo para cima. Seguindo essa
 - `double`
 - `logical`
 
-Todo vetor em R é declarado usando `c()`, desta forma:
+Para declarar um vetor em R usa-se `c()`, desta forma:
 
 ```{r}
   # Vetor lógico
@@ -100,23 +115,30 @@ Todo vetor em R é declarado usando `c()`, desta forma:
   vetor_numerico <- c(3.14, 6.28, 2.3)
   
   # Vetor de caractere
-  vetor_char <- c('ola', 'pessoal', 'xd')
+  vetor_char <- c("ola", "pessoal", "!")
   
 ```
 
-A conversão de tipos é apresentado na célula abaixo: 
+A conversão de tipos é apresentada na célula abaixo: 
 
 ```{r}
   # Esse é um vetor misturado
-  vetor_misturado <- c("sou legal", FALSE, 21)
+  vetor_misturado <- c("teste", FALSE, 21)
 
-  # Podemos verificá-lo assim
-  is.atomic(vetor_misturado)
+  # Visualização dos valores atribuídos
+  vetor_misturado
+
 ```
 
-Então, seguindo a ideia de hierarquia de tipos, esse vetor será convertido para `character` e continuará atômico `r emo::ji("drum")`.
+Então, seguindo a ideia de hierarquia de tipos, esse vetor será convertido para `character` e continuará sendo atômico `r emo::ji("drum")`.
 
-Por outro lado, as listas são heterogêneas, ou seja, aceitam diversos tipos, sendo organizadas em lista de lista. Por isso, é chamado de vetor recursivo. Podemos implementá-la usando `list()`, deste modo:
+```{r}
+  # Para verificar se é atômico
+  is.atomic(vetor_misturado)
+
+```
+
+Por outro lado, as listas são heterogêneas, ou seja, aceitam diversos tipos, sendo organizadas em listas de listas. Por isso, são chamadas de vetores recursivos. Podemos implementá-las usando `list()`, deste modo:
 
 ```{r}
   # Lista de boleanos
@@ -126,102 +148,123 @@ Por outro lado, as listas são heterogêneas, ou seja, aceitam diversos tipos, s
   lista_inteiro <- list(12L, 10L, 7L)
 ```
 
-E a ideia de vários tipos? foi tudo uma mentira? `r emo::ji("doubt")`
-
-Não foi mentira, vamos criar uma lista de diversos tipos, assim:
+Podemos criar uma lista de diversos tipos, assim:
 
 
 ```{r}
-  # Minha lista com todos os tipos 
+  # Lista com todos os tipos 
   lista_misturada <- list(FALSE, 12L, 't', 2i)
-  
-  # Será ela atomica?
-  is.atomic(lista_misturada)
-  
+
+  # Visualização da lista
+  lista_misturada
 ```
- 
-Viu, não era mentira, temos uma lista não atômica, ou seja, de vários os tipos. Mas será ela uma lista mesmo? `r emo::ji("man_vampire_dark_skin_tone")`
+
+Para verificar se a lista é atômica como o vetor que criamos:
 
 ```{r}
-  # Você é uma lista mesmo?
+  # Séra ela atômica?
+  is.atomic(lista_misturada)
+```
+
+Logo, temos uma lista não atômica, ou seja, de vários os tipos. Mas será ela uma lista mesmo? `r emo::ji("man_vampire_dark_skin_tone")`
+
+```{r}
+  # Verificar se é uma lista
   is.list(lista_boleano)
 ```
 
-Ufa, ainda bem! `r emo::ji("face_with_tears_of_joy")`. Esqueci de dizer, que podemos checar o tamanhos dos nossos vetores usando `length()`.
+Podemos checar o tamanhos dos nossos vetores usando `length()`.
 
-Já sabemos de tipos de vetores, agora vamos para as matrizes. Bom, as matrizes seguem a mesma ideia dos vetores atômicos, confesso que não uso com frequência, mas sempre é válido saber. Podemos implementá-la usando `matrix()`, deste modo: 
+Já sabemos dos tipos de vetores, agora vamos para as matrizes. As matrizes seguem a mesma ideia dos vetores atômicos. Podemos implementá-la usando `matrix()`, deste modo: 
  
 ```{r} 
   library(knitr)
 
   # Minha matriz com números inteiros com caractere
-   matriz <- matrix(data = c(1:25, rep("legal", 5)),       nrow = 5, ncol=6)
+   matriz <- matrix(data = c(1:25, rep("teste", 5)), nrow = 5, ncol=6)
    
-   # Para ver nossa matriz
+   # Para visualizar a matriz
    knitr::kable(matriz)
 ```   
 
 Então, seguindo a hierarquia de tipos, a nossa matriz será convertida para `character`. Podemos verificar seu tipo, desta forma:
 
 ```{r}
-  # É matriz mesmo?
+  # Para verificar se é matriz
   is.matrix(matriz)
-   
-  # Sou legal ou chato?
-  matriz[5,6]
-
+  
+  # Para consultarmos por index
+  matriz[1,4]
 ```
 
 Podemos acessar os valores através dos índices de linha e coluna `matriz[linha, coluna]`.
 
 ### DataFrame
 
-Para explicar o conceito de `dataframe`, vamos começar pela prática. Primeiro, vamos ler um conjunto de dados em `.csv` e observar algumas características: 
+Podemos definir **Data frame** como uma matriz (Figura \@ref(fig:fig233)), composta por linhas e colunas, cujas colunas representam as variáveis (atributos) e as linhas representam observações. A Figura \@ref(fig:fig322) apresenta um **Data frame**, na qual é possível observar as definições mencionadas anteriormente, desta forma, sabemos que o aluno **José** obteve **7** na disciplina de **Álgebra Linear**. 
 
-```{r}
-  # Lendo nosso conjunto de dados
-  meu_dataframe <- read.csv2(file = "./nome_do_csv.csv",       sep=",")
-  
-  # Verificando a classe do nosso conjunto de dados
-  class(meu_dataframe)
-  
-  # Verificando o tipo do nosso conjunto de dados
-  typeof(meu_dataframe)
+```{r fig322, echo=FALSE ,fig.align="center", out.width = "80%",fig.cap=' Representação de um Data frame - Fonte: @gk4gk2019'}
+  knitr::include_graphics("./images/df_definicao.png")
 ```
 
-> A ideia do `read.csv` é ler um `.csv` e passar para dataframe no R 
+O trecho de código a seguir apresenta a implementação do **Data frame** apresentado na Figura \@ref(fig:fig322).
 
-Podemos tirar algumas conclusões, a primeira é que existe uma classe chamada `data.frame` que é do tipo `list`, como visto anteriormente a lista em **R** é heterogênea, logo, sabemos que nosso `dataframe` pode ter vários tipos `r emo::ji("grinning_face")`. Para verificar a classe `data.frame` é atômica:
+```{r}
+  # Importação do pacote 
+  library(tibble)  
+  
+  # Criação do tibble
+  df_escola <- tibble::tibble(Aluno = c("José", "Maria", "Ana", "Carlos"),
+                              `Álgebra Linear` = c(7, 10, 8, 7),
+                              `Cálculo I` = c(8, 9, 10, 5),
+                              `Eng. Software` = c(10, 9, 5, 9),
+                              `PAD` = c(5, 7, 4, 9))
+    
+  # Visualização dos dados 
+  df_escola
+```
+
+Neste minicurso, vamos usar o pacote `tibble` no lugar do método `data.frame` contido no `base` do **R**, visto que o `tibble` possui diversas vantagens em relação ao tradicional `data.frame`, por exemplo, ainda no `tibble` criado anteriormente, é possível observar os tipos de cada atributo. Com o objetivo de facilitar a etapa de análise de dados, o pacote `tibble` não faz a conversão de atributos do tipo `character` para `factor` de forma automática.
+
+Agora que sabemos a definição de um **Data frame**, vamos ler um conjunto de dados em `.csv` e observar algumas características: 
+
+```{r, message=FALSE}
+  # Importação do pacote readr
+  library(readr)
+  
+  # Lendo nosso conjunto de dados
+  iris <- readr::read_csv(file = "./data/iris.csv",)
+
+  # Verificando a classe do nosso conjunto de dados
+  class(iris)
+
+  # Verificando o tipo do nosso conjunto de dados
+  typeof(iris)
+```
+
+Podemos usar quaisquer métodos criados para uso no `data.frame` no `tibble`. O código acima mostra que o `tibble` criado possui três classes: `tbl_df`, `tbl` e `data.frame`. É possível observar que o `tibble` possui como classe comum o `data.frame`.
+
+Podemos tirar algumas conclusões, a primeira é que existe uma classe chamada `data.frame` que é do tipo `list`, como visto anteriormente, a lista em **R** é heterogênea, logo, sabemos que nosso `Data frame` pode ter vários tipos. Para verificar se a classe `data.frame` é atômica:
 
 
 ```{r}
   # Verificando se é atomico nosso df
-  is.atomic(meu_dataframe)
+  is.atomic(iris)
 ```
 
-Opa, então sabemos que `dataframe` é uma classe no **R** tratada como um tipo `list`. Mas, afinal, o que é um **dataframe**? `r emo::ji("hand")`
-
-Vou usar a definição feita pelo livro de [Limpeza de dados em R](tps://cdr.ibpad.com.br):
-
-> Tipo especial de lista, onde cada coluna é um vetor de apenas um tipo e todas as colunas têm o mesmo número de registros. É o tipo mais utilizado para se trabalhar com dados
-
-Que definição interessante, então, cada 'coluna' é vetor um atômico? 
-
-Para acessar cada coluna do `data.frame` usamos o símbolo `$`. Agora, vamos responder a pergunta, deste modo:
-
+Podemos acessar os atributos de um **Data Frame** de diversos modos, sendo um deles, utilizando o símbolo `$`:
 ```{r}
-  # é atomico?
-  is.atomic(meu_dataframe$Pclass) 
+  # Para verificar as primeiras linhas
+  head(iris$Species)
 ```
 
-
-Olha só, é atômico. Então, vamos criar uma dataframe, para fixar o aprendizado:
-
+Vamos criar mais `Data Frame` para fixar o aprendizado:
 
 ```{r}
-   # DataFrame[3]
-   data_frame <- data.frame(
-     Risco=c(FALSE,FALSE, FALSE, FALSE,TRUE),                Animal=c("Cachorro", "Gato", "Capivara", "Girafa", "Macaco"),
+   # Criação do Data Frame
+   data_frame <- tibble::tibble(
+     Risco=c(FALSE,FALSE, FALSE, FALSE,TRUE),              
+     Animal=c("Cachorro", "Gato", "Capivara", "Girafa", "Leão"),
      Periculosidade=c(200, 400, 0, 7, 1000))
   
   # Podemos acessar os valores individuais usando o '$'
@@ -235,20 +278,18 @@ Olha só, é atômico. Então, vamos criar uma dataframe, para fixar o aprendiza
 
 ## Operações Básicas
 
-Agora que já sabemos como declarar uma variável, um vetor e um dataframe, nessa seção vamos dar algumas dicas e falar sobre alguns métodos estatísticos.
+Agora que já sabemos como declarar uma variável, um vetor e um *Data frame*, nessa subseção vamos dar algumas dicas e falar sobre alguns métodos estatísticos.
 
 ### Dicas úteis
 
-Para importar os pacotes no **R** usa-se o comando `library()` e para instalar `install.packages()`. Caso esteja com dúvida sobre uma determinada função, use o comando `?nome_da_funcao()` ou `pacote::nome_da_funcao`.
+Para importar os pacotes no **R** usa-se o comando `library()`. Caso esteja com dúvida sobre uma determinada função, use o comando `?nome_do_pacote::nome_da_funcao`.
+
 ```{r, eval=FALSE}
-  # Para usar algum pacote
+  # Para importar um pacote
   library(kohonen)
 
-  # Para instalar algum pacote que esteja
-  #install.packages("meupacotefavorite")
-  
-  # Função do pacote kohonen
-  ?som()
+  # Documentação da função som do pacote kohonen
+  ?kohonen::som
 ```
 
 Para especificar algum diretório para trabalhar, usamos o comando `setwd()` e para verificar o diretório atual `getwd()`.
@@ -258,7 +299,7 @@ Para especificar algum diretório para trabalhar, usamos o comando `setwd()` e p
   getwd() 
   
   # Para definir um novo diretório
-  #setwd("~/R/ggsom/")
+  #setwd("~/R")
 ```
 
 ### Estatística básica
@@ -272,9 +313,9 @@ e as medidas de dispersão:
 
 - Desvio padrão
 
-Para verificar o desvio padrão do conjunto, podemos utilizar a função `sd()` do pacote `stats`. Podemos verificar a média com `mean()` que é uma função do pacote `base` e a mediana com `median()` do pacote `stats`.
+Para verificar o desvio padrão do conjunto, podemos utilizar a função `sd()` do pacote `stats` (já incluso no R). Podemos verificar a média com `mean()` que é uma função do pacote `base` e a mediana com `median()` do pacote `stats`.
 
-Como demonstração, vamos utilizar o conjunto de dados do filme *star wars* `r emo::ji("smiling_face")`
+Como demonstração, vamos utilizar o conjunto de dados do filme *Star Wars*:
 
 
 ```{r}
@@ -282,16 +323,13 @@ Como demonstração, vamos utilizar o conjunto de dados do filme *star wars* `r 
   suppressMessages(library(dplyr))
   starwars <- dplyr::starwars
   
-  # Desse modo o dataset é carregado no nosso ambiente, use ls()
-  data(starwars)
-  
   # Vamos visualizar o dado
   dplyr::glimpse(starwars)
   
   # Vamos ver a média de ano de nascimento
   mean(starwars$birth_year)
   
-  # oops... - Observe que o NA atrapalha nossa média,vamos removê-lo
+  # Observe que o NA gera um erro na nossa média, vamos removê-lo
   mean(starwars$birth_year, na.rm = TRUE)
   
   # Mediana
@@ -309,8 +347,8 @@ Como demonstração, vamos utilizar o conjunto de dados do filme *star wars* `r 
 
 ## Estruturas de decisão
 
-Os `IF's` da vida, se não fosse por isso, aconteceria tal coisa. 
-Bom, no **R**, a estrutura de decisão é bem parecida com a do *Java*, ainda com o conjunto do *star wars*:
+Os `IF's` da vida, se não fosse por isso, aconteceria tal coisa. No **R**, a estrutura de decisão é bem parecida com a do *Java*, ainda com o conjunto do *star wars*:
+
 ```{r}
   personagem <- "BB8"  
 
@@ -339,7 +377,7 @@ Para o `for` podemos utilizar o famoso `foreach`, parecido com `Python`, desta m
 Vamos utilizar o pacote `dplyr` do kit de ferramentas [**Tidyverse**](https://www.tidyverse.org/). Vamos criar um `data.frame` para a manipulação, desta maneira:
 
 ```{r}
-meu_df <- data.frame(
+meu_df <- tibble::tibble(
     aluno_id = c(1, 2, 3, 4, 5, 6),
     aluno_sexo = c("Masculino", "Feminino","Masculino", "Feminino", "Masculino", "Feminino"),
     aluno_curso = c("Historia", "Historia", "Matemática",
@@ -354,13 +392,13 @@ meu_df <- data.frame(
 
 Vamos utilizar os seguintes métodos de manipulação do **dplyr**:
 
-- `select` - Seleciona as colunas do dataframe
-- `filter` - Filtra algum valor da coluna
-- `mutate` - Cria novas variáveis no dataframe
-- `group_by` - agrupa de acordo com um vetor de categorias
-- `summarize` - Reduz os valores para um único resumo.
+- `select` - Seleção de atributos de um **Data Frame**
+- `filter` - Filtro de observações de acordo com uma lógica pré-definida 
+- `mutate` - Criação de novos atributos 
+- `group_by` - Criação de grupos para aplicação de funções de agregação
+- `summarize` - Função de agregação aplicada em grupos
 
-Vamos manipular nosso `dataframe` com base nos métodos acima:
+Vamos manipular nosso **Data Frame** com base nos métodos acima:
 
 ```{r}
 library(dplyr)
@@ -392,7 +430,7 @@ knitr::kable(meu_df1)
 
 ```
 
-Aee, melhorou um pouco, não? `r emo::ji("blue")`. Podemos melhorar ainda mais, como? Usando `%>%` este símbolo, chamado de **pipe** ou **então**, basicamente, é a `pipe` utilizada no **Linux**, mas o que faz?
+Melhorou um pouco, não? `r emo::ji("blue")`. Podemos melhorar ainda mais, como? Usando `%>%` este símbolo, chamado de **pipe** ou **então**, basicamente, é a `pipe` utilizada no **Linux**.
 
 A **pipe** passa a resposta da primeira atribuição para o primeiro parâmetro da função seguinte, desta forma:
 
@@ -403,7 +441,7 @@ meu_vetor
 
 ```
 
-Então, podemos ver que não coloco o `meu_vetor` como parâmetro para a função `mean()`, mas, e se eu quiser colocar mais parâmetros? Opa, você pode e deve, segue a mesma linha de racíocio da função normal, desta forma:
+Então, podemos ver que não coloco o `meu_vetor` como parâmetro da função `mean()`, mas, e se eu quiser colocar mais parâmetros? Opa, você pode e deve, segue a mesma linha de raciocínio da função normal, desta forma:
 
 ```{r}
 meu_vetor <- c(2, 4, 6, 8, NA) %>% mean(na.rm=TRUE)
@@ -422,7 +460,59 @@ Agora, vamos otimizar nossa manipulação usando **pipe**, desta forma:
  knitr::kable(df)
 ```
 
-Essa é a principal função do **pipe**, tornar o código mais limpo e reprodutível.
+Essa é a principal função do **pipe**, tornar o código mais limpo e reprodutível. 
+
+Para encerrarmos esse capítulo de R, vamos mostrar uma análise aplicável ao mundo real, com uso de dois conjuntos de dados, obtidos através da plataforma [kaggle](https://www.kaggle.com/). Os conjuntos de dados utilizados correspondem a série temporal de [mudança climática da supércie terrestre](https://www.kaggle.com/berkeleyearth/climate-change-earth-surface-temperature-data) e os [continentes de cada país](https://www.kaggle.com/statchaitya/country-to-continent). O objetivo desta análise é verificar qual o continente que registrou a maior temperatura anual.
+
+```{r, message=FALSE}
+  
+  # Leitura dos dados de mudança climática
+  temperature_countries <-
+  readr::read_csv("./data/GlobalLandTemperaturesByCountry.csv")
+
+  # Leitura e seleção dos dados de continentes
+  continent <- 
+    readr::read_csv("./data/countryContinent.csv") %>%
+    dplyr::select(country, continent)
+
+  # Filtro a partir dos anos 2000 e tirando a média anual (talvez não seja a melhor aboragem)
+  year_temperature <- temperature_countries %>%
+    dplyr::filter(dt > "2000-01-01")  %>%
+    dplyr::mutate(dt = lubridate::year(dt)) %>%
+    dplyr::group_by(Country, dt) %>%
+    dplyr::summarise(year_mean = mean(AverageTemperature))
+  
+  # Junção dos continentes com cada país  
+  final_dataset <- year_temperature %>%
+    dplyr::rename(country = Country) %>%
+    dplyr::left_join(continent, by="country") %>%
+    dplyr::filter(!is.na(continent)) 
+  
+  # Visualização dos dados
+  head(final_dataset, 5)
+```
+
+Agora vamos responder a nossa pergunta: qual o continente que registrou a maior temperatura anual?
+
+```{r}
+  # Criação de um grupo de continentes e agregando pela meior temperatura
+  final_dataset %>%
+  dplyr::group_by(continent) %>% 
+  summarise(maior_temp = max(year_mean, na.rm = TRUE))
+```
+
+Podemos gerar outras peguntas, por exemplo, qual o ano com a maior média de temperatura registrada?
+
+```{r}
+  # Criação de um grupo de anos e agregação pelo valor da temperatura, por fim ordenação pelos valores de tempearatura
+  final_dataset %>%
+  dplyr::group_by(dt) %>% 
+  dplyr::summarise(maior_temp = max(year_mean, na.rm = TRUE)) %>%
+  dplyr::arrange(desc(maior_temp)) %>% 
+  head(5)
+```
+
+Enfim, podemos responder diversas perguntas com poucas linhas de código. Esperamos que este capítulo tenha dispertado sua curiosidade sobre análise de dados e os materiais base utilizados para criação deste capítulo se encontram nesta [subseção](https://dataat.github.io/introducao-analise-de-dados/introdu%C3%A7%C3%A3o-ao-r.html#para-saber-mais).
 
 
 ## Para saber mais
@@ -441,18 +531,4 @@ Essa é a principal função do **pipe**, tornar o código mais limpo e reprodut
 ###  Materiais utilizados como base
 [Rafael Santos](!https://github.com/rafaeldcsantos/CAP-394)
 
-- José Roberto M. Garcia
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+[R 4 Data Science](https://r4ds.had.co.nz/)
