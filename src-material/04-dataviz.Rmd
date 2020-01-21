@@ -1,11 +1,11 @@
 # Introdução ao ggplot `r emo::ji("bar_chart")`
 
-Escolhemos o pacote de visualização de dados **ggplot2** para **R** e **Python**, pois sua sintaxe é amigável, a qual segue o conceito de *gramática dos gráficos*. Desta forma, a comunidade de Python resolveu criar uma biblioteca baseada no **ggplot2** chamada **plotnine**.
+Escolhemos o pacote de visualização de dados **ggplot2** para **R** e **Python**, pois sua sintaxe é amigável, a qual segue o conceito de *gramática dos gráficos*. Desta forma, a comunidade Python resolveu criar uma biblioteca baseada no **ggplot2** chamada **plotnine**.
 
 
 ## O que é o `ggplot`?
 
-Bom, `ggplot`é um pacote em R criado pelo _Hadley Wickham_, como mencionado anteriormente, sua sintaxe se baseia na obra [The Grammar of Graphics](https://www.amazon.com/Grammar-Graphics-Statistics-Computing/dp/0387245448). Assim, a *gramática dos gráficos* é um conjunto de camadas, cujo o mapeamento dos atributos é chamado de _aesthetics_. O esqueleto pode ser escrito assim:
+Bom, `ggplot`é um pacote em R criado por _Hadley Wickham_ e seus colaboradores, como mencionado anteriormente, sua sintaxe se baseia na obra [The Grammar of Graphics](https://www.amazon.com/Grammar-Graphics-Statistics-Computing/dp/0387245448). Assim, a **gramática dos gráficos** é um conjunto de camadas, cujo o mapeamento dos atributos é chamado de _aesthetics_. O esqueleto pode ser escrito assim:
 
 ```{r,eval = FALSE}
   ggplot(data = <DATA>, aes(<MAPPINGS>)) + 
@@ -27,10 +27,13 @@ Podemos mapear dentro da função `ggplot()` ou dentro de alguma geometria. A im
 ![](./images/aes_ggplot.png)
 
 
-Vamos começar criando um dataframe, deste modo:
+Vamos começar criando um **Data frame**, deste modo:
 
 ```{r}
-escola <- data.frame(
+  # importação do pacote tibble 
+  library(tibble)
+  
+  escola <- tibble::tibble(
     aluno_id = c(1, 2, 3, 4, 5, 6),
     aluno_sexo = c("Masculino", "Feminino","Masculino", "Feminino", "Masculino", "Feminino"),
     aluno_curso = c("Historia", "Historia", "Matemática",
@@ -38,15 +41,20 @@ escola <- data.frame(
     aluno_media = c(2.1, 3.5, 4.0, 1.0, NA, 4.9),
     aluno_avaliacao = c("Ruim", "Ruim", "Excelente",
                         "Ruim", "Nenhum", "Excelente"))
-
-  knitr::kable(escola)
 ```
 
-Agora, vamos mapear os atributos do nosso dataframe `escola`, desta forma:
+```{r, echo=FALSE}
+   knitr::kable(escola)
+```
+
+
+Agora, vamos mapear os atributos do nosso **Data Frame** `escola`, desta forma:
 
 ```{r}
+  # Importação do pacote ggplot2
   library(ggplot2)
-
+  
+  # Mapeamento estético 
   ggplot(escola, aes(x=aluno_id, y=aluno_media, color=aluno_curso))
 
 ```
@@ -78,8 +86,9 @@ Aprendemos o mapeamento estético, agora vamos colocar alguns objetos geométric
 Vamos utilizar `geom_point` para fazer um gráfico bolhas no conjunto de dados, deste modo:
 
 ```{r}
- ggplot(escola, aes(x=aluno_id, y=aluno_media, color=aluno_curso)) + 
-  geom_point(na.rm = TRUE) 
+  # Adição de um objeto geométrico
+  ggplot(escola, aes(x=aluno_id, y=aluno_media, color=aluno_curso)) + 
+    geom_point(na.rm = TRUE) 
 ```
 
 
@@ -90,94 +99,205 @@ Olha que legal. No entanto, ainda faltam informações no nosso gráficos, por e
 
 Bom, agora é a hora de melhorar nosso gráfico, que por sinal está bem estranho, vamos lá!
 
-
 Primeiro, vamos mudar o nome dos nossos atributos em cada eixo e também mudar as escalas:
 
 ```{r}
-   ggplot(escola, aes(x=aluno_id, y=aluno_media, color=aluno_curso)) + 
-  geom_point(na.rm = TRUE) + 
-  scale_x_continuous(name = "Identificação dos alunos", breaks = 1:6)
-
-```
-
-
-Opa, assim ficou mais claro, mas, mudar o nome de apenas um eixo não move moinhos, não, pera? `r emo::ji("clap")`.
-
-
-```{r}
-ggplot(escola, aes(x=aluno_id, y=aluno_media, color=aluno_curso)) + 
-  geom_point(na.rm = TRUE) + 
-  scale_x_continuous(name = "Identificação dos alunos", breaks = 1:6) + 
-  scale_y_continuous(name="Média dos alunos", 
-                   breaks = seq(1, 6, 0.5))
-```
-
-
-Ainda falta mais informações, por exemplo, o título do nosso gráfico.
-
-
-```{r}
-cores <- c("Estatística" = "green",
-           "Historia" = "red",
-            "Matemática" = "blue")
-
+  # Adição de escalas no eixo x e y
   ggplot(escola, aes(x=aluno_id, y=aluno_media, color=aluno_curso)) + 
-  geom_point(na.rm = TRUE) + 
-  scale_x_continuous(name = "Identificação dos alunos", breaks = 1:6) + 
-  scale_y_continuous(name="Média dos alunos", 
-                   breaks = seq(1, 6, 0.5)) + 
-  scale_color_manual("Matérias", values = cores) + 
-    ggtitle("Média dos alunos da faculdade y")
+    geom_point(na.rm = TRUE) +
+    scale_x_continuous(name = "Identificação dos alunos", breaks = 1:6) + 
+    scale_y_continuous(name="Média dos alunos", breaks = seq(1, 6, 0.5))
+
 ```
 
+Ainda falta mais informações, por exemplo, o título do nosso gráfico e melhorar a legenda. 
 
+```{r}
+  # Definição de cores para cada disciplina
+  cores <- c("Estatística" = "green",
+             "Historia" = "red",
+             "Matemática" = "blue")
+  
+  # Alteração da legenda e adição de um título
+  ggplot(escola, aes(x=aluno_id, y=aluno_media, color=aluno_curso)) + 
+    geom_point(na.rm = TRUE) + 
+    scale_x_continuous(name = "Identificação dos alunos", breaks = 1:6) + 
+    scale_y_continuous(name="Média dos alunos", breaks = seq(1, 6, 0.5)) +
+    scale_color_manual("Disciplinas", values = cores) + 
+    ggtitle("Média dos alunos da faculdade")
+```
 
-É possível observar que o aluno com id **5** não possui média em nenhuma matéria. Agora, que tal dividirmos nosso gráfico em sub gráficos? `r emo::ji("cool")`.
-
+É possível observar que o aluno com id **5** não possui média em nenhuma disciplina. Agora, que tal dividirmos nosso gráfico em sub gráficos? `r emo::ji("cool")`.
 
 ## Subplots
 
-Bom, quero visualizar de forma que divida nosso gráfico em subgráficos, usando `facet_wrap`, desta forma:
+Bom, é possível visualizar de forma dividida nosso gráfico em subgráficos, usando `facet_wrap`, desta forma:
 
 
 ```{r}
-
-cores <- c("Estatística" = "green",
-           "Historia" = "red",
-            "Matemática" = "blue")
-
+  # Definição de cores para cada disciplina
+  cores <- c("Estatística" = "green",
+             "Historia" = "red",
+             "Matemática" = "blue")
+  
+  # Craiação de subgráficos pela avaliação de cada aluno 
   ggplot(escola, aes(x=aluno_sexo, y=aluno_media, color=aluno_curso)) + 
-  geom_point(na.rm = TRUE) + 
-  facet_grid(~ aluno_avaliacao) + 
-  labs(title="Notas dos alunos por grid", 
+    geom_point(na.rm = TRUE) + 
+    facet_grid(~ aluno_avaliacao) + 
+    labs(title="Notas dos alunos por grid", 
        x = "Sexo dos alunos",
        y = "Média dos alunos") + 
-  scale_color_manual("Matérias", values = cores) + 
-    ggtitle("Média dos alunos da faculdade y")
+    scale_color_manual("Matérias", values = cores) + 
+    ggtitle("Média dos alunos da faculdade")
 
 
 ```
 
-Dessa vez, usei `labs` para demonstrar que essa função também altera o nome dos eixos.
+Usei `labs` para mostrar que essa função também altera o nome dos eixos.
 
 ## Temas
 
 Por último, vamos deixar nosso gráfico mais elegante, usando os temas do próprio pacote:
 
 ```{r}
-cores <- c("Estatística" = "green",
-           "Historia" = "red",
-            "Matemática" = "blue")
-
+  
+  # Definição de cores para cada disciplina
+  cores <- c("Estatística" = "green",
+             "Historia" = "red",
+             "Matemática" = "blue")
+  
+  # Adição do tema "theme_bw()"
   ggplot(escola, aes(x=aluno_id, y=aluno_media, color=aluno_curso)) + 
-  geom_point(na.rm = TRUE) + 
-  scale_x_continuous(name = "Identificação dos alunos", breaks = 1:6) + 
-  scale_y_continuous(name="Média dos alunos", 
-                   breaks = seq(1, 6, 0.5)) + 
-  scale_color_manual("Matérias", values = cores) + 
-    ggtitle("Média dos alunos da faculdade y") + 
+    geom_point(na.rm = TRUE) + 
+    scale_x_continuous(name = "Identificação dos alunos", breaks = 1:6) + 
+    scale_y_continuous(name="Média dos alunos", breaks = seq(1, 6, 0.5)) + 
+    scale_color_manual("Matérias", values = cores) + 
+    ggtitle("Média dos alunos da faculdade") + 
     theme_bw()
+```
 
+
+## Exemplos 
+
+Nesta subseção vamos usar conjuntos de dados reais para demonstrar o uso do `ggplot2` com mais exemplos.
+
+### Gráfico de coordenadas paralelas
+
+```{r}
+  # importação dos pacotes usados
+  library(tidyr)
+  library(dplyr)
+
+  # Uso dos dados da iris
+  data("iris")
+  
+  # Criação do gráfico de coordenadas paralelas
+  iris %>% dplyr::mutate(id = 1:nrow(iris)) %>% # Criação de um atributo id
+    tidyr::gather(atributos, valores, -Species, -id) %>% # Transformando em wide para long
+    ggplot(., aes(x = atributos, y = valores, color = Species, group = id)) + # mapeamento estético
+    geom_line(size=0.55) + # Objeto geométrico
+    labs(x       = "Atributos",
+         y       = "Valores", 
+         title   = "Coordenadas Paralelas - Iris",
+         caption = "Fonte: dataAt") + # legendas
+    theme_bw() + # Adição do tema "theme_bw()"
+    theme(plot.title = element_text(hjust= 0.5, margin = margin(b = 7))) 
+```
+
+Assim como apresentado anteriormente, podemos dividir nosso gráfico em subgráficos, desta forma:
+
+```{r}
+  # Criação do gráfico de coordenadas paralelas
+  iris %>% dplyr::mutate(id = 1:nrow(iris)) %>%
+    tidyr::gather(atributos, valores, -Species, -id) %>%
+    ggplot(., aes(x = atributos, y = valores, color = Species, group = id)) + 
+    geom_line(size=0.55) +
+    facet_grid(~Species) + 
+    labs(x     = "Atributos",
+         y     = "Valores", 
+         title = "Coordenadas Paralelas - Iris") +
+    theme_bw() + 
+    theme(plot.title = element_text(hjust= 0.5, margin = margin(b = 7)),
+          axis.text.x = element_text(angle = 90)) 
+```
+
+
+Observe que todos conteúdos apresentados neste livro estão sendo utilizados nos gráficos apresentados acima. 
+
+## Gráfico de colunas
+
+Para criar nosso gráfico de colunas vamos utilizar o conjunto de dados de tempestade, desta forma:
+
+```{r}
+  # Importação dos dados como variável de ambiente
+  data("storms")
+  
+  # Visualização dos dados
+  head(storms, 5)
+```
+
+> Para mais informações do conjunto de dados, basta utilizar `?storms`
+
+Como podemos observar, o dado consiste em um série temporal de tempestades registradas. Qual é o tipo de tempestade mais recorrente?
+
+```{r}
+  # Temas para o pacote ggplot2
+  library(cowplot)
+  library(forcats) 
+
+  storms %>% dplyr::group_by(status) %>% 
+    dplyr::summarise(count = n()) %>% 
+    dplyr::mutate(status = forcats::fct_reorder(status, count)) %>% 
+    ggplot(., aes(x = status, y = count)) +
+    geom_col(width = 0.5) + 
+    theme_minimal_hgrid() + 
+    labs(x       = "Tipos de tempestade",
+         y       = "Quantidade",
+         title   = "Gráfico de colunas - Storms") + 
+    theme(plot.title = element_text(hjust= 0.5, margin = margin(b = 7)))
+    
+```
+
+
+O pacote `ggplot2` possui diversas [extensões oficiais](https://www.ggplot2-exts.org/gallery/), as quais implementam diversos métodos de visualização. No próximo exemplo vamos usar a extesão [Lemon](https://github.com/stefanedwards/lemon).
+
+
+## Extensão do ggplot2 - Lemon
+
+Nesta subseção vamos utilizar os dados dos preços de diamantes, podemos importá-lo desta forma:
+
+```{r}
+  # Importação do conjunto de dados como variável de ambiente
+  data("diamonds")
+
+  # Visualização das cinco primeiras observações
+  head(diamonds, 5)
+```
+
+Vamos utilizar os atributos `cut`, `price` e `clarity`, correspodentes a qualidade do corte do diamente, ao preço e a medição de qualidade, respectivamente. 
+
+
+```{r}
+  # importação do pacote Lemon
+  library(lemon)
+  
+  # Definição da semente para garantir reprodutibilidade
+  set.seed(123)
+  
+  # amostragem dos dados
+  amost <- sample(c(1:nrow(diamonds)), nrow(diamonds)*0.1, replace = FALSE)
+  amost_diam <- diamonds[amost,]
+  
+  amost_diam %>%
+    ggplot(., aes(x = as.factor(cut), y = price, color = clarity)) + 
+    geom_point(position=position_jitter(width=0.08)) + 
+    coord_flex_cart(bottom=brackets_horisontal(), left=capped_vertical('both')) +
+    theme_light() +
+    theme(panel.border=element_blank(), axis.line = element_line(),
+          plot.title = element_text(hjust= 0.5, margin = margin(b = 7))) + 
+    labs(x     = "Qualidade do corte",
+         y     = "Preço em US",
+         title = "Gráfico de bolhas - Diamonds")
 ```
 
 

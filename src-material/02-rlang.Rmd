@@ -23,7 +23,7 @@ O kernel do **R** e os pacotes podem ser baixados pelo
 
 ```
 
-O objetivo deste capítulo é abordar de forma introdutória alguns conceitos básicos do R, por favor, sinta-se à vontade para contribuir.
+O objetivo deste capítulo é abordar, de forma introdutória, alguns conceitos básicos do R, por favor, sinta-se à vontade para contribuir.
 
 ## Definição de variáveis
 
@@ -48,7 +48,7 @@ Para declarar cada tipo:
   # Double
   b = 14.01
   
-  # Boleano
+  # Booleano
   k <- FALSE
   
   # Complexo
@@ -150,7 +150,6 @@ Por outro lado, as listas são heterogêneas, ou seja, aceitam diversos tipos, s
 
 Podemos criar uma lista de diversos tipos, assim:
 
-
 ```{r}
   # Lista com todos os tipos 
   lista_misturada <- list(FALSE, 12L, 't', 2i)
@@ -199,7 +198,7 @@ Então, seguindo a hierarquia de tipos, a nossa matriz será convertida para `ch
 
 Podemos acessar os valores através dos índices de linha e coluna `matriz[linha, coluna]`.
 
-### DataFrame
+### Data Frame
 
 Podemos definir **Data frame** como uma matriz (Figura \@ref(fig:fig233)), composta por linhas e colunas, cujas colunas representam as variáveis (atributos) e as linhas representam observações. A Figura \@ref(fig:fig322) apresenta um **Data frame**, na qual é possível observar as definições mencionadas anteriormente, desta forma, sabemos que o aluno **José** obteve **7** na disciplina de **Álgebra Linear**. 
 
@@ -235,17 +234,16 @@ Agora que sabemos a definição de um **Data frame**, vamos ler um conjunto de d
   # Lendo nosso conjunto de dados
   iris <- readr::read_csv(file = "./data/iris.csv",)
 
-  # Verificando a classe do nosso conjunto de dados
+  # Verificando a classe dos nossos dados
   class(iris)
 
-  # Verificando o tipo do nosso conjunto de dados
+  # Verificando o tipo dos nossos dados
   typeof(iris)
 ```
 
 Podemos usar quaisquer métodos criados para uso no `data.frame` no `tibble`. O código acima mostra que o `tibble` criado possui três classes: `tbl_df`, `tbl` e `data.frame`. É possível observar que o `tibble` possui como classe comum o `data.frame`.
 
 Podemos tirar algumas conclusões, a primeira é que existe uma classe chamada `data.frame` que é do tipo `list`, como visto anteriormente, a lista em **R** é heterogênea, logo, sabemos que nosso `Data frame` pode ter vários tipos. Para verificar se a classe `data.frame` é atômica:
-
 
 ```{r}
   # Verificando se é atomico nosso df
@@ -269,16 +267,17 @@ Vamos criar mais `Data Frame` para fixar o aprendizado:
   
   # Podemos acessar os valores individuais usando o '$'
   data_frame$Animal
-  
+```
+
+```{r, echo=FALSE}
   # Visualização das lihas iniciais
   knitr::kable(head(data_frame, 3)) 
- 
 ```
 
 
 ## Operações Básicas
 
-Agora que já sabemos como declarar uma variável, um vetor e um *Data frame*, nessa subseção vamos dar algumas dicas e falar sobre alguns métodos estatísticos.
+Agora que sabemos como declarar uma variável, um vetor e um *Data frame*, nessa subseção vamos dar algumas dicas e falar sobre alguns métodos estatísticos.
 
 ### Dicas úteis
 
@@ -294,12 +293,12 @@ Para importar os pacotes no **R** usa-se o comando `library()`. Caso esteja com 
 
 Para especificar algum diretório para trabalhar, usamos o comando `setwd()` e para verificar o diretório atual `getwd()`.
 
-```{r}
+```{r, eval=FALSE}
   # Para verificar seu diretório atual
   getwd() 
   
   # Para definir um novo diretório
-  #setwd("~/R")
+  setwd("/home/felipe/R")
 ```
 
 ### Estatística básica
@@ -313,10 +312,9 @@ e as medidas de dispersão:
 
 - Desvio padrão
 
-Para verificar o desvio padrão do conjunto, podemos utilizar a função `sd()` do pacote `stats` (já incluso no R). Podemos verificar a média com `mean()` que é uma função do pacote `base` e a mediana com `median()` do pacote `stats`.
+Para verificar o desvio padrão do conjunto, podemos utilizar a função `sd()` do pacote `stats` (já incluso no R). Podemos verificar a média com `mean()` que é uma função do pacote `base` (já incluso no R) e a mediana com `median()` do pacote `stats`.
 
 Como demonstração, vamos utilizar o conjunto de dados do filme *Star Wars*:
-
 
 ```{r}
   # Vamos usar o dado do filme Star Wars do pacote dplyr*
@@ -347,7 +345,7 @@ Como demonstração, vamos utilizar o conjunto de dados do filme *Star Wars*:
 
 ## Estruturas de decisão
 
-Os `IF's` da vida, se não fosse por isso, aconteceria tal coisa. No **R**, a estrutura de decisão é bem parecida com a do *Java*, ainda com o conjunto do *star wars*:
+Os `IF's` da vida - se chover e fizer frio, não vou à praia. No **R**, a estrutura de decisão é bem parecida com a do *Java*, ainda com o conjunto do *star wars*:
 
 ```{r}
   personagem <- "BB8"  
@@ -363,7 +361,7 @@ Os `IF's` da vida, se não fosse por isso, aconteceria tal coisa. No **R**, a es
 
 ## Iteração
 
-Para o `for` podemos utilizar o famoso `foreach`, parecido com `Python`, desta maneira:
+Para o `for` podemos utilizar o `foreach`, parecido com `Python`, desta maneira:
 
 ```{r}
   # Foreach
@@ -374,23 +372,25 @@ Para o `for` podemos utilizar o famoso `foreach`, parecido com `Python`, desta m
 
 ## Manipulação de dados
 
-Vamos utilizar o pacote `dplyr` do kit de ferramentas [**Tidyverse**](https://www.tidyverse.org/). Vamos criar um `data.frame` para a manipulação, desta maneira:
+Vamos utilizar o pacote `dplyr` do *kit* de ferramentas [**Tidyverse**](https://www.tidyverse.org/). Vamos criar um `data.frame` para a manipulação, desta maneira:
 
 ```{r}
 meu_df <- tibble::tibble(
     aluno_id = c(1, 2, 3, 4, 5, 6),
     aluno_sexo = c("Masculino", "Feminino","Masculino", "Feminino", "Masculino", "Feminino"),
-    aluno_curso = c("Historia", "Historia", "Matemática",
+    aluno_curso = c("História", "História", "Matemática",
                     "Estatística", "Matemática", "Estatística"),
     aluno_media = c(2.1, 3.5, 4.0, 1.0, NA, 4.9),
     aluno_avaliacao = c("Ruim", "Ruim", "Excelente",
                         "Ruim", "Nenhum", "Excelente"))
-
-  knitr::kable(meu_df)
-  
 ```
 
-Vamos utilizar os seguintes métodos de manipulação do **dplyr**:
+```{r, echo=FALSE}
+  knitr::kable(meu_df)
+```
+
+
+Vamos utilizar os seguintes métodos do pacote **dplyr**:
 
 - `select` - Seleção de atributos de um **Data Frame**
 - `filter` - Filtro de observações de acordo com uma lógica pré-definida 
@@ -401,34 +401,49 @@ Vamos utilizar os seguintes métodos de manipulação do **dplyr**:
 Vamos manipular nosso **Data Frame** com base nos métodos acima:
 
 ```{r}
-library(dplyr)
+  # Importação do pacote dplyr
+  library(dplyr)
   
-filtro <- dplyr::filter(meu_df, meu_df$aluno_avaliacao == "Ruim")
+  # Filtro pelo atributo "aluno_avaliano"
+  filtro <- dplyr::filter(meu_df, meu_df$aluno_avaliacao == "Ruim")
  
-selecao <- dplyr::select(filtro, aluno_curso, aluno_avaliacao, aluno_media)
+  # Seleção dos atributos "aluno_curso", "aluno_avaliacao" e "aluno_media"
+  selecao <- dplyr::select(filtro, aluno_curso, aluno_avaliacao, aluno_media)
   
-grupo <- dplyr::group_by(selecao, aluno_curso)
+  # Criação de um grupo de cursos
+  grupo <- dplyr::group_by(selecao, aluno_curso)
  
-media <- dplyr::summarize(grupo, media_grupo = mean(aluno_media))
-  
-knitr::kable(media)
- 
+  # Agregação pela média de cada curso
+  media <- dplyr::summarize(grupo, media_grupo = mean(aluno_media))
 ```
 
-Basicamente, filtramos pelo atributo `aluno_avaliacao`, selecionamos os atributos `aluno_curso`, `aluno_avaliacao` e `aluno_media`, agrupamos pelos cursos e tiramos a média daquele grupo em relação os cursos `r emo::ji("bear")`. Mas, ficou muito grande, não podemos melhorar? Podemos sim, substituindo por apenas uma variável, desta forma: 
+```{r, echo=FALSE}
+  # Visualização das médias
+  knitr::kable(media)
+```
+
+
+Basicamente, filtramos pelo atributo `aluno_avaliacao`, selecionamos os atributos `aluno_curso`, `aluno_avaliacao` e `aluno_media`, agrupamos pelos cursos e tiramos a média daquele grupo em relação os cursos `r emo::ji("bear")`. Mas, ficou muito grande, como podemos melhorar? Substituindo por apenas uma variável, desta forma: 
 
 ```{r}
-meu_df1 <- dplyr::filter(meu_df, meu_df$aluno_avaliacao =="Ruim")
- 
-meu_df1 <- dplyr::select(meu_df1, aluno_curso, aluno_avaliacao, aluno_media)
-  
-meu_df1 <- dplyr::group_by(meu_df1, aluno_curso)
- 
-meu_df1 <- dplyr::summarize(meu_df1, media_grupo = mean(aluno_media))
-  
-knitr::kable(meu_df1)
+  # Filtro pelo atributo "aluno_avaliano"
+  meu_df1 <- dplyr::filter(meu_df, meu_df$aluno_avaliacao =="Ruim")
 
+  # Seleção dos atributos "aluno_curso", "aluno_avaliacao" e "aluno_media"
+  meu_df1 <- dplyr::select(meu_df1, aluno_curso, aluno_avaliacao, aluno_media)
+  
+  # Criação de um grupo de cursos
+  meu_df1 <- dplyr::group_by(meu_df1, aluno_curso)
+ 
+  # Agregação pela média de cada curso
+  meu_df1 <- dplyr::summarize(meu_df1, media_grupo = mean(aluno_media))
 ```
+
+```{r, echo=FALSE}
+  # Visualização das médias
+  knitr::kable(meu_df1)
+```
+
 
 Melhorou um pouco, não? `r emo::ji("blue")`. Podemos melhorar ainda mais, como? Usando `%>%` este símbolo, chamado de **pipe** ou **então**, basicamente, é a `pipe` utilizada no **Linux**.
 
@@ -452,19 +467,28 @@ meu_vetor
 Agora, vamos otimizar nossa manipulação usando **pipe**, desta forma:
 
 ```{r}
+  # exemplo de uso do operador pipe
   df <- meu_df %>% filter(aluno_avaliacao == "Ruim") %>%
     select(aluno_curso, aluno_avaliacao, aluno_media) %>%
     group_by(aluno_curso) %>%
     summarize(media_grupo = mean(aluno_media))
-  
- knitr::kable(df)
 ```
 
-Essa é a principal função do **pipe**, tornar o código mais limpo e reprodutível. 
+```{r, echo=FALSE}
+  # Visualização do data frame
+  knitr::kable(df)
+```
 
-Para encerrarmos esse capítulo de R, vamos mostrar uma análise aplicável ao mundo real, com uso de dois conjuntos de dados, obtidos através da plataforma [kaggle](https://www.kaggle.com/). Os conjuntos de dados utilizados correspondem a série temporal de [mudança climática da supércie terrestre](https://www.kaggle.com/berkeleyearth/climate-change-earth-surface-temperature-data) e os [continentes de cada país](https://www.kaggle.com/statchaitya/country-to-continent). O objetivo desta análise é verificar qual o continente que registrou a maior temperatura anual.
+
+Essa é a principal função do operador **pipe**, tornar o código mais limpo e reprodutível. 
+
+Para encerrarmos esse capítulo de R, vamos mostrar uma análise de dados aplicável ao mundo real, com uso de dois conjuntos de dados, obtidos através da plataforma [kaggle](https://www.kaggle.com/). Os conjuntos de dados correspondem a série temporal da [mudança climática da temperatura da supércie terrestre](https://www.kaggle.com/berkeleyearth/climate-change-earth-surface-temperature-data) e os [continentes de cada país](https://www.kaggle.com/statchaitya/country-to-continent). O objetivo desta análise é verificar qual o continente que registrou a maior média anual de temperatura.
 
 ```{r, message=FALSE}
+  # Importação dos pacotes utilizados
+  library(readr)     # Leitura de dados retangulares
+  library(dplyr)     # Métodos para manipulação de dados
+  library(lubridate) # Métodos para trabalhar com dados do tipo date 
   
   # Leitura dos dados de mudança climática
   temperature_countries <-
@@ -473,20 +497,20 @@ Para encerrarmos esse capítulo de R, vamos mostrar uma análise aplicável ao m
   # Leitura e seleção dos dados de continentes
   continent <- 
     readr::read_csv("./data/countryContinent.csv") %>%
-    dplyr::select(country, continent)
+    dplyr::select(country, continent) # Seleção do atributo continente
 
-  # Filtro a partir dos anos 2000 e tirando a média anual (talvez não seja a melhor aboragem)
+  # Filtro a partir do ano 2000 e extração da média anual (talvez não seja a melhor abordagem)
   year_temperature <- temperature_countries %>%
-    dplyr::filter(dt > "2000-01-01")  %>%
-    dplyr::mutate(dt = lubridate::year(dt)) %>%
-    dplyr::group_by(Country, dt) %>%
-    dplyr::summarise(year_mean = mean(AverageTemperature))
+    dplyr::filter(dt > "2000-01-01")  %>% # Filtro a partir do ano 2000
+    dplyr::mutate(dt = lubridate::year(dt)) %>% # Transformando pro tipo date
+    dplyr::group_by(Country, dt) %>% # Criando um grupo de países
+    dplyr::summarise(year_mean = mean(AverageTemperature)) # Agregação pela média
   
   # Junção dos continentes com cada país  
-  final_dataset <- year_temperature %>%
-    dplyr::rename(country = Country) %>%
-    dplyr::left_join(continent, by="country") %>%
-    dplyr::filter(!is.na(continent)) 
+  final_dataset <- year_temperature %>% 
+    dplyr::rename(country = Country) %>% # Alterando o nome do atributo
+    dplyr::left_join(continent, by="country") %>% # Junção dos dois conjuntos
+    dplyr::filter(!is.na(continent)) # Remoção dos valores NA 
   
   # Visualização dos dados
   head(final_dataset, 5)
@@ -495,24 +519,24 @@ Para encerrarmos esse capítulo de R, vamos mostrar uma análise aplicável ao m
 Agora vamos responder a nossa pergunta: qual o continente que registrou a maior temperatura anual?
 
 ```{r}
-  # Criação de um grupo de continentes e agregando pela meior temperatura
+  # Criação de um grupo de continentes e agregando pela maior temperatura
   final_dataset %>%
-  dplyr::group_by(continent) %>% 
-  summarise(maior_temp = max(year_mean, na.rm = TRUE))
+  dplyr::group_by(continent) %>% # Grupo de continentes
+  summarise(maior_temp = max(year_mean, na.rm = TRUE)) # Agregação pela temp max
 ```
 
-Podemos gerar outras peguntas, por exemplo, qual o ano com a maior média de temperatura registrada?
+Podemos gerar outras perguntas, por exemplo, qual o ano com a maior média de temperatura registrada?
 
 ```{r}
-  # Criação de um grupo de anos e agregação pelo valor da temperatura, por fim ordenação pelos valores de tempearatura
+  # Criação de um grupo de anos e agregação pelo valor da temperatura, por fim ordenação pelos valores de temperatura
   final_dataset %>%
-  dplyr::group_by(dt) %>% 
-  dplyr::summarise(maior_temp = max(year_mean, na.rm = TRUE)) %>%
-  dplyr::arrange(desc(maior_temp)) %>% 
+  dplyr::group_by(dt) %>% # Grupo dos anos 
+  dplyr::summarise(maior_temp = max(year_mean, na.rm = TRUE)) %>% # Agregação pelo max
+  dplyr::arrange(desc(maior_temp)) %>% # Ordenação pela temperatura
   head(5)
 ```
 
-Enfim, podemos responder diversas perguntas com poucas linhas de código. Esperamos que este capítulo tenha dispertado sua curiosidade sobre análise de dados e os materiais base utilizados para criação deste capítulo se encontram nesta [subseção](https://dataat.github.io/introducao-analise-de-dados/introdu%C3%A7%C3%A3o-ao-r.html#para-saber-mais).
+Enfim, podemos responder diversas perguntas com poucas linhas de código. Esperamos que este capítulo tenha despertado sua curiosidade sobre análise de dados. Os materiais base utilizados para criação deste capítulo se encontram nesta [subseção](https://dataat.github.io/introducao-analise-de-dados/introdu%C3%A7%C3%A3o-ao-r.html#para-saber-mais).
 
 
 ## Para saber mais
