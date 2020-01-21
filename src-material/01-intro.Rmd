@@ -132,7 +132,7 @@ A definição que escolhemos foi do site **kdnuggets**: "O analista de dados é 
 
 ### Processos da análise de dados
 
-Agora que sabemos o que faz um analista de dados, é necessário entender cada etapa do processo de análise de dados. A Figura \@ref(fig:fig1) apresenta o processo mencionado. Cada etapa é abordada com detalhes em ambas as linguagens (E e Python).
+Agora que sabemos o que faz um analista de dados, é necessário entender cada etapa do processo de análise de dados. A Figura \@ref(fig:fig1) apresenta o processo mencionado. Cada etapa é abordada com detalhes em ambas as linguagens (R e Python).
 
 ```{r fig1, echo=FALSE ,out.width = "150%", fig.cap='Etapas do processo de análise de dados - Fonte: @hadley2017'}
   knitr::include_graphics("./images/data-science.png", )
