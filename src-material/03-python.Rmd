@@ -4,7 +4,7 @@ Python é uma linguagem multiparadigma, com uma sintaxe simples que permite ao u
 
 Nesta introdução, o foco será a aplicação da linguagem Python na manipulação e tratamento de dados, utilizando como base a biblioteca Pandas.
 
-Você pode estar se perguntando o motivo da utilização desta biblioteca e a resposta é bem simples, Python é uma linguagem de uso geral, assim, suas funções nativas não tem foco em uma aplicação específica, como acontece em linguagens como R e Julia, que possuem áreas específicas de aplicação. Com isso, não podemos esperar que nativamente a linguagem tenha métodos variados para a manipulação e tratamento de dados e é nesta parte que o pandas entra, facilitando toda manipulação e tratamento de dados com funções incríveis.
+Você pode estar se perguntando o motivo da utilização desta biblioteca e a resposta é bem simples, Python é uma linguagem de uso geral, assim, suas funções nativas não tem foco em uma aplicação específica, como acontece em linguagens como R e Julia, que possuem áreas específicas de aplicação. Com isso, não podemos esperar que nativamente a linguagem tenha métodos variados para a manipulação e tratamento de dados e é nesta parte que o Pandas entra, facilitando toda manipulação e tratamento de dados com funções incríveis.
 
 Vamos começar !
 
@@ -16,7 +16,7 @@ Para iniciar, vamos entender o que é a biblioteca Pandas e qual seu objetivo ge
 
 Veja então que, tudo o que é necessário para a realização da maioria dos casos de análise de dados utilizando a linguagem Python, irão, bem provavelmente, trabalhar com esta biblioteca.
 
-Para que se tenha uma ideia, o pandas pode ser aplicado em análises envolvendo:
+Para que se tenha uma ideia, o Pandas pode ser aplicado em análises envolvendo:
 
 - Finanças;
 - Geociências;
@@ -27,7 +27,7 @@ Isto tudo por contar com diversas funções e estruturas de dados que facilitam 
 
 ## Estruturas de dados
 
-O Pandas disponibiliza diversas estruturas de dados, sendo as principais:
+O Pandas disponibiliza diversas estruturas de dados preparadas para o trabalho com grandes volumes de dados, sendo as principais:
 
 - Series;
 - DataFrames.
@@ -39,7 +39,7 @@ Nos subtópicos abaixo vamos ver as características de cada uma destas estrutur
 As `Series` são estruturas de dados unidimensionais, que contam com diversos métodos para a manipulação de dados.
 Pode-se entender que as `Series` são estruturas de dados simples, assim como as listas padrões da linguagem Python, com uma pequena diferença, para cada item dentro de uma `Series` tem-se índices.
 
-Para entendermos, vamos começar a com a utilização desta estrutura de dados
+Para entendermos, vamos começar com a utilização desta estrutura de dados
 
 ```{r, echo=FALSE}
 # Estes comandos não devem ser executados em seu terminal
@@ -55,7 +55,9 @@ import pandas as pd
 s = pd.Series([1, 2, 3]); print(s)
 ```
 
-É interessante notar o índice na `Series` (Lateral esquerda na tabela), citado anteriormente, que permitem uma recuperação rápida e simples, sendo muito parecidas com a recuperação de valores em um dicionário em Python, a diferença aqui é que, estas estruturas de dados são criadas para trabalhar com grandes conjuntos de dados, sem contar nas facilidades de manipulação dos dados.
+> Ao fazer pd.Series, você está explicitamente informando que a estrutura de dados `Series` está no contexto da biblioteca Pandas
+
+É interessante notar o índice na `Series`, citado anteriormente, que permite a recuperação rápida e simples dos dados. A recuperação feita através de índices é muito parecida com a recuperação de valores em um dicionário em Python, veja:
 
 ```{python}
 print(s[0]) # Recupera o valor do índice com nome 0
@@ -101,16 +103,16 @@ dicto = {
 dicto_s = pd.Series(dicto); print(dicto_s)
 ```
 
-Após a conversão o uso é basicamente o mesmo do dicionário, porém com os benefícios já citados. Além do que já foi dito sobre as `Series`, é importante lembrar que, estas estruturas de dados possuem diversos métodos para facilitar a manipulação e entendimento dos dados, apresentados nas próximas seções.
+Após a conversão o uso é basicamente o mesmo do dicionário. Além do que já foi dito sobre as `Series`, é importante lembrar que, estas estruturas de dados possuem diversos métodos para facilitar a manipulação e entendimento dos dados, apresentados nas próximas seções.
 
-Mesmo as `Series` sendo estruturas de dados poderosas, elas apresentam a limitação da unidimensionalidade, o que impede estruturas como matrizes e tabelas de serem representados nesta estrutura. Para esta limitação ficar clara, vamos inserir uma matriz de dados dentro de uma `Series`, erros não serão apresentados, porém a representação pode não ficar como desejado.
+Mesmo as `Series` sendo estruturas de dados poderosas, elas apresentam a limitação da unidimensionalidade, o que impede matrizes, tabelas e similares não possam ser facilmente representadas através das `Series`. Para esta limitação ficar clara, vamos inserir uma matriz de dados em uma `Series`, erros não serão apresentados, porém a representação pode não ficar como desejado.
 
 ```{python}
 matriz = pd.Series([[1, 2, 3], [4, 5, 6]])
 print(matriz)
 ```
 
-Percebeu ? Não há uma matriz, e sim várias listas dentro de listas em cada linha. A ideia é que a matriz fosse apresentada em um formato onde cada elemento está em uma posição, assim como apresentado abaixo:
+Percebeu ? Não há uma matriz, e sim várias listas dentro de listas em cada linha. A ideia é que a matriz fosse apresentada em um formato onde cada elemento está em uma posição, como na tabela abaixo.
 
 |   |   |   |
 |---|---|---|
@@ -123,7 +125,7 @@ Para estes casos é necessário o uso de uma outra estrutura de dados, o DataFra
 
 Agora que você já conhece como as `Series` funcionam, vamos apresentar a você o `DataFrame`, que difere das `Series` por serem multidimensionais, ou seja, aqui temos uma estrutura que trabalha com linhas e colunas (Podemos dizer também que temos matrizes aqui) `r emo::ji("rainbow")`.
 
-Boa parte dos métodos disponíveis em uma `Series` também são aplicáveis em `DataFrames`, o que ajuda no aprendizado de utilização da API do pandas, mas é importante entender que, em diversos casos o simples fato de haver mais dimensões nos dados torna a manipulação diferente, com resultados diferentes (Isto para os mesmos métodos), sem contar que o armazenamento também pode diferir.
+Boa parte dos métodos disponíveis em uma `Series` também são aplicáveis em `DataFrames`, o que ajuda no aprendizado de utilização da API do Pandas, mas é importante entender que, em diversos casos o simples fato de haver mais dimensões nos dados torna a manipulação diferente, com resultados diferentes (Isto para os mesmos métodos).
 
 Vejamos algumas características bacanas dos `DataFrames`
 
@@ -165,7 +167,7 @@ A sintaxe de utilização básica para as duas estruturas de dados podem ser vis
 | .loc[linha, coluna]  | .loc[linha] |
 | .iloc[posição da linha, posição da coluna] | .iloc[posição da linha] |
 
-Os métodos mudam exatamente por conta das diferenças apresentadas entre as estruturas de dados, assim, o `.loc` e o `.iloc` permitem a busca por linhas e colunas nos `DataFrames` e somente das linhas de uma `Series`. 
+Os métodos mudam exatamente por conta das diferenças apresentadas entre as estruturas de dados, assim, o `.loc` e o `.iloc` permitem a busca por linhas e colunas nos `DataFrames` e somente das linhas em uma `Series`. 
 
 ```{python}
 df = pd.DataFrame({
@@ -190,15 +192,15 @@ df.iloc[2][['nome', 'idade']]
 df.iloc[1, 1]
 ```
 
-Dentro destes métodos de busca ainda é possível passar uma expressão booleana, para realizar um filtro dos dados.
+Dentro destes métodos de busca ainda é possível passar uma expressão booleana, para realizar um filtro dos dados. Veja o exemplo abaixo, de um `DataFrame`, é desejado todas as linhas da coluna `numeros`, onde os valores sejam maiores ou iguais a 5.
 
 ```{python}
-df = pd.DataFrame({'coluna': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]})
+df = pd.DataFrame({'numeros': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]})
 
-df[df['coluna'] >= 5]
+df[df['numeros'] >= 5]
 ```
 
-O exemplo acima foi apresentado com um `DataFrame`, mas também pode ser aplicado nas `Series`.
+> O exemplo acima foi apresentado com um `DataFrame`, mas também pode ser aplicado nas `Series`.
 
 Estes são os conceitos básicos para a manipulação e filtragem dos dados, existem muitos métodos para a manipulação e filtragem, aqui ainda veremos alguns deles, mas, inicialmente estes já resolver muitos problemas das etapas de análise de dados.
 
@@ -206,9 +208,9 @@ Estes são os conceitos básicos para a manipulação e filtragem dos dados, exi
 
 Muitas vezes queremos agrupar nossos dados, seja para facilitar a manipulação, o entendimento das relações dos dados, ou mesmo para aplicar funções sobre cada um dos grupos e obter informações a partir disto. Para tal pode ser usado os agrupamentos e agregações.
 
-As agregações apresentam diversas derivações de definição, a utiliza aqui será a seguinte: "Operações aplicadas sobre os dados que resultam em um conjunto de valores". 
+As agregações apresentam diversas derivações de definição, aqui foi assumido que "Agregações são operações aplicadas sobre os dados que resultam em um conjunto de valores". 
 
-No pandas, o retordo de uma agregação pode mudar de acordo com a estrutura de dados onde a operação é aplicada, no caso das `Series` é retornado apenas um valor. Para os `DataFrames`, um valor para cada linha/coluna é retornado.
+No Pandas, o retorno de uma agregação pode mudar de acordo com a estrutura de dados onde a operação é aplicada, no caso das `Series` é retornado apenas um valor escalar. Para os `DataFrames`, um valor para cada linha/coluna é retornado.
 
 Algumas operações de agregação são:
 
@@ -227,9 +229,11 @@ print(s.sum())
 print(df.sum())
 ```
 
-Já o agrupamento representa a divisão dos dados, em conjuntos que possuem alguma similaridade (O critério de similaridade é definido pelo usuário), no pandas o agrupamento é realizado com o método `groupby` presente nas classes `Series` e `DataFrames`.
+Já o agrupamento representa a divisão dos dados em conjuntos que possuem alguma similaridade, no Pandas o agrupamento é realizado com o método `groupby` presente nas classes `Series` e `DataFrames`.
 
-Aqui vamos focar no agrupamento dos `DataFrames`.
+> O critério de similaridade citado anteriormente é definido pelo usuário
+
+Aqui vamos focar no agrupamento dos `DataFrames`, mas os passos são os mesmos para as `Series`.
 
 ```{python}
 df = pd.DataFrame({
@@ -241,21 +245,19 @@ df = pd.DataFrame({
 agrupado = df.groupby('tipo')
 ```
 
-No exemplo acima, os dados foram agrupados de acordo com a coluna `tipo`, colocando no mesmo grupo, linhas que possuam o registro da coluna `tipo` igual.
+No exemplo acima, os dados foram agrupados de acordo com a coluna `tipo`, colocando no mesmo grupo linhas que possuam o registro da coluna `tipo` igual.
 
 Certo, a operação é simples e intuitiva, mas o que devemos esperar deste método ? Intuitivamente pensamos em um conjunto de `DataFrames`, cada um representando um grupo e é exatamente isto que o Pandas retorna, porém há algumas particularidades.
 
 O tipo retornado de um `groupby` deixa de ser um `DataFrame` e passa a ser um `DataFrameGroupBy`, que facilita a manipulação dos grupos com métodos especializados.
 
-Dentro do `DataFrameGroupBy` existe o atributo `groups` que possibilita verificar a lista com cada grupo gerado e seus membros.
-
-Caso você queira ver os grupos gerados, use o atributo `groups` no objeto gerado com o `groupby`.
+Vamos iniciar o entendimento do `DataFrameGroupBy` pela verificação dos grupos criados, este processo que é feito através do acesso ao método `groups`.
 
 ```{python}
 print(agrupado.groups)
 ```
 
-Além disto, com um objeto do tipo `DataFrameGroupBy` é possível aplicarmos os conceitos de agregação dentro dos grupos que foram gerados através do `groupby`.
+Acessando o atributo `groups` é possível verificar todos os grupos gerados e seus membros. Além disto, com um objeto `DataFrameGroupBy` é possível aplicarmos os conceitos de agregação dentro dos grupos que foram gerados através do `groupby`.
 
 Para entendermos o funcionamento do processo de agrupamento e agregação juntos, vejamos a definição feita pelo `Hadley Wickham`, que faz a separação de cada processo nas etapas `Dividir-Aplicar-Combinar`
 
