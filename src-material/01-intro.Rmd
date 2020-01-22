@@ -114,7 +114,7 @@ Resumindo essas tarefas, o analista deve possuir habilidades de limpeza, manipul
 
 ### Quais são as diferenças entre analista e cientista de dados?
 
-Tanto se fala de cientista dados, afinal, qual é a diferença?`r emo::ji("developer")` 
+Tanto se fala de analista e cientista de dados, afinal, qual é a diferença?`r emo::ji("developer")` 
 
 Acredito que seja uma dúvida super válida, já que segundo a revista [Harvard Business Review](https://hbr.org/2012/10/data-scientist-the-sexiest-job-of-the-21st-century), cientista de dados é considerada a profissão mais _sexy_ do século 21.
 
@@ -132,7 +132,7 @@ A definição que escolhemos foi do site **kdnuggets**: "O analista de dados é 
 
 ### Processos da análise de dados
 
-Agora que sabemos o que faz um analista de dados, é necessário entender as etapas do processo de análise de dados, apresentados na Figura \@ref(fig:fig1). Cada etapa será abordada com detalhes na documentação de R e Python.
+Agora que sabemos o que faz um analista de dados, é necessário entender as etapas do processo de análise de dados, apresentados na Figura \@ref(fig:fig1).
 
 ```{r fig1, echo=FALSE ,out.width = "150%", fig.cap='Etapas do processo de análise de dados - Fonte: @hadley2017'}
   knitr::include_graphics("./images/data-science.png", )
