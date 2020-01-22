@@ -379,7 +379,7 @@ Interessante! Os valores `(45716, 10)`, indicam respectivamente que, o conjunto 
 df.columns
 ```
 
-> A descrição de cada coluna está disponível na [página dos dados](https://www.kaggle.com/nasa/meteorite-landings), não deixe de conferir para um entendimento completo sobre os métodos de análise e os dados
+> A descrição de cada coluna está disponível na [página dos dados](https://www.kaggle.com/nasa/meteorite-landings), não deixe de conferir para o entendimento completo sobre os métodos de análise e os dados
 
 Vamos explorar a coluna `nametype`, que indica o tipo de meteorito, havendo dois tipos possíveis:
 
@@ -434,7 +434,7 @@ df_gt_mass_500 = df[df['mass'] > 500]
 df_gt_mass_500.shape # Quantidade bem pequena
 ```
 
-É isto, este foi o exemplo para mostrar que com os poucos métodos que vimos neste curso de introdução, é possível tirar várias informações do conjunto de dados, desde que, seja possível entender a estrutura e semântica dos dados.
+É isto, este foi o exemplo para mostrar que com os poucos métodos que vimos neste curso de introdução, é possível tirar várias informações do conjunto de dados, desde que, a estrutura e semântica dos dados seja entendida.
 
 ## Para saber mais
 

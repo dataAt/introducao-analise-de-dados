@@ -128,17 +128,16 @@ Segundo *Josh Wills*, um cientista de dados é melhor em estatística do que qua
 
 A definição que escolhemos foi do site **kdnuggets**: "O analista de dados é como o Sherlock Holmes `r emo::ji("search")` do time de ciência de dados". Ainda em sua definição, "o analista busca resposta para o time e para o negócio. Por outro lado o cientista de dados, cria modelos estatísticos de aprendizado de máquina, visualizações mais elaboradas e gera novas perguntas em relação aos dados".
 
-> Fiquem à vontade para adicionar mais diferenças, basta ler nosso [README](https://github.com/dataAt/introducao-analise-de-dados).
+> Fiquem à vontade para adicionar mais diferenças, veja como contribuir no [README](https://github.com/dataAt/introducao-analise-de-dados) do projeto.
 
 ### Processos da análise de dados
 
-Agora que sabemos o que faz um analista de dados, é necessário entender cada etapa do processo de análise de dados. A Figura \@ref(fig:fig1) apresenta o processo mencionado. Cada etapa é abordada com detalhes em ambas as linguagens (R e Python).
+Agora que sabemos o que faz um analista de dados, é necessário entender as etapas do processo de análise de dados, apresentados na Figura \@ref(fig:fig1). Cada etapa será abordada com detalhes na documentação de R e Python.
 
 ```{r fig1, echo=FALSE ,out.width = "150%", fig.cap='Etapas do processo de análise de dados - Fonte: @hadley2017'}
   knitr::include_graphics("./images/data-science.png", )
 
 ```
-
 
 Primeiro, é importante **importar** os dados nos mais diferentes formatos `.csv, .kml, .json`. Após a leitura dos dados, é necessário limpá-los e transformá-los em **tidy**. O termo **tidy** refere-se a estrutura do conjunto de dados, onde cada coluna é uma variável e cada linha é uma observação @hadley2017. Por exemplo, em R:
 
