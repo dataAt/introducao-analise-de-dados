@@ -341,11 +341,11 @@ df.to_json('nome_do_json.json') # Salva o JSON
 
 Viu ? É tudo muito simples e direto, o que te permite focar em sua análise e deixar de lado problemas com sintaxe `r emo::ji("statue_of_liberty")`. Para fechar esta seção de análise de dados com Python e Pandas, vejamos uma análise completa, aplicável ao mundo real utilizando todos os conceitos que vimos até aqui.
 
-## Exemplo - Análise de dados com Python
+## Exemplos
 
 Para a realização desta análise de exemplo foi utilizado o conjunto de dados [Meteorite Landings](https://www.kaggle.com/nasa/meteorite-landings), com registros de mais de 45 mil meteoros que atingiram a Terra. Os dados foram retirados da plataforma [kaggle.com](https://www.kaggle.com/).
 
-Para iniciar a análise, da mesma forma que foi feito nos exemplos, é necessário import o pandas
+Para iniciar a análise, da mesma forma que foi feito nos exemplos, é necessário importar o pandas
 
 ```{python}
 import pandas as pd

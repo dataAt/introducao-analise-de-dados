@@ -481,7 +481,9 @@ Agora, vamos otimizar nossa manipulação usando **pipe**, desta forma:
 
 Essa é a principal função do operador **pipe**, tornar o código mais limpo e reprodutível. 
 
-Para encerrarmos esse capítulo de R, vamos mostrar uma análise de dados aplicável ao mundo real, com uso de dois conjuntos de dados, obtidos através da plataforma [kaggle](https://www.kaggle.com/). Os conjuntos de dados correspondem a série temporal da [mudança climática da temperatura da supércie terrestre](https://www.kaggle.com/berkeleyearth/climate-change-earth-surface-temperature-data) e os [continentes de cada país](https://www.kaggle.com/statchaitya/country-to-continent). O objetivo desta análise é verificar qual o continente que registrou a maior média anual de temperatura.
+## Exemplos
+
+Para encerrarmos esse capítulo de R, vamos mostrar uma análise de dados aplicada no mundo real, com uso de dois conjuntos de dados, obtidos através da plataforma [kaggle](https://www.kaggle.com/). Os conjuntos de dados correspondem a série temporal de [mudança climática da temperatura da supércie terrestre](https://www.kaggle.com/berkeleyearth/climate-change-earth-surface-temperature-data) e os [continentes de cada país](https://www.kaggle.com/statchaitya/country-to-continent). O objetivo desta análise é verificar qual o continente que registrou a maior média anual de temperatura.
 
 ```{r, message=FALSE}
   # Importação dos pacotes utilizados

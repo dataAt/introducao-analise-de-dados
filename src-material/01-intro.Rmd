@@ -147,7 +147,7 @@ Primeiro, é importante **importar** os dados nos mais diferentes formatos `.csv
                            idade=c(14, 15, 21),
                            escolaridade=c("EF", "EM", "Graduacao" ))
   
-  kable(escola)
+  knitr::kable(escola)
 ```
 
 Sabemos que `Joao` tem `14` anos e está no `ensino fundamental`, seguindo a ideia do formato **tidy**.

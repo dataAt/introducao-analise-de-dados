@@ -6,9 +6,9 @@ A visualização de dados pode ser considerada uma das mais importantes etapas d
 
 Porém, criar formas de visualizar dados pode não ser uma atividade simples, muitas etapas acabam sendo necessárias. É neste contexto que entra o `ggplot`, uma biblioteca de alto nível, criada para tornar o processo de visualização de dados mais simples, possuindo implementações em **R** com o pacote [ggplot2](https://ggplot2.tidyverse.org/) e em **Python** com o pacote [plotnine](https://plotnine.readthedocs.io/en/stable/), ambos completamente compativeis.
 
-Esta seção faz a apresentação aos conceitos básicos necessários para a utilização do `ggplot`.
+Esta seção apresenta os conceitos básicos necessários para a utilização do `ggplot`.
 
-> Os exemplos abaixo serão apresentados utilizando **R**, mas você pode sem nenhum problema executar os códigos em **Python** através da biblioteca `plotnine`.
+> Os exemplos abaixo serão apresentados em **R**, mas você pode sem nenhum problema executar os códigos em **Python** através da biblioteca `plotnine`.
 
 ## O que é o `ggplot`?
 
@@ -190,7 +190,7 @@ Nesta subseção vamos usar conjuntos de dados reais para demonstrar o uso do `g
 
 ### Gráfico de coordenadas paralelas
 
-```{r}
+```{r, message = FALSE}
   # importação dos pacotes usados
   library(tidyr)
   library(dplyr)
@@ -229,7 +229,7 @@ Assim como apresentado anteriormente, podemos dividir nosso gráfico em subgráf
 ```
 
 
-Observe que todos conteúdos apresentados neste livro estão sendo utilizados nos gráficos apresentados acima. 
+Observe que, todos os conteúdos abordados neste livro estão sendo utilizados nos gráficos apresentados acima. 
 
 ## Gráfico de colunas
 
@@ -237,17 +237,17 @@ Para criar nosso gráfico de colunas vamos utilizar o conjunto de dados de tempe
 
 ```{r}
   # Importação dos dados como variável de ambiente
-  data("storms")
+  storms <- dplyr::storms
   
   # Visualização dos dados
   head(storms, 5)
 ```
 
-> Para mais informações do conjunto de dados, basta utilizar `?storms`
+> Para mais informações do conjunto de dados, basta utilizar `?dplyr::storms`
 
 Como podemos observar, o dado consiste em um série temporal de tempestades registradas. Qual é o tipo de tempestade mais recorrente?
 
-```{r}
+```{r, message=FALSE}
   # Temas para o pacote ggplot2
   library(cowplot)
   library(forcats) 
@@ -275,7 +275,7 @@ Nesta subseção vamos utilizar os dados dos preços de diamantes, podemos impor
 
 ```{r}
   # Importação do conjunto de dados como variável de ambiente
-  data("diamonds")
+  diamonds <- ggplot2::diamonds
 
   # Visualização das cinco primeiras observações
   head(diamonds, 5)
@@ -284,7 +284,7 @@ Nesta subseção vamos utilizar os dados dos preços de diamantes, podemos impor
 Vamos utilizar os atributos `cut`, `price` e `clarity`, correspodentes a qualidade do corte do diamente, ao preço e a medição de qualidade, respectivamente. 
 
 
-```{r}
+```{r, message=FALSE}
   # importação do pacote Lemon
   library(lemon)
   
