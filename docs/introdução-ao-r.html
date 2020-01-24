@@ -151,7 +151,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.3" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#estruturas-de-decisão"><i class="fa fa-check"></i><b>2.3</b> Estruturas de decisão</a></li>
 <li class="chapter" data-level="2.4" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#iteração"><i class="fa fa-check"></i><b>2.4</b> Iteração</a></li>
 <li class="chapter" data-level="2.5" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#manipulação-de-dados"><i class="fa fa-check"></i><b>2.5</b> Manipulação de dados</a></li>
-<li class="chapter" data-level="2.6" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#para-saber-mais"><i class="fa fa-check"></i><b>2.6</b> Para saber mais</a></li>
+<li class="chapter" data-level="2.6" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#exemplos"><i class="fa fa-check"></i><b>2.6</b> Exemplos</a></li>
+<li class="chapter" data-level="2.7" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#para-saber-mais"><i class="fa fa-check"></i><b>2.7</b> Para saber mais</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="introdução-ao-python.html"><a href="introdução-ao-python.html"><i class="fa fa-check"></i><b>3</b> Introdução ao Python 🚀</a><ul>
 <li class="chapter" data-level="3.1" data-path="introdução-ao-python.html"><a href="introdução-ao-python.html#introdução-ao-pandas"><i class="fa fa-check"></i><b>3.1</b> Introdução ao Pandas 🐼</a></li>
@@ -162,7 +163,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.2.4" data-path="introdução-ao-python.html"><a href="introdução-ao-python.html#agrupamento-de-dados-e-agregações"><i class="fa fa-check"></i><b>3.2.4</b> Agrupamento de dados e agregações</a></li>
 <li class="chapter" data-level="3.2.5" data-path="introdução-ao-python.html"><a href="introdução-ao-python.html#funções-de-leitura-e-escrita-de-dados"><i class="fa fa-check"></i><b>3.2.5</b> Funções de leitura e escrita de dados</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="introdução-ao-python.html"><a href="introdução-ao-python.html#exemplo---análise-de-dados-com-python"><i class="fa fa-check"></i><b>3.3</b> Exemplo - Análise de dados com Python</a></li>
+<li class="chapter" data-level="3.3" data-path="introdução-ao-python.html"><a href="introdução-ao-python.html#exemplos-1"><i class="fa fa-check"></i><b>3.3</b> Exemplos</a></li>
 <li class="chapter" data-level="3.4" data-path="introdução-ao-python.html"><a href="introdução-ao-python.html#para-saber-mais-1"><i class="fa fa-check"></i><b>3.4</b> Para saber mais</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="introdução-ao-ggplot.html"><a href="introdução-ao-ggplot.html"><i class="fa fa-check"></i><b>4</b> Introdução ao ggplot 📊</a><ul>
@@ -172,7 +173,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.4" data-path="introdução-ao-ggplot.html"><a href="introdução-ao-ggplot.html#escalas"><i class="fa fa-check"></i><b>4.4</b> Escalas</a></li>
 <li class="chapter" data-level="4.5" data-path="introdução-ao-ggplot.html"><a href="introdução-ao-ggplot.html#subplots"><i class="fa fa-check"></i><b>4.5</b> Subplots</a></li>
 <li class="chapter" data-level="4.6" data-path="introdução-ao-ggplot.html"><a href="introdução-ao-ggplot.html#temas"><i class="fa fa-check"></i><b>4.6</b> Temas</a></li>
-<li class="chapter" data-level="4.7" data-path="introdução-ao-ggplot.html"><a href="introdução-ao-ggplot.html#exemplos"><i class="fa fa-check"></i><b>4.7</b> Exemplos</a><ul>
+<li class="chapter" data-level="4.7" data-path="introdução-ao-ggplot.html"><a href="introdução-ao-ggplot.html#exemplos-2"><i class="fa fa-check"></i><b>4.7</b> Exemplos</a><ul>
 <li class="chapter" data-level="4.7.1" data-path="introdução-ao-ggplot.html"><a href="introdução-ao-ggplot.html#gráfico-de-coordenadas-paralelas"><i class="fa fa-check"></i><b>4.7.1</b> Gráfico de coordenadas paralelas</a></li>
 </ul></li>
 <li class="chapter" data-level="4.8" data-path="introdução-ao-ggplot.html"><a href="introdução-ao-ggplot.html#gráfico-de-colunas"><i class="fa fa-check"></i><b>4.8</b> Gráfico de colunas</a></li>
@@ -199,15 +200,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="introdução-ao-r" class="section level1">
 <h1><span class="header-section-number">2</span> Introdução ao R</h1>
-<p><strong>R</strong> é uma linguagem de programação de alto nível voltada para visualização e análise de dados. Em essência foi inspirada na linguagem de programação <strong>S</strong> (do inglês <em>stats</em>). Foi inicialmente escrita por <a href="https://en.wikipedia.org/wiki/Ross_Ihaka"><strong>R</strong>oss Ihaka</a> e <a href="https://en.wikipedia.org/wiki/Robert_Gentleman_(statistician)"><strong>R</strong>obert Gentleman</a> no departamento de estatística da universidade de Auckland na Nova Zelândia. Atualmente a linguagem é mantida pelo grupo <strong>R Core Team</strong> que são pessoas do mundo inteiro tentando melhorar a linguagem dia após dia. Esse conteúdo foi baseado no livro <em>THE R BOOK</em> escrito por <span class="citation">Crawley (2012)</span>, sendo considerado a bíblia do R.</p>
+<p><strong>R</strong> é uma linguagem de programação de alto nível voltada para visualização e análise de dados. Em essência foi inspirada na linguagem de programação <strong>S</strong> (do inglês <em>stats</em>). Foi inicialmente escrita por <a href="https://en.wikipedia.org/wiki/Ross_Ihaka"><strong>R</strong>oss Ihaka</a> e <a href="https://en.wikipedia.org/wiki/Robert_Gentleman_(statistician)"><strong>R</strong>obert Gentleman</a> no departamento de estatística da universidade de Auckland na Nova Zelândia. Atualmente a linguagem é mantida pelo grupo <strong>R Core Team</strong> composto por pessoas do mundo inteiro que tentam melhorar a linguagem dia após dia. Esse conteúdo foi baseado no livro <em>THE R BOOK</em> escrito por <span class="citation">Crawley (2012)</span>, sendo considerado a bíblia do R.</p>
 <p>O kernel do <strong>R</strong> e os pacotes podem ser baixados pelo
 <a href="https://cran.r-project.org/">CRAN</a> - <em>C</em>omprehensive <strong>R</strong> <strong>A</strong>rchive <strong>N</strong>etwork. Para instalar os pacotes em R:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">  <span class="co"># Via CRAN</span></a>
 <a class="sourceLine" id="cb4-2" data-line-number="2">  <span class="kw">install.packages</span>(<span class="st">&quot;nome_do_pacote&quot;</span>)</a>
 <a class="sourceLine" id="cb4-3" data-line-number="3">  </a>
-<a class="sourceLine" id="cb4-4" data-line-number="4">  <span class="co"># Via github</span></a>
+<a class="sourceLine" id="cb4-4" data-line-number="4">  <span class="co"># Via github (Pacote remotes)</span></a>
 <a class="sourceLine" id="cb4-5" data-line-number="5">  remotes<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;nome_do_repositorio/nome_do_pacote&quot;</span>)</a></code></pre></div>
-<p>O objetivo deste capítulo é abordar, de forma introdutória, alguns conceitos básicos do R, por favor, sinta-se à vontade para contribuir.</p>
+<p>O objetivo deste capítulo é abordar, de forma introdutória, alguns conceitos básicos do R. Caso existam informações que você acha relevante estar aqui, sinta-se à vontade para contribuir.</p>
 <div id="definição-de-variáveis" class="section level2">
 <h2><span class="header-section-number">2.1</span> Definição de variáveis</h2>
 <p>Para atribuir qualquer valor à uma variável usamos uma seta <code>&lt;-</code> ou <code>=</code>, apontando-a para a variável. Segundo <span class="citation">Wickham and Grolemund (2017)</span>, usa-se a seta <code>&lt;-</code> como forma de boas práticas. Assim, para declarar as variáveis:</p>
@@ -892,7 +893,7 @@ História
 </tr>
 </tbody>
 </table>
-<p>Melhorou um pouco, não? 🔹. Podemos melhorar ainda mais, como? Usando <code>%&gt;%</code> este símbolo, chamado de <strong>pipe</strong> ou <strong>então</strong>, basicamente, é a <code>pipe</code> utilizada no <strong>Linux</strong>.</p>
+<p>Melhorou um pouco, não? 🔷. Podemos melhorar ainda mais, como? Usando <code>%&gt;%</code> este símbolo, chamado de <strong>pipe</strong> ou <strong>então</strong>, basicamente, é a <code>pipe</code> utilizada no <strong>Linux</strong>.</p>
 <p>A <strong>pipe</strong> passa a resposta da primeira atribuição para o primeiro parâmetro da função seguinte, desta forma:</p>
 <div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb65-1" data-line-number="1">meu_vetor &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">9</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mean</span>()</a>
 <a class="sourceLine" id="cb65-2" data-line-number="2">  </a>
@@ -940,7 +941,10 @@ História
 </tbody>
 </table>
 <p>Essa é a principal função do operador <strong>pipe</strong>, tornar o código mais limpo e reprodutível.</p>
-<p>Para encerrarmos esse capítulo de R, vamos mostrar uma análise de dados aplicável ao mundo real, com uso de dois conjuntos de dados, obtidos através da plataforma <a href="https://www.kaggle.com/">kaggle</a>. Os conjuntos de dados correspondem a série temporal da <a href="https://www.kaggle.com/berkeleyearth/climate-change-earth-surface-temperature-data">mudança climática da temperatura da supércie terrestre</a> e os <a href="https://www.kaggle.com/statchaitya/country-to-continent">continentes de cada país</a>. O objetivo desta análise é verificar qual o continente que registrou a maior média anual de temperatura.</p>
+</div>
+<div id="exemplos" class="section level2">
+<h2><span class="header-section-number">2.6</span> Exemplos</h2>
+<p>Para encerrarmos esse capítulo de R, vamos mostrar uma análise de dados aplicada no mundo real, com uso de dois conjuntos de dados, obtidos através da plataforma <a href="https://www.kaggle.com/">kaggle</a>. Os conjuntos de dados correspondem a série temporal de <a href="https://www.kaggle.com/berkeleyearth/climate-change-earth-surface-temperature-data">mudança climática da temperatura da supércie terrestre</a> e os <a href="https://www.kaggle.com/statchaitya/country-to-continent">continentes de cada país</a>. O objetivo desta análise é verificar qual o continente que registrou a maior média anual de temperatura.</p>
 <div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb70-1" data-line-number="1">  <span class="co"># Importação dos pacotes utilizados</span></a>
 <a class="sourceLine" id="cb70-2" data-line-number="2">  <span class="kw">library</span>(readr)     <span class="co"># Leitura de dados retangulares</span></a>
 <a class="sourceLine" id="cb70-3" data-line-number="3">  <span class="kw">library</span>(dplyr)     <span class="co"># Métodos para manipulação de dados</span></a>
@@ -1010,7 +1014,7 @@ História
 <p>Enfim, podemos responder diversas perguntas com poucas linhas de código. Esperamos que este capítulo tenha despertado sua curiosidade sobre análise de dados. Os materiais base utilizados para criação deste capítulo se encontram nesta <a href="https://dataat.github.io/introducao-analise-de-dados/introdu%C3%A7%C3%A3o-ao-r.html#para-saber-mais">subseção</a>.</p>
 </div>
 <div id="para-saber-mais" class="section level2">
-<h2><span class="header-section-number">2.6</span> Para saber mais</h2>
+<h2><span class="header-section-number">2.7</span> Para saber mais</h2>
 <p>Este foi só o começo! Para continuar e aprender mais, consulte:</p>
 <ul>
 <li><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/complex.html">Números complexos</a></li>
