@@ -2,10 +2,10 @@
 
 \usepackage{sbc-template}
 
-\usepackage{graphicx,url}
+\usepackage{hyperref}
+\usepackage{graphicx, url}
 
 \usepackage[brazil]{babel}   
-%\usepackage[latin1]{inputenc}  
 \usepackage[utf8]{inputenc}  
 
 \sloppy
@@ -14,69 +14,40 @@
 
 \author{Felipe Carvalho\inst{1}, Felipe Menino\inst{1}}
 
-\address{FATEC "Jessen Vidal" 
+\address{Instituto Nacional de Pesquisas Espaciais
     \email{felipe.carvalho@inpe.br},
     \email{felipe.carlos@fatec.sp.gov.br}
-% \nextinstitute
-%   Department of Computer Science -- University of Durham\\
-%   Durham, U.K.
-% \nextinstitute
-%   Departamento de Sistemas e Computação\\
-%   Universidade Regional de Blumenal (FURB) -- Blumenau, SC -- Brazil
-%   \email{\{nedel,flavio\}@inf.ufrgs.br, R.Bordini@durham.ac.uk,
-%   jomi@inf.furb.br}
 }
 
 \begin{document} 
 
 \maketitle
-
-% \begin{abstract}
-%   This meta-paper describes the style to be used in articles and short papers
-%   for SBC conferences. For papers in English, you should add just an abstract
-%   while for the papers in Portuguese, we also ask for an abstract in
-%   Portuguese (``resumo''). In both cases, abstracts should not have more than
-%   10 lines and must be in the first page of the paper.
-% \end{abstract}
      
 \begin{resumo} 
-    A aplicação dos conceitos vistos no mini-curso de introdução a análise de dados é extremamente importante para a fixação dos conteúdos. Esta é uma lista de atividades para auxiliar o aluno na fixação de todo o conteúdo.
+    A aplicação dos conceitos vistos no minicurso de introdução à análise de dados é extremamente importante para a fixação dos conceitos. Desta forma, esta lista de exercícios busca criar situações que ajudem o aluno na aplicação e fixação de tais conceitos.
 \end{resumo}
 
 \section{Contexto}
 
-Um \textbf{web scrap} foi realizado com dez mil aplicativos da \textbf{Google Play Store}. Estes dados estão disponibilizados no \textbf{Kaggle}.
+Atualmente na \textbf{Google Play Store} existem milhares de aplicativos, com as mais variadas características. Um conjunto de dados disponibilizados no \href{https://www.kaggle.com/}{Kaggle} traz informações gerais sobre 10 mil aplicativos disponibilizados na loja.
 
-O interessante deste conjunto é tentar fazer verificações dos tipos mais populares de aplicativos, para quem sabe, ao começar um novo aplicativo, você já saiba uma tendência a seguir.
+O interessante deste conjunto é tentar fazer verificações dos tipos mais populares de aplicativos, para quem sabe, ao começar um novo aplicativo, você já saber qual tendência seguir.
 
-Para esta análise, um conjunto amostral de 1000 registros será utilizado, porém, encorajamos você a depois que finalizar a atividade, acessar o \textbf{Kaggle} e ver este e outros conjuntos de dados completos.
-
-O link é este: https://www.kaggle.com/lava18/google-play-store-apps
+Para esta análise, um conjunto amostral de 1000 registros será utilizado, porém, encorajamos você a depois que finalizar a atividade, acessar a \href{https://www.kaggle.com/lava18/google-play-store-apps}{página dos dados} e fazer a análise com todos os dados.
 
 \section{Atividade}
 
-Como demonstrado ao longo das atividades do curso, à analise de dados é basicamente uma atividade utilizada para responder perguntas através de diferentes métodos de tratamento de manipulação dos dados.
+Como apresentado ao longo das atividades do curso, a analise de dados é basicamente uma atividade utilizada para responder perguntas através de diferentes métodos de tratamento e manipulação dos dados.
 
-Com este conjunto de dados, responda as seguintes questões:
+Com base nisto, faça a análise do conjunto de dados \textbf{MIAD003}, que está no repositório do minicurso, dentro do diretório \textbf{atividades}.
+
+Com este conjunto de dados, responda as seguintes perguntas:
 
 \begin{itemize}
     \item Qual a categoria de aplicativo mais comum na \textbf{Google Play Store} ?
     \item Qual a categoria dos aplicativos com maior média de avaliações ?
-    \item Nos aplicativos com avaliações maiores que 4, qual a quantidade de \textbf{reviews} ? Padrões altos de avaliação, podem ser vinculados a quantidade de \textit{reviews} ?
     \item A maior quantidade de \textit{reviews} pertence a qual aplicativo ?
     \item Há mais aplicativos pagos ou grátis neste conjunto de dados ?
 \end{itemize}
-
-% \section{Referências}
-% Bibliographic references must be unambiguous and uniform.  We recommend giving
-% the author names references in brackets, e.g. \cite{knuth:84},
-% \cite{boulic:91}, and \cite{smith:99}.
-
-% The references must be listed using 12 point font size, with 6 points of space
-% before each reference. The first line of each reference should not be
-% indented, while the subsequent should be indented by 0.5 cm.
-
-% \bibliographystyle{sbc}
-% \bibliography{sbc-template}
 
 \end{document}
