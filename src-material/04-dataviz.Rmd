@@ -21,7 +21,7 @@ Esta seção apresenta os conceitos básicos necessários para a utilização do
 
 ## O que é o `ggplot`?
 
-Bom, `ggplot`é um pacote em R criado por _Hadley Wickham_ e seus colaboradores, como mencionado anteriormente, sua sintaxe se baseia na obra [The Grammar of Graphics](https://www.amazon.com/Grammar-Graphics-Statistics-Computing/dp/0387245448). Assim, a **gramática dos gráficos** é um conjunto de camadas, cujo o mapeamento dos atributos é chamado de _aesthetics_. O esqueleto pode ser escrito assim:
+Bom, `ggplot` é um pacote em R criado por _Hadley Wickham_ e seus colaboradores, como mencionado anteriormente, sua sintaxe se baseia na obra [The Grammar of Graphics](https://www.amazon.com/Grammar-Graphics-Statistics-Computing/dp/0387245448). Assim, a **gramática dos gráficos** é um conjunto de camadas, cujo o mapeamento dos atributos é chamado de _aesthetics_. O esqueleto pode ser escrito assim:
 
 ```{r,eval = FALSE}
   ggplot(data = <DATA>, aes(<MAPPINGS>)) + 
