@@ -1,6 +1,15 @@
+---
+output: bookdown::html_document2
+bibliography: bibtex.bib
+fig_caption: yes
+header-includes:
+- \usepackage{float}
+- \floatsetup[table]{capposition=bot}
+---
+
 # Introdução ao ggplot `r emo::ji("bar_chart")`
 
-A visualização de dados pode ser considerada uma das mais importantes etapas do processo de análise de dados, é através dela que diversos fenômenos presentes nos dados poderão ser explicados e visualizados.
+A visualização de dados pode ser considerada uma das mais importantes etapas do processo de análise de dados, é através dela que diversos fenômenos presentes nos dados podem ser explicados e visualizados.
 
 > Quando não souber como explicar, mostre, afinal, uma imagem vale mais que mil palavras.
 
@@ -29,7 +38,8 @@ Vamos explicar linha por linha do código acima. Vamos lá `r emo::ji("calculati
 
 ## Mapeamento Estético
 
-Podemos mapear dentro da função `ggplot()` ou dentro de alguma geometria. A imagem abaixo, retirada do livro do @claus2019, mostra os métodos geométricos do mapeamento estético.
+
+A estética refere-se a cada aspecto de um dado elemento gráfico. Descrevemos as posições (`position`) por um valor x e y, mas outros sistemas de coordenadas são possíveis. É possível alterar a forma (`shape`), tamanho (`size`) e cor (`size`) dos elementos [@claus2019]. A imagem abaixo, retirada do livro do @claus2019, mostra os componentes do mapeamento estético.
 
 ![](./images/aes_ggplot.png)
 
@@ -71,14 +81,15 @@ Bom, agora que mapeamos nossos atributos é possível ver que no eixo `x` está 
 
 ## Objetos geométricos
 
-Aprendemos o mapeamento estético, agora vamos colocar alguns objetos geométricos no nosso gráfico, com base nessa tabela, retirado da livro [Ciência de dados em R](https://cdr.ibpad.com.br/):
+
+Os objetos geométricos representam os objetos a serem adicionados no gráficos, por exemplo, pontos (`geom_point`), colunas (`geom_col`), linha (`geom_line`). Observe que, os objetos geométricos são sufixos do métodos `geom_`. A tabela abaixo, retirada do livro [Ciência de dados em R](https://cdr.ibpad.com.br/), mostra os tipos de geométricos mais comuns:
 
 ---------------------------------------------------------------------------------------------------------------------
                           Tipo                                                          Objeto Geométrico
 ------------------------------------------------------------    -----------------------------------------------------
                  Dispersão (scatterplot)                                                  `geom_point()`        
                  
-                 Gráfico de bolhas                                                        `geom_point()`
+                 Gráfico de pontos                                                        `geom_point()`
                  
                  Gráfico de barras                                                    `geom_bar()` e `geom_col()`                      
                  Histograma                                                               `geom_histogram()`    
@@ -90,7 +101,7 @@ Aprendemos o mapeamento estético, agora vamos colocar alguns objetos geométric
                  Gráfico de linhas                                                        `geom_line()`
 ----------------------------------------------------------------------------------------------------------------------
 
-Vamos utilizar `geom_point` para fazer um gráfico bolhas no conjunto de dados, deste modo:
+Vamos utilizar `geom_point` para fazer um gráfico de pontos no conjunto de dados, deste modo:
 
 ```{r}
   # Adição de um objeto geométrico
@@ -99,14 +110,16 @@ Vamos utilizar `geom_point` para fazer um gráfico bolhas no conjunto de dados, 
 ```
 
 
-Olha que legal. No entanto, ainda faltam informações no nosso gráficos, por exemplo, no eixo `x`, não sabemos se começa com 0 ou 1 e o nome dos nossos atributos não estão informativos. 
+Olha que legal. No entanto, ainda faltam informações no nosso gráficos, por exemplo, no eixo `x` não sabemos se começa com 0 ou 1 e o nome dos atributos não estão informativos. 
 
 
 ## Escalas
 
 Bom, agora é a hora de melhorar nosso gráfico, que por sinal está bem estranho, vamos lá!
 
-Primeiro, vamos mudar o nome dos nossos atributos em cada eixo e também mudar as escalas:
+O `ggplot` cria as escalas de forma automática, no entanto, é interessante ajustar as escalas para manter o gráfico mais fidedigno em relação aos seus eixos.  
+
+Primeiro, vamos mudar o nome dos nossos atributos em cada eixo e também alterar as escalas:
 
 ```{r}
   # Adição de escalas no eixo x e y
@@ -116,6 +129,8 @@ Primeiro, vamos mudar o nome dos nossos atributos em cada eixo e também mudar a
     scale_y_continuous(name="Média dos alunos", breaks = seq(1, 6, 0.5))
 
 ```
+
+Como as variáveis utilizadas são contínuas, podemos utilizar a função `scale_x_continuous`. Caso seja uma variável categórica, por exemplo, o nome dos alunos, usamos `scale_x_discrete`.
 
 Ainda falta mais informações, por exemplo, o título do nosso gráfico e melhorar a legenda. 
 
@@ -136,10 +151,15 @@ Ainda falta mais informações, por exemplo, o título do nosso gráfico e melho
 
 É possível observar que o aluno com id **5** não possui média em nenhuma disciplina. Agora, que tal dividirmos nosso gráfico em sub gráficos? `r emo::ji("cool")`.
 
-## Subplots
+## Subplots (facet)
 
-Bom, é possível visualizar de forma dividida nosso gráfico em subgráficos, usando `facet_wrap`, desta forma:
+Podemos dividir nosso gráfico em subgráficos utilizandos as funções `facet_grid` e `facet_wrap`:
 
+-`facet_grid`: Forma uma matriz de painéis definidos por linhas e colunas. É mais útil quando se tem duas variáveis discretas, e todas as combinações das variáveis existem nos dados.
+
+-`facet_wrap`: Converte painéis de uma dimensão para duas dimensões.
+  
+> Definições retiradas da documentação e do livro @cdr2018. 
 
 ```{r}
   # Definição de cores para cada disciplina
@@ -160,7 +180,7 @@ Bom, é possível visualizar de forma dividida nosso gráfico em subgráficos, u
 
 ```
 
-Usei `labs` para mostrar que essa função também altera o nome dos eixos.
+Usamos o `labs` para mostrar que essa função também altera o nome dos eixos.
 
 ## Temas
 
