@@ -1,0 +1,83 @@
+---
+output:
+    pdf_document:
+      citation_package: natbib
+      df_print: tibble
+      fig_caption: yes
+      keep_tex: no
+      template: "../template/latex-ms.tex"
+title: 'Introdução à análise de dados'
+author:
+- affiliation: National Institute for Space Research (INPE), Brazil
+  name: Felipe Carvalho
+- affiliation: National Institute for Space Research (INPE), Brazil
+  name: Felipe Menino
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+endnote: false
+fontfamily: mathdesign
+fontfamilyoptions: adobe-utopia
+fontsize: 11pt
+graphics: true
+header-includes:
+ \usepackage{float}
+ \usepackage[utf8]{inputenc}
+ \usepackage[T1]{fontenc}
+ \usepackage{multirow}
+ \usepackage{xcolor}
+ \usepackage{hyperref}
+mathtools: true
+bibliography: ./template/references-sits.bib
+abstract: A aplicação dos conceitos vistos no minicurso de introdução à análise de dados é extremamente importante para a fixação dos conceitos. Desta forma, esta lista de exercícios busca criar situações que ajudem o aluno na aplicação e fixação de tais conceitos.
+---
+
+# 1. Contexto
+
+A Universidade Federal do Oeste da Bahia (UFOB), disponibiliza dados nominais de alunos que trancaram suas matrículas na universidade. Os dados disponibilizados referentes aos anos de 2014 à 2017 estão no \href{http://dados.gov.br/dataset/estudantes-com-matricula-trancada}{Portal Brasileiro de Dados Abertos}
+
+# 2. Atividade
+
+Como apresentado ao longo das atividades do curso, a analise de dados é basicamente uma atividade utilizada para responder perguntas através de diferentes métodos de tratamento e manipulação dos dados.
+
+Com base nisto, faça a análise do conjunto de dados \textbf{MIAD002}, que está no repositório do minicurso, dentro do diretório \textbf{atividades}.
+
+Com este conjunto de dados, responda as seguintes questões:
+
+\begin{enumerate}
+    \item Qual o curso com maior quantidade de matrículas trancadas no ano de 2015 ?
+    \item Faça um \textbf{plot} com a variação entre os anos do número de matrículas trancadas por curso.
+    \item Qual semestre (de todos os anos) contém a maior taxa de matrículas trancadas ?
+\end{enumerate}
+  
+\newpage
+
+## \textit{\textbf{Dicas}}
+
+Abaixo uma tabela com a relação de funções que podem ser úteis para a solução dos exercícios propostos
+
+```{r, tab1, echo=FALSE}
+  library(kableExtra)
+
+  tabela <- tibble::tibble(`Descrição` = c(
+    "Leitura de dados", 
+    "Agrupamento", 
+    "Filtro", 
+    "Desvio padrão", 
+    "Média",
+    "Mínino",
+    "Máximo"),
+    `R` = c("readr::read_csv()",
+            "dplr::group_by()",
+            "dplyr::filter()",
+            "stats::sd()",
+            "mean()",
+            "min()",
+            "max()"),
+    `Python` = c("pd.read_csv()",
+                 "pd.DataFrame.groupby()",
+                 "pd.DataFrame[Condição]",
+                 "pd.DataFrame.std()",
+                 "pd.DataFrame.mean()",
+                 "pd.DataFrame.min()",
+                 "pd.DataFrame.max()"));
+  knitr::kable(tabela, format = "markdown")
+```
