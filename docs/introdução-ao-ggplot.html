@@ -171,7 +171,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.2" data-path="introdução-ao-ggplot.html"><a href="introdução-ao-ggplot.html#mapeamento-estético"><i class="fa fa-check"></i><b>4.2</b> Mapeamento Estético</a></li>
 <li class="chapter" data-level="4.3" data-path="introdução-ao-ggplot.html"><a href="introdução-ao-ggplot.html#objetos-geométricos"><i class="fa fa-check"></i><b>4.3</b> Objetos geométricos</a></li>
 <li class="chapter" data-level="4.4" data-path="introdução-ao-ggplot.html"><a href="introdução-ao-ggplot.html#escalas"><i class="fa fa-check"></i><b>4.4</b> Escalas</a></li>
-<li class="chapter" data-level="4.5" data-path="introdução-ao-ggplot.html"><a href="introdução-ao-ggplot.html#subplots"><i class="fa fa-check"></i><b>4.5</b> Subplots</a></li>
+<li class="chapter" data-level="4.5" data-path="introdução-ao-ggplot.html"><a href="introdução-ao-ggplot.html#subplots-facet"><i class="fa fa-check"></i><b>4.5</b> Subplots (facet)</a></li>
 <li class="chapter" data-level="4.6" data-path="introdução-ao-ggplot.html"><a href="introdução-ao-ggplot.html#temas"><i class="fa fa-check"></i><b>4.6</b> Temas</a></li>
 <li class="chapter" data-level="4.7" data-path="introdução-ao-ggplot.html"><a href="introdução-ao-ggplot.html#exemplos-2"><i class="fa fa-check"></i><b>4.7</b> Exemplos</a><ul>
 <li class="chapter" data-level="4.7.1" data-path="introdução-ao-ggplot.html"><a href="introdução-ao-ggplot.html#gráfico-de-coordenadas-paralelas"><i class="fa fa-check"></i><b>4.7.1</b> Gráfico de coordenadas paralelas</a></li>
@@ -200,7 +200,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="introdução-ao-ggplot" class="section level1">
 <h1><span class="header-section-number">4</span> Introdução ao ggplot 📊</h1>
-<p>A visualização de dados pode ser considerada uma das mais importantes etapas do processo de análise de dados, é através dela que diversos fenômenos presentes nos dados poderão ser explicados e visualizados.</p>
+<p>A visualização de dados pode ser considerada uma das mais importantes etapas do processo de análise de dados, é através dela que diversos fenômenos presentes nos dados podem ser explicados e visualizados.</p>
 <blockquote>
 <p>Quando não souber como explicar, mostre, afinal, uma imagem vale mais que mil palavras.</p>
 </blockquote>
@@ -211,7 +211,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </blockquote>
 <div id="o-que-é-o-ggplot" class="section level2">
 <h2><span class="header-section-number">4.1</span> O que é o <code>ggplot</code>?</h2>
-<p>Bom, <code>ggplot</code>é um pacote em R criado por <em>Hadley Wickham</em> e seus colaboradores, como mencionado anteriormente, sua sintaxe se baseia na obra <a href="https://www.amazon.com/Grammar-Graphics-Statistics-Computing/dp/0387245448">The Grammar of Graphics</a>. Assim, a <strong>gramática dos gráficos</strong> é um conjunto de camadas, cujo o mapeamento dos atributos é chamado de <em>aesthetics</em>. O esqueleto pode ser escrito assim:</p>
+<p>Bom, <code>ggplot</code> é um pacote em R criado por <em>Hadley Wickham</em> e seus colaboradores, como mencionado anteriormente, sua sintaxe se baseia na obra <a href="https://www.amazon.com/Grammar-Graphics-Statistics-Computing/dp/0387245448">The Grammar of Graphics</a>. Assim, a <strong>gramática dos gráficos</strong> é um conjunto de camadas, cujo o mapeamento dos atributos é chamado de <em>aesthetics</em>. O esqueleto pode ser escrito assim:</p>
 <div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb152-1" data-line-number="1">  <span class="kw">ggplot</span>(<span class="dt">data =</span> <span class="op">&lt;</span>DATA<span class="op">&gt;</span>, <span class="kw">aes</span>(<span class="op">&lt;</span>MAPPINGS<span class="op">&gt;</span>)) <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb152-2" data-line-number="2"><span class="st">  </span><span class="er">&lt;</span>GEOM_FUNCTION<span class="op">&gt;</span>(</a>
 <a class="sourceLine" id="cb152-3" data-line-number="3">     <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="op">&lt;</span>MAPPINGS<span class="op">&gt;</span>),</a>
@@ -224,7 +224,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="mapeamento-estético" class="section level2">
 <h2><span class="header-section-number">4.2</span> Mapeamento Estético</h2>
-<p>Podemos mapear dentro da função <code>ggplot()</code> ou dentro de alguma geometria. A imagem abaixo, retirada do livro do <span class="citation">Wilke (2019)</span>, mostra os métodos geométricos do mapeamento estético.</p>
+<p>A estética refere-se a cada aspecto de um dado elemento gráfico. Descrevemos as posições (<code>position</code>) por um valor x e y, mas outros sistemas de coordenadas são possíveis. É possível alterar a forma (<code>shape</code>), tamanho (<code>size</code>) e cor (<code>size</code>) dos elementos <span class="citation">(Wilke 2019)</span>. A imagem abaixo, retirada do livro do <span class="citation">Wilke (2019)</span>, mostra os componentes do mapeamento estético.</p>
 <p><img src="images/aes_ggplot.png" /></p>
 <p>Vamos começar criando um <strong>Data frame</strong>, deste modo:</p>
 <div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb153-1" data-line-number="1">  <span class="co"># importação do pacote tibble </span></a>
@@ -374,7 +374,7 @@ Excelente
 </div>
 <div id="objetos-geométricos" class="section level2">
 <h2><span class="header-section-number">4.3</span> Objetos geométricos</h2>
-<p>Aprendemos o mapeamento estético, agora vamos colocar alguns objetos geométricos no nosso gráfico, com base nessa tabela, retirado da livro <a href="https://cdr.ibpad.com.br/">Ciência de dados em R</a>:</p>
+<p>Os objetos geométricos representam os objetos a serem adicionados no gráficos, por exemplo, pontos (<code>geom_point</code>), colunas (<code>geom_col</code>), linha (<code>geom_line</code>). Observe que, os objetos geométricos são sufixos do métodos <code>geom_</code>. A tabela abaixo, retirada do livro <a href="https://cdr.ibpad.com.br/">Ciência de dados em R</a>, mostra os tipos de geométricos mais comuns:</p>
 <table>
 <colgroup>
 <col width="54%" />
@@ -392,7 +392,7 @@ Excelente
 <td align="center"><code>geom_point()</code></td>
 </tr>
 <tr class="even">
-<td align="center">Gráfico de bolhas</td>
+<td align="center">Gráfico de pontos</td>
 <td align="center"><code>geom_point()</code></td>
 </tr>
 <tr class="odd">
@@ -415,23 +415,25 @@ Histograma</td>
 </tr>
 </tbody>
 </table>
-<p>Vamos utilizar <code>geom_point</code> para fazer um gráfico bolhas no conjunto de dados, deste modo:</p>
+<p>Vamos utilizar <code>geom_point</code> para fazer um gráfico de pontos no conjunto de dados, deste modo:</p>
 <div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb155-1" data-line-number="1">  <span class="co"># Adição de um objeto geométrico</span></a>
 <a class="sourceLine" id="cb155-2" data-line-number="2">  <span class="kw">ggplot</span>(escola, <span class="kw">aes</span>(<span class="dt">x=</span>aluno_id, <span class="dt">y=</span>aluno_media, <span class="dt">color=</span>aluno_curso)) <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb155-3" data-line-number="3"><span class="st">    </span><span class="kw">geom_point</span>(<span class="dt">na.rm =</span> <span class="ot">TRUE</span>) </a></code></pre></div>
 <p><img src="intro-analise-de-dados_files/figure-html/unnamed-chunk-79-1.png" width="672" /></p>
-<p>Olha que legal. No entanto, ainda faltam informações no nosso gráficos, por exemplo, no eixo <code>x</code>, não sabemos se começa com 0 ou 1 e o nome dos nossos atributos não estão informativos.</p>
+<p>Olha que legal. No entanto, ainda faltam informações no nosso gráficos, por exemplo, no eixo <code>x</code> não sabemos se começa com 0 ou 1 e o nome dos atributos não estão informativos.</p>
 </div>
 <div id="escalas" class="section level2">
 <h2><span class="header-section-number">4.4</span> Escalas</h2>
 <p>Bom, agora é a hora de melhorar nosso gráfico, que por sinal está bem estranho, vamos lá!</p>
-<p>Primeiro, vamos mudar o nome dos nossos atributos em cada eixo e também mudar as escalas:</p>
+<p>O <code>ggplot</code> cria as escalas de forma automática, no entanto, é interessante ajustar as escalas para manter o gráfico mais fidedigno em relação aos seus eixos.</p>
+<p>Primeiro, vamos mudar o nome dos nossos atributos em cada eixo e também alterar as escalas:</p>
 <div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb156-1" data-line-number="1">  <span class="co"># Adição de escalas no eixo x e y</span></a>
 <a class="sourceLine" id="cb156-2" data-line-number="2">  <span class="kw">ggplot</span>(escola, <span class="kw">aes</span>(<span class="dt">x=</span>aluno_id, <span class="dt">y=</span>aluno_media, <span class="dt">color=</span>aluno_curso)) <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb156-3" data-line-number="3"><span class="st">    </span><span class="kw">geom_point</span>(<span class="dt">na.rm =</span> <span class="ot">TRUE</span>) <span class="op">+</span></a>
 <a class="sourceLine" id="cb156-4" data-line-number="4"><span class="st">    </span><span class="kw">scale_x_continuous</span>(<span class="dt">name =</span> <span class="st">&quot;Identificação dos alunos&quot;</span>, <span class="dt">breaks =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">6</span>) <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb156-5" data-line-number="5"><span class="st">    </span><span class="kw">scale_y_continuous</span>(<span class="dt">name=</span><span class="st">&quot;Média dos alunos&quot;</span>, <span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">1</span>, <span class="dv">6</span>, <span class="fl">0.5</span>))</a></code></pre></div>
 <p><img src="intro-analise-de-dados_files/figure-html/unnamed-chunk-80-1.png" width="672" /></p>
+<p>Como as variáveis utilizadas são contínuas, podemos utilizar a função <code>scale_x_continuous</code>. Caso seja uma variável categórica, por exemplo, o nome dos alunos, usamos <code>scale_x_discrete</code>.</p>
 <p>Ainda falta mais informações, por exemplo, o título do nosso gráfico e melhorar a legenda.</p>
 <div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb157-1" data-line-number="1">  <span class="co"># Definição de cores para cada disciplina</span></a>
 <a class="sourceLine" id="cb157-2" data-line-number="2">  cores &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Estatística&quot;</span> =<span class="st"> &quot;green&quot;</span>,</a>
@@ -448,9 +450,14 @@ Histograma</td>
 <p><img src="intro-analise-de-dados_files/figure-html/unnamed-chunk-81-1.png" width="672" /></p>
 <p>É possível observar que o aluno com id <strong>5</strong> não possui média em nenhuma disciplina. Agora, que tal dividirmos nosso gráfico em sub gráficos? 🆒.</p>
 </div>
-<div id="subplots" class="section level2">
-<h2><span class="header-section-number">4.5</span> Subplots</h2>
-<p>Bom, é possível visualizar de forma dividida nosso gráfico em subgráficos, usando <code>facet_wrap</code>, desta forma:</p>
+<div id="subplots-facet" class="section level2">
+<h2><span class="header-section-number">4.5</span> Subplots (facet)</h2>
+<p>Podemos dividir nosso gráfico em subgráficos utilizandos as funções <code>facet_grid</code> e <code>facet_wrap</code>:</p>
+<p>-<code>facet_grid</code>: Forma uma matriz de painéis definidos por linhas e colunas. É mais útil quando se tem duas variáveis discretas, e todas as combinações das variáveis existem nos dados.</p>
+<p>-<code>facet_wrap</code>: Converte painéis de uma dimensão para duas dimensões.</p>
+<blockquote>
+<p>Definições retiradas da documentação e do livro <span class="citation">Oliveira, Guerra, and Mcdonell (2018)</span>.</p>
+</blockquote>
 <div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb158-1" data-line-number="1">  <span class="co"># Definição de cores para cada disciplina</span></a>
 <a class="sourceLine" id="cb158-2" data-line-number="2">  cores &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Estatística&quot;</span> =<span class="st"> &quot;green&quot;</span>,</a>
 <a class="sourceLine" id="cb158-3" data-line-number="3">             <span class="st">&quot;Historia&quot;</span> =<span class="st"> &quot;red&quot;</span>,</a>
@@ -466,7 +473,7 @@ Histograma</td>
 <a class="sourceLine" id="cb158-13" data-line-number="13"><span class="st">    </span><span class="kw">scale_color_manual</span>(<span class="st">&quot;Matérias&quot;</span>, <span class="dt">values =</span> cores) <span class="op">+</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb158-14" data-line-number="14"><span class="st">    </span><span class="kw">ggtitle</span>(<span class="st">&quot;Média dos alunos da faculdade&quot;</span>)</a></code></pre></div>
 <p><img src="intro-analise-de-dados_files/figure-html/unnamed-chunk-82-1.png" width="672" /></p>
-<p>Usei <code>labs</code> para mostrar que essa função também altera o nome dos eixos.</p>
+<p>Usamos o <code>labs</code> para mostrar que essa função também altera o nome dos eixos.</p>
 </div>
 <div id="temas" class="section level2">
 <h2><span class="header-section-number">4.6</span> Temas</h2>
