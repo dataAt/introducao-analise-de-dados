@@ -82,7 +82,7 @@ Bom, agora que mapeamos nossos atributos é possível ver que no eixo `x` está 
 ## Objetos geométricos
 
 
-Os objetos geométricos representam os objetos a serem adicionados no gráficos, por exemplo, pontos (`geom_point`), colunas (`geom_col`), linha (`geom_line`). Observe que, os objetos geométricos são sufixos do métodos `geom_`. A tabela abaixo, retirada do livro [Ciência de dados em R](https://cdr.ibpad.com.br/), mostra os tipos de geométricos mais comuns:
+Os objetos geométricos representam os objetos a serem adicionados no gráficos, por exemplo, pontos (`geom_point`), colunas (`geom_col`), linha (`geom_line`). Observe que, os objetos geométricos são sufixos do métodos `geom_`. A tabela abaixo, retirada do livro [Ciência de dados em R](https://cdr.ibpad.com.br/), mostra os tipos geométricos mais comuns:
 
 ---------------------------------------------------------------------------------------------------------------------
                           Tipo                                                          Objeto Geométrico
@@ -174,13 +174,10 @@ Podemos dividir nosso gráfico em subgráficos utilizandos as funções `facet_g
     labs(title="Notas dos alunos por grid", 
        x = "Sexo dos alunos",
        y = "Média dos alunos") + 
-    scale_color_manual("Matérias", values = cores) + 
-    ggtitle("Média dos alunos da faculdade")
-
-
+    scale_color_manual("Matérias", values = cores)
 ```
 
-Usamos o `labs` para mostrar que essa função também altera o nome dos eixos.
+Usamos o `labs` para mostrar que essa função também altera o nome dos eixos e o título
 
 ## Temas
 
