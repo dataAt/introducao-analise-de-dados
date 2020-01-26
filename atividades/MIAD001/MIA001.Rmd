@@ -1,0 +1,96 @@
+---
+output:
+    pdf_document:
+      citation_package: natbib
+      df_print: tibble
+      fig_caption: yes
+      keep_tex: no
+      template: "../template/latex-ms.tex"
+title: 'Introdução à análise de dados'
+author:
+- affiliation: National Institute for Space Research (INPE), Brazil
+  name: Felipe Carvalho 
+- affiliation: National Institute for Space Research (INPE), Brazil
+  name: Felipe Menino
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+endnote: false
+fontfamily: mathdesign
+fontfamilyoptions: adobe-utopia
+fontsize: 11pt
+graphics: true
+header-includes:
+ \usepackage{float}
+ \usepackage[utf8]{inputenc}
+ \usepackage[T1]{fontenc}
+ \usepackage{multirow}
+ \usepackage{xcolor}
+mathtools: true
+bibliography: ../template/references-sits.bib
+abstract: A aplicação dos conceitos vistos no minicurso de introdução à análise de dados é extremamente importante para a fixação dos conceitos. Desta forma, esta lista de exercícios busca criar situações que ajudem o aluno na aplicação e fixação de tais conceitos.
+---
+
+# 1. Contexto
+
+Este conjunto de dados, representa uma serie temporal, do ano de 2001 até 2015, com dados relacionados ao número de mortes por transportes terrestres no Brasil. Os dados são disponibilizados pela [Sala de Apoio à Gestão Estratégica](http://sage.saude.gov.br/). Descrição dos dados:
+
+Fazer a análise deste conjunto de dados, pode nos ajudar a entender os problemas de mortalidade relacionados a transportes terrestres.
+
+# 2. Atividade
+
+Como apresentado ao longo das atividades do curso, a analise de dados é basicamente uma atividade utilizada para responder perguntas através de diferentes métodos de tratamento e manipulação dos dados.
+
+Com base nisto, faça a análise do conjunto de dados **MIAD001**, que está no repositório do minicurso, dentro do diretório **atividades**.
+
+Com este conjunto de dados, responda as seguintes perguntas:
+
+\begin{enumerate}
+  \item Qual o tipo de acidente que mais ocorreu independe do ano?
+  \item Qual ano apresentou a maior taxa geral de mortalidade por acidentes?
+  \item Qual ano apresentou a maior taxa de mortalidade em automóveis?
+  \item Qual o desvio padrão entre todos os anos, em acidentes sofridos por Motociclistas?
+\end{enumerate}
+
+\newpage
+
+## **Dicas**
+
+Abaixo uma tabela com a relação de funções que podem ser úteis para a solução dos exercícios propostos
+
+
+```{r, tab1, echo=FALSE}
+
+  library(kableExtra)
+  library(magrittr)
+
+  tabela <- tibble::tibble(`Descrição` = c(
+    "Leitura de dados", 
+    "Agrupamento", 
+    "Filtro", 
+    "Desvio padrão", 
+    "Média",
+    "Mínino",
+    "Máximo"),
+    `R` = c("readr::read_csv()",
+            "dplr::group_by()",
+            "dplyr::filter()",
+            "stats::sd()",
+            "mean()",
+            "min()",
+            "max()"),
+    `Python` = c("pd.read_csv()",
+                 "pd.DataFrame.groupby()",
+                 "pd.DataFrame[Condição]",
+                 "pd.DataFrame.std()",
+                 "pd.DataFrame.mean()",
+                 "pd.DataFrame.min()",
+                 "pd.DataFrame.max()"))
+```
+
+```{r,echo=FALSE}
+  knitr::kable(tabela, format = "markdown")
+```
+
+
+
+
+
