@@ -374,7 +374,7 @@ Excelente
 </div>
 <div id="objetos-geométricos" class="section level2">
 <h2><span class="header-section-number">4.3</span> Objetos geométricos</h2>
-<p>Os objetos geométricos representam os objetos a serem adicionados no gráficos, por exemplo, pontos (<code>geom_point</code>), colunas (<code>geom_col</code>), linha (<code>geom_line</code>). Observe que, os objetos geométricos são sufixos do métodos <code>geom_</code>. A tabela abaixo, retirada do livro <a href="https://cdr.ibpad.com.br/">Ciência de dados em R</a>, mostra os tipos de geométricos mais comuns:</p>
+<p>Os objetos geométricos representam os objetos a serem adicionados no gráficos, por exemplo, pontos (<code>geom_point</code>), colunas (<code>geom_col</code>), linha (<code>geom_line</code>). Observe que, os objetos geométricos são sufixos do métodos <code>geom_</code>. A tabela abaixo, retirada do livro <a href="https://cdr.ibpad.com.br/">Ciência de dados em R</a>, mostra os tipos geométricos mais comuns:</p>
 <table>
 <colgroup>
 <col width="54%" />
@@ -470,10 +470,9 @@ Histograma</td>
 <a class="sourceLine" id="cb158-10" data-line-number="10"><span class="st">    </span><span class="kw">labs</span>(<span class="dt">title=</span><span class="st">&quot;Notas dos alunos por grid&quot;</span>, </a>
 <a class="sourceLine" id="cb158-11" data-line-number="11">       <span class="dt">x =</span> <span class="st">&quot;Sexo dos alunos&quot;</span>,</a>
 <a class="sourceLine" id="cb158-12" data-line-number="12">       <span class="dt">y =</span> <span class="st">&quot;Média dos alunos&quot;</span>) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb158-13" data-line-number="13"><span class="st">    </span><span class="kw">scale_color_manual</span>(<span class="st">&quot;Matérias&quot;</span>, <span class="dt">values =</span> cores) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb158-14" data-line-number="14"><span class="st">    </span><span class="kw">ggtitle</span>(<span class="st">&quot;Média dos alunos da faculdade&quot;</span>)</a></code></pre></div>
+<a class="sourceLine" id="cb158-13" data-line-number="13"><span class="st">    </span><span class="kw">scale_color_manual</span>(<span class="st">&quot;Matérias&quot;</span>, <span class="dt">values =</span> cores)</a></code></pre></div>
 <p><img src="intro-analise-de-dados_files/figure-html/unnamed-chunk-82-1.png" width="672" /></p>
-<p>Usamos o <code>labs</code> para mostrar que essa função também altera o nome dos eixos.</p>
+<p>Usamos o <code>labs</code> para mostrar que essa função também altera o nome dos eixos e o título</p>
 </div>
 <div id="temas" class="section level2">
 <h2><span class="header-section-number">4.6</span> Temas</h2>
