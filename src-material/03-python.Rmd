@@ -1,6 +1,7 @@
-# Introdução ao Python `r emo::ji("rocket")`
+# Introdução ao Python 
+<!-- `r emo::ji("rocket")` -->
 
-Python é uma linguagem multiparadigma, com uma sintaxe simples que permite ao utilizador focar no problema e deixar de lado qualquer tipo de especificidade. A linguagem vem sendo amplamente utilizada em diversas áreas, por conta das milhares de bibliotecas que possui, boa parte dessas distribuídas pela incrível comunidade da linguagem `r emo::ji("heart")`.
+Python é uma linguagem multiparadigma, com uma sintaxe simples que permite ao utilizador focar no problema e deixar de lado qualquer tipo de especificidade. A linguagem vem sendo amplamente utilizada em diversas áreas, por conta das milhares de bibliotecas que possui, boa parte dessas distribuídas pela incrível comunidade da linguagem <!-- `r emo::ji("heart")`.-->
 
 Nesta introdução, o foco será a aplicação da linguagem Python na manipulação e tratamento de dados, utilizando como base a biblioteca Pandas.
 
@@ -8,7 +9,8 @@ Você pode estar se perguntando o motivo da utilização desta biblioteca e a re
 
 Vamos começar !
 
-## Introdução ao Pandas `r emo::ji("panda_face")`
+## Introdução ao Pandas 
+<!-- `r emo::ji("panda_face")` -->
 
 Para iniciar, vamos entender o que é a biblioteca Pandas e qual seu objetivo geral, para isto, vejamos a definição feita na documentação oficial do projeto.
 
@@ -123,7 +125,7 @@ Para estes casos é necessário o uso de uma outra estrutura de dados, o DataFra
 
 ### DataFrames
 
-Agora que você já conhece como as `Series` funcionam, vamos apresentar a você o `DataFrame`, que difere das `Series` por serem multidimensionais, ou seja, aqui temos uma estrutura que trabalha com linhas e colunas (Podemos dizer também que temos matrizes aqui) `r emo::ji("rainbow")`.
+Agora que você já conhece como as `Series` funcionam, vamos apresentar a você o `DataFrame`, que difere das `Series` por serem multidimensionais, ou seja, aqui temos uma estrutura que trabalha com linhas e colunas (Podemos dizer também que temos matrizes aqui) <!-- `r emo::ji("rainbow")`. -->
 
 Boa parte dos métodos disponíveis em uma `Series` também são aplicáveis em `DataFrames`, o que ajuda no aprendizado de utilização da API do Pandas, mas é importante entender que, em diversos casos o simples fato de haver mais dimensões nos dados torna a manipulação diferente, com resultados diferentes (Isto para os mesmos métodos).
 
@@ -297,7 +299,7 @@ Pronto! Com estes métodos de manipulação já é possível resolver diversos p
 
 ### Funções de leitura e escrita de dados
 
-Além das estruturas de dados poderosas, o pandas também possui funções para leitura e escrita de dados que facilitam muito a vida `r emo::ji("rocket")`.
+Além das estruturas de dados poderosas, o pandas também possui funções para leitura e escrita de dados que facilitam muito a vida <!-- `r emo::ji("rocket")` -->.
 
 Como existem muitas funções para leitura e escrita, aqui serão apresentadas apenas algumas, mas não deixe de conferir a [documentação do projeto](https://pandas.pydata.org/pandas-docs/stable/) para conhecer as demais funções oferecidas.
 
@@ -316,9 +318,9 @@ type(df)
 Um `DataFrame`, o que possibilita a aplicação de todos os métodos já vistos aqui. Vamos ver o conteúdo carregado através dos métodos `head` e `tail`, que recuperar o início e o final do `DataFrame`, respectivamente.
 
 ```{python}
-print(df.head()) # Função que mostra o início do DataFrame carregado
+df.head() # Função que mostra o início do DataFrame carregado
 
-print(df.tail()) # Função que mostra o final do DataFrame carregado
+# print(df.tail()) # Função que mostra o final do DataFrame carregado
 ```
 
 Caso os dados que você está trabalhando sejam oriundos de algum `web serviço`, o pandas também pode te ajudar! Com o método `read_json` você pode passar não só o nome do arquivo json em sua máquina, mas também a URL do `web serviço` que distribui tais dados. Vamos recuperar dados de um `web serviço` de exemplo.
@@ -339,7 +341,7 @@ df.to_csv('nome_do_csv.csv') # Salva o CSV
 df.to_json('nome_do_json.json') # Salva o JSON
 ```
 
-Viu ? É tudo muito simples e direto, o que te permite focar em sua análise e deixar de lado problemas com sintaxe `r emo::ji("statue_of_liberty")`. Para fechar esta seção de análise de dados com Python e Pandas, vejamos uma análise completa, aplicável ao mundo real utilizando todos os conceitos que vimos até aqui.
+Viu ? É tudo muito simples e direto, o que te permite focar em sua análise e deixar de lado problemas com sintaxe <!-- `r emo::ji("statue_of_liberty")` -->. Para fechar esta seção de análise de dados com Python e Pandas, vejamos uma análise completa, aplicável ao mundo real utilizando todos os conceitos que vimos até aqui.
 
 ## Exemplos
 

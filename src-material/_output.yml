@@ -1,0 +1,16 @@
+bookdown::pdf_book:
+  includes:
+    in_header: [latex/preamble.tex, latex/blackbox.tex, latex/infobox.tex]
+    before_body: latex/before_body.tex
+    after_body: latex/after_body.tex
+  keep_tex: yes
+  fig_crop: false
+  latex_engine: xelatex
+  citation_package: natbib
+  template: null
+  pandoc_args: [--top-level-division=chapter, --wrap=none]
+  toc_depth: 3
+  toc_unnumbered: no
+  toc_appendix: yes
+  highlight_bw: yes
+  quote_footer: ["\\VA{", "}{}"]

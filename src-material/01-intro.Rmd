@@ -1,12 +1,18 @@
 ---
-output: bookdown::html_document2
+output: bookdown::pdf_book
 bibliography: bibtex.bib
 fig_caption: yes
+always_allow_html: true
 header-includes:
+- \usepackage{floatrow}
 - \usepackage{float}
 - \usepackage{xcolor}
-- \floatsetup[table]{capposition=bot}
+- \floatsetup[table]{capposition=top}
 ---
+
+```{r, include=FALSE}
+options(tinytex.verbose = TRUE)
+```
 
 # Introdução
 
@@ -61,8 +67,8 @@ table <- tibble::tibble(`Tipo de variável` = c("Quantitativa/numérica contínu
                                           "Texto normal e pode ser tratado como categórico se precisar."))
 
   
-  mytable <- table %>% knitr::kable(format = "html",
-                                 padding = 2,
+  # Alterado para a distribuição em latex 
+  mytable <- table %>% knitr::kable(format = "latex",
                                 caption = "Tipos de variáveis encontradas durante um cenário de análise de dados") %>%
     kableExtra::kable_styling(latex_options = 'HOLD_position',
                             position = "center" ,
@@ -114,7 +120,7 @@ Resumindo essas tarefas, o analista deve possuir habilidades de limpeza, manipul
 
 ### Quais são as diferenças entre analista e cientista de dados?
 
-Tanto se fala de analista e cientista de dados, afinal, qual é a diferença?`r emo::ji("developer")` 
+Tanto se fala de analista e cientista de dados, afinal, qual é a diferença? <!-- `r emo::ji("developer")`  -->
 
 Acredito que seja uma dúvida super válida, já que segundo a revista [Harvard Business Review](https://hbr.org/2012/10/data-scientist-the-sexiest-job-of-the-21st-century), cientista de dados é considerada a profissão mais _sexy_ do século 21.
 
@@ -126,7 +132,7 @@ Segundo *Josh Wills*, um cientista de dados é melhor em estatística do que qua
 - [betterbuys](https://www.betterbuys.com/bi/comparing-data-science-roles/);
 - [kdnuggets](https://www.kdnuggets.com/2015/11/different-data-science-roles-industry.html).
 
-A definição que escolhemos foi do site **kdnuggets**: "O analista de dados é como o Sherlock Holmes `r emo::ji("search")` do time de ciência de dados". Ainda em sua definição, "o analista busca resposta para o time e para o negócio. Por outro lado o cientista de dados, cria modelos estatísticos de aprendizado de máquina, visualizações mais elaboradas e gera novas perguntas em relação aos dados".
+A definição que escolhemos foi do site **kdnuggets**: "O analista de dados é como o Sherlock Holmes <!-- `r emo::ji("search")` --> do time de ciência de dados". Ainda em sua definição, "o analista busca resposta para o time e para o negócio. Por outro lado o cientista de dados, cria modelos estatísticos de aprendizado de máquina, visualizações mais elaboradas e gera novas perguntas em relação aos dados".
 
 > Fiquem à vontade para adicionar mais diferenças, veja como contribuir no [README](https://github.com/dataAt/introducao-analise-de-dados) do projeto.
 

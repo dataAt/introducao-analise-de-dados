@@ -1,12 +1,3 @@
----
-output: bookdown::html_document2
-bibliography: bibtex.bib
-fig_caption: yes
-header-includes:
-- \usepackage{float}
-- \floatsetup[table]{capposition=bot}
----
-
 # Introdução ao R
 
 **R** é uma linguagem de programação de alto nível voltada para visualização e análise de dados. Em essência foi inspirada na linguagem de programação __S__ (do inglês *stats*). Foi inicialmente escrita por [**R**oss Ihaka](https://en.wikipedia.org/wiki/Ross_Ihaka) e [**R**obert Gentleman](https://en.wikipedia.org/wiki/Robert_Gentleman_(statistician)) no departamento de estatística da universidade de Auckland na Nova Zelândia. Atualmente a linguagem é mantida pelo grupo __R Core Team__ composto por pessoas do mundo inteiro que tentam melhorar a linguagem dia após dia. Esse conteúdo foi baseado no livro *THE R BOOK* escrito por @crawley2012, sendo considerado a bíblia do R.
@@ -129,7 +120,7 @@ A conversão de tipos é apresentada na célula abaixo:
 
 ```
 
-Então, seguindo a ideia de hierarquia de tipos, esse vetor será convertido para `character` e continuará sendo atômico `r emo::ji("drum")`.
+Então, seguindo a ideia de hierarquia de tipos, esse vetor será convertido para `character` e continuará sendo atômico <!-- `r emo::ji("drum")` -->
 
 ```{r}
   # Para verificar se é atômico
@@ -164,7 +155,7 @@ Para verificar se a lista é atômica como o vetor que criamos:
   is.atomic(lista_misturada)
 ```
 
-Logo, temos uma lista não atômica, ou seja, de vários os tipos. Mas será ela uma lista mesmo? `r emo::ji("man_vampire_dark_skin_tone")`
+Logo, temos uma lista não atômica, ou seja, de vários os tipos. Mas será ela uma lista mesmo? <!-- `r emo::ji("man_vampire_dark_skin_tone")` -->
 
 ```{r}
   # Verificar se é uma lista
@@ -422,7 +413,7 @@ Vamos manipular nosso **Data Frame** com base nos métodos acima:
 ```
 
 
-Basicamente, filtramos pelo atributo `aluno_avaliacao`, selecionamos os atributos `aluno_curso`, `aluno_avaliacao` e `aluno_media`, agrupamos pelos cursos e tiramos a média daquele grupo em relação os cursos `r emo::ji("bear")`. Mas, ficou muito grande, como podemos melhorar? Substituindo por apenas uma variável, desta forma: 
+Basicamente, filtramos pelo atributo `aluno_avaliacao`, selecionamos os atributos `aluno_curso`, `aluno_avaliacao` e `aluno_media`, agrupamos pelos cursos e tiramos a média daquele grupo em relação os cursos <!-- `r emo::ji("bear")` -->. Mas, ficou muito grande, como podemos melhorar? Substituindo por apenas uma variável, desta forma: 
 
 ```{r}
   # Filtro pelo atributo "aluno_avaliano"
@@ -444,7 +435,7 @@ Basicamente, filtramos pelo atributo `aluno_avaliacao`, selecionamos os atributo
 ```
 
 
-Melhorou um pouco, não? `r emo::ji("blue")`. Podemos melhorar ainda mais, como? Usando `%>%` este símbolo, chamado de **pipe** ou **então**, basicamente, é a `pipe` utilizada no **Linux**.
+Melhorou um pouco, não? <!-- `r emo::ji("blue")` -->. Podemos melhorar ainda mais, como? Usando `%>%` este símbolo, chamado de **pipe** ou **então**, basicamente, é a `pipe` utilizada no **Linux**.
 
 A **pipe** passa a resposta da primeira atribuição para o primeiro parâmetro da função seguinte, desta forma:
 

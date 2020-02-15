@@ -1,13 +1,5 @@
----
-output: bookdown::html_document2
-bibliography: bibtex.bib
-fig_caption: yes
-header-includes:
-- \usepackage{float}
-- \floatsetup[table]{capposition=bot}
----
-
-# Introdução ao ggplot `r emo::ji("bar_chart")`
+# Introdução ao ggplot 
+<!-- `r emo::ji("bar_chart")` -->
 
 A visualização de dados pode ser considerada uma das mais importantes etapas do processo de análise de dados, é através dela que diversos fenômenos presentes nos dados podem ser explicados e visualizados.
 
@@ -34,7 +26,7 @@ Bom, `ggplot` é um pacote em R criado por _Hadley Wickham_ e seus colaboradores
   <FACET_FUNCTION>  
 ```
 
-Vamos explicar linha por linha do código acima. Vamos lá `r emo::ji("calculation")`.
+Vamos explicar linha por linha do código acima. Vamos lá <!-- `r emo::ji("calculation")`. -->
 
 ## Mapeamento Estético
 
@@ -149,7 +141,7 @@ Ainda falta mais informações, por exemplo, o título do nosso gráfico e melho
     ggtitle("Média dos alunos da faculdade")
 ```
 
-É possível observar que o aluno com id **5** não possui média em nenhuma disciplina. Agora, que tal dividirmos nosso gráfico em sub gráficos? `r emo::ji("cool")`.
+É possível observar que o aluno com id **5** não possui média em nenhuma disciplina. Agora, que tal dividirmos nosso gráfico em sub gráficos? <!-- `r emo::ji("cool")` -->.
 
 ## Subplots (facet)
 
@@ -325,7 +317,7 @@ Vamos utilizar os atributos `cut`, `price` e `clarity`, correspodentes a qualida
 ```
 
 
-Bom, sabemos que o `ggplot` é bem completo, mas, só abordamos uma pequena parcela. Com o tempo vamos adicionando mais materiais. Para se aprofundar no pacote, veja nossas análises no [dataAt](https://github.com/dataAt/introducao-analise-de-dados/tree/master/src/R) `r emo::ji("dancer")`.
+Bom, sabemos que o `ggplot` é bem completo, mas, só abordamos uma pequena parcela. Com o tempo vamos adicionando mais materiais. Para se aprofundar no pacote, veja nossas análises no [dataAt](https://github.com/dataAt/introducao-analise-de-dados/tree/master/src/R) <!-- `r emo::ji("dancer")` -->.
 
 ## Para saber mais
 

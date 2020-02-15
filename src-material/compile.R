@@ -13,4 +13,7 @@ if (!dir.exists('venv')) {
 
 # é necessário alterar o path para o diretório com os materiais em .Rmd
 setwd("./")
-bookdown::render_book("index.Rmd", bookdown::gitbook(lib_dir = "libs"))
+# bookdown::render_book("index.Rmd", bookdown::gitbook(lib_dir = "libs"))
+
+options(tinytex.verbose = TRUE)
+bookdown::render_book("index.Rmd", bookdown::pdf_book())

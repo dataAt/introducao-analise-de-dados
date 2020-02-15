@@ -1,3 +1,4 @@
 book_filename: intro-analise-de-dados
 output_dir: "../docs"
 delete_merged_file: TRUE
+always_allow_html: true
