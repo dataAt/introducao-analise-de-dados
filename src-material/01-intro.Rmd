@@ -8,11 +8,22 @@ header-includes:
 - \floatsetup[table]{capposition=bot}
 ---
 
+```{r, echo=FALSE, message=FALSE}
+suppressWarnings(library(knitr))
+suppressWarnings(library(tibble))
+suppressWarnings(library(magrittr))
+suppressWarnings(library(kableExtra))
+suppressWarnings(library(devtools))
+suppressMessages(library(lubridate))
+
+```
+
+
+
 # Introdução
 
-A análise de dados é uma das atividades mais interessantes da atualidade, com ela é possível monitorar o governo, por exemplo, [Operação serenata](https://serenata.ai/), fazer empresas de sucesso e produtos que atendam a real necessidade de seus clientes, e o mais importante, comprovar a veracidade de informações recebida e saciar nossa curiosidade.
-Isto porque com a quantidade de dados disponíveis, podemos literalmente, saber sobre tudo, aplicando técnicas de análise de dados.
-Portanto, este minicurso tem como objetivo apresentar, de forma introdutória, as principais tecnologias para analisar dados com as linguagens de programação R e Python.
+Certa vez em uma conversa entre cientistas, sendo eles biológos, físicos e matemáticos, com discussões afloradas e inúmeras discordâncias entre si, todos concordaram em uma coisa: a importância da análise de dados no processo de extração de informações. Anedota à parte, podemos ver essa tal análise de dados em diversas situações do nosso cotidiano, por exemplo, no monitoramento políticos ([Operação serenata](https://serenata.ai/)); na verificação das informações geradas pelas redes sociais ([Aos Fatos](https://www.aosfatos.org/)), e (add mais um exemplo....). Caso os exemplos acima não tenham aguçado sua imanaginação, tente pensar em aplicações que não envolvam dados, tentou? dificíl, né? Pois é, isto porque com a quantidade de dados disponíveis, podemos literalmente, saber sobre tudo, aplicando técnicas de análise de dados.
+Portanto, este minicurso tem como objetivo apresentar, de forma introdutória, as principais tecnologias para análise dados com as linguagens de programação __R__ e __Python__.
 
 ## Dados
 
@@ -26,14 +37,10 @@ Agora que sabemos a definição de dados, podemos concluir que *Big Data* é um 
 
 ### Tipos de dados
 
-A tabela \@ref(tab:tab1) foi feita com base no matérial de estatística da [UFPR](http://leg.ufpr.br/~silvia/CE055/node8.html) e o template utilizado foi retirado do livro-texto [Claus O. Wilke](https://serialmentor.com/dataviz).
+A tabela \@ref(tab:tab1) mostra diferentes tipos de dados, feita com base nos materiais de estatística da [UFPR](http://leg.ufpr.br/~silvia/CE055/node8.html) e do livro-texto de [Claus O. Wilke](https://serialmentor.com/dataviz).
 
 ```{r, tab1, echo=FALSE, message=FALSE}
-  
 
-suppressWarnings(library(tidyverse))
-suppressWarnings(library(kableExtra))
-library(devtools)
   
 table <- tibble::tibble(`Tipo de variável` = c("Quantitativa/numérica contínua",
                                               "Quantitativa/numérica discreta",
@@ -76,7 +83,7 @@ table <- tibble::tibble(`Tipo de variável` = c("Quantitativa/numérica contínu
 
 Como mencionado anteriormente, existem muitos dados disponíveis, estes vindos das mais diversas fontes e formatos, e boa parte dos desafios na análise de dados estão vinculados aos formatos nos quais os dados estão disponíveis, isto porque dependendo do formato, existem diferentes etapas de organização que devem ser aplicadas.
 
-> “Os conjuntos de dados arrumados são todos iguais, mas todos os conjuntos de dados desorganizados são desorganizados à sua própria maneira.” - Hadley Wickham
+> “Conjuntos de dados formatados são todos iguais, mas todos os conjuntos de dados não formatados são desorganizados à sua própria maneira.” - Hadley Wickham
 
 Nos subtópicos abaixo, serão descritos os principais formatos de dados e exemplos de cada um.
 
@@ -142,10 +149,10 @@ Agora que sabemos o que faz um analista de dados, é necessário entender as eta
 Primeiro, é importante **importar** os dados nos mais diferentes formatos `.csv, .kml, .json`. Após a leitura dos dados, é necessário limpá-los e transformá-los em **tidy**. O termo **tidy** refere-se a estrutura do conjunto de dados, onde cada coluna é uma variável e cada linha é uma observação @hadley2017. Por exemplo, em R:
 
 ```{r, fig.cap = '(ref:tidy_data)'}
-  library(knitr)
-  escola <- tibble::tibble(nome=c("Joao", "Maria","Helena"),
-                           idade=c(14, 15, 21),
-                           escolaridade=c("EF", "EM", "Graduacao" ))
+  escola <- tibble::tibble(
+    nome = c("Joao", "Maria","Helena"),
+    idade = c(14, 15, 21),
+    escolaridade = c("EF", "EM", "Graduacao"))
   
   knitr::kable(escola)
 ```
@@ -155,7 +162,6 @@ Sabemos que `Joao` tem `14` anos e está no `ensino fundamental`, seguindo a ide
 A etapa de **transformação** é composta pela adição de novos atributos com base no conjunto de dados, por exemplo, a média da idade dos alunos, visto acima. Nesta etapa, é importante gerar algumas perguntas sobre seus dados e tentar respondê-las realizando a manipulação dos dados. Um exemplo de transformação muito utilizada, é extrair o dia da semana de uma determinada data. Por exemplo, em R:
 
 ```{r,  fig.cap = '(ref:r_date)'}
-  suppressMessages(library(lubridate))
 
   data <- lubridate::dmy("11/10/2018") 
   lubridate::wday(data, label = TRUE)
@@ -163,14 +169,14 @@ A etapa de **transformação** é composta pela adição de novos atributos com 
 
 No exemplo acima, estamos usando o pacote `lubridate` e com uma linha de código descobrimos o dia da semana do dia 11 de outubro de 2018.
 
-Hadley descreve a **visualização** e os **modelos** como engenharia de representação de conhecimento. A **visualização**, pode gerar novos conhecimentos, questionamentos e respostas. Segundo @claus2019, a visualização de dados, é a parte arte e a parte ciência na área de ciência de dados, portanto, a visualização precisa estar correta e agradável para interpretá-la.
+Hadley descreve a **visualização** e os **modelos** como engenharia de representação do conhecimento. A **visualização** pode gerar novos conhecimentos, questionamentos e respostas. Segundo @claus2019, a visualização de dados é a parte arte e a parte ciência na área de ciência de dados, portanto, a visualização precisa estar correta e agradável para interpretá-la.
 
-> TIL: visualisation ou visualization possuem o mesmo significado, mas, na Europa é com "s" e na América com "z".
+> TIL: visualisation ou visualization possuem o mesmo significado, mas, na Europa usam-se "s" e na América "z".
 
 Segundo @hadley2017, **modelos** são ferramentas complementares de visualização. Para @schutt2013, realizar a análise exploratória de dados (EDA) é a etapa fundamental para a criação de um modelo. A **comunicação** é a última etapa do processo, sendo fundamental para o analista transmitir as informações obtidas através da análise dos dados, para clientes técnicos e não técnicos. Para isso, o analista apoia-se nos gráficos e modelos criados, por isso, é necessário que os gráficos possuam, pelo menos, uma estética agravél e de fácil interpretação.
 
-Nos próximos capítulos é apresentado com detalhes quais pacotes e bibliotecas podem ser aplicados em cada etapa do processo de análise de dados.
+Nos próximos capítulos são apresentados com detalhes quais pacotes e bibliotecas podem ser aplicados em cada etapa do processo de análise de dados.
 
 ## Contribuição
 
-Este material está em constante mudança e todas as recomendações e melhorias são bem-vindas. Fique à vontade para adicionar mais conteúdo, instruções de colaboração no [README](https://github.com/dataAt/introducao-analise-de-dados).
+Este material está em constante mudança e todas as recomendações e melhorias são bem-vindas. Fique à vontade para adicionar mais conteúdo. Instruções de colaboração podem ser vistas no [README](https://github.com/dataAt/introducao-analise-de-dados).
