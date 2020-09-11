@@ -10,23 +10,21 @@ header-includes:
 
 # Introdução
 
-A análise de dados é uma das atividades mais interessantes da atualidade, com ela é possível monitorar o governo, por exemplo, [Operação serenata](https://serenata.ai/), fazer empresas de sucesso e produtos que atendam a real necessidade de seus clientes, e o mais importante, comprovar a veracidade de informações recebida e saciar nossa curiosidade.
-Isto porque com a quantidade de dados disponíveis, podemos literalmente, saber sobre tudo, aplicando técnicas de análise de dados.
-Portanto, este minicurso tem como objetivo apresentar, de forma introdutória, as principais tecnologias para analisar dados com as linguagens de programação R e Python.
+A análise de dados é uma das atividades mais interessantes da atualidade, com ela é possível monitorar o governo (por exemplo, [Operação serenata](https://serenata.ai/)), fazer empresas de sucesso e produtos que atendam a real necessidade de seus clientes, e o mais importante, comprovar a veracidade de informações recebida e saciar nossa curiosidade. Isto porque, com a quantidade de dados disponíveis, podemos literalmente, saber sobre tudo, aplicando técnicas de análise de dados. Portanto, este minicurso tem como objetivo apresentar, de forma introdutória, as principais tecnologias para analisar dados a partir das linguagens de programação R e Python.
 
 ## Dados
 
-Muito foi dito sobre dados, que estes são abundantes e estão em constante crescimento, porém, o que são dados? 
+Muito é dito sobre dados, que estes são abundantes e que estão em constante crescimento, porém, o que são dados? 
 
-Bem, esta pergunta possui diversas respostas, isto porque há várias definições para dados, aqui iremos assumir que dados são:
+Bem, esta pergunta possui diversas respostas, isso porque há várias definições para dados. Aqui iremos assumir que dados são:
 
-> "Qualquer coisa registrada com o propósito de posteriormente ser analisado" - [Dr. Rafael Santos](http://www.lac.inpe.br/~rafael.santos/).
+> "Qualquer coisa registrada com o propósito de posterior analise" - [Dr. Rafael Santos](http://www.lac.inpe.br/~rafael.santos/).
 
-Agora que sabemos a definição de dados, podemos concluir que *Big Data* é um alto volume de dados. Não entraremos no mérito do que é ou não considerado *Big Data*, caso queiram ler mais sobre o assunto, recomendamos o artigo [**Big data: A survey**](https://link.springer.com/article/10.1007/s11036-013-0489-0) publicado por **Min Chen e seus colaboradores**.
+Agora que sabemos a definição de dados, podemos deduzir que *Big Data* é um alto volume de dados. Não entraremos no mérito do que é, ou não, considerado *Big Data*. Caso queira ler mais sobre o assunto, recomendamos o artigo [**Big data: A survey**](https://link.springer.com/article/10.1007/s11036-013-0489-0) publicado por **Min Chen e colaboradores**.
 
 ### Tipos de dados
 
-A tabela \@ref(tab:tab1) foi feita com base no matérial de estatística da [UFPR](http://leg.ufpr.br/~silvia/CE055/node8.html) e o template utilizado foi retirado do livro-texto [Claus O. Wilke](https://serialmentor.com/dataviz).
+A tabela \@ref(tab:tab1) foi feita com base no material de estatística da [UFPR](http://leg.ufpr.br/~silvia/CE055/node8.html) e o *template* utilizado foi retirado do livro-texto [Claus O. Wilke](https://serialmentor.com/dataviz).
 
 ```{r, tab1, echo=FALSE, message=FALSE}
   
@@ -56,8 +54,8 @@ table <- tibble::tibble(`Tipo de variável` = c("Quantitativa/numérica contínu
                           `Descrição` = c("Valores mensuráveis que assumem valores em um escala contínua (na reta real). Usualmente devem ser medida através de algum instrumento. Exemplo: peso (balança), tempo (relógio), e pressão arterial.",
                                           "Características mensuráveis que podem assumir apenas um número finito ou infinito contável de valores e, assim, somente fazem sentido valores inteiros. Geralmente são o resultado de contagens. Exemplos: número de filhos, número de bactérias por litro de leite, número de cigarros fumados por dia.",
                                           "Não possui ordenação dentre as categorias. Essas variáveis são também chamadas de factors. Exemplo: Sexo, cor dos olhos, doente/sadio.",
-                                          "Existe uma ordenação entre as categorias. Essas variáveis são também chamadas de ordered factors. Exemplo: escolaridade (1°, 2°, 3°), mês de observação(janeiro, fevereiro… dezembro).",
-                                          "Dia ou hora específicos. Também datas genéricas, Por exemplo 29 de Fevereiro em anos não bissextos",
+                                          "Existe uma ordenação entre as categorias. Essas variáveis são também chamadas de ordered factors. Exemplo: escolaridade (1°, 2°, 3°), mês de observação (janeiro, fevereiro… dezembro).",
+                                          "Dia ou hora específicos. Também datas genéricas. Exemplo 29 de Fevereiro em anos não bissextos",
                                           "Texto normal e pode ser tratado como categórico se precisar."))
 
   
@@ -74,34 +72,37 @@ table <- tibble::tibble(`Tipo de variável` = c("Quantitativa/numérica contínu
 
 ### Formatos de dados
 
-Como mencionado anteriormente, existem muitos dados disponíveis, estes vindos das mais diversas fontes e formatos, e boa parte dos desafios na análise de dados estão vinculados aos formatos nos quais os dados estão disponíveis, isto porque dependendo do formato, existem diferentes etapas de organização que devem ser aplicadas.
+Como mencionado anteriormente, existem muitos dados disponíveis providos das mais diversas fontes e formatos. Boa parte dos desafios na análise de dados estão vinculados aos formatos nos quais os dados estão disponíveis, isso porque, dependendo do formato, existem diferentes etapas de organização que devem ser aplicadas.
 
 > “Os conjuntos de dados arrumados são todos iguais, mas todos os conjuntos de dados desorganizados são desorganizados à sua própria maneira.” - Hadley Wickham
 
-Nos subtópicos abaixo, serão descritos os principais formatos de dados e exemplos de cada um.
+Nos subtópicos abaixo, são descritos os principais formatos de dados e exemplos de cada um.
 
 #### Dados estruturados
-Esse formato de dado segue a estrutura de linhas e colunas (retangular). São geralmente encontrados em banco de dados, Excel (`.xls`) e valores separados por vírgulas (do inglês *Comma-separated values*) (`.csv`) 
+
+Este formato de dado segue a estrutura de linhas e colunas (retangular). São geralmente encontrados em banco de dados, Excel (`.xls`) e valores separados por vírgulas (do inglês *Comma-separated values*) (`.csv`) 
 
 #### Dados Semiestruturados
-São dados que possuem uma organização clara, porém, não seguem o padrão de linha e coluna. Geralmente são aqueles formatos que recebemos em requisições via API (do inglês *"Application Programming Interface*), por exemplo, `JSON`, `XML` e `HTML`. 
+
+São dados que possuem uma organização clara, porém, não seguem o padrão de linha e coluna. Geralmente são aqueles formatos que recebemos em requisições via API (do inglês *"Application Programming Interface*) *Web*, por exemplo, `JSON`, `XML` e `HTML`. 
 
 #### Dados não estruturados
+
 São aqueles que não conseguimos identificar uma organização clara, geralmente, são arquivos com forte teor textual, por exemplo, e-mail, tweets, PDF, imagens, vídeos, entre outros.
 
-> Lembrando que nem todo dado desorganizado é não estruturado.
+> Lembrando que, nem todo dado desorganizado é não estruturado.
 
 ## O que é análise de dados?
 
-Para *John W. Tukey*, grande parte da análise de dados é inferencial, ou seja, o ato de extrair informações de uma amostra em relação ao conjunto todo. É interessante ressaltar que, **análise de dados** não é um conceito novo, por exemplo, essa definição de *Tukey* foi publicada em 1962, no artigo *The Future of Data Analysis*.
+Segundo *John W. Tukey*, grande parte da análise de dados é inferencial, ou seja, o ato de extrair informações de uma amostra em relação ao conjunto todo. É interessante ressaltar que, **análise de dados** não é um conceito novo, a definição de *Tukey* foi publicada em 1962, no artigo *The Future of Data Analysis*.
 
-> Inferência estatística é um ramo da Estatística cujo objetivo é fazer afirmações a partir de um conjunto de valores representativo (amostra) sobre um universo (população). - Wikipedia
+> Inferência estatística é um ramo da Estatística cujo objetivo é fazer afirmações a partir de um conjunto de valores representativos (amostra) sobre um universo (população). - Wikipedia
 
 Buscando por mais definições, a [Wikipedia](https://en.wikipedia.org/wiki/Data_analysis) descreve **análise de dados** como o processo de observação, limpeza, transformação e modelagem de dados. Com o objetivo de extrair informações de dados não tratados.
 
 ### O que faz um analista de dados?
 
-O Artigo publicado pelo [dataquest](https://www.dataquest.io/blog/data-analyst-data-scientist-data-engineer/), define o analista de dados como um agregador de valor para a companhia através respostas obtidas através dos dados, dessa forma, ajudando na tomada de decisão da empresa. Ainda no artigo do dataquest, um analista de dados é responsável pelas seguintes tarefas:
+O artigo "Data Engineer, Data Analyst, Data Scientist - What's the Difference ?" publicado pelo [dataquest](https://www.dataquest.io/blog/data-analyst-data-scientist-data-engineer/), define o analista de dados como um agregador para a companhia, que obtém respostas através de dados. Dessa forma, ajudando na tomada de decisão da empresa. De acordo com o artigo do dataquest, um analista de dados é responsável pelas seguintes áreas:
 
 - Limpeza e organização de dados;
 - Uso de estatística para ter uma visão geral dos dados;
@@ -114,11 +115,11 @@ Resumindo essas tarefas, o analista deve possuir habilidades de limpeza, manipul
 
 ### Quais são as diferenças entre analista e cientista de dados?
 
-Tanto se fala de analista e cientista de dados, afinal, qual é a diferença?`r emo::ji("developer")` 
+Tanto se fala de analista e cientista de dados, mas afinal, qual é a diferença?`r emo::ji("developer")` 
 
-Acredito que seja uma dúvida super válida, já que segundo a revista [Harvard Business Review](https://hbr.org/2012/10/data-scientist-the-sexiest-job-of-the-21st-century), cientista de dados é considerada a profissão mais _sexy_ do século 21.
+Segundo a revista [Harvard Business Review](https://hbr.org/2012/10/data-scientist-the-sexiest-job-of-the-21st-century), cientista de dados é considerada a profissão mais _sexy_ do século 21.
 
-Segundo *Josh Wills*, um cientista de dados é melhor em estatística do que qualquer engenheiro de software e melhor em engenharia de software do que qualquer estatístico. Um cientista de dados possui todas as habilidades de um analista, mas, em essência, contém um domínio maior em estatística, matemática e _Machine Learning_. Em busca de um compilado de definições, formulamos nossa resposta com base nesses sites:
+De acordo com *Josh Wills*, um cientista de dados é melhor em estatística do que qualquer engenheiro de *software* e melhor em engenharia de *software* do que qualquer estatístico. Um cientista de dados possui todas as habilidades de um analista, mas, em essência contém um domínio maior em estatística, matemática e _Machine Learning_. Em busca de um compilado de definições, formulamos nossa resposta com base nesses sites:
 
 - [dataquest](https://www.dataquest.io/blog/data-analyst-data-scientist-data-engineer/);
 - [edureka](https://www.edureka.co/blog/difference-between-data-scientist-and-data-analyst/);
@@ -126,20 +127,20 @@ Segundo *Josh Wills*, um cientista de dados é melhor em estatística do que qua
 - [betterbuys](https://www.betterbuys.com/bi/comparing-data-science-roles/);
 - [kdnuggets](https://www.kdnuggets.com/2015/11/different-data-science-roles-industry.html).
 
-A definição que escolhemos foi do site **kdnuggets**: "O analista de dados é como o Sherlock Holmes `r emo::ji("search")` do time de ciência de dados". Ainda em sua definição, "o analista busca resposta para o time e para o negócio. Por outro lado o cientista de dados, cria modelos estatísticos de aprendizado de máquina, visualizações mais elaboradas e gera novas perguntas em relação aos dados".
+A definição que escolhemos foi a do *site* **kdnuggets**: "O analista de dados é como o Sherlock Holmes `r emo::ji("search")` do time de ciência de dados". Ainda em sua definição, "o analista busca resposta para o time e para o negócio. Por outro lado o cientista de dados, cria modelos estatísticos de aprendizado de máquina, visualizações mais elaboradas e gera novas perguntas em relação aos dados".
 
 > Fiquem à vontade para adicionar mais diferenças, veja como contribuir no [README](https://github.com/dataAt/introducao-analise-de-dados) do projeto.
 
 ### Processos da análise de dados
 
-Agora que sabemos o que faz um analista de dados, é necessário entender as etapas do processo de análise de dados, apresentados na Figura \@ref(fig:fig1).
+Agora que sabemos o que faz um analista de dados, é necessário entender as etapas do processo de análise de dados. Na Figura \@ref(fig:fig1) é apresentado um fluxograma sequencial das etapas do processo.
 
 ```{r fig1, echo=FALSE ,out.width = "150%", fig.cap='Etapas do processo de análise de dados - Fonte: @hadley2017'}
   knitr::include_graphics("./images/data-science.png", )
 
 ```
 
-Primeiro, é importante **importar** os dados nos mais diferentes formatos `.csv, .kml, .json`. Após a leitura dos dados, é necessário limpá-los e transformá-los em **tidy**. O termo **tidy** refere-se a estrutura do conjunto de dados, onde cada coluna é uma variável e cada linha é uma observação @hadley2017. Por exemplo, em R:
+A primeira etapa (**Import**) consiste em fazer a leitura aos dados, independentemente do formato do arquivo (`.csv, .kml, .json`). Após a leitura dos dados, é necessário organizar, estruturar os dados e corrigir possíveis erros tornando os dados **tidy**. O termo **tidy** refere-se a nova estrutura do conjunto de dados, onde cada coluna é um atributo e cada linha é uma observação [@hadley2017]. A seguir é apresentado um exemplo sobre a linguagem **R**, com 3 atributos (nome, idade e escolaridade) e 3 observações:
 
 ```{r, fig.cap = '(ref:tidy_data)'}
   library(knitr)
@@ -150,9 +151,9 @@ Primeiro, é importante **importar** os dados nos mais diferentes formatos `.csv
   knitr::kable(escola)
 ```
 
-Sabemos que `Joao` tem `14` anos e está no `ensino fundamental`, seguindo a ideia do formato **tidy**.
+Com o dado no formato **tidy**, facilmente pode-se observar que `João` tem 14 anos e está no `ensino fundamental`.
 
-A etapa de **transformação** é composta pela adição de novos atributos com base no conjunto de dados, por exemplo, a média da idade dos alunos, visto acima. Nesta etapa, é importante gerar algumas perguntas sobre seus dados e tentar respondê-las realizando a manipulação dos dados. Um exemplo de transformação muito utilizada, é extrair o dia da semana de uma determinada data. Por exemplo, em R:
+A etapa de **Transform** é composta pela adição de novos atributos com base no conjunto de dados primário, por exemplo, a média da idade dos alunos. Esta etapa tem como objetivo gerar questionamentos sobre o conjunto de dados e tentar respondê-las através da manipulação dos dados. No código em R abaixo é apresentado um exemplo de transformação que pode ser realizada, onde um novo atributo é gerado ao extrair o dia da smeana de uma determinada data.
 
 ```{r,  fig.cap = '(ref:r_date)'}
   suppressMessages(library(lubridate))
@@ -161,13 +162,15 @@ A etapa de **transformação** é composta pela adição de novos atributos com 
   lubridate::wday(data, label = TRUE)
 ```
 
-No exemplo acima, estamos usando o pacote `lubridate` e com uma linha de código descobrimos o dia da semana do dia 11 de outubro de 2018.
+No exemplo acima, estamos usando o pacote `lubridate` para descobrir o dia da semana da data 11 de outubro de 2018.
 
-Hadley descreve a **visualização** e os **modelos** como engenharia de representação de conhecimento. A **visualização**, pode gerar novos conhecimentos, questionamentos e respostas. Segundo @claus2019, a visualização de dados, é a parte arte e a parte ciência na área de ciência de dados, portanto, a visualização precisa estar correta e agradável para interpretá-la.
+A etapa **Visualise** consiste em produzir representações dos dados que permitam uma análise visual das informações, como por exemplo, a utilização de gráficos. Visualizar o conjunto de dados, pode gerar novos conhecimentos, questionamentos e respostas. Segundo @claus2019, a visualização de dados, é a parte arte e a parte ciência na área de ciência de dados, portanto, a visualização precisa estar correta e agradável para interpretá-la.
 
 > TIL: visualisation ou visualization possuem o mesmo significado, mas, na Europa é com "s" e na América com "z".
 
-Segundo @hadley2017, **modelos** são ferramentas complementares de visualização. Para @schutt2013, realizar a análise exploratória de dados (EDA) é a etapa fundamental para a criação de um modelo. A **comunicação** é a última etapa do processo, sendo fundamental para o analista transmitir as informações obtidas através da análise dos dados, para clientes técnicos e não técnicos. Para isso, o analista apoia-se nos gráficos e modelos criados, por isso, é necessário que os gráficos possuam, pelo menos, uma estética agravél e de fácil interpretação.
+Na etapa **Models** são geradas abstrações ou modelos a partir da visualização
+
+Segundo @hadley2017, **Models** são ferramentas complementares de visualização. Para @schutt2013, realizar a análise exploratória de dados (EDA) é a etapa fundamental para a criação de um modelo. **Communicate** é a última etapa do processo, sendo fundamental para o analista transmitir as informações obtidas através da análise dos dados, para clientes técnicos e não técnicos. Para isso, o analista apoia-se nos gráficos e modelos criados, por isso, é necessário que os gráficos possuam, pelo menos, uma estética agravél e de fácil interpretação.
 
 Nos próximos capítulos é apresentado com detalhes quais pacotes e bibliotecas podem ser aplicados em cada etapa do processo de análise de dados.
 
