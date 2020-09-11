@@ -33,6 +33,7 @@ Para colaborar, faça um [fork](https://help.github.com/en/github/collaborating-
 - Felipe Carvalho (Dev);
 - Felipe Menino (Dev);
 - Lucas Augusto (Dev);
+- Leonardo Vieira (Dev/Rev);
 - Weslei Luiz (Rev).
 
 ## Materiais utilizados :books:
