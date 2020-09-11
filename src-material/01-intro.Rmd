@@ -155,9 +155,11 @@ Com o dado no formato **tidy**, facilmente pode-se observar que `João` tem 14 a
 
 A etapa de **Transform** é composta pela adição de novos atributos com base no conjunto de dados primário, por exemplo, a média da idade dos alunos. Esta etapa tem como objetivo gerar questionamentos sobre o conjunto de dados e tentar respondê-las através da manipulação dos dados. No código em R abaixo é apresentado um exemplo de transformação que pode ser realizada, onde um novo atributo é gerado ao extrair o dia da smeana de uma determinada data.
 
-```{r,  fig.cap = '(ref:r_date)'}
-  suppressMessages(library(lubridate))
+```{r, echo=FALSE}
+suppressMessages(library(lubridate))
+```
 
+```{r,  fig.cap = '(ref:r_date)'}
   data <- lubridate::dmy("11/10/2018") 
   lubridate::wday(data, label = TRUE)
 ```

@@ -74,7 +74,7 @@ Exemplo de declaração dos tipos primitivos
 
 ### Tipos de dados estruturados
 
-Agora que conhecemos os tipos primitivos, vamos aprender sobre vetores e matrizes. Apenas relembrando, podemos dizer que vetores são estruturas unidimensionais que seguem um sentido, contendo 1 linha e **N** colunas ou 1 coluna e **N** linhas. Por outro lado, a matriz é um vetor com **N**-dimensões sendo sua representação básica um vetor bidimensional composto por linhas e colunas. Na Figura @\ref(fig:fig233) é apresentado um exemplo das estruturas mencionadas.
+Agora que conhecemos os tipos primitivos, vamos aprender sobre vetores e matrizes. Apenas relembrando, podemos dizer que vetores são estruturas unidimensionais que seguem um sentido, contendo 1 linha e **N** colunas ou 1 coluna e **N** linhas. Por outro lado, a matriz é um vetor com **N**-dimensões sendo sua representação básica um vetor bidimensional composto por linhas e colunas. Na Figura \@ref(fig:fig233) é apresentado um exemplo das estruturas mencionadas.
 
 ```{r fig233, echo=FALSE ,fig.align="center", out.width = "50%",fig.cap='Estrutura de dados: Vetor e Matriz'}
   knitr::include_graphics("./images/vec_matriz.png")
