@@ -9,10 +9,10 @@ header-includes:
 
 # Introdução ao R
 
-**R** é uma linguagem de programação de alto nível voltada para visualização e análise de dados. Em essência foi inspirada na linguagem de programação __S__ (do inglês *stats*). Foi inicialmente escrita por [**R**oss Ihaka](https://en.wikipedia.org/wiki/Ross_Ihaka) e [**R**obert Gentleman](https://en.wikipedia.org/wiki/Robert_Gentleman_(statistician)) no departamento de estatística da universidade de Auckland na Nova Zelândia. Atualmente a linguagem é mantida pelo grupo __R Core Team__ composto por pessoas do mundo inteiro que tentam melhorar a linguagem dia após dia. Esse conteúdo foi baseado no livro *THE R BOOK* escrito por @crawley2012, sendo considerado a bíblia do R.
+**R** é uma linguagem de programação de alto nível voltada para visualização e análise de dados. Em essência foi inspirada na linguagem de programação __S__ (do inglês *stats*). Foi inicialmente escrita por [**R**oss Ihaka](https://en.wikipedia.org/wiki/Ross_Ihaka) e [**R**obert Gentleman](https://en.wikipedia.org/wiki/Robert_Gentleman_(statistician)) no departamento de estatística da universidade de Auckland na Nova Zelândia. Atualmente, a linguagem é mantida pelo grupo __R Core Team__ composto por pessoas do mundo inteiro que tentam melhorar a linguagem dia após dia. Esse conteúdo foi baseado no livro *THE R BOOK* escrito por @crawley2012, sendo considerado a bíblia do R.
 
 O *kernel* do **R** e os pacotes podem ser baixados pelo 
-[CRAN](https://cran.r-project.org/) - *C*omprehensive **R** **A**rchive **N**etwork. Abaixo é apresentada a sintaxe para instalar pacotes em R:
+[CRAN](https://cran.r-project.org/) - *C*omprehensive **R** **A**rchive **N**etwork. O trecho de código abaixo mostrar como instalar pacotes em R:
 
 ```{r, eval=FALSE}
   # Via CRAN
@@ -22,11 +22,11 @@ O *kernel* do **R** e os pacotes podem ser baixados pelo
   remotes::install_github("nome_do_repositorio/nome_do_pacote")
 ```
 
-O objetivo deste capítulo é abordar conceitos básicos do R. Caso existam informações que você acha relevante estar aqui, sinta-se à vontade para contribuir.
+O objetivo deste capítulo é abordar conceitos básicos do **R**. Caso existam informações que você acha relevante estar aqui, sinta-se à vontade para contribuir.
 
 ## Definição de variáveis
 
-Para atribuir um valor à uma variável usamos o símbolo `<-` ou `=`. No caso da seta, o símbolo deve apontar no sentido da variável e não do valor. Segundo @hadley2017, é uma boa prática de programação utilizar a seta `<-` ao invés do `=`. A seguir é apresentado um trecho de código de como pode ser realizada a declaração e atribuição de valores na linguagem R:
+Para atribuir um valor à uma variável usamos o símbolo `<-` ou `=`. No caso da seta, o símbolo deve apontar no sentido da variável e não do valor. Segundo @hadley2017, é uma boa prática de programação utilizar a seta `<-` ao invés do `=`. A seguir é apresentado um trecho de código de como pode ser realizada a declaração e atribuição de valores na linguagem **R**:
 
 ```{r}
   a <- "Olá!"
@@ -36,7 +36,7 @@ Para atribuir um valor à uma variável usamos o símbolo `<-` ou `=`. No caso d
 
 ### Tipos primitivos
 
-Agora que sabemos atribuir valores a uma variável, vamos falar sobre os tipos primitivos do **R**. Segundo a hierarquia do R, todo valor numérico é uma instância da classe pai: `numeric`. Basicamente, o tipo `double` (classe filha de `numeric`) é atribuído à todo número declarado sem sufixo. No entanto, ao se definir um sufixo, outras tipagens podem ser atribuídas às variáveis. Como por exemplo, o tipo `integer`: através da adição do sufixo `L` ao valor da variável e o tipo `complex`: através do sufixo `i`. Outros tipos primitivos são: os valores booleanos `TRUE` e `FALSE`(instâncias da classe `logical`) e os caracteres (instâncias da classe `character`)
+Agora que sabemos como atribuir valores a uma variável, vamos falar sobre os tipos primitivos do **R**. Segundo a hierarquia do **R**, todo valor numérico é uma instância da classe pai: `numeric`. Basicamente, o tipo `double` (classe filha de `numeric`) é atribuído à todo número declarado sem sufixo. No entanto, ao se definir um sufixo, outras tipagens podem ser atribuídas às variáveis. Por exemplo, o tipo `integer`: através da adição do sufixo `L` ao valor da variável e o tipo `complex`: através do sufixo `i`. Outros tipos primitivos são: os valores booleanos `TRUE` e `FALSE`(instâncias da classe `logical`) e os caracteres (instâncias da classe `character`)
 
 Exemplo de declaração dos tipos primitivos
 
@@ -114,7 +114,7 @@ Para declarar um vetor em **R** usa-se `c()`, desta forma:
   
 ```
 
-A conversão de tipos é apresentada na célula abaixo: 
+A conversão de tipos é apresentada no trecho de código abaixo: 
 
 ```{r}
   # Esse é um vetor misturado
@@ -125,7 +125,7 @@ A conversão de tipos é apresentada na célula abaixo:
 
 ```
 
-Então, segundo a ideia de hierarquia de tipos do **R**, o vetor da célula acima será convertido para o tipo `character`e continuará sendo atômico `r emo::ji("drum")`.
+Então, segundo a hierarquia de tipos do **R**, o vetor declarado acima será convertido para o tipo `character`e continuará sendo atômico `r emo::ji("drum")`.
 
 ```{r}
   # Para verificar se é atômico
@@ -160,7 +160,7 @@ Para verificar se a lista é atômica utiliza-se o comando `is.atomic()`. Abaixo
   is.atomic(lista_misturada)
 ```
 
-A seguir é apresentado um exemplo com uma lista não atômica, ou seja, uma lista heterogênea composta de vários tipos. Mas, será ela uma lista mesmo ? `r emo::ji("man_vampire_dark_skin_tone")`
+A seguir é apresentado um exemplo com uma lista não atômica, ou seja, uma lista heterogênea composta de vários tipos. Mas, será ela uma lista mesmo ? 
 
 ```{r}
   # Verificar se é uma lista
@@ -195,7 +195,7 @@ Podemos acessar os valores através dos índices de linha e coluna `matriz[linha
 
 ### Data Frame
 
-Um **Data Frame** pode ser entendido como uma matriz (Figura \@ref(fig:fig233)) composta por linhas e colunas, cujas colunas representam as variáveis (atributos) e as linhas representam observações. A Figura \@ref(fig:fig322) apresenta um **Data frame** onde é possível observar as definições mencionadas anteriormente. A partir da imagem podemos inferir que o aluno **José** obteve **7** na disciplina de **Álgebra Linear**. 
+Um **Data Frame** pode ser entendido como uma matriz (Figura \@ref(fig:fig233)) composta por linhas e colunas, cujas colunas representam as variáveis (atributos) e as linhas representam observações. A Figura \@ref(fig:fig322) apresenta um **Data frame** em que é possível observar as definições mencionadas anteriormente. A partir da imagem podemos inferir que o aluno **José** obteve **7** na disciplina de **Álgebra Linear**. 
 
 ```{r fig322, echo=FALSE ,fig.align="center", out.width = "80%",fig.cap=' Representação de um Data frame - Fonte: @gk4gk2019'}
   knitr::include_graphics("./images/df_definicao.png")
@@ -236,7 +236,7 @@ Agora que sabemos a definição de um **Data frame**, vamos ler um conjunto de d
   typeof(iris)
 ```
 
-Podemos usar quaisquer dos métodos apresentados anteriormente para manipular e obter informações do `data.frame` no `tibble`. O código acima mostra que o `tibble` criado possui três classes: `tbl_df`, `tbl` e `data.frame`. É possível observar que o `tibble` possui como classe comum o `data.frame`.
+Podemos usar quaisquer dos métodos apresentados anteriormente para manipular e obter informações do `data.frame` no `tibble`. O trecho de código acima mostra que o `tibble` criado possui três classes: `tbl_df`, `tbl` e `data.frame`. É possível observar que o `tibble` tem como classe comum o `data.frame`.
 
 Podemos tirar algumas conclusões, a primeira é que, existe uma classe chamada `data.frame` do tipo `list`. A segunda é que, a lista em **R** é heterogênea, portanto, nosso `Data frame` pode conter vários tipos. Para verificar se a classe `data.frame` é atômica, retomamos a função `is.atomic()`:
 
@@ -305,7 +305,7 @@ Nesta seção, vamos focar em como aplicar as estatísticas básicas. Não iremo
 - Medidas de dispersão
   - Desvio padrão
 
-Para verificar o desvio padrão do conjunto, podemos utilizar a função `sd()` do pacote `stats` (incluso por padrão no R). Podemos verificar a média com `mean()` que é uma função do pacote `base` (incluso por padrão no R) e a mediana com `median()` do pacote `stats`.
+Para verificar o desvio padrão do conjunto, podemos utilizar a função `sd()` do pacote `stats` (incluso por padrão no **R**). Podemos verificar a média com `mean()` que é uma função do pacote `base` (incluso por padrão no **R**) e a mediana com `median()` do pacote `stats`.
 
 Como demonstração, vamos utilizar o conjunto de dados do filme *Star Wars*:
 
@@ -338,14 +338,14 @@ Como demonstração, vamos utilizar o conjunto de dados do filme *Star Wars*:
 
 ## Estruturas de decisão
 
-No **R**, os `IF's` da vida - "se chover e fizer frio, não vou à praia" possuem uma estrutura semelhante ao Java. A seguir, são apresentados exemplos das estruturas de decisão do R com o uso do conjunto de dados *star wars*.
+No **R**, os `IF's` da vida - "se chover e fizer frio, não vou à praia", possuem uma estrutura semelhante ao Java. A seguir, são apresentados exemplos das estruturas de decisão do **R** com o uso do conjunto de dados *star wars*.
 
 ```{r}
   personagem <- "BB8"  
 
-  if(personagem %in% starwars$name){
+  if (personagem %in% starwars$name) {
     "Tem o personagem BB8 nos dados"
-  } else if("Padmé" %in% starwars$name) {
+  } else if ("Padmé" %in% starwars$name) {
     "Tem a personagem Padmé nos dados"
   } else {
     "Não possui esse personagem"
@@ -354,20 +354,20 @@ No **R**, os `IF's` da vida - "se chover e fizer frio, não vou à praia" possue
 
 ## Iteração
 
-Em **R** para iterar sobre objetos como lists ou vectors utiliza-se o comando de reptição `for`. A sintaxe
-para utilizar o comando `for` no **R** é semelhante ao comando em **Python**. Na célula abaixo é
+Em **R** para iterar sobre objetos como `list` ou `vector` utiliza-se o comando de reptição `for`. A sintaxe
+para utilizar o comando `for` no **R** é semelhante ao comando em **Python**. No trecho de código abaixo é
 apresentado um exemplo de `foreach` "para cada elemento da estrutura faça" na linguagem **R**:
 
 ```{r}
   # Foreach
-  for(i in head(starwars$name, 3)){
+  for (i in head(starwars$name, 3)) {
     print(i)
   }
 ```
 
 ## Manipulação de dados
 
-Vamos utilizar o pacote `dplyr` do *kit* de ferramentas [**Tidyverse**](https://www.tidyverse.org/) para manipular os valores de um `data.frame`. Para isso, criamos o seguinte `data.frame`:
+Vamos utilizar o pacote `dplyr` do *kit* de ferramentas [**Tidyverse**](https://www.tidyverse.org/) para manipular os `data.frame`s. Para isso, criamos o seguinte `data.frame`:
 
 ```{r}
 meu_df <- tibble::tibble(
@@ -392,7 +392,7 @@ A seguir são descritos os método do pacote **dplyr** utilizados nos exemplos:
 - `group_by` - Criação de grupos para aplicação de funções de agregação;
 - `summarize` - Função de agregação aplicada em grupos.
 
-Com base nos métodos acima, vamos manipular nosso ​Data Frame​ ?
+Com base nos métodos acima, vamos manipular nosso Data Frame.
 
 ```{r}
   # Importação do pacote dplyr
@@ -417,7 +417,7 @@ Com base nos métodos acima, vamos manipular nosso ​Data Frame​ ?
 ```
 
 
-No exemplo acima foram realizadas algumas operações sobre o data.frame. Sobre o resultado da filtragem foi feita a seleção dos atributos `aluno_curso`, `aluno_avaliacao` e `aluno_media`. A partir da seleção dos atributos agrupamos os dados segundo o atributo `aluno_curso`. E por fim, calculamos a média do atributo `aluno_media` revelando o curso e a média dos alunos que obtiveram uma avaliação ruim `r emo::ji("bear")`. Mas, o código ficou muito grande, como podemos melhorar? Substituindo por apenas uma variável, desta forma: 
+No exemplo acima foram realizadas algumas operações sobre o Data frame. Sobre o resultado da filtragem foi feita a seleção dos atributos `aluno_curso`, `aluno_avaliacao` e `aluno_media`. A partir da seleção dos atributos, agrupamos os dados segundo o atributo `aluno_curso`. E por fim, calculamos a média do atributo `aluno_media` revelando o curso e a média dos alunos que obtiveram uma avaliação ruim. Mas, o código ficou muito grande, como podemos melhorar? Substituindo por apenas uma variável, desta forma: 
 
 ```{r}
   # Filtro pelo atributo "aluno_avaliano"
@@ -438,7 +438,7 @@ No exemplo acima foram realizadas algumas operações sobre o data.frame. Sobre 
   knitr::kable(meu_df1)
 ```
 
-Melhorou um pouco, não? Mas podemos melhorar ainda mais utilizando o símbolo `%>%`. O `%>%` é chamado de *pipe* ela é permite com que a resposta da primeira atribuição seja utilizada como primeiro parâmetro da função seguinte, desta forma:
+Melhorou um pouco, não? Mas podemos melhorar ainda mais utilizando o símbolo `%>%`. O `%>%` é chamado de *pipe* e permite com que a resposta da primeira atribuição seja utilizada como primeiro parâmetro da função seguinte, desta forma:
 
 ```{r}
 meu_vetor <- c(1, 3, 5, 7, 9) %>% mean()
@@ -450,7 +450,7 @@ meu_vetor
 A partir disto não precisamos usar a variável `meu_vetor` como parâmetro da função `mean()`. Mas e se eu quiser adicionar mais parâmetros? Opa, você pode e deve! Isso segue a mesma linha de raciocínio da função, desta forma:
 
 ```{r}
-meu_vetor <- c(2, 4, 6, 8, NA) %>% mean(na.rm=TRUE)
+meu_vetor <- c(2, 4, 6, 8, NA) %>% mean(na.rm = TRUE)
 
 meu_vetor
 ```
@@ -474,7 +474,7 @@ Essa é a principal função do operador **pipe**, tornar o código mais limpo e
 
 ## Exemplos
 
-Para encerrarmos esse capítulo de R, vamos mostrar uma análise de dados aplicada no mundo real. Para isso, iremos utilizar dois conjuntos de dados obtidos através da plataforma [kaggle](https://www.kaggle.com/). Os conjuntos de dados correspondentes a série temporal de [mudança climática da temperatura da superfície terrestre terrestre](https://www.kaggle.com/berkeleyearth/climate-change-earth-surface-temperature-data) e os [continentes de cada país](https://www.kaggle.com/statchaitya/country-to-continent). O objetivo da análise é verificar qual continente registrou a maior média anual de temperatura.
+Para encerrarmos esse capítulo de **R**, vamos mostrar uma análise de dados aplicada em um conjunto de dados do mundo real. Para isso, iremos utilizar dois conjuntos de dados obtidos através da plataforma [kaggle](https://www.kaggle.com/). Os conjuntos de dados correspondem a série temporal de [mudança climática da temperatura da superfície terrestre terrestre](https://www.kaggle.com/berkeleyearth/climate-change-earth-surface-temperature-data) e os [continentes de cada país](https://www.kaggle.com/statchaitya/country-to-continent). O objetivo da análise é verificar qual continente registrou a maior média anual de temperatura.
 
 ```{r, message=FALSE}
   # Importação dos pacotes utilizados
@@ -508,7 +508,7 @@ Para encerrarmos esse capítulo de R, vamos mostrar uma análise de dados aplica
   head(final_dataset, 5)
 ```
 
-Agora vamos responder a nossa pergunta: qual o continente que registrou a maior temperatura anual?
+Agora, vamos responder a nossa pergunta: qual o continente que registrou a maior temperatura anual?
 
 ```{r}
   # Criação de um grupo de continentes e agregando pela maior temperatura

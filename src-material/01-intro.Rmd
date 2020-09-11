@@ -10,7 +10,7 @@ header-includes:
 
 # Introdução
 
-A análise de dados é uma das atividades mais interessantes da atualidade, com ela é possível monitorar o governo (por exemplo, [Operação serenata](https://serenata.ai/)), fazer empresas de sucesso e produtos que atendam a real necessidade de seus clientes, e o mais importante, comprovar a veracidade de informações recebida e saciar nossa curiosidade. Isto porque, com a quantidade de dados disponíveis, podemos literalmente, saber sobre tudo, aplicando técnicas de análise de dados. Portanto, este minicurso tem como objetivo apresentar, de forma introdutória, as principais tecnologias para analisar dados a partir das linguagens de programação R e Python.
+A análise de dados é uma das atividades mais interessantes da atualidade, com ela é possível monitorar o governo (por exemplo, [Operação serenata](https://serenata.ai/)), fazer empresas de sucesso e produtos que atendam a real necessidade de seus clientes, e o mais importante, comprovar a veracidade de informações recebida e saciar nossa curiosidade. Isto porque, com a quantidade de dados disponíveis, podemos literalmente, saber sobre tudo, aplicando técnicas de análise de dados. Portanto, este minicurso tem como objetivo apresentar, de forma introdutória, as principais tecnologias para analisar dados a partir das linguagens de programação **R** e **Python**.
 
 ## Dados
 
@@ -140,7 +140,7 @@ Agora que sabemos o que faz um analista de dados, é necessário entender as eta
 
 ```
 
-A primeira etapa (**Import**) consiste em fazer a leitura aos dados, independentemente do formato do arquivo (`.csv, .kml, .json`). Após a leitura dos dados, é necessário organizar, estruturar os dados e corrigir possíveis erros tornando os dados **tidy**. O termo **tidy** refere-se a nova estrutura do conjunto de dados, onde cada coluna é um atributo e cada linha é uma observação [@hadley2017]. A seguir é apresentado um exemplo sobre a linguagem **R**, com 3 atributos (nome, idade e escolaridade) e 3 observações:
+A primeira etapa (**Import**) consiste em fazer a leitura dos dados, independentemente do formato do arquivo (`.csv, .kml, .json`). Após a leitura dos dados, é necessário organizar, estruturar os dados e corrigir possíveis erros tornando os dados **tidy**. O termo **tidy** refere-se a nova estrutura do conjunto de dados, em que cada coluna é um atributo e cada linha é uma observação [@hadley2017]. A seguir é apresentado um exemplo sobre a linguagem **R**, com 3 atributos (nome, idade e escolaridade) e 3 observações:
 
 ```{r, fig.cap = '(ref:tidy_data)'}
   library(knitr)
@@ -153,7 +153,7 @@ A primeira etapa (**Import**) consiste em fazer a leitura aos dados, independent
 
 Com o dado no formato **tidy**, facilmente pode-se observar que `João` tem 14 anos e está no `ensino fundamental`.
 
-A etapa de **Transform** é composta pela adição de novos atributos com base no conjunto de dados primário, por exemplo, a média da idade dos alunos. Esta etapa tem como objetivo gerar questionamentos sobre o conjunto de dados e tentar respondê-las através da manipulação dos dados. No código em R abaixo é apresentado um exemplo de transformação que pode ser realizada, onde um novo atributo é gerado ao extrair o dia da smeana de uma determinada data.
+A etapa de **Transform** é composta pela adição de novos atributos com base no conjunto de dados primário, por exemplo, a média da idade dos alunos. Esta etapa tem como objetivo gerar questionamentos sobre o conjunto de dados e tentar respondê-las através da manipulação dos dados. No código em **R** abaixo é apresentado um exemplo de transformação que pode ser realizada, em que um novo atributo é gerado ao extrair o dia da semana de uma determinada data.
 
 ```{r, echo=FALSE}
 suppressMessages(library(lubridate))
@@ -166,13 +166,13 @@ suppressMessages(library(lubridate))
 
 No exemplo acima, estamos usando o pacote `lubridate` para descobrir o dia da semana da data 11 de outubro de 2018.
 
-A etapa **Visualise** consiste em produzir representações dos dados que permitam uma análise visual das informações, como por exemplo, a utilização de gráficos. Visualizar o conjunto de dados, pode gerar novos conhecimentos, questionamentos e respostas. Segundo @claus2019, a visualização de dados, é a parte arte e a parte ciência na área de ciência de dados, portanto, a visualização precisa estar correta e agradável para interpretá-la.
+A etapa **Visualise** consiste em produzir representações dos dados que permitam uma análise visual das informações, como o uso de gráficos. Visualizar o conjunto de dados pode gerar novos conhecimentos, questionamentos e respostas. Segundo @claus2019, a visualização de dados, é a parte arte e a parte ciência na área de ciência de dados, portanto, a visualização precisa estar correta e agradável para interpretá-la.
 
 > TIL: visualisation ou visualization possuem o mesmo significado, mas, na Europa é com "s" e na América com "z".
 
 Na etapa **Models** são geradas abstrações ou modelos a partir da visualização
 
-Segundo @hadley2017, **Models** são ferramentas complementares de visualização. Para @schutt2013, realizar a análise exploratória de dados (EDA) é a etapa fundamental para a criação de um modelo. **Communicate** é a última etapa do processo, sendo fundamental para o analista transmitir as informações obtidas através da análise dos dados, para clientes técnicos e não técnicos. Para isso, o analista apoia-se nos gráficos e modelos criados, por isso, é necessário que os gráficos possuam, pelo menos, uma estética agravél e de fácil interpretação.
+Segundo @hadley2017, **Models** são ferramentas complementares de visualização. Para @schutt2013, realizar a análise exploratória de dados (EDA) é a etapa fundamental para a criação de um modelo. **Communicate** é a última etapa do processo, sendo fundamental para o analista transmitir as informações obtidas através da análise dos dados, para clientes técnicos e não técnicos. Para isso, o analista apoia-se nos gráficos e modelos criados, por isso é necessário que os gráficos possuam, pelo menos, uma estética agravél e de fácil interpretação.
 
 Nos próximos capítulos é apresentado com detalhes quais pacotes e bibliotecas podem ser aplicados em cada etapa do processo de análise de dados.
 
