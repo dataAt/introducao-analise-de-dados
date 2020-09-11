@@ -12,7 +12,7 @@ header-includes:
 **R** é uma linguagem de programação de alto nível voltada para visualização e análise de dados. Em essência foi inspirada na linguagem de programação __S__ (do inglês *stats*). Foi inicialmente escrita por [**R**oss Ihaka](https://en.wikipedia.org/wiki/Ross_Ihaka) e [**R**obert Gentleman](https://en.wikipedia.org/wiki/Robert_Gentleman_(statistician)) no departamento de estatística da universidade de Auckland na Nova Zelândia. Atualmente, a linguagem é mantida pelo grupo __R Core Team__ composto por pessoas do mundo inteiro que tentam melhorar a linguagem dia após dia. Esse conteúdo foi baseado no livro *THE R BOOK* escrito por @crawley2012, sendo considerado a bíblia do R.
 
 O *kernel* do **R** e os pacotes podem ser baixados pelo 
-[CRAN](https://cran.r-project.org/) - *C*omprehensive **R** **A**rchive **N**etwork. O trecho de código abaixo mostrar como instalar pacotes em R:
+[CRAN](https://cran.r-project.org/) - *C*omprehensive **R** **A**rchive **N**etwork. O trecho de código abaixo mostra como instalar pacotes em R:
 
 ```{r, eval=FALSE}
   # Via CRAN
@@ -22,7 +22,7 @@ O *kernel* do **R** e os pacotes podem ser baixados pelo
   remotes::install_github("nome_do_repositorio/nome_do_pacote")
 ```
 
-O objetivo deste capítulo é abordar conceitos básicos do **R**. Caso existam informações que você acha relevante estar aqui, sinta-se à vontade para contribuir.
+O objetivo deste capítulo é abordar conceitos básicos do **R**. Caso existam informações que você ache relevante estar aqui, sinta-se à vontade para contribuir.
 
 ## Definição de variáveis
 
