@@ -4,42 +4,42 @@ Python é uma linguagem multiparadigma, com uma sintaxe simples que permite ao u
 
 Nesta introdução, o foco será a aplicação da linguagem Python na manipulação e tratamento de dados, utilizando como base a biblioteca Pandas.
 
-Você pode estar se perguntando o motivo da utilização desta biblioteca e a resposta é bem simples, Python é uma linguagem de uso geral, assim, suas funções nativas não tem foco em uma aplicação específica, como acontece em linguagens como R e Julia, que possuem áreas específicas de aplicação. Com isso, não podemos esperar que nativamente a linguagem tenha métodos variados para a manipulação e tratamento de dados e é nesta parte que o Pandas entra, facilitando toda manipulação e tratamento de dados com funções incríveis.
+Você pode estar se perguntando o motivo da utilização desta biblioteca e a resposta é bem simples. Python é uma linguagem de uso geral, assim, suas funções nativas não tem como foco uma aplicação específica. Isso diferencia o Python de linguagens como R e Julia, que possuem áreas específicas de aplicação. Com isso, não podemos esperar que nativamente a linguagem tenha métodos variados para a manipulação e tretamento de dados e é nessa parte que o Pandas trabalha, facilitando toda a manipulação e tratamento de dados com funções incríveis.
 
 Vamos começar !
 
 ## Introdução ao Pandas `r emo::ji("panda_face")`
 
-Para iniciar, vamos entender o que é a biblioteca Pandas e qual seu objetivo geral, para isto, vejamos a definição feita na documentação oficial do projeto.
+Para iniciar, vamos entender o que é a biblioteca Pandas e qual seu objetivo geral, para isso, vejamos a definição feita na documentação oficial do projeto.
 
 > Pandas é uma biblioteca open source, licenciada pelo BSD, que fornece estruturas de dados de alto desempenho e fáceis de usar e ferramentas de análise de dados para a linguagem de programação Python.
 
-Veja então que, tudo o que é necessário para a realização da maioria dos casos de análise de dados utilizando a linguagem Python, irão, bem provavelmente, trabalhar com esta biblioteca.
+Veja então que, o Pandas possui quase tudo o que é necessário para a realização de um projeto de análise de dados na linguagem Python. Isso faz com que a biblioteca seja a principal ferramenta Python para a área de *Data Science*.
 
-Para que se tenha uma ideia, o Pandas pode ser aplicado em análises envolvendo:
+Para se ter uma ideia, o Pandas pode ser aplicado em análises envolvendo:
 
 - Finanças;
 - Geociências;
 - Ciência social;
 - Além de diversas outras áreas de ciências e engenharia.
 
-Isto tudo por contar com diversas funções e estruturas de dados que facilitam os processos de análise, essas discutidas nos próximos tópicos. 
+Nos próximos tópicos serão abordadas as principais funções e estruturas de dados do Pandas, evidenciando o quão fácil é a utilização da ferramenta.
 
 ## Estruturas de dados
 
 O Pandas disponibiliza diversas estruturas de dados preparadas para o trabalho com grandes volumes de dados, sendo as principais:
 
-- Series;
-- DataFrames.
+- *Series*;
+- *DataFrames*.
 
-Nos subtópicos abaixo vamos ver as características de cada uma destas estruturas, e em seguida, veremos alguns utilitários para leitura dos dados com Pandas.
+Nos subtópicos abaixo vamos ver as características de cada uma dessas estruturas, e em seguida, veremos alguns utilitários para leitura de dados com Pandas.
 
 ### Series
 
-As `Series` são estruturas de dados unidimensionais, que contam com diversos métodos para a manipulação de dados.
-Pode-se entender que as `Series` são estruturas de dados simples, assim como as listas padrões da linguagem Python, com uma pequena diferença, para cada item dentro de uma `Series` tem-se índices.
+As `Series` são estruturas unidimensionais, que contam com diversos métodos para a manipulação de dados.
+Pode-se entender que as `Series` são estruturas de dados simples, assim como as listas padrões da linguagem Python, com uma pequena diferença, os items dentro de uma `Series` possuem um índice.
 
-Para entendermos, vamos começar com a utilização desta estrutura de dados
+Para entendermos como a estrutura funciona, vamos apresentar alguns exemplos de como criar e manipular as `Series`.
 
 ```{r, echo=FALSE}
 # Estes comandos não devem ser executados em seu terminal
@@ -47,7 +47,7 @@ library(reticulate)
 use_python("venv/bin/python3")
 ```
 
-Inicialmente, faça a importação da biblioteca pandas com o 'apelido' de `pd`, em seguida, vamos criar uma `Series` simples, passando como parâmetro de entrada uma lista com três valores, veja:
+No código abaixo, inicialmente é realizada a importação do Pandas com o 'apelido' de `pd`. Em seguida criamos uma `Series` simples, passando como parâmetro de entrada uma lista com três valores, veja:
 
 ```{python}
 import pandas as pd
@@ -55,21 +55,21 @@ import pandas as pd
 s = pd.Series([1, 2, 3]); print(s)
 ```
 
-> Ao fazer pd.Series, você está explicitamente informando que a estrutura de dados `Series` está no contexto da biblioteca Pandas
+> Ao fazer pd.Series, você está explicitamente informando que a estrutura de dados `Series` está no contexto da biblioteca Pandas.
 
-É interessante notar o índice na `Series`, citado anteriormente, que permite a recuperação rápida e simples dos dados. A recuperação feita através de índices é muito parecida com a recuperação de valores em um dicionário em Python, veja:
+É interessante notar que cada elemento da `Series` possui um índice associado. Este índice permite a recuperação rápida e simples dos dados que compõem a `Series`. A recuperação feita através de índices é muito parecida com a recuperação de valores em um dicionário em Python. Abaixo é apresentado um exemplo de como indexar e recuperar um elemento da `Series`:
 
 ```{python}
 print(s[0]) # Recupera o valor do índice com nome 0
 ```
 
-Para visualizar somente o índice, utilizamos o atributo `index`.
+Através do atributo `index` é possível visualizar os índices associados a estrutura:
 
 ```{python}
 print(s.index)
 ```
 
-O índice pode ser facilmente editado
+O índice pode ser facilmente editado como segue:
 
 ```{python}
 s.index = ["um", "dois", "tres"]
@@ -77,7 +77,7 @@ s.index = ["um", "dois", "tres"]
 print(s.index)
 ```
 
-Também é possível já criar uma `Series` com um índice personalizado, para isto, basta passar no construtor uma lista representado o índice, veja:
+Também é possível já criar uma `Series` com um índice personalizado, para isto, basta passar como parâmetro do construtor da `Series` uma segunda lista com os valores dos índices.
 
 ```{python}
 s = pd.Series([7, 8, 9], [1, 2, 3])
@@ -86,13 +86,13 @@ s = pd.Series([7, 8, 9], [1, 2, 3])
 s = pd.Series([7, 8, 9], index=[1, 2, 3]) # Fica explicito quem é o índice
 ```
 
-Veja que a primeira lista passada representa os dados, e a segunda o índice
+Note que a primeira lista passada representa os dados, e a segunda o índice.
 
 ```{python}
 print(s)
 ```
 
-É possível também transformar facilmente os dicionários em `Series`.
+É possível criar uma `Series` através de um dicionário Python. Veja o exemplo:
 
 ```{python}
 dicto = {
@@ -103,45 +103,45 @@ dicto = {
 dicto_s = pd.Series(dicto); print(dicto_s)
 ```
 
-Após a conversão o uso é basicamente o mesmo do dicionário. Além do que já foi dito sobre as `Series`, é importante lembrar que, estas estruturas de dados possuem diversos métodos para facilitar a manipulação e entendimento dos dados, apresentados nas próximas seções.
+Após a construção o uso é basicamente o mesmo do dicionário. Além do que já foi dito sobre as `Series`, é importante lembrar que, estas estruturas de dados possuem diversos métodos para facilitar a manipulação e entendimento dos dados, apresentados nas próximas seções.
 
-Mesmo as `Series` sendo estruturas de dados poderosas, elas apresentam a limitação da unidimensionalidade, o que impede matrizes, tabelas e similares não possam ser facilmente representadas através das `Series`. Para esta limitação ficar clara, vamos inserir uma matriz de dados em uma `Series`, erros não serão apresentados, porém a representação pode não ficar como desejado.
+Mesmo as `Series` sendo estruturas de dados poderosas, elas apresentam a limitação da unidimensionalidade. Isso impede que estruturas N-dimensionais (Como por exemplo, matrizes, tabelas e similares) não possam ser facilmente representadas através das `Series`. Para exemplificar este impedimento, vamos inserir uma matriz de dados em uma `Series`, erros não serão apresentados, porém, a representação pode não ficar como desejado.
 
 ```{python}
 matriz = pd.Series([[1, 2, 3], [4, 5, 6]])
 print(matriz)
 ```
 
-Percebeu ? Não há uma matriz, e sim várias listas dentro de listas em cada linha. A ideia é que a matriz fosse apresentada em um formato onde cada elemento está em uma posição, como na tabela abaixo.
+Percebeu ? Não há uma matriz, e sim listas de listas associadas aos índices. A ideia é que a matriz fosse apresentada em um formato onde cada elemento está em uma posição, como na tabela abaixo.
 
 |   |   |   |
 |---|---|---|
 | 1 | 2 | 3 |
 | 4 | 5 | 6 |
 
-Para estes casos é necessário o uso de uma outra estrutura de dados, o DataFrame, tratado no subtópico seguinte.
+Para estes casos é necessário o uso de uma outra estrutura de dados, o *DataFrame*, tratado no subtópico seguinte.
 
 ### DataFrames
 
-Agora que você já conhece como as `Series` funcionam, vamos apresentar a você o `DataFrame`, que difere das `Series` por serem multidimensionais, ou seja, aqui temos uma estrutura que trabalha com linhas e colunas (Podemos dizer também que temos matrizes aqui) `r emo::ji("rainbow")`.
+Agora que você já conhece como as `Series` funcionam, vamos apresentar a você o `DataFrame`. O `DataFrame` difere das `Series` por ser uma estrutura multidimensional, ou seja, trabalha com linhas e colunas.
 
-Boa parte dos métodos disponíveis em uma `Series` também são aplicáveis em `DataFrames`, o que ajuda no aprendizado de utilização da API do Pandas, mas é importante entender que, em diversos casos o simples fato de haver mais dimensões nos dados torna a manipulação diferente, com resultados diferentes (Isto para os mesmos métodos).
+Boa parte dos métodos disponíveis em uma `Series` também são aplicáveis em `DataFrames`, o que ajuda no aprendizado da utilização da API do Pandas. É importante entender que, o fato de haver mais dimensões nos dados torna a manipulação diferente, com resultados diferentes (Isto para os mesmos métodos).
 
-Vejamos algumas características bacanas dos `DataFrames`
+Vejamos algumas características bacanas dos `DataFrames`:
 
 ```{python}
 matriz = pd.DataFrame([[1, 2, 3], [4, 5, 6]])
 print(matriz)
 ```
 
-O mesmo processo feito acima, quando realizado nas `Series` gerou listas de listas, aqui não, tem-se uma matriz com formas de recuperação por linhas e colunas. Da mesma forma que as `Series`, os `DataFrames` tem o índice que pode ser nomeado, e além destes, as colunas, que também podem ser nomeadas e utilizadas para a recuperação de dados.
+O processo acima quando realizado nas `Series`, gera listas de listas. Porém com os `DataFrames` tem-se uma matriz com formas de recuperação por linhas e colunas. Da mesma forma que as `Series`, os `DataFrames` permitem que os índices sejam (re)nomeados, além disso, as colunas também podem ser (re)nomeadas e utilizadas para a recuperação de dados.
 
 ```{python}
 tabela = pd.DataFrame([[.9, .8, .7], [.4, .5, .7]], columns = ['primeiro', 'segundo', 'terceiro'], index = ['zero', 'um'])
 print(tabela)
 ```
 
-Pode-se também utilizar os dicionários e trasforma-los em `DataFrames`, veja como isto é feito.
+Um `DataFrame` também pode ser criado através de um dicionário, veja como isso é feito:
 
 ```{python}
 dicto = {
@@ -152,22 +152,20 @@ dicto = {
 df = pd.DataFrame(dicto); print(df)
 ```
 
-Bem, agora que você entendeu a diferença fundamental entre estas estruturas de dados, vamos para a parte de manipulação delas.
+Bem, agora que você entendeu a diferença fundamental entre essas estruturas de dados, vamos aprender sobre diferentes métodos para a manipulação dessas estruturas.
 
 ### Seleção e filtro dos dados
 
-Uma parte muito importante é a seleção e filtro dos dados, com elas basicamente faremos a manipulação dos dados.
-
-Vamos começar fazendo a busca utilizando os índices (index) e as colunas (No caso dos `DataFrames`). Para isto, vamos utilizar os métodos `.loc`, que permitem buscar uma linha com algum nome de índice específico e o `.iloc` que busca uma linha em uma posição específica.
+Uma parte muito importante é a seleção e filtragem dos dados. Vamos começar fazendo a busca utilizando os índices (index) e as colunas (No caso dos `DataFrames`). Para isto, utilizamos os métodos `.loc`, que permitem buscar uma linha com algum nome de índice específico e o `.iloc` que busca uma linha em uma posição específica.
 
 A sintaxe de utilização básica para as duas estruturas de dados podem ser vistas abaixos:
 
 | DataFrame        | Series     |     
 | ------------- |:-------------:|
-| .loc[linha, coluna]  | .loc[linha] |
+| .loc[Nome da linha, Nome da coluna]  | .loc[Nome da linha] |
 | .iloc[posição da linha, posição da coluna] | .iloc[posição da linha] |
 
-Os métodos mudam exatamente por conta das diferenças apresentadas entre as estruturas de dados, assim, o `.loc` e o `.iloc` permitem a busca por linhas e colunas nos `DataFrames` e somente das linhas em uma `Series`. 
+Note as diferenças de sintaxe em relação a estrutura de dados (`Series` ou `DataFrames`) adotada. Os métodos mudam pela quantidade de parâmetros que podem ser utilizados. O `.loc` e `.iloc` permitem a busca por linhas e colunas nos `DataFrames` e somente das linhas em uma `Series`.
 
 ```{python}
 df = pd.DataFrame({
@@ -176,7 +174,7 @@ df = pd.DataFrame({
   'nota': [8, 9, 10]
 }, index = [7, 8, 9])
 
-# Recuperando a aluna com index 9
+# Recuperando o nome da aluna com index 9
 df.loc[9, 'nome']
 
 # É possível também recuperar mais de uma coluna com o .loc
@@ -192,7 +190,7 @@ df.iloc[2][['nome', 'idade']]
 df.iloc[1, 1]
 ```
 
-Dentro destes métodos de busca ainda é possível passar uma expressão booleana, para realizar um filtro dos dados. Veja o exemplo abaixo, de um `DataFrame`, é desejado todas as linhas da coluna `numeros`, onde os valores sejam maiores ou iguais a 5.
+Ambas estruturas também permitem a utilização de expressões booleanas para filtragem dos dados. No exemplo abaixo é instanciado um `DataFrame` de valores numéricos. O objetivo é selecionar todos elementos do `DataFrame` maiores ou iguais a 5.
 
 ```{python}
 df = pd.DataFrame({'numeros': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]})
@@ -200,17 +198,17 @@ df = pd.DataFrame({'numeros': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]})
 df[df['numeros'] >= 5]
 ```
 
-> O exemplo acima foi apresentado com um `DataFrame`, mas também pode ser aplicado nas `Series`.
+> O exemplo utilizou um `DataFrame`, mas as expressões booleanas também podem ser aplicadas nas `Series`.
 
-Estes são os conceitos básicos para a manipulação e filtragem dos dados, existem muitos métodos para a manipulação e filtragem, aqui ainda veremos alguns deles, mas, inicialmente estes já resolver muitos problemas das etapas de análise de dados.
+Esses são os conceitos básicos para a manipulação e filtragem dos dados. Existem diversas funções e métodos que podem ser utilizados para esse fim. Inicialmente veremos somente parte deles, porém, só com o que vimos até aqui já é possível realizar grande parte das etapas de análise de dados.
 
 ### Agrupamento de dados e agregações
 
-Muitas vezes queremos agrupar nossos dados, seja para facilitar a manipulação, o entendimento das relações dos dados, ou mesmo para aplicar funções sobre cada um dos grupos e obter informações a partir disto. Para tal pode ser usado os agrupamentos e agregações.
+Muitas vezes quereos agrupar nossos dados para obter informações, seja para facilitar a manipulação, o entendimento das relações contidas nos dados, ou mesmo para aplicar funções sobre cada um dos grupos e obter informações a partir disto. Para isso podemos utilizar diferentes formas de agrupamentos e agregações.
 
-As agregações apresentam diversas derivações de definição, aqui foi assumido que "Agregações são operações aplicadas sobre os dados que resultam em um conjunto de valores". 
+O termo agregações pode apresentar diferentes definições, aqui foi assumido que, "Agregações são operações aplicadas sobre os dados que resultam em um conjunto de valores".
 
-No Pandas, o retorno de uma agregação pode mudar de acordo com a estrutura de dados onde a operação é aplicada, no caso das `Series` é retornado apenas um valor escalar. Para os `DataFrames`, um valor para cada linha/coluna é retornado.
+No Pandas, o retorno de uma agregação pode mudar de acordo com a estrutura de dados, no caso das `Series` é retornado apenas um valor escalar. Para os `DataFrames`, o retorno da agregação é um valor para cada linha ou coluna (A dimensão pode ser definida pelo usuário).
 
 Algumas operações de agregação são:
 
@@ -229,9 +227,9 @@ print(s.sum())
 print(df.sum())
 ```
 
-Já o agrupamento representa a divisão dos dados em conjuntos que possuem alguma similaridade, no Pandas o agrupamento é realizado com o método `groupby` presente nas classes `Series` e `DataFrames`.
+Por outro lado, as operações de agrupamento realizam a divisão dos dados em conjuntos que possuem alguma similaridade. No Pandas o agrupamento é realizado com o método `groupby` presente nas `Series` e `DataFrames`.
 
-> O critério de similaridade citado anteriormente é definido pelo usuário
+> O critério de similaridade utilizado nas operações de agrupamento são definidos pelo usuário.
 
 Aqui vamos focar no agrupamento dos `DataFrames`, mas os passos são os mesmos para as `Series`.
 
@@ -245,27 +243,27 @@ df = pd.DataFrame({
 agrupado = df.groupby('tipo')
 ```
 
-No exemplo acima, os dados foram agrupados de acordo com a coluna `tipo`, colocando no mesmo grupo linhas que possuam o registro da coluna `tipo` igual.
+No exemplo acima, os dados foram agrupados de acordo com a coluna `tipo`. No caso, os elementos que possuem o mesmo valor do atributo `tipo` são agrupados por linhas.
 
-Certo, a operação é simples e intuitiva, mas o que devemos esperar deste método ? Intuitivamente pensamos em um conjunto de `DataFrames`, cada um representando um grupo e é exatamente isto que o Pandas retorna, porém há algumas particularidades.
+Certo, a operação é simples e intuitiva, mas o que devemos esperar deste método ? Intuitivamente pensamos em um conjunto de `DataFrames`, onde cada `DataFrame` representa um grupo. Esse é exatamente o retorno do Pandas, porém, há algumas particulariedades. O tipo retornado de uma operação `groupby` deixa de ser um `DataFrame` e passa a ser um `DataFrameGroupBy`. Isso facilita a manipulação dos grupos com métodos especializados.
 
-O tipo retornado de um `groupby` deixa de ser um `DataFrame` e passa a ser um `DataFrameGroupBy`, que facilita a manipulação dos grupos com métodos especializados.
-
-Vamos iniciar o entendimento do `DataFrameGroupBy` pela verificação dos grupos criados, este processo que é feito através do acesso ao método `groups`.
+Vamos iniciar o entendimento do `DataFrameGroupBy` pela verificação dos grupos criados. Esse processo é feito através do atributo `groups`.
 
 ```{python}
 print(agrupado.groups)
 ```
 
-Acessando o atributo `groups` é possível verificar todos os grupos gerados e seus membros. Além disto, com um objeto `DataFrameGroupBy` é possível aplicarmos os conceitos de agregação dentro dos grupos que foram gerados através do `groupby`.
+Acessando o atributo `groups` é possível verificar todos os grupos gerados e seus membros. Além disto, com um objeto `DataFrameGroupBy` é possível aplicarmos os conceitos de agregação dentro dos grupos gerados pelo `groupby`.
 
-Para entendermos o funcionamento do processo de agrupamento e agregação juntos, vejamos a definição feita pelo `Hadley Wickham`, que faz a separação de cada processo nas etapas `Dividir-Aplicar-Combinar`
+Para entendermos o funcionamento do processo de agrupamento e agregação juntos, vejamos a definição feita por `Hadley Wickham`:
+
+> "O processo de dividir é o agrupamento, onde os dados são agrupados de acordo com alguma característica definida previamente, a aplicação realiza as agregações, filtros ou transformações e por fim a combinação, que representa a junção dos resultados das etapas anteriores"
+
+Na definição o processo é dividido nas etapas `Dividir-Aplicar-Combinar`. Na figura abaixo é apresentado um fluxograma das diferentes etapas deste processo.
 
 ![](images/03.08-split-apply-combine.png)
 
-O processo de dividir é o agrupamento, onde os dados são agrupados de acordo com alguma característica definida previamente, a aplicação realiza as agregações, filtros ou transformações e por fim a combinação, que representa a junção dos resultados das etapas anteriores.
-
-Para que se haja um entendimento melhor, vamos criar um exemplo.
+Para aprimorar o entendimento vamos criar um exemplo.
 
 ```{python}
 df = pd.DataFrame({
@@ -275,45 +273,45 @@ df = pd.DataFrame({
 })
 ```
 
-Vamos agrupar estes dados, levando em consideração a idade.
+No código apresentado abaixo é realizado um agrupamento levando em consideração o atributo idade.
 
 ```{python}
 # Esta é a etapa de divir, da definição do Hedley
 agrupado = df.groupby('idade')
 
 # Aplicando uma agregação
-## Esta é a etapa de aplicação e junçaõ, definida pelo Hedley
+## Esta é a etapa de aplicação e junção, definida pelo Hedley
 print(agrupado.count())
 ```
 
-Veja que o agrupamento e a contagem foram realizados. E se for necessário aplicar a agregação em uma coluna específica ? É possível!
+Veja que o resultado do agrupamento apresenta o valor do atributo idade e a quantidade de elementos associados ao grupo. Mas é possível aplicar a agregação em uma coluna específica ? Sim, é possível!
 
 ```{python}
 # Agregando somente o dinheiro de cada grupo
 print(agrupado['dinheiro'].sum())
 ```
 
-Pronto! Com estes métodos de manipulação já é possível resolver diversos problemas do mundo real!
+Pronto! No exemplo acima é apresentado um exemplo de como agregar uma coluna específica no caso o atributo `dinheiro`. Com estes métodos de manipulação já é possível resolver diversos problemas do mundo real!
 
 ### Funções de leitura e escrita de dados
 
 Além das estruturas de dados poderosas, o pandas também possui funções para leitura e escrita de dados que facilitam muito a vida `r emo::ji("rocket")`.
 
-Como existem muitas funções para leitura e escrita, aqui serão apresentadas apenas algumas, mas não deixe de conferir a [documentação do projeto](https://pandas.pydata.org/pandas-docs/stable/) para conhecer as demais funções oferecidas.
+Como existem muitas funções para leitura e escrita, aqui serão apresentadas apenas algumas. Para conhecer outras funções de leitura e escrita não deixe de conferir a [documentação do projeto](https://pandas.pydata.org/pandas-docs/stable/).
 
-Caso você esteja trabalhando com dados estruturados, salvos em um arquivo csv, existe a função `read_csv` para te ajudar.
+Caso você esteja trabalhando com dados estruturados salvos em um arquivo `.csv`, existe a função `read_csv` para te ajudar.
 
 ```{python}
 df = pd.read_csv('data/titanic.csv') # O caminho pode ser diferente eu sua máquina
 ```
 
-O ponto importante a ser notado é que, os dados quando carregados com as funções do pandas, sempre serão devolvidos em `Series` ou `DataFrames`. Vejamos o tipo do dado carregado
+O ponto importante a ser notado é que, os dados quando carregados com as funções do Pandas, sempre serão alocados em memória como uma `Series` ou `DataFrame`. Com a função `type` vamos verificar qual o tipo do dado carregado.
 
 ```{python}
 type(df)
 ```
 
-Um `DataFrame`, o que possibilita a aplicação de todos os métodos já vistos aqui. Vamos ver o conteúdo carregado através dos métodos `head` e `tail`, que recuperar o início e o final do `DataFrame`, respectivamente.
+Observe que o dado ao ser lido é representado como uma `DataFrame`. Portanto, podemos utilizar todos os métodos já vistos até aqui. Existem algumas formas de visualizar os dados carregados. A seguir são apresentados exemplos das funções `head` e `tail` que respectivamente recuperam o início e o final do `DataFrame`.
 
 ```{python}
 print(df.head()) # Função que mostra o início do DataFrame carregado
@@ -321,7 +319,7 @@ print(df.head()) # Função que mostra o início do DataFrame carregado
 print(df.tail()) # Função que mostra o final do DataFrame carregado
 ```
 
-Caso os dados que você está trabalhando sejam oriundos de algum `web serviço`, o pandas também pode te ajudar! Com o método `read_json` você pode passar não só o nome do arquivo json em sua máquina, mas também a URL do `web serviço` que distribui tais dados. Vamos recuperar dados de um `web serviço` de exemplo.
+Caso os dados que você está trabalhando sejam oriundos de algum `serviço web`, o Pandas também pode te ajudar! Com o método `read_json` você pode passar não só o nome do arquivo json em sua máquina, mas também a URL do `serviço web` que distribui tais dados. Como exemplo vamos recuperar dados de uma `API Rest` de exemplo.
 
 ```{python}
 json_frame = pd.read_json('http://dummy.restapiexample.com/api/v1/employees')
@@ -330,22 +328,22 @@ print(json_frame.head())
 print(json_frame.columns) # Recupera as colunas do DataFrame
 ```
 
-Da mesma forma que a leitura, fazer escrita de dados com pandas é muito simples, tendo os dados em `Series` ou `DataFrame` é possível salvar os dados em diferentes formatos. Por exemplo, para salvar uma `Serie` ou um `DataFrame` em um arquivo CSV o método `to_csv` pode ser utilizado.
+Da mesma forma que a leitura, fazer escrita de dados com pandas é muito simples. Tendo os dados sobre uma `Series` ou `DataFrame` é possível salvar os dados em diferentes formatos. Por exemplo, o método `to_csv` pode ser utilizado para salvar uma `Series` ou um `DataFrame` em um arquivo `.csv`.
 
-Mas caso você queira salvar em um arquivo json, basta trocar o método `to_csv` para `to_json` e pronto! Seus dados já estarão disponibilizados no sistema de arquivo nos formados indicados.
+Mas caso você queira salvar em um arquivo json, basta trocar o método `to_csv` para `to_json` e pronto! Seus dados estarão disponibilizados no sistema de arquivos nos formatos indicados.
 
 ```{python}
 df.to_csv('nome_do_csv.csv') # Salva o CSV
 df.to_json('nome_do_json.json') # Salva o JSON
 ```
 
-Viu ? É tudo muito simples e direto, o que te permite focar em sua análise e deixar de lado problemas com sintaxe `r emo::ji("statue_of_liberty")`. Para fechar esta seção de análise de dados com Python e Pandas, vejamos uma análise completa, aplicável ao mundo real utilizando todos os conceitos que vimos até aqui.
+Viu ? É tudo muito simples e direto, o que te permite focar em sua análise e deixar de lado problemas com sintaxe `r emo::ji("statue_of_liberty")`. Para fechar esta seção de análise de dados com Python e Pandas, será apresentado um exemplo de análise que pode ser utilizada em aplicaçẽos reais.
 
 ## Exemplos
 
-Para a realização desta análise de exemplo foi utilizado o conjunto de dados [Meteorite Landings](https://www.kaggle.com/nasa/meteorite-landings), com registros de mais de 45 mil meteoros que atingiram a Terra. Os dados foram retirados da plataforma [kaggle.com](https://www.kaggle.com/).
+Para o exemplo foi utilizado o conjunto de dados [Meteorite Landings](https://www.kaggle.com/nasa/meteorite-landings) retirados da plataforma [Kaggle](https://www.kaggle.com/). O conjunto de dados consistem em mais de 45 mil registros de meteoros que atingiram a Terra.
 
-Para iniciar a análise, da mesma forma que foi feito nos exemplos, é necessário importar o pandas
+Para iniciar a análise inicialmente importamos a biblioteca Pandas.
 
 ```{python}
 import pandas as pd
@@ -365,28 +363,28 @@ Para começar, vamos verificar o tipo de dado que foi devolvido da função `rea
 type(df)
 ```
 
-Beleza, um `DataFrame`, isto indica que vamos conseguir aplicar os métodos que vimos anteriormente sem problemas. Agora vamos verificar as dimensões que a tabela representa no `DataFrame` possui. Para tal, o atributo `shape` será utilizado.
+Beleza, é um `DataFrame`, isso indica que vamos conseguir aplicar os métodos que vimos anteriormente sem problemas. Agora vamos verificar as dimensões que a tabela representa no `DataFrame` possui. Para tal, o atributo `shape` será utilizado.
 
 ```{python}
 # Verificando a dimensão dos dados
 df.shape
 ```
 
-Interessante! Os valores `(45716, 10)`, indicam respectivamente que, o conjunto de dados possuí `45716` linhas e `10` colunas. Por falar nas colunas, vamos verificar quais são cada uma das colunas disponíveis neste conjunto de dados.
+Interessante! Os valores `(45716, 10)`, indicam respectivamente que, o conjunto de dados possui `45716` linhas e `10` colunas. Por falar nas colunas, vamos verificar quais são as colunas disponíveis neste conjunto de dados.
 
 ```{python}
 # Verificando as colunas
 df.columns
 ```
 
-> A descrição de cada coluna está disponível na [página dos dados](https://www.kaggle.com/nasa/meteorite-landings), não deixe de conferir para o entendimento completo sobre os métodos de análise e os dados
+> A descrição de cada coluna está disponível na [página dos dados](https://www.kaggle.com/nasa/meteorite-landings), não deixe de conferir para o entendimento completo sobre os métodos de análise e os dados.
 
 Vamos explorar a coluna `nametype`, que indica o tipo de meteorito, havendo dois tipos possíveis:
 
 - Valid: Tipo comum de meteorito;
-- Relict: Meteorito degrado pelo clima da Terra.
+- Relict: Meteorito degradado pelo clima da Terra.
 
-Façamos a separação do conjunto de dados, para verificar qual tipo possui mais dados.
+Para verificar qual tipo possui mais dados vamos dividir o conjunto de dados entre as observações do conjunto do tipo `Valid` e as observações do tipo `Relict`.
 
 ```{python}
 # Separando por tipo de meteorito
@@ -401,7 +399,7 @@ df_valid.shape
 df_relict.shape
 ```
 
-Olha que bacana! Já foi possível perceber que, os meteoritos `Valid` são apresentados em escalar muito maiores. Agora, vamos entender a quantidade de massa média que cada um desses grupos apresenta.
+Olha que bacana! Já é possível perceber que o número de meteoritos do tipo `Valid` é muito maior que os do tipo `Relict`. Agora, vamos entender a quantidade de massa média que cada um desses grupos apresenta.
 
 ```{python}
 # Agrupando para verificar a massa média por grupo
@@ -409,15 +407,15 @@ df_groupby_nametype = df.groupby('nametype')
 df_groupby_nametype_massmean = df_groupby_nametype['mass'].mean()
 ```
 
-Depois de agrupar, vamos olhar o resultado
+Vamos olhar o resultado do agrupamento.
 
 ```{python}
 print(df_groupby_nametype_massmean)
 ```
 
-A massa média (Apresentada em gramas) do grupo `Valid` é muito maior, o que pode ser explicado pela quantidade no conjunto de dados.
+A massa média (apresentada em gramas) do grupo `Valid` é muito maior, o que pode ser explicado pela quantidade no conjunto de dados.
 
-Para finalizar, vamos fazer a contagem dos tipos de meteoritos
+Para finalizar, vamos fazer a contagem dos tipos de meteoritos.
 
 ```{python}
 # Contagem da quantidade de tipos
@@ -425,7 +423,7 @@ df_groupedby_recclass = df.groupby('recclass')
 df_groupedby_recclass_count = df_groupedby_recclass['recclass'].count()
 ```
 
-Por fim, façamos o filtro do conjunto de dados pela quantidade de massa 
+Por fim, façamos o filtro do conjunto de dados pela quantidade de massa .
 
 ```{python}
 # Filtragem (Maior que 500 gramas)
@@ -434,7 +432,7 @@ df_gt_mass_500 = df[df['mass'] > 500]
 df_gt_mass_500.shape # Quantidade bem pequena
 ```
 
-É isto, este foi o exemplo para mostrar que com os poucos métodos que vimos neste curso de introdução, é possível tirar várias informações do conjunto de dados, desde que, a estrutura e semântica dos dados seja entendida.
+É isso, o exemplo mostrou que conhecendo bem a estrutura e semântica dos dados e com os métodos apresentados no curso é possível extrair várias informações de um conjunto de dados.
 
 ## Para saber mais
 
